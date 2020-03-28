@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <!-- Global site tag (gtag.js) - Google Analytics -->
+        <!-- \/ Uncomment to deploy -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160051848-1"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
@@ -10,6 +11,7 @@
 
             gtag('config', 'UA-160051848-1');
         </script>
+        <!-- /\ -->
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,92 +20,39 @@
         <meta name="robots" content="index, follow">
         
         <link rel="canonical" href="https://fael.tech">
-        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Libre+Baskerville:400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Open+Sans&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
 
-        <!-- <link rel="stylesheet" href="css/fontawesome.css"> -->
-        <!-- <link rel="stylesheet" href="css/solid.css"> -->
-        <!-- <link rel="stylesheet" href="css/brands.css"> -->
+        <!-- \/ Comment before deploy -->
+        <!-- <link rel="stylesheet" href="icons/fontawesome.css">
+        <link rel="stylesheet" href="icons/solid.css">
+        <link rel="stylesheet" href="icons/brands.css"> -->
+        <!-- /\ -->
         <link rel="stylesheet" href="style.css">
         <link rel="shortcut icon" type="image/png" href="favicon.png">
     </head>
     <body>
-        <header class="header">
+        <header id="particles-js" class="header">
             <div class="header__logo-box">
                 <picture class="header__logo">
-                    <source srcset="img/logo-single-small-1x.png 1x, img/logo-single-small-2x.png 2x" media="(max-width: 37.5em)">
+                    <!-- <source srcset="img/logo-single-small-1x.png 1x, img/logo-single-small-2x.png 2x" media="(max-width: 37.5em)"> -->
+                    <source srcset="img/logo-1x.png 1x, img/logo-2x.png 2x" media="(max-width: 37.5em)">
                     <img srcset="img/logo-horizontal-1x.png 1x, img/logo-horizontal-2x.png 2x" alt="Full logo of fael.tech" class="header__logo" src="img/logo-horizontal-2x.png">
                 </picture>
-                <!-- <img src="img/logo-horizontal-white-transparent.svg" alt="Logo" class="header__logo"> -->
             </div>
             <div class="header__text-box">
-                <h1 class="heading-primary">
-                    <span class="heading-primary--main">Technology as routine</span>
-                    <span class="heading-primary--sub">Every day counts for a better future</span>
-                </h1>
-                <!-- <a href="#" class="btn btn--white btn--animated">Check out my portfolio</a> -->
+                <h1 class="heading-main" data-tilt data-tilt-reverse="true" data-tilt-full-page-listening>Technology as routine</h1>
+                <h2 class="heading-sub" data-tilt data-tilt-reverse="true" data-tilt-full-page-listening>Web Development and Creative Tools</h2>
+                <a href="/about/" class="btn btn--white btn--animated">About me</a>
             </div>
         </header>
-        <main>
-            <section class="section-bio">
-                <div class="u-text-center u-m-b">
-                    <figure class="section-bio__shape">
-                        <img src="img/photo-faelplg.jpg" alt="Profile image" class="section-bio__img">
-                        <figcaption class="section-bio__caption">
-                            <a href="https://linkedin.com/in/faelplg" target="_blank" title="LinkedIn account">in/faelplg</a>
-                        </figcaption>
-                    </figure>
-                    <h2 class="title">Rafael Goulart</h2>
-                    <h2 class="subtitle">Software Architect, UX Engineer, and Web Developer</h2>
-                    <h2 class="subtitle subtitle--light">CTO at Residuall</h2>
-                </div>
-                <div class="row section-bio__content">
-                    <p class="p section-bio__text">
-                        Experienced product developer in the software industry, with strengths in strategic management, process-oriented management, solution architectures, and also user experience. </br></br> Proven ability as a manager, working in the elaboration, implementation, and monitoring of the strategic planning for information systems. Responsible for both strategic management and IT governance. Successful in developing a technology that has resulted in an over 40% increase in the operational efficiency of waste collection companies. Extensive expertise in system architecture development and administration. As a web developer and UX engineer, I love to work with interactions and micro-interactions, components crafting, and layout animations. </br></br> Recently, I have started to invest in my career with projects and studies in the area of ​​cybersecurity, mainly highlighting the topics of data security policies, ethical hacking, and hardware hacking.
-                    </p>
-                </div>
-            </section>
-        </main>
-        <footer class="footer">
-            <div class="footer__logo-container">
-                <picture class="footer__logo">
-                    <source srcset="img/logo-horizontal-1x.png 1x, img/logo-horizontal-2x.png 2x" media="(max-width: 37.5em)">
-                    <img srcset="img/logo-1x.png 1x, img/logo-2x.png 2x" alt="Full logo of fael.tech" class="footer__logo" src="img/logo-2x.png">
-                </picture>
-            </div>
-            <div class="row footer__navigation-container">
-                <div class="footer__navigation">
-                    <ul class="footer__list">
-                        <li class="footer__item">
-                            <a href="https://github.com/faelplg" class="footer__link" target="_blank"><i class="fab fa-github"></i>GitHub</a>
-                        </li>
-                        <li class="footer__item">
-                            <a href="https://linkedin.com/in/faelplg" class="footer__link" target="_blank"><i class="fab fa-linkedin-in"></i>LinkedIn</a>
-                        </li>
-                        <li class="footer__item">
-                            <a href="https://twitter.com/faelplg" class="footer__link" target="_blank"><i class="fab fa-twitter"></i>Twitter</a>
-                        </li>
-                        <li class="footer__item">
-                            <a href="https://codepen.io/faelplg" class="footer__link" target="_blank"><i class="fab fa-codepen"></i>Codepen</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-1-of-2 u-no-margin">
-                    <p class="footer__copyright">
-                        Copyright &copy; by <a href="https://github.com/faelplg" class="footer-single__link" target="_blank">faelplg</a>. <br/><br/>You are 100% allowed to use this webpage for both personal and commercial use, but NOT to claim it as your own design. A credit to the original author, Rafael Goulart, is of course highly appreciated!
-                    </p>
-                </div>
-                <div class="col-1-of-2">
-                    <p class="footer__credits">
-                        Image credits: <a href="https://spacetelescope.org/" class="footer-single__link" target="_blank">ESA/Hubble</a>. <br/><br/>
-                        The header image is the NGC 1999, a reflection nebula in Orion. Image by <a href="https://www.nasa.gov/" class="footer-single__link" target="_blank">NASA</a>/<a href="https://www.esa.int/" class="footer-single__link" target="_blank">ESA</a> and the Hubble Heritage Team (<a href="http://www.stsci.edu/" class="footer-single__link" target="_blank">STScI</a>) <br/><br/>
-                        The footer image is the Hubble's sharpest view of the Orion Nebula. Image by <a href="https://www.nasa.gov/" class="footer-single__link" target="_blank">NASA</a>, <a href="https://www.esa.int/" class="footer-single__link" target="_blank">ESA</a>, M. Robberto ( <a href="http://www.stsci.edu/" class="footer-single__link" target="_blank">Space Telescope Science Institute</a>/<a href="https://www.esa.int/" class="footer-single__link" target="_blank">ESA</a>) and the Hubble Space Telescope Orion Treasury Project Team.
-                    </p>
-                </div>
-            </div>
-        </footer>
-
+        <!-- \/ Comment before deploy -->
+        <!-- <script type="text/javascript" src="./vendors/particles.js"></script>
+        <script type="text/javascript" src="./vendors/tilt.js"></script>
+        <script type="text/javascript" src="app.js"></script> -->
+        <!-- /\ -->
+        <!-- \/ Uncomment to deploy -->
+        <script type="text/javascript" src="vendors.js"></script>
         <script type="text/javascript" src="index.js"></script>
+        <!-- /\ -->
     </body>
 </html>
