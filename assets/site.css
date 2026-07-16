@@ -36,6 +36,8 @@ a:hover { color: var(--ft-teal-500); }
   padding: 64px 24px 40px;
   border-bottom: 1px solid var(--ft-border);
 }
+
+.site-cover.no-border { border-bottom: none; }
 .site-cover__word {
   font-size: 40px;
   font-weight: 700;
