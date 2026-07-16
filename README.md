@@ -5,16 +5,7 @@ IA — e laboratório de aplicação da identidade visual da marca **fael.tech**
 construído com os tokens e regras da marca, é a prova viva do sistema (não há uma página separada
 de "componentes"). Bilíngue: pt-BR na raiz, inglês em `en/`.
 
-**Forward through technology — technology is not the destination, it's how we move forward.**
-
-## Rodar localmente
-
-Sem build. Servir os arquivos estáticos e abrir no navegador:
-
-```
-python3 -m http.server 8080
-# abrir http://localhost:8080
-```
+**Forward through technology.**
 
 ## Estrutura
 
@@ -48,11 +39,6 @@ AGENTS.md                 → instruções para agentes de IA que trabalharem ne
 ```
 
 ## Documentação
-
-O projeto está content-complete: as páginas, a identidade visual e a documentação para agentes de
-IA já refletem o estado final do site. Mudanças futuras devem ser feitas diretamente nos arquivos
-e, quando relevantes para fatos de carreira ou estrutura de conteúdo, refletidas em
-[docs/ai/](docs/ai/).
 
 Para trabalhar no kit de marca em si (símbolo, cores, tokens), veja
 [brand/README.md](brand/README.md). Para agentes de IA/LLMs que precisem de
