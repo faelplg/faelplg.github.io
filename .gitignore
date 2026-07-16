@@ -1,34 +1,39 @@
-# dependencies (bun install)
-node_modules
-
-# output
-out
-dist
-*.tgz
-
-# code coverage
-coverage
-*.lcov
-
-# logs
-logs
-_.log
-report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
-
-# dotenv environment variable files
-.env
-.env.development.local
-.env.test.local
-.env.production.local
-.env.local
-
-# caches
-.eslintcache
-.cache
-*.tsbuildinfo
-
-# IntelliJ based IDEs
-.idea
-
-# Finder (MacOS) folder config
+# OS
 .DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Editor / IDE
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-workspace
+
+# Logs
+*.log
+npm-debug.log*
+
+# Dependências (não versionadas — projeto não usa build/bundler, mas ferramentas
+# de dev como `bunx serve`/`npx serve` podem gerar cache local)
+node_modules/
+package-lock.json
+bun.lockb
+
+# Skills de agentes de IA — conteúdo vendorizado/reproduzível a partir de
+# skills-lock.json (que permanece versionado); não faz parte do site em si.
+.agents/skills/
+
+# Variáveis de ambiente / segredos
+.env
+.env.*.local
+
+# Arquivos temporários
+*.tmp
+*.zip
