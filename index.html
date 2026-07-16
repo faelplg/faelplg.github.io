@@ -1,45 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160051848-1"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fael Goulart — CTO/CIO, DPO e estrategista em transformação com IA</title>
+<meta name="description" content="Site pessoal de Rafael (Fael) Goulart: CTO/CIO, DPO e estrategista em transformação com IA. Trajetória, identidade visual da fael.tech e contato." />
+<link rel="icon" href="brand/assets/faeltech-favicon.svg">
+<link rel="alternate" hreflang="en" href="en/index.html">
+<link rel="alternate" hreflang="pt-BR" href="index.html">
+<link rel="stylesheet" href="brand/tokens.css">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
 
-            gtag('config', 'UA-160051848-1');
-        </script>
+  <header class="site-topbar">
+    <div class="site-topbar__inner">
+      <a class="site-topbar__brand" href="index.html">
+        <img src="brand/assets/faeltech-mark.svg" width="26" height="26" alt="">
+        <span class="site-word" style="font-size:19px;">fael<span class="tld">.tech</span></span>
+      </a>
+      <button class="site-topbar__toggle" type="button" data-topbar-toggle aria-expanded="false" aria-controls="site-topbar-nav">☰</button>
+      <nav class="site-topbar__nav" id="site-topbar-nav" aria-label="Navegação principal">
+        <a href="index.html" class="site-topbar__link--active" aria-current="page">Início</a>
+        <a href="manual.html">Manual da marca</a>
+        <a href="sobre.html">Trajetória</a>
+        <a href="contato.html">Contato</a>
+        <a class="site-topbar__lang" href="en/index.html" hreflang="en" lang="en">EN->PT</a>
+      </nav>
+    </div>
+  </header>
 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>fael.tech | Technology as routine</title>
-        <meta name="description" content="Rafael Goulart (a.k.a. faelplg) portfolio website. Find out more about technology, routine and career.">
-        <meta name="robots" content="index, follow">
-        
-        <link rel="canonical" href="https://fael.tech">
-        <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Open+Sans&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+  <!-- ═══ Hero ═══ -->
+  <section class="site-hero">
+    <img class="site-hero__portrait" src="assets/img/fael-portrait.jpg" alt="Retrato de Rafael (Fael) Goulart">
+    <div>
+      <div class="site-eyebrow">Rafael (Fael) Goulart · Florianópolis, Brasil</div>
+      <h1>Tecnologia como meio de crescimento<span class="tld">.</span></h1>
+      <p class="site-hero__lead">
+        CTO/CIO, DPO, engenheiro de software e estrategista em transformação com IA, com mais de 15 anos de desenvolvimento de
+        software e 10 anos em posições de liderança. Uso de visão estratégica, domínio técnico e criatividade
+        para transformar operações e produtos digitais, indo do código à estratégia.
+      </p>
+      <div class="site-hero__actions">
+        <a class="site-btn site-btn--primary" href="sobre.html">Ver trajetória</a>
+        <a class="site-btn site-btn--secondary" href="manual.html">Manual da marca</a>
+        <a class="site-btn site-btn--secondary" href="contato.html">Contato</a>
+      </div>
+    </div>
+  </section>
 
-        <link rel="stylesheet" href="style.css">
-        <link rel="shortcut icon" type="image/png" href="favicon.png">
-    </head>
-    <body>
-        <header id="particles-js" class="header">
-            <div class="header__logo-box">
-                <picture class="header__logo">
-                    <!-- <source srcset="img/logo-single-small-1x.png 1x, img/logo-single-small-2x.png 2x" media="(max-width: 37.5em)"> -->
-                    <source srcset="img/logo-1x.png 1x, img/logo-2x.png 2x" media="(max-width: 37.5em)">
-                    <img srcset="img/logo-horizontal-1x.png 1x, img/logo-horizontal-2x.png 2x" alt="Full logo of fael.tech" class="header__logo" src="img/logo-horizontal-2x.png">
-                </picture>
-            </div>
-            <div class="header__text-box">
-                <h1 class="heading-main" data-tilt data-tilt-reverse="true" data-tilt-full-page-listening>Technology as routine</h1>
-                <h2 class="heading-sub" data-tilt data-tilt-reverse="true" data-tilt-full-page-listening>Web Development and Creative Tools</h2>
-                <a href="/about/" class="btn btn--white btn--animated">About me</a>
-            </div>
-        </header>
+  <div class="site-page">
 
-        <script type="text/javascript" src="vendors.js"></script>
-        <script type="text/javascript" src="index.js"></script>
-    </body>
+    <!-- ═══ Essência ═══ -->
+    <section class="site-section" id="essencia">
+      <div class="site-section__head"><span class="site-section__num">01</span><h2>Direction. Motion. Impact.</h2></div>
+      <p>A minha marca pessoal fael.tech nasce da ideia <strong>forward through technology</strong>: tecnologia não como destino, mas
+        como o meio pelo qual ideias, produtos e organizações avançam. Três ideias centrais orientam meu trabalho:</p>
+      <div class="site-pillars" style="padding:0;">
+        <div class="site-pillar">
+          <div class="site-pillar__num">01 · Direction</div>
+          <h3>Direção</h3>
+          <p>Tecnologia precisa estar conectada a uma intenção. Antes de construir, entendo o problema, o contexto e o resultado desejado.</p>
+        </div>
+        <div class="site-pillar">
+          <div class="site-pillar__num">02 · Motion</div>
+          <h3>Movimento</h3>
+          <p>Conhecimento precisa gerar movimento. Estratégia, arquitetura, design e engenharia transformando ideias em algo concreto.</p>
+        </div>
+        <div class="site-pillar">
+          <div class="site-pillar__num">03 · Impact</div>
+          <h3>Impacto</h3>
+          <p>Movimento tecnológico só tem valor quando produz transformação real: melhores produtos, organizações e experiências.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ O que eu faço ═══ -->
+    <section class="site-section" id="atuacao">
+      <div class="site-section__head"><span class="site-section__num">02</span><h2>O que eu faço</h2></div>
+      <div class="site-grid-2">
+        <div class="site-panel" style="padding:20px 22px;">
+          <h3 style="margin-top:0;">Estratégia e liderança de tecnologia</h3>
+          <p>Liderança de áreas de tecnologia de ponta a ponta, atuando em estratégia, resultados operacionais, GRC, estrutura e desenvolvimento de times. O framework de trabalho depende da organização estratégica da empresa.</p>
+        </div>
+        <div class="site-panel" style="padding:20px 22px;">
+          <h3 style="margin-top:0;">Transformação com IA</h3>
+          <p>Estruturação de roadmap e agendas de adoção de inteligência artificial e operações de base agêntica na organização, independente do porte e da estrutura legada. O que é importante aqui é que a IA cresça como um gêmeo cognitivo de processos e produtos.</p>
+        </div>
+        <div class="site-panel" style="padding:20px 22px;">
+          <h3 style="margin-top:0;">Segurança da informação e privacidade</h3>
+          <p>Atuação como DPO, implementando práticas de segurança digital e conformidade (LGPD) em escala organizacional.</p>
+        </div>
+        <div class="site-panel" style="padding:20px 22px;">
+          <h3 style="margin-top:0;">Arquitetura e engenharia de software</h3>
+          <p>Base técnica sólida em desenvolvimento web e UX (ecossistema JS), com foco em arquitetura de soluções e programação criativa.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Destaques ═══ -->
+    <section class="site-section" id="destaques">
+      <div class="site-section__head"><span class="site-section__num">03</span><h2>Destaques de carreira</h2></div>
+      <ul class="site-rules">
+        <li><span class="glyph">→</span><span>Liderou como CTO uma equipe de <strong>50 profissionais</strong> na Aurum por mais de 5 anos, período em que a empresa quase dobrou receita e base de clientes, e o time praticamente dobrou de tamanho <em>(números a confirmar)</em>.</span></li>
+        <li><span class="glyph">→</span><span>Manteve a área de tecnologia premiada em <strong>GPTW (Great Place to Work)</strong> em todos os anos à frente da função, com eNPS e NPS do time consistentemente acima de 80.</span></li>
+        <li><span class="glyph">→</span><span>Participou da entrega de <strong>mais de 10 produtos digitais</strong>, atuando desde a programação até a arquitetura e gestão de produto.</span></li>
+        <li><span class="glyph">→</span><span>Cofundou <strong>duas empresas de tecnologia</strong> — incluindo a Yattó (antes Residuall), onde vendeu sua participação após reposicionar a empresa para um modelo consultivo voltado a grandes indústrias.</span></li>
+        <li><span class="glyph">→</span><span>Atuou como gestor público de tecnologia no Governo de Minas Gerais, coordenando infraestrutura digital e governança de TI para unidades de atendimento ao cidadão em todo o estado.</span></li>
+      </ul>
+      <div style="margin-top:24px;">
+        <a class="site-btn site-btn--secondary" href="sobre.html">Ver trajetória completa →</a>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <span class="site-cover__tagline">fael.tech · forward through technology</span>
+      <img src="brand/assets/faeltech-mark-circle.svg" width="20" height="20" alt="">
+    </footer>
+
+  </div>
+
+  <script src="assets/main.js"></script>
+</body>
 </html>

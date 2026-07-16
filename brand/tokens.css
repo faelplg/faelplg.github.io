@@ -1,0 +1,61 @@
+/* ═══════════════════════════════════════════════
+   fael.tech — tokens de marca
+   AI as an Arrow · identidade visual v2.0
+   ═══════════════════════════════════════════════ */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  /* ── Cores de marca — escala teal ── */
+  --ft-teal-900: #042F2E;    /* profundidade — fundos imersivos */
+  --ft-teal-700: #0F766E;    /* marca — fundos claros */
+  --ft-teal-500: #14B8A6;    /* interação — hover, links, realces */
+  --ft-teal-300: #2DD4BF;    /* marca — fundos escuros */
+  --ft-teal-100: #5EEAD4;    /* detalhe — texto ativo sobre escuro */
+  --ft-teal: var(--ft-teal-700);
+  --ft-teal-light: var(--ft-teal-300);
+
+  /* ── Neutros ── */
+  --ft-ink: #111827;         /* tinta — texto e 1 cor */
+  --ft-paper: #F7F8F5;       /* papel — canvas padrão */
+  --ft-surface: #FFFFFF;
+  --ft-surface-muted: #EEF2ED;
+  --ft-border: #D9DED7;
+  --ft-text: #111827;
+  --ft-text-muted: #6B7280;
+
+  /* ── Liquid glass — o campo por onde a seta atravessa ──
+     Superfícies translúcidas para camadas digitais.
+     O símbolo permanece sempre sólido. */
+  --ft-glass-fill: rgba(255, 255, 255, 0.55);        /* vidro sobre claro */
+  --ft-glass-fill-dark: rgba(255, 255, 255, 0.08);   /* vidro sobre escuro */
+  --ft-glass-tint: rgba(45, 212, 191, 0.12);         /* tingimento teal */
+  --ft-glass-border: rgba(255, 255, 255, 0.45);
+  --ft-glass-border-dark: rgba(255, 255, 255, 0.16);
+  --ft-glass-blur: 20px;
+  --ft-glass-radius: 20px;
+  --ft-glass-shadow: 0 8px 32px rgba(4, 47, 46, 0.18);
+  --ft-glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+
+  /* Fundo imersivo padrão para camadas glass (nunca no símbolo) */
+  --ft-depth-bg: radial-gradient(120% 90% at 20% 10%, #0F766E 0%, #042F2E 70%);
+
+  /* ── Tipografia ── */
+  --ft-font-sans: 'IBM Plex Sans', system-ui, sans-serif;
+  --ft-font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --ft-tracking-tight: -0.025em; /* wordmark e títulos grandes */
+  --ft-tracking-wide: 0.06em;    /* eyebrows uppercase */
+}
+
+/* Superfície liquid glass pronta para uso */
+.ft-glass {
+  background: linear-gradient(var(--ft-glass-tint), var(--ft-glass-tint)), var(--ft-glass-fill);
+  -webkit-backdrop-filter: blur(var(--ft-glass-blur)) saturate(1.4);
+  backdrop-filter: blur(var(--ft-glass-blur)) saturate(1.4);
+  border: 1px solid var(--ft-glass-border);
+  border-radius: var(--ft-glass-radius);
+  box-shadow: var(--ft-glass-shadow), var(--ft-glass-highlight);
+}
+.ft-glass--dark {
+  background: linear-gradient(var(--ft-glass-tint), var(--ft-glass-tint)), var(--ft-glass-fill-dark);
+  border-color: var(--ft-glass-border-dark);
+}

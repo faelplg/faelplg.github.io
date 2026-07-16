@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>fael.tech — Manual de Identidade Visual · v3.0</title>
+<link rel="icon" href="assets/faeltech-favicon.svg">
+<link rel="stylesheet" href="tokens.css">
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--ft-paper); color: var(--ft-text);
+    font-family: var(--ft-font-sans); font-size: 16px; line-height: 1.6;
+  }
+  a { color: var(--ft-teal); }
+  a:hover { color: #115E59; text-decoration: underline; }
+  .page { max-width: 920px; margin: 0 auto; padding: 56px 32px 96px 32px; }
+
+  .eyebrow {
+    font-family: var(--ft-font-mono); font-size: 11px; font-weight: 500;
+    letter-spacing: var(--ft-tracking-wide); text-transform: uppercase; color: var(--ft-teal);
+  }
+  section { margin-top: 72px; }
+  .sec-head { display: flex; align-items: baseline; gap: 14px; border-bottom: 1px solid var(--ft-border); padding-bottom: 14px; margin-bottom: 28px; }
+  .sec-num { font-family: var(--ft-font-mono); font-size: 13px; color: var(--ft-teal); font-weight: 700; }
+  .sec-head h2 { font-size: 24px; font-weight: 600; letter-spacing: var(--ft-tracking-tight); margin: 0; }
+  h3 { font-size: 17px; font-weight: 600; margin: 28px 0 10px 0; }
+  p { color: var(--ft-text-muted); margin: 0 0 14px 0; max-width: 720px; }
+  p strong, li strong { color: var(--ft-text); }
+
+  .panel { background: var(--ft-surface); border: 1px solid var(--ft-border); border-radius: 12px; }
+  .specimen { display: flex; align-items: center; justify-content: center; padding: 48px 24px; }
+  .specimen.ink { background: var(--ft-ink); }
+  .specimen.muted { background: var(--ft-surface-muted); }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .cap { font-size: 12px; color: var(--ft-text-muted); margin-top: 8px; }
+
+  .lockup { display: flex; align-items: center; gap: 14px; }
+  .word { font-size: 30px; font-weight: 700; letter-spacing: var(--ft-tracking-tight); line-height: 1; }
+  .word .tld { color: var(--ft-teal); }
+  .word.on-ink { color: var(--ft-paper); }
+  .word.on-ink .tld { color: var(--ft-teal-light); }
+  .tagline {
+    font-family: var(--ft-font-mono); font-size: 11px; letter-spacing: var(--ft-tracking-wide);
+    text-transform: uppercase; color: var(--ft-text-muted); margin-top: 10px;
+  }
+
+  code.inline {
+    font-family: var(--ft-font-mono); font-size: 0.9em; color: var(--ft-text);
+    background: var(--ft-surface-muted); padding: 1px 5px; border-radius: 4px;
+  }
+  .codeblock {
+    font-family: var(--ft-font-mono); font-size: 12.5px; line-height: 1.7;
+    background: var(--ft-ink); color: #E2E8F0; border-radius: 8px;
+    padding: 16px 18px; white-space: pre; overflow-x: auto;
+  }
+  .codeblock .c { color: #64748B; }
+  .codeblock .t { color: #2DD4BF; }
+
+  .swatch { border: 1px solid var(--ft-border); border-radius: 8px; overflow: hidden; }
+  .swatch .chip { height: 72px; }
+  .swatch .meta { padding: 9px 12px; background: var(--ft-surface); }
+  .swatch .name { font-size: 12.5px; font-weight: 600; }
+  .swatch .hexv { font-family: var(--ft-font-mono); font-size: 11px; color: var(--ft-text-muted); }
+
+  ul.rules { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; max-width: 760px; }
+  ul.rules li { display: flex; gap: 12px; font-size: 14.5px; line-height: 1.55; color: var(--ft-text-muted); }
+  ul.rules .glyph { color: var(--ft-teal); flex-shrink: 0; }
+
+  .dont-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .dont { border: 1px solid var(--ft-border); border-radius: 8px; overflow: hidden; }
+  .dont .vis { height: 130px; display: flex; align-items: center; justify-content: center; background: var(--ft-surface); position: relative; }
+  .dont .lbl { font-size: 12px; color: var(--ft-text-muted); padding: 8px 12px; border-top: 1px solid var(--ft-border); background: var(--ft-surface); }
+  .dont .lbl strong { color: #B91C1C; font-weight: 600; }
+
+  .filetable { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .filetable td { padding: 10px 12px; border-top: 1px solid var(--ft-border); vertical-align: middle; }
+  .filetable tr:first-child td { border-top: none; }
+  .filetable .path { font-family: var(--ft-font-mono); font-size: 12.5px; }
+  .filetable .use { color: var(--ft-text-muted); }
+
+  .icon-row { display: flex; align-items: flex-end; gap: 40px; }
+  .icon-size-wrap { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .size-cap { font-family: var(--ft-font-mono); font-size: 10.5px; color: var(--ft-text-muted); }
+
+  /* Clearspace diagram */
+  .clearspace { position: relative; display: inline-block; padding: 26px; border: 1px dashed #BFC8BD; border-radius: 4px; }
+
+  @media print {
+    body { background: #fff; }
+    section { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ═══ Capa ═══ -->
+  <header style="text-align:center; padding: 48px 0 8px 0;" data-screen-label="Capa">
+    <svg width="130" height="130" viewBox="0 0 400 400" role="img" aria-label="Símbolo fael.tech" style="display:inline-block;">
+      <path d="M208.99 0C255.205 0 297.554 16.4093 330.531 43.6606L312.256 48.5835L310.089 49.1695C281.622 28.775 246.712 16.8196 208.99 16.8196C160.9 16.8196 117.38 36.335 85.8667 67.8644C71.6918 82.0468 59.9183 98.6906 51.3079 117.093L30.6897 122.426C40.413 97.2842 55.2325 74.7212 73.9763 55.9676C108.535 21.3907 156.273 0 208.99 0ZM381.256 108.361C393.264 133.385 400 161.457 400 191.111C400 243.855 378.62 291.618 344.062 326.195C309.503 360.772 261.765 382.163 208.99 382.163H206.94L217.834 365.167C262.409 362.94 302.591 343.952 332.171 314.298C363.684 282.769 383.189 239.225 383.189 191.111C383.189 167.844 378.679 145.692 370.42 125.414L381.256 108.361ZM146.198 371.614C118.727 362.061 94.1258 346.355 73.9763 326.195C39.4175 291.618 18.0379 243.855 18.0379 191.111C18.0379 188.962 18.0768 186.833 18.1549 184.723L34.9072 194.686C35.8443 241.335 55.1153 283.589 85.8667 314.298C101.857 330.356 121.011 343.308 142.274 352.098L146.198 371.614Z" fill="var(--ft-teal)"/>
+      <path d="M263.581 261.905L147.37 291.97C154.34 326.664 161.252 361.416 168.281 396.111C168.691 398.103 170.155 399.568 172.147 399.92C174.138 400.272 176.013 399.451 177.067 397.752L188.723 379.232V379.35C189.27 378.568 189.816 377.748 190.363 376.888L263.581 261.905ZM70.989 196.561L351.618 123.539L369.073 96.2293C369.854 94.979 370.557 93.7483 371.182 92.5371L396.662 51.9825C397.716 50.283 397.657 48.2317 396.427 46.5908C395.256 44.9498 393.264 44.2467 391.331 44.7741L316.649 64.817L131.848 113.693C129.973 114.123 128.079 114.494 126.166 114.807L80.185 126.88L3.57007 146.922C1.6957 147.45 0.348493 148.974 0.0556223 150.908C-0.237249 152.9 0.641307 154.717 2.33996 155.713L51.8938 185.191L70.989 196.561ZM333.518 152.08L99.5145 213.556L135.889 235.181L142.918 269.876L281.739 233.423L333.518 152.08Z" fill="var(--ft-teal)"/>
+    </svg>
+    <h1 style="font-size:40px; font-weight:700; letter-spacing:var(--ft-tracking-tight); margin:24px 0 6px 0; line-height:1.1;">fael<span style="color:var(--ft-teal);">.tech</span></h1>
+    <div class="tagline">Manual de identidade visual · v3.0</div>
+    <p style="max-width:620px; margin:22px auto 0 auto; text-align:center;">
+      <strong>Forward through technology — technology is not the destination, it's how we move forward.</strong><br>
+      Este manual define o símbolo, os lockups, as cores, a tipografia e as regras de uso da marca fael.tech.
+    </p>
+  </header>
+
+  <!-- ═══ 01 Conceito ═══ -->
+  <section data-screen-label="01 Conceito">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Conceito</h2></div>
+    <p>
+      A marca nasce da filosofia <strong>Forward through technology</strong>: tecnologia não como destino,
+      mas como o meio pelo qual ideias, produtos e organizações avançam. O símbolo representa a capacidade
+      de compreender contextos complexos, encontrar uma direção e transformar intenção em movimento.
+    </p>
+    <ul class="rules">
+      <li><span class="glyph">→</span><span><strong>O ponteiro</strong> — ação e interação: a forma remete a um ponteiro de mouse, o elemento que seleciona, cria, conecta e transforma intenção em ação no ambiente digital.</span></li>
+      <li><span class="glyph">→</span><span><strong>As letras F e T</strong> — autoria e identidade: as iniciais de fael.tech estão incorporadas à construção do símbolo, podendo também ser lidas como Forward Through Technology.</span></li>
+      <li><span class="glyph">→</span><span><strong>A nave</strong> — exploração e inovação: o símbolo pode ser percebido como uma nave atravessando uma órbita, representando curiosidade e disposição para explorar novas possibilidades.</span></li>
+      <li><span class="glyph">→</span><span><strong>A trajetória ascendente</strong> — progresso: a orientação para a frente e para cima comunica evolução, ambição e construção de resultados — sem apontar para um destino fixo.</span></li>
+      <li><span class="glyph">→</span><span><strong>O círculo</strong> — contexto e órbita: representa o ambiente em que a tecnologia opera (produtos, organizações, pessoas, sistemas). Quando o símbolo atravessa esse campo, comunica transformação.</span></li>
+      <li><span class="glyph">→</span><span><strong>Símbolo sem círculo</strong> — ação em curso: mais direto e dinâmico, usado quando o contexto já é fornecido pelo wordmark.</span></li>
+    </ul>
+
+    <h3>Essência da marca</h3>
+    <p>Três ideias centrais estruturam a fael.tech:</p>
+    <div class="grid-2" style="grid-template-columns:repeat(3,1fr);">
+      <div class="panel" style="padding:18px 20px;">
+        <div class="eyebrow">Direction</div>
+        <p style="margin:8px 0 0;">Tecnologia precisa estar conectada a uma intenção — compreender o problema e o resultado desejado antes de construir.</p>
+      </div>
+      <div class="panel" style="padding:18px 20px;">
+        <div class="eyebrow">Motion</div>
+        <p style="margin:8px 0 0;">Conhecimento precisa gerar movimento — estratégia, arquitetura, design e engenharia transformando ideias em algo concreto.</p>
+      </div>
+      <div class="panel" style="padding:18px 20px;">
+        <div class="eyebrow">Impact</div>
+        <p style="margin:8px 0 0;">Movimento tecnológico só tem valor quando produz transformação real — melhores produtos, organizações e experiências.</p>
+      </div>
+    </div>
+    <p style="margin-top:20px;">Assinatura secundária, usada em apresentações e conteúdos institucionais: <strong>Direction. Motion. Impact.</strong></p>
+  </section>
+
+  <!-- ═══ 02 Símbolo ═══ -->
+  <section data-screen-label="02 Símbolo">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Símbolo</h2></div>
+    <div class="grid-2">
+      <div>
+        <div class="panel specimen" style="padding:56px 24px;">
+          <svg width="160" height="160" viewBox="0 0 400 400"><path d="M208.99 0C255.205 0 297.554 16.4093 330.531 43.6606L312.256 48.5835L310.089 49.1695C281.622 28.775 246.712 16.8196 208.99 16.8196C160.9 16.8196 117.38 36.335 85.8667 67.8644C71.6918 82.0468 59.9183 98.6906 51.3079 117.093L30.6897 122.426C40.413 97.2842 55.2325 74.7212 73.9763 55.9676C108.535 21.3907 156.273 0 208.99 0ZM381.256 108.361C393.264 133.385 400 161.457 400 191.111C400 243.855 378.62 291.618 344.062 326.195C309.503 360.772 261.765 382.163 208.99 382.163H206.94L217.834 365.167C262.409 362.94 302.591 343.952 332.171 314.298C363.684 282.769 383.189 239.225 383.189 191.111C383.189 167.844 378.679 145.692 370.42 125.414L381.256 108.361ZM146.198 371.614C118.727 362.061 94.1258 346.355 73.9763 326.195C39.4175 291.618 18.0379 243.855 18.0379 191.111C18.0379 188.962 18.0768 186.833 18.1549 184.723L34.9072 194.686C35.8443 241.335 55.1153 283.589 85.8667 314.298C101.857 330.356 121.011 343.308 142.274 352.098L146.198 371.614Z" fill="var(--ft-teal)"/><path d="M263.581 261.905L147.37 291.97C154.34 326.664 161.252 361.416 168.281 396.111C168.691 398.103 170.155 399.568 172.147 399.92C174.138 400.272 176.013 399.451 177.067 397.752L188.723 379.232V379.35C189.27 378.568 189.816 377.748 190.363 376.888L263.581 261.905ZM70.989 196.561L351.618 123.539L369.073 96.2293C369.854 94.979 370.557 93.7483 371.182 92.5371L396.662 51.9825C397.716 50.283 397.657 48.2317 396.427 46.5908C395.256 44.9498 393.264 44.2467 391.331 44.7741L316.649 64.817L131.848 113.693C129.973 114.123 128.079 114.494 126.166 114.807L80.185 126.88L3.57007 146.922C1.6957 147.45 0.348493 148.974 0.0556223 150.908C-0.237249 152.9 0.641307 154.717 2.33996 155.713L51.8938 185.191L70.989 196.561ZM333.518 152.08L99.5145 213.556L135.889 235.181L142.918 269.876L281.739 233.423L333.518 152.08Z" fill="var(--ft-teal)"/></svg>
+        </div>
+        <div class="cap">Com círculo — símbolo isolado, favicon, app icon e lockups verticais</div>
+      </div>
+      <div>
+        <div class="panel specimen" style="padding:56px 24px;">
+          <svg width="160" height="160" viewBox="0 0 400 400"><path d="M265.302 244.575L148.332 278.412C155.348 317.46 162.305 356.574 169.38 395.622C169.793 397.865 171.266 399.514 173.271 399.91C175.275 400.306 177.162 399.382 178.223 397.469L189.956 376.626V376.758C190.506 375.878 191.056 374.955 191.606 373.988L265.302 244.575ZM71.4527 171.03L353.914 88.8439L371.483 58.1068C372.27 56.6997 372.977 55.3145 373.606 53.9513L399.252 8.30727C400.313 6.39444 400.254 4.08572 399.016 2.23885C397.837 0.391982 395.833 -0.399437 393.887 0.1942L318.717 22.7524L132.709 77.7627C130.822 78.2464 128.916 78.6642 126.99 79.016L80.7087 92.6036L3.59339 115.162C1.70677 115.756 0.350769 117.47 0.0559856 119.647C-0.238798 121.89 0.645495 123.935 2.35524 125.056L52.2327 158.233L71.4527 171.03ZM335.697 120.966L100.164 190.158L136.777 214.497L143.851 253.545L283.579 212.518L335.697 120.966Z" fill="var(--ft-teal)"/></svg>
+        </div>
+        <div class="cap">Sem círculo — ao lado do wordmark, nos lockups horizontais</div>
+      </div>
+      <div>
+        <div class="specimen ink panel" style="padding:56px 24px; border:none;">
+          <svg width="160" height="160" viewBox="0 0 400 400"><path d="M208.99 0C255.205 0 297.554 16.4093 330.531 43.6606L312.256 48.5835L310.089 49.1695C281.622 28.775 246.712 16.8196 208.99 16.8196C160.9 16.8196 117.38 36.335 85.8667 67.8644C71.6918 82.0468 59.9183 98.6906 51.3079 117.093L30.6897 122.426C40.413 97.2842 55.2325 74.7212 73.9763 55.9676C108.535 21.3907 156.273 0 208.99 0ZM381.256 108.361C393.264 133.385 400 161.457 400 191.111C400 243.855 378.62 291.618 344.062 326.195C309.503 360.772 261.765 382.163 208.99 382.163H206.94L217.834 365.167C262.409 362.94 302.591 343.952 332.171 314.298C363.684 282.769 383.189 239.225 383.189 191.111C383.189 167.844 378.679 145.692 370.42 125.414L381.256 108.361ZM146.198 371.614C118.727 362.061 94.1258 346.355 73.9763 326.195C39.4175 291.618 18.0379 243.855 18.0379 191.111C18.0379 188.962 18.0768 186.833 18.1549 184.723L34.9072 194.686C35.8443 241.335 55.1153 283.589 85.8667 314.298C101.857 330.356 121.011 343.308 142.274 352.098L146.198 371.614Z" fill="var(--ft-teal-light)"/><path d="M263.581 261.905L147.37 291.97C154.34 326.664 161.252 361.416 168.281 396.111C168.691 398.103 170.155 399.568 172.147 399.92C174.138 400.272 176.013 399.451 177.067 397.752L188.723 379.232V379.35C189.27 378.568 189.816 377.748 190.363 376.888L263.581 261.905ZM70.989 196.561L351.618 123.539L369.073 96.2293C369.854 94.979 370.557 93.7483 371.182 92.5371L396.662 51.9825C397.716 50.283 397.657 48.2317 396.427 46.5908C395.256 44.9498 393.264 44.2467 391.331 44.7741L316.649 64.817L131.848 113.693C129.973 114.123 128.079 114.494 126.166 114.807L80.185 126.88L3.57007 146.922C1.6957 147.45 0.348493 148.974 0.0556223 150.908C-0.237249 152.9 0.641307 154.717 2.33996 155.713L51.8938 185.191L70.989 196.561ZM333.518 152.08L99.5145 213.556L135.889 235.181L142.918 269.876L281.739 233.423L333.518 152.08Z" fill="var(--ft-teal-light)"/></svg>
+        </div>
+        <div class="cap">Sobre fundos escuros o símbolo muda para #2DD4BF</div>
+      </div>
+      <div>
+        <div class="specimen ink panel" style="padding:56px 24px; border:none;">
+          <svg width="160" height="160" viewBox="0 0 400 400"><path d="M265.302 244.575L148.332 278.412C155.348 317.46 162.305 356.574 169.38 395.622C169.793 397.865 171.266 399.514 173.271 399.91C175.275 400.306 177.162 399.382 178.223 397.469L189.956 376.626V376.758C190.506 375.878 191.056 374.955 191.606 373.988L265.302 244.575ZM71.4527 171.03L353.914 88.8439L371.483 58.1068C372.27 56.6997 372.977 55.3145 373.606 53.9513L399.252 8.30727C400.313 6.39444 400.254 4.08572 399.016 2.23885C397.837 0.391982 395.833 -0.399437 393.887 0.1942L318.717 22.7524L132.709 77.7627C130.822 78.2464 128.916 78.6642 126.99 79.016L80.7087 92.6036L3.59339 115.162C1.70677 115.756 0.350769 117.47 0.0559856 119.647C-0.238798 121.89 0.645495 123.935 2.35524 125.056L52.2327 158.233L71.4527 171.03ZM335.697 120.966L100.164 190.158L136.777 214.497L143.851 253.545L283.579 212.518L335.697 120.966Z" fill="var(--ft-teal-light)"/></svg>
+        </div>
+        <div class="cap">Versão sem círculo para fundos escuros</div>
+      </div>
+    </div>
+    <h3>Construção</h3>
+    <p>
+      Duas composições do mesmo ponteiro (grade 400×400): <strong>com círculo</strong>, para usos autônomos e
+      verticais, e <strong>sem círculo</strong>, mais leve, para acompanhar o wordmark nos lockups horizontais.
+      A geometria é toda em planos retos e ângulos precisos — o oposto da curva orgânica da identidade
+      anterior. Sem gradientes, sem contornos, sem sombras.
+    </p>
+  </section>
+
+  <!-- ═══ 03 Lockups ═══ -->
+  <section data-screen-label="03 Lockups">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Lockups</h2></div>
+    <div class="grid-2">
+      <div>
+        <div class="panel specimen">
+          <div class="lockup">
+            <svg width="46" height="46" viewBox="0 0 400 400"><path d="M265.302 244.575L148.332 278.412C155.348 317.46 162.305 356.574 169.38 395.622C169.793 397.865 171.266 399.514 173.271 399.91C175.275 400.306 177.162 399.382 178.223 397.469L189.956 376.626V376.758C190.506 375.878 191.056 374.955 191.606 373.988L265.302 244.575ZM71.4527 171.03L353.914 88.8439L371.483 58.1068C372.27 56.6997 372.977 55.3145 373.606 53.9513L399.252 8.30727C400.313 6.39444 400.254 4.08572 399.016 2.23885C397.837 0.391982 395.833 -0.399437 393.887 0.1942L318.717 22.7524L132.709 77.7627C130.822 78.2464 128.916 78.6642 126.99 79.016L80.7087 92.6036L3.59339 115.162C1.70677 115.756 0.350769 117.47 0.0559856 119.647C-0.238798 121.89 0.645495 123.935 2.35524 125.056L52.2327 158.233L71.4527 171.03ZM335.697 120.966L100.164 190.158L136.777 214.497L143.851 253.545L283.579 212.518L335.697 120.966Z" fill="var(--ft-teal)"/></svg>
+            <span class="word">fael<span class="tld">.tech</span></span>
+          </div>
+        </div>
+        <div class="cap">Lockup horizontal — o padrão. Ponteiro sem círculo à esquerda, altura ≈ 1,1× a altura da caixa-x do wordmark.</div>
+      </div>
+      <div>
+        <div class="specimen ink panel" style="border:none;">
+          <div class="lockup">
+            <svg width="46" height="46" viewBox="0 0 400 400"><path d="M265.302 244.575L148.332 278.412C155.348 317.46 162.305 356.574 169.38 395.622C169.793 397.865 171.266 399.514 173.271 399.91C175.275 400.306 177.162 399.382 178.223 397.469L189.956 376.626V376.758C190.506 375.878 191.056 374.955 191.606 373.988L265.302 244.575ZM71.4527 171.03L353.914 88.8439L371.483 58.1068C372.27 56.6997 372.977 55.3145 373.606 53.9513L399.252 8.30727C400.313 6.39444 400.254 4.08572 399.016 2.23885C397.837 0.391982 395.833 -0.399437 393.887 0.1942L318.717 22.7524L132.709 77.7627C130.822 78.2464 128.916 78.6642 126.99 79.016L80.7087 92.6036L3.59339 115.162C1.70677 115.756 0.350769 117.47 0.0559856 119.647C-0.238798 121.89 0.645495 123.935 2.35524 125.056L52.2327 158.233L71.4527 171.03ZM335.697 120.966L100.164 190.158L136.777 214.497L143.851 253.545L283.579 212.518L335.697 120.966Z" fill="var(--ft-teal-light)"/></svg>
+            <span class="word on-ink">fael<span class="tld">.tech</span></span>
+          </div>
+        </div>
+        <div class="cap">Versão para fundos escuros — texto em papel, símbolo e .tech em teal claro.</div>
+      </div>
+      <div>
+        <div class="panel specimen" style="background:var(--ft-surface);">
+          <div style="display:flex; flex-direction:column; align-items:center;">
+            <svg width="64" height="64" viewBox="0 0 400 400"><path d="M208.99 0C255.205 0 297.554 16.4093 330.531 43.6606L312.256 48.5835L310.089 49.1695C281.622 28.775 246.712 16.8196 208.99 16.8196C160.9 16.8196 117.38 36.335 85.8667 67.8644C71.6918 82.0468 59.9183 98.6906 51.3079 117.093L30.6897 122.426C40.413 97.2842 55.2325 74.7212 73.9763 55.9676C108.535 21.3907 156.273 0 208.99 0ZM381.256 108.361C393.264 133.385 400 161.457 400 191.111C400 243.855 378.62 291.618 344.062 326.195C309.503 360.772 261.765 382.163 208.99 382.163H206.94L217.834 365.167C262.409 362.94 302.591 343.952 332.171 314.298C363.684 282.769 383.189 239.225 383.189 191.111C383.189 167.844 378.679 145.692 370.42 125.414L381.256 108.361ZM146.198 371.614C118.727 362.061 94.1258 346.355 73.9763 326.195C39.4175 291.618 18.0379 243.855 18.0379 191.111C18.0379 188.962 18.0768 186.833 18.1549 184.723L34.9072 194.686C35.8443 241.335 55.1153 283.589 85.8667 314.298C101.857 330.356 121.011 343.308 142.274 352.098L146.198 371.614Z" fill="var(--ft-teal)"/><path d="M263.581 261.905L147.37 291.97C154.34 326.664 161.252 361.416 168.281 396.111C168.691 398.103 170.155 399.568 172.147 399.92C174.138 400.272 176.013 399.451 177.067 397.752L188.723 379.232V379.35C189.27 378.568 189.816 377.748 190.363 376.888L263.581 261.905ZM70.989 196.561L351.618 123.539L369.073 96.2293C369.854 94.979 370.557 93.7483 371.182 92.5371L396.662 51.9825C397.716 50.283 397.657 48.2317 396.427 46.5908C395.256 44.9498 393.264 44.2467 391.331 44.7741L316.649 64.817L131.848 113.693C129.973 114.123 128.079 114.494 126.166 114.807L80.185 126.88L3.57007 146.922C1.6957 147.45 0.348493 148.974 0.0556223 150.908C-0.237249 152.9 0.641307 154.717 2.33996 155.713L51.8938 185.191L70.989 196.561ZM333.518 152.08L99.5145 213.556L135.889 235.181L142.918 269.876L281.739 233.423L333.518 152.08Z" fill="var(--ft-teal)"/></svg>
+            <span class="word" style="font-size:24px; margin-top:12px;">fael<span class="tld">.tech</span></span>
+            <span class="tagline">Forward through technology</span>
+          </div>
+        </div>
+        <div class="cap">Lockup vertical com círculo — capas, aberturas de apresentação, assinaturas.</div>
+      </div>
+      <div>
+        <div class="specimen muted panel" style="border:none;">
+          <div class="lockup">
+            <svg width="46" height="46" viewBox="0 0 400 400"><path d="M265.302 244.575L148.332 278.412C155.348 317.46 162.305 356.574 169.38 395.622C169.793 397.865 171.266 399.514 173.271 399.91C175.275 400.306 177.162 399.382 178.223 397.469L189.956 376.626V376.758C190.506 375.878 191.056 374.955 191.606 373.988L265.302 244.575ZM71.4527 171.03L353.914 88.8439L371.483 58.1068C372.27 56.6997 372.977 55.3145 373.606 53.9513L399.252 8.30727C400.313 6.39444 400.254 4.08572 399.016 2.23885C397.837 0.391982 395.833 -0.399437 393.887 0.1942L318.717 22.7524L132.709 77.7627C130.822 78.2464 128.916 78.6642 126.99 79.016L80.7087 92.6036L3.59339 115.162C1.70677 115.756 0.350769 117.47 0.0559856 119.647C-0.238798 121.89 0.645495 123.935 2.35524 125.056L52.2327 158.233L71.4527 171.03ZM335.697 120.966L100.164 190.158L136.777 214.497L143.851 253.545L283.579 212.518L335.697 120.966Z" fill="var(--ft-ink)"/></svg>
+            <span class="word" style="color:var(--ft-ink);">fael<span style="color:var(--ft-ink);">.tech</span></span>
+          </div>
+        </div>
+        <div class="cap">1 cor (tinta) — carimbo, relevo, impressão monocromática. Sem o .tech em teal.</div>
+      </div>
+    </div>
+
+    <h3>Área de proteção</h3>
+    <div style="display:flex; align-items:center; gap:28px; flex-wrap:wrap;">
+      <div class="clearspace">
+        <div class="lockup">
+          <svg width="46" height="46" viewBox="0 0 400 400"><path d="M265.302 244.575L148.332 278.412C155.348 317.46 162.305 356.574 169.38 395.622C169.793 397.865 171.266 399.514 173.271 399.91C175.275 400.306 177.162 399.382 178.223 397.469L189.956 376.626V376.758C190.506 375.878 191.056 374.955 191.606 373.988L265.302 244.575ZM71.4527 171.03L353.914 88.8439L371.483 58.1068C372.27 56.6997 372.977 55.3145 373.606 53.9513L399.252 8.30727C400.313 6.39444 400.254 4.08572 399.016 2.23885C397.837 0.391982 395.833 -0.399437 393.887 0.1942L318.717 22.7524L132.709 77.7627C130.822 78.2464 128.916 78.6642 126.99 79.016L80.7087 92.6036L3.59339 115.162C1.70677 115.756 0.350769 117.47 0.0559856 119.647C-0.238798 121.89 0.645495 123.935 2.35524 125.056L52.2327 158.233L71.4527 171.03ZM335.697 120.966L100.164 190.158L136.777 214.497L143.851 253.545L283.579 212.518L335.697 120.966Z" fill="var(--ft-teal)"/></svg>
+          <span class="word">fael<span class="tld">.tech</span></span>
+        </div>
+      </div>
+      <p style="max-width:340px;">Mantenha ao redor do lockup um espaço livre igual à <strong>metade da altura do símbolo</strong> em todos os lados. Nada entra nessa área — texto, bordas ou outros logos.</p>
+    </div>
+  </section>
+
+  <!-- ═══ 04 Ícone ═══ -->
+  <section data-screen-label="04 Ícone">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Ícone e favicon</h2></div>
+    <div class="panel specimen" style="padding:40px 24px;">
+      <div class="icon-row">
+        <div class="icon-size-wrap">
+          <svg width="96" height="96" viewBox="0 0 400 400"><path d="M208.99 0C255.205 0 297.554 16.4093 330.531 43.6606L312.256 48.5835L310.089 49.1695C281.622 28.775 246.712 16.8196 208.99 16.8196C160.9 16.8196 117.38 36.335 85.8667 67.8644C71.6918 82.0468 59.9183 98.6906 51.3079 117.093L30.6897 122.426C40.413 97.2842 55.2325 74.7212 73.9763 55.9676C108.535 21.3907 156.273 0 208.99 0ZM381.256 108.361C393.264 133.385 400 161.457 400 191.111C400 243.855 378.62 291.618 344.062 326.195C309.503 360.772 261.765 382.163 208.99 382.163H206.94L217.834 365.167C262.409 362.94 302.591 343.952 332.171 314.298C363.684 282.769 383.189 239.225 383.189 191.111C383.189 167.844 378.679 145.692 370.42 125.414L381.256 108.361ZM146.198 371.614C118.727 362.061 94.1258 346.355 73.9763 326.195C39.4175 291.618 18.0379 243.855 18.0379 191.111C18.0379 188.962 18.0768 186.833 18.1549 184.723L34.9072 194.686C35.8443 241.335 55.1153 283.589 85.8667 314.298C101.857 330.356 121.011 343.308 142.274 352.098L146.198 371.614Z" fill="var(--ft-teal)"/><path d="M263.581 261.905L147.37 291.97C154.34 326.664 161.252 361.416 168.281 396.111C168.691 398.103 170.155 399.568 172.147 399.92C174.138 400.272 176.013 399.451 177.067 397.752L188.723 379.232V379.35C189.27 378.568 189.816 377.748 190.363 376.888L263.581 261.905ZM70.989 196.561L351.618 123.539L369.073 96.2293C369.854 94.979 370.557 93.7483 371.182 92.5371L396.662 51.9825C397.716 50.283 397.657 48.2317 396.427 46.5908C395.256 44.9498 393.264 44.2467 391.331 44.7741L316.649 64.817L131.848 113.693C129.973 114.123 128.079 114.494 126.166 114.807L80.185 126.88L3.57007 146.922C1.6957 147.45 0.348493 148.974 0.0556223 150.908C-0.237249 152.9 0.641307 154.717 2.33996 155.713L51.8938 185.191L70.989 196.561ZM333.518 152.08L99.5145 213.556L135.889 235.181L142.918 269.876L281.739 233.423L333.518 152.08Z" fill="var(--ft-teal)"/></svg>
+          <span class="size-cap">96px</span>
+        </div>
+        <div class="icon-size-wrap">
+          <svg width="48" height="48" viewBox="0 0 400 400"><path d="M208.99 0C255.205 0 297.554 16.4093 330.531 43.6606L312.256 48.5835L310.089 49.1695C281.622 28.775 246.712 16.8196 208.99 16.8196C160.9 16.8196 117.38 36.335 85.8667 67.8644C71.6918 82.0468 59.9183 98.6906 51.3079 117.093L30.6897 122.426C40.413 97.2842 55.2325 74.7212 73.9763 55.9676C108.535 21.3907 156.273 0 208.99 0ZM381.256 108.361C393.264 133.385 400 161.457 400 191.111C400 243.855 378.62 291.618 344.062 326.195C309.503 360.772 261.765 382.163 208.99 382.163H206.94L217.834 365.167C262.409 362.94 302.591 343.952 332.171 314.298C363.684 282.769 383.189 239.225 383.189 191.111C383.189 167.844 378.679 145.692 370.42 125.414L381.256 108.361ZM146.198 371.614C118.727 362.061 94.1258 346.355 73.9763 326.195C39.4175 291.618 18.0379 243.855 18.0379 191.111C18.0379 188.962 18.0768 186.833 18.1549 184.723L34.9072 194.686C35.8443 241.335 55.1153 283.589 85.8667 314.298C101.857 330.356 121.011 343.308 142.274 352.098L146.198 371.614Z" fill="var(--ft-teal)"/><path d="M263.581 261.905L147.37 291.97C154.34 326.664 161.252 361.416 168.281 396.111C168.691 398.103 170.155 399.568 172.147 399.92C174.138 400.272 176.013 399.451 177.067 397.752L188.723 379.232V379.35C189.27 378.568 189.816 377.748 190.363 376.888L263.581 261.905ZM70.989 196.561L351.618 123.539L369.073 96.2293C369.854 94.979 370.557 93.7483 371.182 92.5371L396.662 51.9825C397.716 50.283 397.657 48.2317 396.427 46.5908C395.256 44.9498 393.264 44.2467 391.331 44.7741L316.649 64.817L131.848 113.693C129.973 114.123 128.079 114.494 126.166 114.807L80.185 126.88L3.57007 146.922C1.6957 147.45 0.348493 148.974 0.0556223 150.908C-0.237249 152.9 0.641307 154.717 2.33996 155.713L51.8938 185.191L70.989 196.561ZM333.518 152.08L99.5145 213.556L135.889 235.181L142.918 269.876L281.739 233.423L333.518 152.08Z" fill="var(--ft-teal)"/></svg>
+          <span class="size-cap">48px</span>
+        </div>
+        <div class="icon-size-wrap">
+          <svg width="24" height="24" viewBox="0 0 400 400"><path d="M208.99 0C255.205 0 297.554 16.4093 330.531 43.6606L312.256 48.5835L310.089 49.1695C281.622 28.775 246.712 16.8196 208.99 16.8196C160.9 16.8196 117.38 36.335 85.8667 67.8644C71.6918 82.0468 59.9183 98.6906 51.3079 117.093L30.6897 122.426C40.413 97.2842 55.2325 74.7212 73.9763 55.9676C108.535 21.3907 156.273 0 208.99 0ZM381.256 108.361C393.264 133.385 400 161.457 400 191.111C400 243.855 378.62 291.618 344.062 326.195C309.503 360.772 261.765 382.163 208.99 382.163H206.94L217.834 365.167C262.409 362.94 302.591 343.952 332.171 314.298C363.684 282.769 383.189 239.225 383.189 191.111C383.189 167.844 378.679 145.692 370.42 125.414L381.256 108.361ZM146.198 371.614C118.727 362.061 94.1258 346.355 73.9763 326.195C39.4175 291.618 18.0379 243.855 18.0379 191.111C18.0379 188.962 18.0768 186.833 18.1549 184.723L34.9072 194.686C35.8443 241.335 55.1153 283.589 85.8667 314.298C101.857 330.356 121.011 343.308 142.274 352.098L146.198 371.614Z" fill="var(--ft-teal)"/><path d="M263.581 261.905L147.37 291.97C154.34 326.664 161.252 361.416 168.281 396.111C168.691 398.103 170.155 399.568 172.147 399.92C174.138 400.272 176.013 399.451 177.067 397.752L188.723 379.232V379.35C189.27 378.568 189.816 377.748 190.363 376.888L263.581 261.905ZM70.989 196.561L351.618 123.539L369.073 96.2293C369.854 94.979 370.557 93.7483 371.182 92.5371L396.662 51.9825C397.716 50.283 397.657 48.2317 396.427 46.5908C395.256 44.9498 393.264 44.2467 391.331 44.7741L316.649 64.817L131.848 113.693C129.973 114.123 128.079 114.494 126.166 114.807L80.185 126.88L3.57007 146.922C1.6957 147.45 0.348493 148.974 0.0556223 150.908C-0.237249 152.9 0.641307 154.717 2.33996 155.713L51.8938 185.191L70.989 196.561ZM333.518 152.08L99.5145 213.556L135.889 235.181L142.918 269.876L281.739 233.423L333.518 152.08Z" fill="var(--ft-teal)"/></svg>
+          <span class="size-cap">24px</span>
+        </div>
+        <div class="icon-size-wrap">
+          <svg width="16" height="16" viewBox="0 0 400 400"><path d="M208.99 0C255.205 0 297.554 16.4093 330.531 43.6606L312.256 48.5835L310.089 49.1695C281.622 28.775 246.712 16.8196 208.99 16.8196C160.9 16.8196 117.38 36.335 85.8667 67.8644C71.6918 82.0468 59.9183 98.6906 51.3079 117.093L30.6897 122.426C40.413 97.2842 55.2325 74.7212 73.9763 55.9676C108.535 21.3907 156.273 0 208.99 0ZM381.256 108.361C393.264 133.385 400 161.457 400 191.111C400 243.855 378.62 291.618 344.062 326.195C309.503 360.772 261.765 382.163 208.99 382.163H206.94L217.834 365.167C262.409 362.94 302.591 343.952 332.171 314.298C363.684 282.769 383.189 239.225 383.189 191.111C383.189 167.844 378.679 145.692 370.42 125.414L381.256 108.361ZM146.198 371.614C118.727 362.061 94.1258 346.355 73.9763 326.195C39.4175 291.618 18.0379 243.855 18.0379 191.111C18.0379 188.962 18.0768 186.833 18.1549 184.723L34.9072 194.686C35.8443 241.335 55.1153 283.589 85.8667 314.298C101.857 330.356 121.011 343.308 142.274 352.098L146.198 371.614Z" fill="var(--ft-teal)"/><path d="M263.581 261.905L147.37 291.97C154.34 326.664 161.252 361.416 168.281 396.111C168.691 398.103 170.155 399.568 172.147 399.92C174.138 400.272 176.013 399.451 177.067 397.752L188.723 379.232V379.35C189.27 378.568 189.816 377.748 190.363 376.888L263.581 261.905ZM70.989 196.561L351.618 123.539L369.073 96.2293C369.854 94.979 370.557 93.7483 371.182 92.5371L396.662 51.9825C397.716 50.283 397.657 48.2317 396.427 46.5908C395.256 44.9498 393.264 44.2467 391.331 44.7741L316.649 64.817L131.848 113.693C129.973 114.123 128.079 114.494 126.166 114.807L80.185 126.88L3.57007 146.922C1.6957 147.45 0.348493 148.974 0.0556223 150.908C-0.237249 152.9 0.641307 154.717 2.33996 155.713L51.8938 185.191L70.989 196.561ZM333.518 152.08L99.5145 213.556L135.889 235.181L142.918 269.876L281.739 233.423L333.518 152.08Z" fill="var(--ft-teal)"/></svg>
+          <span class="size-cap">16px</span>
+        </div>
+        <div class="icon-size-wrap">
+          <svg width="96" height="96" viewBox="0 0 512 512"><rect width="512" height="512" rx="96" fill="#111827"/><g transform="translate(86,86) scale(0.85)"><path d="M208.99 0C255.205 0 297.554 16.4093 330.531 43.6606L312.256 48.5835L310.089 49.1695C281.622 28.775 246.712 16.8196 208.99 16.8196C160.9 16.8196 117.38 36.335 85.8667 67.8644C71.6918 82.0468 59.9183 98.6906 51.3079 117.093L30.6897 122.426C40.413 97.2842 55.2325 74.7212 73.9763 55.9676C108.535 21.3907 156.273 0 208.99 0ZM381.256 108.361C393.264 133.385 400 161.457 400 191.111C400 243.855 378.62 291.618 344.062 326.195C309.503 360.772 261.765 382.163 208.99 382.163H206.94L217.834 365.167C262.409 362.94 302.591 343.952 332.171 314.298C363.684 282.769 383.189 239.225 383.189 191.111C383.189 167.844 378.679 145.692 370.42 125.414L381.256 108.361ZM146.198 371.614C118.727 362.061 94.1258 346.355 73.9763 326.195C39.4175 291.618 18.0379 243.855 18.0379 191.111C18.0379 188.962 18.0768 186.833 18.1549 184.723L34.9072 194.686C35.8443 241.335 55.1153 283.589 85.8667 314.298C101.857 330.356 121.011 343.308 142.274 352.098L146.198 371.614Z" fill="#2DD4BF"/><path d="M263.581 261.905L147.37 291.97C154.34 326.664 161.252 361.416 168.281 396.111C168.691 398.103 170.155 399.568 172.147 399.92C174.138 400.272 176.013 399.451 177.067 397.752L188.723 379.232V379.35C189.27 378.568 189.816 377.748 190.363 376.888L263.581 261.905ZM70.989 196.561L351.618 123.539L369.073 96.2293C369.854 94.979 370.557 93.7483 371.182 92.5371L396.662 51.9825C397.716 50.283 397.657 48.2317 396.427 46.5908C395.256 44.9498 393.264 44.2467 391.331 44.7741L316.649 64.817L131.848 113.693C129.973 114.123 128.079 114.494 126.166 114.807L80.185 126.88L3.57007 146.922C1.6957 147.45 0.348493 148.974 0.0556223 150.908C-0.237249 152.9 0.641307 154.717 2.33996 155.713L51.8938 185.191L70.989 196.561ZM333.518 152.08L99.5145 213.556L135.889 235.181L142.918 269.876L281.739 233.423L333.518 152.08Z" fill="#2DD4BF"/></g></svg>
+          <span class="size-cap">app icon 512</span>
+        </div>
+      </div>
+    </div>
+    <div class="cap">Sempre use a versão <strong>com círculo</strong> para favicon e app icon — o contorno ancora o ponteiro e mantém o símbolo legível em qualquer tamanho. O app icon usa tinta #111827, raio 96/512 e símbolo em #2DD4BF.</div>
+  </section>
+
+  <!-- ═══ 05 Cores ═══ -->
+  <section data-screen-label="05 Cores">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Cores</h2></div>
+    <p>A paleta evolui de duas cores de marca para uma <strong>escala teal de profundidade</strong> — da base mais escura da trajetória (900) ao detalhe luminoso (100). O 700 continua sendo a cor da marca em fundos claros; o 300, em fundos escuros.</p>
+    <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:16px;">
+      <div class="swatch"><div class="chip" style="background:var(--ft-teal-900);"></div><div class="meta"><div class="name">Teal 900 — profundidade</div><div class="hexv">#042F2E</div></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--ft-teal-700);"></div><div class="meta"><div class="name">Teal 700 — marca</div><div class="hexv">#0F766E</div></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--ft-teal-500);"></div><div class="meta"><div class="name">Teal 500 — interação</div><div class="hexv">#14B8A6</div></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--ft-teal-300);"></div><div class="meta"><div class="name">Teal 300 — marca dark</div><div class="hexv">#2DD4BF</div></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--ft-teal-100);"></div><div class="meta"><div class="name">Teal 100 — detalhe</div><div class="hexv">#5EEAD4</div></div></div>
+    </div>
+    <h3>Neutros</h3>
+    <div class="grid-4" style="margin-bottom:16px;">
+      <div class="swatch"><div class="chip" style="background:var(--ft-ink);"></div><div class="meta"><div class="name">Tinta</div><div class="hexv">#111827</div></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--ft-paper); border-bottom:1px solid var(--ft-border);"></div><div class="meta"><div class="name">Papel</div><div class="hexv">#F7F8F5</div></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--ft-surface); border-bottom:1px solid var(--ft-border);"></div><div class="meta"><div class="name">Superfície</div><div class="hexv">#FFFFFF</div></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--ft-surface-muted);"></div><div class="meta"><div class="name">Superfície suave</div><div class="hexv">#EEF2ED</div></div></div>
+    </div>
+    <p style="margin-top:4px;"><strong>Uma cor de marca por aplicação.</strong> O símbolo é sempre chapado — gradientes e transparência pertencem às superfícies (seção 06), nunca à marca em si.</p>
+  </section>
+
+  <!-- ═══ 06 Liquid glass ═══ -->
+  <section data-screen-label="06 Liquid glass">
+    <div class="sec-head"><span class="sec-num">06</span><h2>Liquid glass — o ambiente por onde o símbolo atravessa</h2></div>
+    <p>
+      Na identidade digital, a camada <strong>liquid glass</strong> representa o ambiente tecnológico em
+      constante mudança: ferramentas, tendências, interfaces e plataformas que se transformam
+      continuamente — superfícies translúcidas, desfocadas e levemente tingidas de teal (painéis, docks,
+      overlays, cards flutuantes). <strong>O símbolo nunca é de vidro</strong>: ele atravessa o ambiente,
+      mas permanece sólido e nítido. <em>O ambiente muda. A direção permanece clara.</em>
+    </p>
+    <div class="grid-2">
+      <div>
+        <div style="background:var(--ft-depth-bg); border-radius:12px; padding:44px 24px; display:flex; align-items:center; justify-content:center;">
+          <div class="ft-glass ft-glass--dark" style="padding:28px 40px; display:flex; flex-direction:column; align-items:center;">
+            <svg width="56" height="56" viewBox="0 0 400 400"><path d="M208.99 0C255.205 0 297.554 16.4093 330.531 43.6606L312.256 48.5835L310.089 49.1695C281.622 28.775 246.712 16.8196 208.99 16.8196C160.9 16.8196 117.38 36.335 85.8667 67.8644C71.6918 82.0468 59.9183 98.6906 51.3079 117.093L30.6897 122.426C40.413 97.2842 55.2325 74.7212 73.9763 55.9676C108.535 21.3907 156.273 0 208.99 0ZM381.256 108.361C393.264 133.385 400 161.457 400 191.111C400 243.855 378.62 291.618 344.062 326.195C309.503 360.772 261.765 382.163 208.99 382.163H206.94L217.834 365.167C262.409 362.94 302.591 343.952 332.171 314.298C363.684 282.769 383.189 239.225 383.189 191.111C383.189 167.844 378.679 145.692 370.42 125.414L381.256 108.361ZM146.198 371.614C118.727 362.061 94.1258 346.355 73.9763 326.195C39.4175 291.618 18.0379 243.855 18.0379 191.111C18.0379 188.962 18.0768 186.833 18.1549 184.723L34.9072 194.686C35.8443 241.335 55.1153 283.589 85.8667 314.298C101.857 330.356 121.011 343.308 142.274 352.098L146.198 371.614Z" fill="#FFFFFF"/><path d="M263.581 261.905L147.37 291.97C154.34 326.664 161.252 361.416 168.281 396.111C168.691 398.103 170.155 399.568 172.147 399.92C174.138 400.272 176.013 399.451 177.067 397.752L188.723 379.232V379.35C189.27 378.568 189.816 377.748 190.363 376.888L263.581 261.905ZM70.989 196.561L351.618 123.539L369.073 96.2293C369.854 94.979 370.557 93.7483 371.182 92.5371L396.662 51.9825C397.716 50.283 397.657 48.2317 396.427 46.5908C395.256 44.9498 393.264 44.2467 391.331 44.7741L316.649 64.817L131.848 113.693C129.973 114.123 128.079 114.494 126.166 114.807L80.185 126.88L3.57007 146.922C1.6957 147.45 0.348493 148.974 0.0556223 150.908C-0.237249 152.9 0.641307 154.717 2.33996 155.713L51.8938 185.191L70.989 196.561ZM333.518 152.08L99.5145 213.556L135.889 235.181L142.918 269.876L281.739 233.423L333.518 152.08Z" fill="#FFFFFF"/></svg>
+            <span class="word" style="font-size:22px; margin-top:12px; color:#FFFFFF;">fael<span style="color:var(--ft-teal-100);">.tech</span></span>
+          </div>
+        </div>
+        <div class="cap">Painel glass sobre o fundo de profundidade (<code class="inline">--ft-depth-bg</code>) — o único gradiente da identidade, sempre atrás do vidro.</div>
+      </div>
+      <div>
+        <div style="background:var(--ft-paper); border:1px solid var(--ft-border); border-radius:12px; padding:44px 24px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;">
+          <div style="position:absolute; width:130px; height:130px; border-radius:50%; background:var(--ft-teal-300); opacity:0.35; filter:blur(6px); left:18%; top:-30px;"></div>
+          <div style="position:absolute; width:90px; height:90px; border-radius:50%; background:var(--ft-teal-500); opacity:0.25; filter:blur(6px); right:14%; bottom:-20px;"></div>
+          <div class="ft-glass" style="padding:16px 26px; display:flex; align-items:center; gap:12px; position:relative;">
+            <svg width="30" height="30" viewBox="0 0 400 400"><path d="M265.302 244.575L148.332 278.412C155.348 317.46 162.305 356.574 169.38 395.622C169.793 397.865 171.266 399.514 173.271 399.91C175.275 400.306 177.162 399.382 178.223 397.469L189.956 376.626V376.758C190.506 375.878 191.056 374.955 191.606 373.988L265.302 244.575ZM71.4527 171.03L353.914 88.8439L371.483 58.1068C372.27 56.6997 372.977 55.3145 373.606 53.9513L399.252 8.30727C400.313 6.39444 400.254 4.08572 399.016 2.23885C397.837 0.391982 395.833 -0.399437 393.887 0.1942L318.717 22.7524L132.709 77.7627C130.822 78.2464 128.916 78.6642 126.99 79.016L80.7087 92.6036L3.59339 115.162C1.70677 115.756 0.350769 117.47 0.0559856 119.647C-0.238798 121.89 0.645495 123.935 2.35524 125.056L52.2327 158.233L71.4527 171.03ZM335.697 120.966L100.164 190.158L136.777 214.497L143.851 253.545L283.579 212.518L335.697 120.966Z" fill="var(--ft-teal)"/></svg>
+            <span class="word" style="font-size:19px;">fael<span class="tld">.tech</span></span>
+          </div>
+        </div>
+        <div class="cap">Vidro sobre claro — barra ou card flutuante com <code class="inline">.ft-glass</code>; o desfoque revela o conteúdo por trás.</div>
+      </div>
+    </div>
+    <h3>Regras do vidro</h3>
+    <ul class="rules">
+      <li><span class="glyph">→</span><span><strong>Símbolo sólido, campo translúcido</strong> — vidro só em contêineres e superfícies; o ponteiro e o wordmark nunca recebem transparência ou desfoque.</span></li>
+      <li><span class="glyph">→</span><span><strong>Tingimento teal sutil</strong> — o vidro carrega <code class="inline">--ft-glass-tint</code> (teal a 12%); nunca vidro cinza neutro nem colorido de outra família.</span></li>
+      <li><span class="glyph">→</span><span><strong>Um nível de vidro por composição</strong> — sem vidro sobre vidro; a hierarquia vem do conteúdo, não do empilhamento de camadas.</span></li>
+      <li><span class="glyph">→</span><span><strong>Contraste garantido</strong> — texto sobre vidro segue os mesmos mínimos de legibilidade (tinta sobre claro, papel/teal 100 sobre escuro).</span></li>
+      <li><span class="glyph">→</span><span><strong>Impresso é sólido</strong> — liquid glass é um comportamento de tela; em papel, use as versões chapadas da seção 03.</span></li>
+    </ul>
+  </section>
+
+  <!-- ═══ 06 Tipografia ═══ -->
+  <section data-screen-label="06 Tipografia">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Tipografia</h2></div>
+    <div class="panel" style="padding:26px 28px; display:flex; flex-direction:column; gap:20px;">
+      <div style="display:flex; align-items:baseline; gap:20px; flex-wrap:wrap;">
+        <span style="font-size:30px; font-weight:700; letter-spacing:var(--ft-tracking-tight); width:280px;">fael<span style="color:var(--ft-teal);">.tech</span></span>
+        <span style="font-size:13px; color:var(--ft-text-muted);">Wordmark — IBM Plex Sans 700, minúsculas, tracking -0.025em, <code class="inline">.tech</code> em teal</span>
+      </div>
+      <div style="display:flex; align-items:baseline; gap:20px; flex-wrap:wrap;">
+        <span style="font-size:22px; font-weight:600; width:280px;">Títulos e interface</span>
+        <span style="font-size:13px; color:var(--ft-text-muted);">IBM Plex Sans 400–700, sentence case — nunca title case</span>
+      </div>
+      <div style="display:flex; align-items:baseline; gap:20px; flex-wrap:wrap;">
+        <span style="font-family:var(--ft-font-mono); font-size:14px; width:280px;">FORWARD THROUGH TECHNOLOGY · $ deploy --prod</span>
+        <span style="font-size:13px; color:var(--ft-text-muted);">JetBrains Mono — tagline, eyebrows uppercase (tracking 0.06em), comandos e literais técnicos</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 07 Usos incorretos ═══ -->
+  <section data-screen-label="07 Usos incorretos">
+    <div class="sec-head"><span class="sec-num">08</span><h2>Usos incorretos</h2></div>
+    <div class="dont-grid">
+      <div class="dont">
+        <div class="vis">
+          <svg width="60" height="60" viewBox="0 0 400 400" style="transform:rotate(-18deg);"><path d="M265.302 244.575L148.332 278.412C155.348 317.46 162.305 356.574 169.38 395.622C169.793 397.865 171.266 399.514 173.271 399.91C175.275 400.306 177.162 399.382 178.223 397.469L189.956 376.626V376.758C190.506 375.878 191.056 374.955 191.606 373.988L265.302 244.575ZM71.4527 171.03L353.914 88.8439L371.483 58.1068C372.27 56.6997 372.977 55.3145 373.606 53.9513L399.252 8.30727C400.313 6.39444 400.254 4.08572 399.016 2.23885C397.837 0.391982 395.833 -0.399437 393.887 0.1942L318.717 22.7524L132.709 77.7627C130.822 78.2464 128.916 78.6642 126.99 79.016L80.7087 92.6036L3.59339 115.162C1.70677 115.756 0.350769 117.47 0.0559856 119.647C-0.238798 121.89 0.645495 123.935 2.35524 125.056L52.2327 158.233L71.4527 171.03ZM335.697 120.966L100.164 190.158L136.777 214.497L143.851 253.545L283.579 212.518L335.697 120.966Z" fill="var(--ft-teal)"/></svg>
+        </div>
+        <div class="lbl"><strong>Não</strong> rotacione o símbolo</div>
+      </div>
+      <div class="dont">
+        <div class="vis">
+          <svg width="60" height="60" viewBox="0 0 400 400"><defs><linearGradient id="bad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0F766E"/><stop offset="1" stop-color="#2563EB"/></linearGradient></defs><path d="M265.302 244.575L148.332 278.412C155.348 317.46 162.305 356.574 169.38 395.622C169.793 397.865 171.266 399.514 173.271 399.91C175.275 400.306 177.162 399.382 178.223 397.469L189.956 376.626V376.758C190.506 375.878 191.056 374.955 191.606 373.988L265.302 244.575ZM71.4527 171.03L353.914 88.8439L371.483 58.1068C372.27 56.6997 372.977 55.3145 373.606 53.9513L399.252 8.30727C400.313 6.39444 400.254 4.08572 399.016 2.23885C397.837 0.391982 395.833 -0.399437 393.887 0.1942L318.717 22.7524L132.709 77.7627C130.822 78.2464 128.916 78.6642 126.99 79.016L80.7087 92.6036L3.59339 115.162C1.70677 115.756 0.350769 117.47 0.0559856 119.647C-0.238798 121.89 0.645495 123.935 2.35524 125.056L52.2327 158.233L71.4527 171.03ZM335.697 120.966L100.164 190.158L136.777 214.497L143.851 253.545L283.579 212.518L335.697 120.966Z" fill="url(#bad)"/></svg>
+        </div>
+        <div class="lbl"><strong>Não</strong> aplique gradientes no símbolo — gradiente só no fundo de profundidade, atrás do vidro</div>
+      </div>
+      <div class="dont">
+        <div class="vis">
+          <svg width="60" height="60" viewBox="0 0 400 400"><path d="M208.99 0C255.205 0 297.554 16.4093 330.531 43.6606L312.256 48.5835L310.089 49.1695C281.622 28.775 246.712 16.8196 208.99 16.8196C160.9 16.8196 117.38 36.335 85.8667 67.8644C71.6918 82.0468 59.9183 98.6906 51.3079 117.093L30.6897 122.426C40.413 97.2842 55.2325 74.7212 73.9763 55.9676C108.535 21.3907 156.273 0 208.99 0ZM381.256 108.361C393.264 133.385 400 161.457 400 191.111C400 243.855 378.62 291.618 344.062 326.195C309.503 360.772 261.765 382.163 208.99 382.163H206.94L217.834 365.167C262.409 362.94 302.591 343.952 332.171 314.298C363.684 282.769 383.189 239.225 383.189 191.111C383.189 167.844 378.679 145.692 370.42 125.414L381.256 108.361ZM146.198 371.614C118.727 362.061 94.1258 346.355 73.9763 326.195C39.4175 291.618 18.0379 243.855 18.0379 191.111C18.0379 188.962 18.0768 186.833 18.1549 184.723L34.9072 194.686C35.8443 241.335 55.1153 283.589 85.8667 314.298C101.857 330.356 121.011 343.308 142.274 352.098L146.198 371.614Z" fill="var(--ft-teal)"/><path d="M263.581 261.905L147.37 291.97C154.34 326.664 161.252 361.416 168.281 396.111C168.691 398.103 170.155 399.568 172.147 399.92C174.138 400.272 176.013 399.451 177.067 397.752L188.723 379.232V379.35C189.27 378.568 189.816 377.748 190.363 376.888L263.581 261.905ZM70.989 196.561L351.618 123.539L369.073 96.2293C369.854 94.979 370.557 93.7483 371.182 92.5371L396.662 51.9825C397.716 50.283 397.657 48.2317 396.427 46.5908C395.256 44.9498 393.264 44.2467 391.331 44.7741L316.649 64.817L131.848 113.693C129.973 114.123 128.079 114.494 126.166 114.807L80.185 126.88L3.57007 146.922C1.6957 147.45 0.348493 148.974 0.0556223 150.908C-0.237249 152.9 0.641307 154.717 2.33996 155.713L51.8938 185.191L70.989 196.561ZM333.518 152.08L99.5145 213.556L135.889 235.181L142.918 269.876L281.739 233.423L333.518 152.08Z" fill="#F97316"/></svg>
+        </div>
+        <div class="lbl"><strong>Não</strong> recolore o círculo e o ponteiro com cores diferentes — são sempre uma cor só</div>
+      </div>
+      <div class="dont">
+        <div class="vis">
+          <svg width="90" height="55" viewBox="0 0 400 400" preserveAspectRatio="none" style="width:90px; height:55px;"><path d="M265.302 244.575L148.332 278.412C155.348 317.46 162.305 356.574 169.38 395.622C169.793 397.865 171.266 399.514 173.271 399.91C175.275 400.306 177.162 399.382 178.223 397.469L189.956 376.626V376.758C190.506 375.878 191.056 374.955 191.606 373.988L265.302 244.575ZM71.4527 171.03L353.914 88.8439L371.483 58.1068C372.27 56.6997 372.977 55.3145 373.606 53.9513L399.252 8.30727C400.313 6.39444 400.254 4.08572 399.016 2.23885C397.837 0.391982 395.833 -0.399437 393.887 0.1942L318.717 22.7524L132.709 77.7627C130.822 78.2464 128.916 78.6642 126.99 79.016L80.7087 92.6036L3.59339 115.162C1.70677 115.756 0.350769 117.47 0.0559856 119.647C-0.238798 121.89 0.645495 123.935 2.35524 125.056L52.2327 158.233L71.4527 171.03ZM335.697 120.966L100.164 190.158L136.777 214.497L143.851 253.545L283.579 212.518L335.697 120.966Z" fill="var(--ft-teal)"/></svg>
+        </div>
+        <div class="lbl"><strong>Não</strong> distorça as proporções</div>
+      </div>
+      <div class="dont">
+        <div class="vis" style="background:var(--ft-teal);">
+          <svg width="60" height="60" viewBox="0 0 400 400"><path d="M265.302 244.575L148.332 278.412C155.348 317.46 162.305 356.574 169.38 395.622C169.793 397.865 171.266 399.514 173.271 399.91C175.275 400.306 177.162 399.382 178.223 397.469L189.956 376.626V376.758C190.506 375.878 191.056 374.955 191.606 373.988L265.302 244.575ZM71.4527 171.03L353.914 88.8439L371.483 58.1068C372.27 56.6997 372.977 55.3145 373.606 53.9513L399.252 8.30727C400.313 6.39444 400.254 4.08572 399.016 2.23885C397.837 0.391982 395.833 -0.399437 393.887 0.1942L318.717 22.7524L132.709 77.7627C130.822 78.2464 128.916 78.6642 126.99 79.016L80.7087 92.6036L3.59339 115.162C1.70677 115.756 0.350769 117.47 0.0559856 119.647C-0.238798 121.89 0.645495 123.935 2.35524 125.056L52.2327 158.233L71.4527 171.03ZM335.697 120.966L100.164 190.158L136.777 214.497L143.851 253.545L283.579 212.518L335.697 120.966Z" fill="#115E59"/></svg>
+        </div>
+        <div class="lbl"><strong>Não</strong> use com baixo contraste — sobre teal, use a versão branca</div>
+      </div>
+      <div class="dont">
+        <div class="vis">
+          <svg width="60" height="60" viewBox="0 0 400 400" style="filter:drop-shadow(0 6px 8px rgba(15,118,110,0.55));"><path d="M265.302 244.575L148.332 278.412C155.348 317.46 162.305 356.574 169.38 395.622C169.793 397.865 171.266 399.514 173.271 399.91C175.275 400.306 177.162 399.382 178.223 397.469L189.956 376.626V376.758C190.506 375.878 191.056 374.955 191.606 373.988L265.302 244.575ZM71.4527 171.03L353.914 88.8439L371.483 58.1068C372.27 56.6997 372.977 55.3145 373.606 53.9513L399.252 8.30727C400.313 6.39444 400.254 4.08572 399.016 2.23885C397.837 0.391982 395.833 -0.399437 393.887 0.1942L318.717 22.7524L132.709 77.7627C130.822 78.2464 128.916 78.6642 126.99 79.016L80.7087 92.6036L3.59339 115.162C1.70677 115.756 0.350769 117.47 0.0559856 119.647C-0.238798 121.89 0.645495 123.935 2.35524 125.056L52.2327 158.233L71.4527 171.03ZM335.697 120.966L100.164 190.158L136.777 214.497L143.851 253.545L283.579 212.518L335.697 120.966Z" fill="var(--ft-teal)"/></svg>
+        </div>
+        <div class="lbl"><strong>Não</strong> aplique sombras coloridas ou brilhos</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 08 Assets ═══ -->
+  <section data-screen-label="08 Assets">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Assets do kit</h2></div>
+    <div class="panel" style="overflow:hidden;">
+      <table class="filetable">
+        <tbody>
+          <tr><td class="path">assets/faeltech-mark.svg</td><td class="use">Ponteiro sem círculo, teal — lockups horizontais em fundo claro</td></tr>
+          <tr><td class="path">assets/faeltech-mark-dark.svg</td><td class="use">Ponteiro sem círculo, #2DD4BF — lockups horizontais em fundos escuros</td></tr>
+          <tr><td class="path">assets/faeltech-mark-ink.svg</td><td class="use">Ponteiro sem círculo, 1 cor tinta — impressão, carimbo</td></tr>
+          <tr><td class="path">assets/faeltech-mark-white.svg</td><td class="use">Ponteiro sem círculo, branco — sobre foto ou teal chapado</td></tr>
+          <tr><td class="path">assets/faeltech-mark-circle.svg</td><td class="use">Ponteiro com círculo, teal — símbolo isolado e lockups verticais</td></tr>
+          <tr><td class="path">assets/faeltech-mark-circle-dark.svg</td><td class="use">Ponteiro com círculo, #2DD4BF — fundos escuros</td></tr>
+          <tr><td class="path">assets/faeltech-mark-circle-white.svg</td><td class="use">Ponteiro com círculo, branco — sobre foto ou teal chapado</td></tr>
+          <tr><td class="path">assets/faeltech-favicon.svg</td><td class="use">Ponteiro com círculo — favicon ≤ 32px</td></tr>
+          <tr><td class="path">assets/faeltech-app-icon.svg</td><td class="use">App icon 512×512 — tinta + ponteiro com círculo em teal claro</td></tr>
+          <tr><td class="path">tokens.css</td><td class="use">Tokens de marca — escala teal, neutros, liquid glass (<code class="inline">.ft-glass</code>), fontes</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>Lockup em HTML — copie e cole</h3>
+    <div class="codeblock"><span class="c">&lt;!-- requer tokens.css (carrega IBM Plex Sans) --&gt;</span>
+&lt;div style="display:flex;align-items:center;gap:14px"&gt;
+  &lt;img src="assets/faeltech-mark.svg" height="46" alt="fael.tech"&gt;
+  &lt;span style="font:700 30px var(--ft-font-sans);letter-spacing:var(--ft-tracking-tight)"&gt;
+    fael&lt;span style="color:<span class="t">var(--ft-teal)</span>"&gt;.tech&lt;/span&gt;
+  &lt;/span&gt;
+&lt;/div&gt;</div>
+  </section>
+
+  <footer style="margin-top:72px; padding-top:20px; border-top:1px solid var(--ft-border); display:flex; justify-content:space-between; align-items:center;">
+    <span class="tagline" style="margin:0;">fael.tech · manual de identidade visual · v3.0</span>
+    <svg width="20" height="20" viewBox="0 0 400 400"><path d="M208.99 0C255.205 0 297.554 16.4093 330.531 43.6606L312.256 48.5835L310.089 49.1695C281.622 28.775 246.712 16.8196 208.99 16.8196C160.9 16.8196 117.38 36.335 85.8667 67.8644C71.6918 82.0468 59.9183 98.6906 51.3079 117.093L30.6897 122.426C40.413 97.2842 55.2325 74.7212 73.9763 55.9676C108.535 21.3907 156.273 0 208.99 0ZM381.256 108.361C393.264 133.385 400 161.457 400 191.111C400 243.855 378.62 291.618 344.062 326.195C309.503 360.772 261.765 382.163 208.99 382.163H206.94L217.834 365.167C262.409 362.94 302.591 343.952 332.171 314.298C363.684 282.769 383.189 239.225 383.189 191.111C383.189 167.844 378.679 145.692 370.42 125.414L381.256 108.361ZM146.198 371.614C118.727 362.061 94.1258 346.355 73.9763 326.195C39.4175 291.618 18.0379 243.855 18.0379 191.111C18.0379 188.962 18.0768 186.833 18.1549 184.723L34.9072 194.686C35.8443 241.335 55.1153 283.589 85.8667 314.298C101.857 330.356 121.011 343.308 142.274 352.098L146.198 371.614Z" fill="var(--ft-teal)"/><path d="M263.581 261.905L147.37 291.97C154.34 326.664 161.252 361.416 168.281 396.111C168.691 398.103 170.155 399.568 172.147 399.92C174.138 400.272 176.013 399.451 177.067 397.752L188.723 379.232V379.35C189.27 378.568 189.816 377.748 190.363 376.888L263.581 261.905ZM70.989 196.561L351.618 123.539L369.073 96.2293C369.854 94.979 370.557 93.7483 371.182 92.5371L396.662 51.9825C397.716 50.283 397.657 48.2317 396.427 46.5908C395.256 44.9498 393.264 44.2467 391.331 44.7741L316.649 64.817L131.848 113.693C129.973 114.123 128.079 114.494 126.166 114.807L80.185 126.88L3.57007 146.922C1.6957 147.45 0.348493 148.974 0.0556223 150.908C-0.237249 152.9 0.641307 154.717 2.33996 155.713L51.8938 185.191L70.989 196.561ZM333.518 152.08L99.5145 213.556L135.889 235.181L142.918 269.876L281.739 233.423L333.518 152.08Z" fill="var(--ft-teal)"/></svg>
+  </footer>
+
+</div>
+</body>
+</html>

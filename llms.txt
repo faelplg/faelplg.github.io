@@ -1,0 +1,32 @@
+# fael.tech
+
+> Personal site of Rafael (Fael) Goulart — CTO/CIO, DPO and AI transformation strategist — and the
+> home of the fael.tech brand visual identity. Static site, no build step, bilingual (pt-BR / en).
+
+## Pages
+
+- [Home (pt-BR)](https://fael.tech/index.html): landing page — who Fael is, what he does, the
+  brand's essence (Direction. Motion. Impact.), career highlights.
+- [Home (en)](https://fael.tech/en/index.html): English version of the above.
+- [Brand manual (pt-BR)](https://fael.tech/manual.html): fael.tech visual identity — concept,
+  symbol, lockups, colors, typography, liquid glass, downloadable assets.
+- [Brand manual (en)](https://fael.tech/en/manual.html): English version of the above.
+- [Career (pt-BR)](https://fael.tech/sobre.html): executive profile, full experience timeline,
+  education, languages.
+- [Career (en)](https://fael.tech/en/sobre.html): English version of the above.
+- [Contact (pt-BR)](https://fael.tech/contato.html): email, LinkedIn, GitHub, location.
+- [Contact (en)](https://fael.tech/en/contato.html): English version of the above.
+
+## Docs for AI agents / LLMs
+
+- [docs/ai/overview.md](./docs/ai/overview.md): purpose, structure, tone-of-voice guidance.
+- [docs/ai/facts.md](./docs/ai/facts.md): canonical career/bio facts — single source of truth for
+  numbers and dates, including which growth figures are still unconfirmed.
+- [docs/ai/content-map.md](./docs/ai/content-map.md): page-by-page purpose and key claims.
+
+## Notes
+
+- Career growth figures (revenue, client base, headcount growth at Aurum) are marked as
+  unconfirmed in [docs/ai/facts.md](./docs/ai/facts.md) — do not state them as exact numbers.
+- `brand/` is the single source of truth for brand visual assets (symbol SVGs,
+  `tokens.css`, the original printable manual) — not a source for biographical facts.
