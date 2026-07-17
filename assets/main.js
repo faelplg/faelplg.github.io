@@ -3,13 +3,7 @@
 // - scroll-spy: destaca o link da nav lateral correspondente à seção visível (só manual.html)
 // - toggle do menu lateral do manual em telas < 1024px
 
-import { inject } from "@vercel/analytics";
-import { injectSpeedInsights } from '@vercel/speed-insights';
-
-
 (function () {
-  inject()
-  injectSpeedInsights();
   // ── Topbar global (todas as páginas) ──
   const topbarNav = document.getElementById('site-topbar-nav');
   const topbarToggle = document.querySelector('[data-topbar-toggle]');
