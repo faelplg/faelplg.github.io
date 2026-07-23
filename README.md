@@ -1,9 +1,10 @@
 # fael.tech — site pessoal e laboratório da marca
 
-Site pessoal estático de Rafael (Fael) Goulart — CTO/CIO, DPO e estrategista em transformação com
-IA — e laboratório de aplicação da identidade visual da marca **fael.tech**. O próprio site,
-construído com os tokens e regras da marca, é a prova viva do sistema (não há uma página separada
-de "componentes"). Bilíngue: pt-BR na raiz, inglês em `en/`.
+Site pessoal estático de Rafael (Fael) Goulart — Software Engineer e former CTO, com atuação em
+front-end, full stack, AI Engineering e arquitetura — e laboratório de aplicação da identidade
+visual da marca **fael.tech**. O próprio site, construído com os tokens e regras da marca, é a
+prova viva do sistema (não há uma página separada de "componentes"). Bilíngue: pt-BR na raiz,
+inglês em `en/`.
 
 **Forward through technology.**
 

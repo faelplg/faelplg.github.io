@@ -6,10 +6,10 @@
 ## Início — `index.html` / `en/index.html`
 
 - **Propósito:** landing pessoal. Responde "quem é Fael" e "o que ele faz" em poucos segundos.
-- **Conteúdo:** retrato, headline ("Tecnologia não é o destino. É como avançamos" / "Technology is
-  not the destination. It's how we move forward"), bio curta, os 3 pilares da marca
-  (Direction/Motion/Impact), áreas de atuação (estratégia de tecnologia, IA, segurança/DPO,
-  arquitetura/engenharia), destaques de carreira condensados, CTAs para as demais páginas.
+- **Conteúdo:** retrato, headline sobre produtos centrados em pessoas, bio curta de Software
+  Engineer e former CTO, princípios de trabalho (clareza, sistemas e simplicidade), áreas de
+  atuação (front-end, full stack/arquitetura, AI Engineering e liderança técnica/produto),
+  evidências de execução e objetivo atual de carreira, com CTAs para contato, GitHub e trajetória.
 - **Não contém:** linha do tempo completa de experiência (está em Trajetória) nem detalhes da
   identidade visual (está no Manual da marca).
 
@@ -27,11 +27,13 @@
 ## Trajetória — `sobre.html` / `en/sobre.html`
 
 - **Propósito:** carreira profissional detalhada (equivalente a um currículo em formato web).
-- **Conteúdo:** perfil executivo, linha do tempo completa de experiência com bullets por cargo,
-  formação acadêmica, idiomas, disponibilidade.
+- **Conteúdo:** perfil profissional de Software Engineer, linha do tempo completa com entregas
+  técnicas e responsabilidades de liderança por cargo, formação acadêmica, idiomas e objetivo de
+  carreira sênior/staff.
 - **Fatos citados aqui devem bater literalmente com** [facts.md](./facts.md).
 
 ## Contato — `contato.html` / `en/contato.html`
 
 - **Propósito:** canais de contato.
-- **Conteúdo:** e-mail (r@fael.tech), LinkedIn, GitHub, localização (Florianópolis, SC).
+- **Conteúdo:** objetivo atual de carreira, e-mail (r@fael.tech), LinkedIn, GitHub e localização
+  (Florianópolis, SC).

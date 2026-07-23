@@ -15,6 +15,7 @@ $RECYCLE.BIN/
 *.swo
 *~
 *.sublime-workspace
+*.code-workspace
 
 # Logs
 *.log
