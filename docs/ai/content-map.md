@@ -9,7 +9,8 @@
 - **Conteúdo:** retrato, headline sobre produtos centrados em pessoas, bio curta de Software
   Engineer e former CTO, princípios de trabalho (clareza, sistemas e simplicidade), áreas de
   atuação (front-end, full stack/arquitetura, AI Engineering e liderança técnica/produto),
-  evidências de execução e objetivo atual de carreira, com CTAs para contato, GitHub e trajetória.
+  evidências de execução e a nova fase em três linhas — produtos, consultoria e possibilidades em
+  engenharia/liderança/executivo —, com CTAs para contato, GitHub e trajetória.
 - **Não contém:** linha do tempo completa de experiência (está em Trajetória) nem detalhes da
   identidade visual (está no Manual da marca).
 
@@ -28,12 +29,12 @@
 
 - **Propósito:** carreira profissional detalhada (equivalente a um currículo em formato web).
 - **Conteúdo:** perfil profissional de Software Engineer, linha do tempo completa com entregas
-  técnicas e responsabilidades de liderança por cargo, formação acadêmica, idiomas e objetivo de
-  carreira sênior/staff.
+  técnicas e responsabilidades de liderança por cargo, formação acadêmica, idiomas e as três
+  linhas da nova fase profissional.
 - **Fatos citados aqui devem bater literalmente com** [facts.md](./facts.md).
 
 ## Contato — `contato.html` / `en/contato.html`
 
 - **Propósito:** canais de contato.
-- **Conteúdo:** objetivo atual de carreira, e-mail (r@fael.tech), LinkedIn, GitHub e localização
-  (Florianópolis, SC).
+- **Conteúdo:** síntese das três linhas da nova fase profissional, e-mail (r@fael.tech), LinkedIn,
+  GitHub e localização (Florianópolis, SC).

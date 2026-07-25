@@ -65,9 +65,19 @@ enquanto já assumia o cargo de CTO na Aurum.
 
 Português (nativo) · Inglês (fluente) · Espanhol (intermediário)
 
-## Disponibilidade
+## Nova fase profissional
 
-Busca oportunidades como Software Engineer em nível sênior/staff, com foco em front-end, full
-stack, arquitetura de software e AI Engineering, no Brasil ou em times internacionais. Cargos-alvo:
-Software Engineer, Staff Software Engineer, Senior Software Engineer, Front-end Engineer,
-AI Engineer e Software Architect.
+Três linhas de atuação complementares:
+
+1. **Empreendedorismo e produtos:** criação de microprodutos digitais de baixo ticket e projetos
+   open source, usando IA tanto no desenvolvimento quanto como parte dos produtos.
+2. **Consultoria e transformação:** transformação digital com ou sem orientação a IA, aplicando
+   experiência em estruturas e times de tecnologia, transições de maturidade tecnológica e
+   roadmaps de adoção de IA.
+3. **Engenharia, liderança e executivo:** avaliação de possibilidades em engenharia de software
+   como executor, em posições de liderança técnica ou organizacional e em cargos executivos.
+
+Na terceira linha, as famílias de função consideradas incluem Software Engineer, Staff/Senior
+Software Engineer, Front-end Engineer, AI Engineer, Software Architect, liderança de engenharia,
+Head of Engineering, CTO e CIO. Isso não deve ser apresentado publicamente como busca ativa ou
+disponibilidade irrestrita.

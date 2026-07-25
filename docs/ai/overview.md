@@ -33,9 +33,12 @@ Cada par pt/en usa `<link rel="alternate" hreflang>` para se referenciar mutuame
   de clientes, headcount) deve manter a expressão "a confirmar" / "figures to confirm" — ver
   [facts.md](./facts.md).
 - **Sentence case, nunca title case** em títulos e headlines (convenção da marca).
-- **Engenharia primeiro.** Apresentar Fael prioritariamente como Software Engineer experiente e
-  hands-on. A experiência como CTO comprova visão sistêmica, liderança e contexto de negócio, mas
-  não deve competir com a identidade principal nem aparecer como cargo-alvo atual.
+- **Engenharia como identidade central.** Apresentar Fael prioritariamente como Software Engineer
+  experiente e hands-on. A experiência como CTO comprova visão sistêmica, liderança e contexto de
+  negócio e sustenta uma nova fase mais ampla, sem transformar o site em anúncio explícito de
+  busca por emprego.
+- **Três linhas de atuação.** Comunicar a nova fase por meio de empreendedorismo e produtos,
+  consultoria e transformação, e possibilidades em engenharia, liderança ou cargos executivos.
 - **Produtos centrados em pessoas.** Conectar front-end, full stack, IA, arquitetura, produto e
   design à missão de reduzir o atrito entre intenção humana e capacidade tecnológica.
 - **Marca:** a filosofia é "Forward through technology" — tecnologia como meio, não como fim.

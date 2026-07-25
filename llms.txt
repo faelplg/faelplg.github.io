@@ -7,16 +7,18 @@
 ## Pages
 
 - [Home (pt-BR)](https://fael.tech/index.html): landing page — Software Engineer positioning,
-  human-centered product mission, areas of expertise, evidence, and current career objective.
+  human-centered product mission, areas of expertise, evidence, and a new professional chapter
+  spanning products, consulting, engineering, leadership, and executive possibilities.
 - [Home (en)](https://fael.tech/en/index.html): English version of the above.
 - [Brand manual (pt-BR)](https://fael.tech/manual.html): fael.tech visual identity — concept,
   symbol, lockups, colors, typography, liquid glass, downloadable assets.
 - [Brand manual (en)](https://fael.tech/en/manual.html): English version of the above.
 - [Career (pt-BR)](https://fael.tech/sobre.html): professional profile, full experience timeline,
-  technical and leadership outcomes, education, languages, and career objective.
+  technical and leadership outcomes, education, languages, and three lines of work for the new
+  professional chapter.
 - [Career (en)](https://fael.tech/en/sobre.html): English version of the above.
-- [Contact (pt-BR)](https://fael.tech/contato.html): current career objective, email, LinkedIn,
-  GitHub, and location.
+- [Contact (pt-BR)](https://fael.tech/contato.html): summary of the three lines of work, email,
+  LinkedIn, GitHub, and location.
 - [Contact (en)](https://fael.tech/en/contato.html): English version of the above.
 
 ## Docs for AI agents / LLMs
