@@ -1,21 +1,22 @@
 # fael.tech
 
-> Personal site of Rafael (Fael) Goulart — Software Engineer and former CTO working across
-> front-end, full stack, AI Engineering, and architecture — and the home of the fael.tech brand
-> visual identity. Static site, no build step, bilingual (pt-BR / en).
+> Personal site of Rafael (Fael) Goulart, a Software Engineer, technology strategist, former CTO,
+> and DPO working across front-end, full stack, AI Engineering, architecture, and security. It is
+> also the home of the fael.tech brand visual identity. Static site, no build step, bilingual
+> (pt-BR / en).
 
 ## Pages
 
-- [Home (pt-BR)](https://fael.tech/index.html): landing page — Software Engineer positioning,
-  human-centered product mission, areas of expertise, evidence, and a new professional chapter
+- [Home (pt-BR)](https://fael.tech/index.html): landing page - Software Engineer and technology
+  strategist positioning, human-centered systems mission, areas of expertise, evidence, and a new professional chapter
   spanning products, consulting, engineering, leadership, and executive possibilities.
 - [Home (en)](https://fael.tech/en/index.html): English version of the above.
-- [Brand manual (pt-BR)](https://fael.tech/manual.html): fael.tech visual identity — concept,
+- [Brand manual (pt-BR)](https://fael.tech/manual.html): fael.tech visual identity - concept,
   symbol, lockups, colors, typography, liquid glass, downloadable assets.
 - [Brand manual (en)](https://fael.tech/en/manual.html): English version of the above.
 - [Career (pt-BR)](https://fael.tech/sobre.html): professional profile, full experience timeline,
-  technical and leadership outcomes, education, languages, and three lines of work for the new
-  professional chapter.
+  technical and leadership outcomes, education, MIT certification, languages, and three lines of
+  work for the new professional chapter.
 - [Career (en)](https://fael.tech/en/sobre.html): English version of the above.
 - [Contact (pt-BR)](https://fael.tech/contato.html): summary of the three lines of work, email,
   LinkedIn, GitHub, and location.
@@ -24,13 +25,13 @@
 ## Docs for AI agents / LLMs
 
 - [docs/ai/overview.md](./docs/ai/overview.md): purpose, structure, tone-of-voice guidance.
-- [docs/ai/facts.md](./docs/ai/facts.md): canonical career/bio facts — single source of truth for
-  numbers and dates, including which growth figures are still unconfirmed.
+- [docs/ai/facts.md](./docs/ai/facts.md): canonical career/bio facts - single source of truth for
+  numbers, dates, education, and certification.
 - [docs/ai/content-map.md](./docs/ai/content-map.md): page-by-page purpose and key claims.
 
 ## Notes
 
-- Career growth figures (revenue, client base, headcount growth at Aurum) are marked as
-  unconfirmed in [docs/ai/facts.md](./docs/ai/facts.md) — do not state them as exact numbers.
+- Career growth figures for Aurum are confirmed in [docs/ai/facts.md](./docs/ai/facts.md) and must
+  stay aligned with the source texts in `career-library`.
 - `brand/` is the single source of truth for brand visual assets (symbol SVGs,
-  `tokens.css`, the original printable manual) — not a source for biographical facts.
+  `tokens.css`, the original printable manual) - not a source for biographical facts.

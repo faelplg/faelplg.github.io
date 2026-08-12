@@ -1,7 +1,8 @@
-# fael.tech — site pessoal e laboratório da marca
+# fael.tech - site pessoal e laboratório da marca
 
-Site pessoal estático de Rafael (Fael) Goulart — Software Engineer e former CTO, com atuação em
-front-end, full stack, AI Engineering e arquitetura — e laboratório de aplicação da identidade
+Site pessoal estático de Rafael (Fael) Goulart, Software Engineer e estrategista de tecnologia,
+former CTO e DPO, com atuação em front-end, full stack, AI Engineering, arquitetura e segurança,
+e laboratório de aplicação da identidade
 visual da marca **fael.tech**. O próprio site, construído com os tokens e regras da marca, é a
 prova viva do sistema (não há uma página separada de "componentes"). Bilíngue: pt-BR na raiz,
 inglês em `en/`.
@@ -25,7 +26,7 @@ assets/
   main.js                      → topbar global, scroll-spy do manual, menus mobile
   img/
     fael-portrait.jpg           → retrato de perfil
-brand/          → fonte única de verdade da marca — NÃO modificar a partir deste projeto
+brand/          → fonte única de verdade da marca - NÃO modificar a partir deste projeto
   manual-identidade-visual.html   → manual original imprimível
   tokens.css                → tokens de cor/tipografia/liquid glass (--ft-*)
   assets/*.svg               → símbolo, ícone, favicon
