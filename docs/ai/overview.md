@@ -21,6 +21,7 @@ Estático, sem framework/bundler, bilíngue (pt-BR na raiz, inglês em `en/`).
 |---|---|---|
 | Início (landing pessoal) | `index.html` | `en/index.html` |
 | Manual da marca | `manual.html` | `en/manual.html` |
+| Horizonte (evolução conceitual) | `horizonte.html` | `en/horizonte.html` |
 | Trajetória / carreira | `sobre.html` | `en/sobre.html` |
 | Contato | `contato.html` | `en/contato.html` |
 
@@ -55,7 +56,7 @@ para isso, use [facts.md](./facts.md).
 
 ## Estado do projeto
 
-O site mantém 8 páginas, a identidade visual em `brand/` e esta documentação como referências
+O site mantém 10 páginas, a identidade visual em `brand/` e esta documentação como referências
 vivas do projeto. Não existem mais `docs/SPEC.md` nem uma pasta `tasks/` (o
 fluxo de spec-driven development usado durante a construção foi descontinuado após a conclusão) -
 `docs/ai/` é hoje a documentação de referência viva. Materiais brutos de rascunho (versões antigas

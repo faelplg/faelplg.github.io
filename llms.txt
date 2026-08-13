@@ -14,6 +14,11 @@
 - [Brand manual (pt-BR)](https://fael.tech/manual.html): fael.tech visual identity - concept,
   symbol, lockups, colors, typography, liquid glass, downloadable assets.
 - [Brand manual (en)](https://fael.tech/en/manual.html): English version of the above.
+- [Horizon (pt-BR)](https://fael.tech/horizonte.html): conceptual evolution of the fael.tech
+  identity inspired by long time horizons, knowledge preservation, and possible futures from
+  Isaac Asimov's Foundation saga. Presents principles, visual language, a digital application,
+  voice, and manifesto while keeping the current brand assets untouched.
+- [Horizon (en)](https://fael.tech/en/horizonte.html): English version of the above.
 - [Career (pt-BR)](https://fael.tech/sobre.html): professional profile, full experience timeline,
   technical and leadership outcomes, education, MIT certification, languages, and three lines of
   work for the new professional chapter.

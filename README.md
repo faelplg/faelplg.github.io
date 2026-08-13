@@ -14,11 +14,13 @@ inglês em `en/`.
 ```
 index.html              → pt-BR · Início (landing pessoal)
 manual.html               → pt-BR · Manual da identidade visual
+horizonte.html              → pt-BR · Horizonte (evolução conceitual da identidade)
 sobre.html                → pt-BR · Trajetória / carreira
 contato.html              → pt-BR · Contato
 en/
   index.html                → en · Home
   manual.html                 → en · Brand manual
+  horizonte.html              → en · Horizon (conceptual identity evolution)
   sobre.html                  → en · Career
   contato.html                → en · Contact
 assets/
@@ -26,6 +28,7 @@ assets/
   main.js                      → topbar global, scroll-spy do manual, menus mobile
   img/
     fael-portrait.jpg           → retrato de perfil
+    foundation-horizon.jpg      → arte original da página Horizonte
 brand/          → fonte única de verdade da marca - NÃO modificar a partir deste projeto
   manual-identidade-visual.html   → manual original imprimível
   tokens.css                → tokens de cor/tipografia/liquid glass (--ft-*)
