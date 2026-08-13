@@ -24,6 +24,19 @@
   do site; o texto do conceito (seção 01) é mantido em paridade manual com
   `brand/manual-identidade-visual.html`, que é o documento original imprimível da marca.
 
+## Horizonte - `horizonte.html` / `en/horizonte.html`
+
+- **Propósito:** apresentar uma proposta de evolução conceitual para a identidade fael.tech,
+  inspirada pela escala temporal, pela preservação do conhecimento e pelos futuros possíveis da
+  saga *Foundation*, de Isaac Asimov.
+- **Conteúdo:** princípios de horizonte longo, conhecimento como infraestrutura e preparação para
+  futuros possíveis; continuidade entre Direction/Motion/Impact e a nova linguagem; paleta oficial,
+  geometria orbital, demonstração de aplicação digital, voz e manifesto.
+- **Relação com a marca atual:** é uma exploração aplicada e explicitamente apresentada como
+  proposta conceitual. O manual e os assets em `brand/` continuam sendo a fonte oficial da marca.
+- **Imagem:** `assets/img/foundation-horizon.jpg` é uma arte original criada para a página a partir
+  do moodboard de referência. A luz quente existe apenas na imagem e não cria um novo token de cor.
+
 ## Trajetória - `sobre.html` / `en/sobre.html`
 
 - **Propósito:** carreira profissional detalhada (equivalente a um currículo em formato web).

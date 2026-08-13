@@ -27,9 +27,11 @@ node_modules/
 package-lock.json
 bun.lockb
 
-# Skills de agentes de IA — conteúdo vendorizado/reproduzível a partir de
+# Skills de agentes de IA - conteúdo vendorizado/reproduzível a partir de
 # skills-lock.json (que permanece versionado); não faz parte do site em si.
-.agents/skills/
+.agents/skills/*
+!.agents/skills/brand-identity/
+!.agents/skills/brand-identity/**
 
 # Variáveis de ambiente / segredos
 .env
