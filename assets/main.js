@@ -15,7 +15,9 @@
       button.setAttribute('aria-expanded', String(open));
     }
 
+    // Sem JS a lista fica aberta e o botão oculto; com JS, recolhe e mostra o botão.
     setOpen(false);
+    button.hidden = false;
     button.addEventListener('click', () => setOpen(menu.dataset.open !== 'true'));
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && menu.dataset.open === 'true') {
