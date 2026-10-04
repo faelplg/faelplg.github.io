@@ -6,7 +6,8 @@
 ## Início - `index.html` / `en/index.html`
 
 - **Propósito:** landing pessoal. Responde "quem é Fael" e "o que ele faz" em poucos segundos.
-- **Conteúdo:** avatar ilustrado em busto, posicionamento de Software Engineer, former CTO e DPO, missão de criar
+- **Conteúdo:** hero com avatar ilustrado em busto e autodescrição curta (ver `facts.md`), apresentação
+  completa no início da seção 01, posicionamento de Software Engineer, former CTO e DPO, missão de criar
   sistemas coerentes, seguros e centrados em pessoas, princípios de trabalho, áreas de atuação
   (front-end, full stack/arquitetura, AI Engineering, estratégia, segurança e DPO), métricas de
   execução e a nova fase em três linhas - produtos, consultoria e engenharia/liderança/executivo.

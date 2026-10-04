@@ -11,6 +11,8 @@
 - Contato: r@fael.tech · linkedin.com/in/faelplg · github.com/faelplg
 - Identidade principal: Software Engineer e estrategista de tecnologia, com mais de dez anos de experiência como diretor e executivo
 - Headline: Software Engineer | Former CTO | Front-end, Full Stack & AI Engineering | DPO & InfoSec
+- Autodescrição (hero da home): Engenheiro de software, de UX e de inteligência artificial, empreendedor, creative coder, músico e ativista. / Software, UX, and AI engineer, entrepreneur, creative coder, musician, and activist.
+- Principais formas de impacto numa empresa (eyebrow da home): Transformação estratégica e de inteligência artificial. / Strategic and AI transformation.
 - Problema que quer resolver: reduzir o atrito entre intenção humana, complexidade organizacional e capacidade tecnológica
 - Campo de impacto: produtos centrados em pessoas e em mercados emergentes, com engenharia de software, IA agêntica e segurança como fundações
 - Missão: construir produtos e organizações de tecnologia coerentes, seguros e centrados em pessoas
