@@ -174,7 +174,7 @@ a:hover { color: var(--ft-accent-hover); }
    Parágrafo sem classe dentro de .site-section já é body: o :where() zera a
    especificidade, então o texto de um componente (.site-pillar p) vale sobre ele. */
 .site-text,
-:where(.site-section) p {
+:where(.site-section p) {
   margin: 0;
   max-width: var(--ft-measure);
   font-size: var(--ft-text-body-size);
@@ -185,7 +185,7 @@ a:hover { color: var(--ft-accent-hover); }
 .site-text + .site-text { margin-top: var(--ft-space-4); }
 /* Na seção, o parágrafo deixa 16px para o que vier depois dele: outro
    parágrafo, uma lista, uma grade ou um botão */
-:where(.site-section) p:where(:not(:last-child)) { margin-bottom: var(--ft-space-4); }
+:where(.site-section p:not(:last-child)) { margin-bottom: var(--ft-space-4); }
 .site-text--lead {
   max-width: var(--ft-measure-narrow);
   font-size: var(--ft-text-lead-size);
