@@ -8,30 +8,40 @@
 <link rel="icon" href="brand/assets/faeltech-favicon.svg">
 <link rel="alternate" hreflang="en" href="en/horizonte.html">
 <link rel="alternate" hreflang="pt-BR" href="horizonte.html">
+<meta name="color-scheme" content="light dark" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600..700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" />
 <link rel="stylesheet" href="brand/tokens.css">
 <link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/hero.css">
+<link rel="stylesheet" href="assets/main.css">
 </head>
 <body class="foundation-page">
 
-  <header class="site-topbar">
-    <div class="site-topbar__inner">
-      <a class="site-topbar__brand" href="index.html">
-        <img src="brand/assets/faeltech-mark-dark.svg" width="26" height="26" alt="">
-        <span class="site-word on-ink" style="font-size:19px;">fael<span class="tld">.tech</span></span>
-      </a>
-      <button class="site-topbar__toggle" type="button" data-topbar-toggle aria-expanded="false" aria-controls="site-topbar-nav">☰</button>
-      <nav class="site-topbar__nav" id="site-topbar-nav" aria-label="Navegação principal">
-        <a href="index.html">Início</a>
-        <a href="manual.html">Manual da marca</a>
-        <a href="horizonte.html" class="site-topbar__link--active" aria-current="page">Horizonte</a>
-        <a href="sobre.html">Trajetória</a>
-        <a href="contato.html">Contato</a>
-        <a class="site-topbar__lang" href="en/horizonte.html" hreflang="en" lang="en">PT->EN</a>
+  <a class="site-skip" href="#main">Pular para o conteúdo</a>
+
+  <header class="foundation-bar">
+    <div class="ds-hero__bar">
+      <a class="ds-hero__brand" href="index.html"><span class="ds-mark" aria-hidden="true"></span><span class="site-word">fael<span class="tld">.tech</span></span></a>
+      <button class="site-menu-btn" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-menu">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        Menu
+      </button>
+      <nav class="site-menu" id="site-menu" data-menu aria-label="Navegação principal">
+        <ul class="ds-hero__nav">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="manual.html">Manual da marca</a></li>
+          <li><a href="horizonte.html" aria-current="page">Horizonte</a></li>
+          <li><a href="sobre.html">Trajetória</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a class="site-lang" href="en/horizonte.html" hreflang="en" lang="en">PT->EN</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <main class="foundation-main">
+  <main class="foundation-main" id="main">
     <header class="foundation-hero">
       <div class="foundation-hero__inner">
         <div class="foundation-hero__content">
@@ -131,10 +141,10 @@
             <h3>Cor como sinal</h3>
             <p class="foundation-language__description">A paleta oficial permanece como base. Teal orienta; tinta cria profundidade; papel devolve clareza.</p>
             <div class="foundation-swatches">
-              <div class="foundation-swatch"><div class="foundation-swatch__chip foundation-swatch__chip--ink"></div><span class="foundation-swatch__name">Campo profundo</span><span class="foundation-swatch__token">--ft-ink</span></div>
-              <div class="foundation-swatch"><div class="foundation-swatch__chip foundation-swatch__chip--teal"></div><span class="foundation-swatch__name">Direção</span><span class="foundation-swatch__token">--ft-teal-700</span></div>
-              <div class="foundation-swatch"><div class="foundation-swatch__chip foundation-swatch__chip--signal"></div><span class="foundation-swatch__name">Sinal</span><span class="foundation-swatch__token">--ft-teal-300</span></div>
-              <div class="foundation-swatch"><div class="foundation-swatch__chip foundation-swatch__chip--paper"></div><span class="foundation-swatch__name">Conhecimento</span><span class="foundation-swatch__token">--ft-paper</span></div>
+              <div class="foundation-swatch"><div class="foundation-swatch__chip" style="background:var(--ft-ink);"></div><span class="foundation-swatch__name">Campo profundo</span><span class="foundation-swatch__token">--ft-ink</span></div>
+              <div class="foundation-swatch"><div class="foundation-swatch__chip" style="background:var(--ft-teal-700);"></div><span class="foundation-swatch__name">Direção</span><span class="foundation-swatch__token">--ft-teal-700</span></div>
+              <div class="foundation-swatch"><div class="foundation-swatch__chip" style="background:var(--ft-teal-300);"></div><span class="foundation-swatch__name">Sinal</span><span class="foundation-swatch__token">--ft-teal-300</span></div>
+              <div class="foundation-swatch"><div class="foundation-swatch__chip" style="background:var(--ft-paper);"></div><span class="foundation-swatch__name">Conhecimento</span><span class="foundation-swatch__token">--ft-paper</span></div>
             </div>
             <p class="foundation-note">A luz quente do moodboard entra apenas em fotografia e ilustração. Ela cria atmosfera, mas não se torna um novo token de marca.</p>
           </div>

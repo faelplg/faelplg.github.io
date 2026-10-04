@@ -1,31 +1,29 @@
-// fael.tech — site: comportamento compartilhado
-// - topbar: menu global colapsável em telas < 720px (todas as páginas)
+// fael.tech - site: comportamento compartilhado
+// - menu da barra do hero: abre e fecha a nav quando o palco fica estreito (todas as páginas)
 // - scroll-spy: destaca o link da nav lateral correspondente à seção visível (só manual.html)
 // - toggle do menu lateral do manual em telas < 1024px
 
 (function () {
-  // ── Topbar global (todas as páginas) ──
-  const topbarNav = document.getElementById('site-topbar-nav');
-  const topbarToggle = document.querySelector('[data-topbar-toggle]');
-  if (topbarToggle && topbarNav) {
-    const topbarQuery = window.matchMedia('(max-width: 720px)');
+  // ── Menu da barra (todas as páginas) ──
+  // A nav só some no palco estreito (container query no CSS); aqui só se troca o estado.
+  document.querySelectorAll('[data-menu]').forEach((menu) => {
+    const button = menu.parentElement.querySelector('[data-menu-toggle]');
+    if (!button) return;
 
-    function syncTopbarState(collapsed) {
-      topbarNav.setAttribute('data-collapsed', String(collapsed));
-      topbarToggle.setAttribute('aria-expanded', String(!collapsed));
+    function setOpen(open) {
+      menu.dataset.open = String(open);
+      button.setAttribute('aria-expanded', String(open));
     }
 
-    syncTopbarState(topbarQuery.matches);
-
-    topbarToggle.addEventListener('click', () => {
-      const isCollapsed = topbarNav.getAttribute('data-collapsed') === 'true';
-      syncTopbarState(!isCollapsed);
+    setOpen(false);
+    button.addEventListener('click', () => setOpen(menu.dataset.open !== 'true'));
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && menu.dataset.open === 'true') {
+        setOpen(false);
+        button.focus();
+      }
     });
-
-    topbarQuery.addEventListener('change', (event) => {
-      syncTopbarState(event.matches);
-    });
-  }
+  });
 })();
 
 (function () {

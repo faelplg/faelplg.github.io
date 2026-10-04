@@ -28,10 +28,11 @@ página separada de "componentes".
 ```
 index.html / manual.html / sobre.html / contato.html   → páginas pt-BR (raiz)
 en/{index,manual,sobre,contato}.html                    → páginas en (espelho 1:1 das pt-BR)
-assets/site.css                                          → CSS do site inteiro; só consome var(--ft-*)
-                                                             de brand/tokens.css, nunca redeclara cor/fonte
-assets/main.js                                            → topbar global, scroll-spy do manual, menus mobile
-assets/img/                                               → imagens do site (ex.: retrato)
+assets/site.css, hero.css, canvas.js, hero.js           → cópias exatas do fael-tech-design-system (não editar aqui)
+assets/main.css                                          → estilos próprios do site (moldura, menu, manual, Horizonte);
+                                                             só consome var(--ft-*) semânticos de brand/tokens.css
+assets/main.js                                            → menu da barra do hero, scroll-spy do manual, menu lateral mobile
+assets/img/                                               → imagens do site (ex.: avatar/avatar-busto.png do hero da home)
 brand/                                                    → fonte única de verdade da marca (ver seção abaixo)
 docs/ai/overview.md                                       → propósito, tom de voz, diretrizes de conteúdo
 docs/ai/facts.md                                          → fatos canônicos de carreira/bio (única fonte de números/datas)
@@ -72,12 +73,24 @@ manual completo.
 
 ## Fluxo de trabalho ao editar uma página HTML
 
-Cada página HTML é standalone (sem includes/templates), então elementos compartilhados - topbar,
-`<link rel="alternate" hreflang>`, tags do Vercel, `<link rel="stylesheet">` - existem duplicados
-em cada arquivo. Ao mudar um desses elementos (ex.: um link da nav, o texto da topbar), replique a
-mudança nas 8 páginas (4 pt + 4 en), não só na que motivou a edição. Ao criar uma página nova,
-copie a estrutura de `<head>` e do `<header class="site-topbar">` de uma página existente do mesmo
-idioma para não perder um `hreflang` ou a inclusão dos scripts.
+Cada página HTML é standalone (sem includes/templates), então elementos compartilhados - a barra
+de navegação (`.ds-hero__bar`, dentro do hero de cada página), `<link rel="alternate" hreflang>`,
+tags do Vercel, `<link rel="stylesheet">` - existem duplicados em cada arquivo. Ao mudar um desses
+elementos (ex.: um link da nav), replique a mudança nas 8 páginas (4 pt + 4 en), não só na que
+motivou a edição. Ao criar uma página nova, copie a estrutura de `<head>` e do
+`<header class="ds-hero ...">` de uma página existente do mesmo idioma para não perder um `hreflang`
+ou a inclusão dos scripts.
+
+## Design system
+
+O visual segue o [fael-tech-design-system](https://github.com/faelplg/design-systems/tree/main/fael-tech-design-system).
+`brand/tokens.css`, `brand/assets/*.svg`, `assets/site.css`, `assets/hero.css`, `assets/canvas.js` e
+`assets/hero.js` são cópias exatas de lá: para mudar algum deles, mude no design system e copie de
+novo. O que só existe no site vai em `assets/main.css`. Cada página abre com um hero do design system:
+Busto na home, Agulhas na Trajetória e Retícula no Manual e no Contato. O tema segue o sistema
+operacional (`light-dark()` nos tokens semânticos); componentes nunca usam hex, `rgba()` ou
+primitivos (`--ft-teal-*`, `--ft-ink`...), só os semânticos (`--ft-fg`, `--ft-bg-raised`,
+`--ft-accent`...), e espaçamento sai de `--ft-space-*`.
 
 ## Testar localmente
 

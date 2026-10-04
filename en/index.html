@@ -8,57 +8,66 @@
 <link rel="icon" href="../brand/assets/faeltech-favicon.svg">
 <link rel="alternate" hreflang="pt-BR" href="../index.html">
 <link rel="alternate" hreflang="en" href="index.html">
+<meta name="color-scheme" content="light dark" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600..700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" />
 <link rel="stylesheet" href="../brand/tokens.css">
 <link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/hero.css">
+<link rel="stylesheet" href="../assets/main.css">
 </head>
 <body>
 
-  <header class="site-topbar">
-    <div class="site-topbar__inner">
-      <a class="site-topbar__brand" href="index.html">
-        <img src="../brand/assets/faeltech-mark.svg" width="26" height="26" alt="">
-        <span class="site-word" style="font-size:19px;">fael<span class="tld">.tech</span></span>
-      </a>
-      <button class="site-topbar__toggle" type="button" data-topbar-toggle aria-expanded="false" aria-controls="site-topbar-nav">☰</button>
-      <nav class="site-topbar__nav" id="site-topbar-nav" aria-label="Main navigation">
-        <a href="index.html" class="site-topbar__link--active" aria-current="page">Home</a>
-        <a href="manual.html">Brand manual</a>
-        <!-- <a href="horizonte.html">Horizon</a> -->
-        <a href="sobre.html">Career</a>
-        <a href="contato.html">Contact</a>
-        <a class="site-topbar__lang" href="../index.html" hreflang="pt-BR" lang="pt-BR">EN->PT</a>
+  <a class="site-skip" href="#main">Skip to content</a>
+
+  <header class="ds-hero ds-hero--bust site-container site-stage" data-hero="bust">
+    <div class="ds-hero__bar">
+      <a class="ds-hero__brand" href="index.html"><span class="ds-mark" aria-hidden="true"></span><span class="site-word">fael<span class="tld">.tech</span></span></a>
+      <button class="site-menu-btn" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-menu">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        Menu
+      </button>
+      <nav class="site-menu" id="site-menu" data-menu aria-label="Main navigation">
+        <ul class="ds-hero__nav">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="manual.html">Brand manual</a></li>
+          <!-- <li><a href="horizonte.html">Horizon</a></li> -->
+          <li><a href="sobre.html">Career</a></li>
+          <li><a href="contato.html">Contact</a></li>
+          <li><a class="site-lang" href="../index.html" hreflang="pt-BR" lang="pt-BR">EN->PT</a></li>
+        </ul>
       </nav>
     </div>
-  </header>
-
-  <!-- ═══ Hero ═══ -->
-  <section class="site-hero">
-    <img class="site-hero__portrait" src="../assets/img/fael-portrait.jpg" alt="Portrait of Rafael (Fael) Goulart">
-    <div>
+    <div class="ds-hero__body">
       <div class="site-eyebrow">Software Engineer · Former CTO · DPO &amp; InfoSec</div>
-      <h1>Welcome! You can call me Fael<span class="tld">.</span></h1>
-      <p class="site-hero__lead">
+      <h1 class="ds-hero__title">Welcome! You can call me Fael<span class="tld">.</span></h1>
+      <p class="ds-hero__lead">
         I am a software engineer and technology strategist with 15+ years of experience across front-end, full stack,
         architecture, leadership, research, and innovation. I connect programming, product, information security, UX,
         and agentic engineering to build sustainable solutions. My executive background broadens how I think about people,
         risk, and strategy without erasing a technical, hands-on identity.
       </p>
-      <div class="site-hero__actions">
+      <div class="ds-hero__actions">
         <a class="site-btn site-btn--primary" href="contato.html">Let's talk</a>
         <a class="site-btn site-btn--secondary" href="https://github.com/faelplg">View GitHub</a>
         <a class="site-btn site-btn--secondary" href="sobre.html">See my career</a>
       </div>
     </div>
-  </section>
+    <figure class="ds-hero__figure">
+      <span class="ds-hero__disc" aria-hidden="true"></span>
+      <img class="ds-hero__bust" src="../assets/img/avatar/avatar-busto.png" width="709" height="941" alt="Fael's avatar as a bust portrait, smiling, with hands in pockets">
+    </figure>
+  </header>
 
-  <div class="site-page">
+  <main class="site-page site-container" id="main">
 
     <!-- ═══ Positioning ═══ -->
     <section class="site-section" id="essence">
       <div class="site-section__head"><span class="site-section__num">01</span><h2>Technology in service of people</h2></div>
       <p>I want to reduce the friction between human intent, organizational complexity, and technological capability.
         I connect engineering, product, design, security, and AI through principles and systems.</p>
-      <div class="site-pillars" style="padding:0;">
+      <div class="site-pillars">
         <div class="site-pillar">
           <div class="site-pillar__num">01 · Clarity</div>
           <h3>Clarity over haste</h3>
@@ -81,20 +90,20 @@
     <section class="site-section" id="focus">
       <div class="site-section__head"><span class="site-section__num">02</span><h2>Where I add value</h2></div>
       <div class="site-grid-2">
-        <div class="site-panel" style="padding:20px 22px;">
-          <h3 style="margin-top:0;">Front-end Engineering</h3>
+        <div class="site-panel site-panel--body">
+          <h3>Front-end Engineering</h3>
           <p>Front-end interfaces and architectures with React, TypeScript, JavaScript, and micro-frontends, combining engineering quality with user experience.</p>
         </div>
-        <div class="site-panel" style="padding:20px 22px;">
-          <h3 style="margin-top:0;">Full Stack and architecture</h3>
+        <div class="site-panel site-panel--body">
+          <h3>Full Stack and architecture</h3>
           <p>End-to-end products and systems, from modeling to operations, with experience in Go, Python, PHP, MySQL, and the JavaScript ecosystem.</p>
         </div>
-        <div class="site-panel" style="padding:20px 22px;">
-          <h3 style="margin-top:0;">AI Engineering</h3>
+        <div class="site-panel site-panel--body">
+          <h3>AI Engineering</h3>
           <p>AI applied to products and software development, including agentic systems, multi-agent architectures, and AgentOps.</p>
         </div>
-        <div class="site-panel" style="padding:20px 22px;">
-          <h3 style="margin-top:0;">Strategy, security, and DPO</h3>
+        <div class="site-panel site-panel--body">
+          <h3>Strategy, security, and DPO</h3>
           <p>Technical leadership, data, information security, cybersecurity, risk management, business continuity, and privacy.</p>
         </div>
       </div>
@@ -110,10 +119,10 @@
         <li><span class="glyph">→</span><span>I built the data, security, and privacy functions, reducing monthly data-leak investigation requests from approximately <strong>30 to zero</strong>.</span></li>
         <li><span class="glyph">→</span><span>I created a <strong>company-wide AI adoption roadmap</strong>, spanning governance and security through product innovation.</span></li>
       </ul>
-      <div style="margin-top:28px;">
+      <div class="site-block">
         <h3>A new professional chapter</h3>
         <p>After more than ten years as a technology director and executive, I am beginning a chapter that combines three complementary lines of work.</p>
-        <div class="site-pillars" style="padding:0; margin-top:20px;">
+        <div class="site-pillars">
           <div class="site-pillar">
             <div class="site-pillar__num">01 · Build</div>
             <h3>Products and open source</h3>
@@ -130,7 +139,7 @@
             <p>Possibilities in software engineering as an individual contributor, technical or organizational leadership, and executive roles.</p>
           </div>
         </div>
-        <div style="margin-top:24px;">
+        <div class="site-actions">
           <a class="site-btn site-btn--primary" href="contato.html">Let's talk</a>
           <a class="site-btn site-btn--secondary" href="sobre.html">See full career →</a>
         </div>
@@ -139,13 +148,15 @@
 
     <footer class="site-footer">
       <span class="site-cover__tagline">fael.tech · forward through technology</span>
-      <img src="../brand/assets/faeltech-mark-circle.svg" width="20" height="20" alt="">
+      <span class="ds-mark ds-mark--circle" aria-hidden="true"></span>
     </footer>
 
-  </div>
+  </main>
 
   <script defer src="/_vercel/insights/script.js"></script>
   <script defer src="/_vercel/speed-insights/script.js"></script>
+  <script src="../assets/canvas.js"></script>
+  <script src="../assets/hero.js"></script>
   <script src="../assets/main.js"></script>
 </body>
 </html>

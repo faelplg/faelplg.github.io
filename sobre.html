@@ -8,38 +8,51 @@
 <link rel="icon" href="brand/assets/faeltech-favicon.svg">
 <link rel="alternate" hreflang="en" href="en/sobre.html">
 <link rel="alternate" hreflang="pt-BR" href="sobre.html">
+<meta name="color-scheme" content="light dark" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600..700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" />
 <link rel="stylesheet" href="brand/tokens.css">
 <link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/hero.css">
+<link rel="stylesheet" href="assets/main.css">
 </head>
 <body>
 
-  <header class="site-topbar">
-    <div class="site-topbar__inner">
-      <a class="site-topbar__brand" href="index.html">
-        <img src="brand/assets/faeltech-mark.svg" width="26" height="26" alt="">
-        <span class="site-word" style="font-size:19px;">fael<span class="tld">.tech</span></span>
-      </a>
-      <button class="site-topbar__toggle" type="button" data-topbar-toggle aria-expanded="false" aria-controls="site-topbar-nav">☰</button>
-      <nav class="site-topbar__nav" id="site-topbar-nav" aria-label="Navegação principal">
-        <a href="index.html">Início</a>
-        <a href="manual.html">Manual da marca</a>
-        <!-- <a href="horizonte.html">Horizonte</a> -->
-        <a href="sobre.html" class="site-topbar__link--active" aria-current="page">Trajetória</a>
-        <a href="contato.html">Contato</a>
-        <a class="site-topbar__lang" href="en/sobre.html" hreflang="en" lang="en">PT->EN</a>
+  <a class="site-skip" href="#main">Pular para o conteúdo</a>
+
+  <header class="ds-hero ds-hero--page ds-hero--needles site-container site-stage" data-hero="needles">
+    <canvas class="ds-hero__canvas" aria-hidden="true"></canvas>
+    <div class="ds-hero__bar">
+      <a class="ds-hero__brand" href="index.html"><span class="ds-mark" aria-hidden="true"></span><span class="site-word">fael<span class="tld">.tech</span></span></a>
+      <button class="site-menu-btn" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-menu">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        Menu
+      </button>
+      <nav class="site-menu" id="site-menu" data-menu aria-label="Navegação principal">
+        <ul class="ds-hero__nav">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="manual.html">Manual da marca</a></li>
+          <!-- <li><a href="horizonte.html">Horizonte</a></li> -->
+          <li><a href="sobre.html" aria-current="page">Trajetória</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a class="site-lang" href="en/sobre.html" hreflang="en" lang="en">PT->EN</a></li>
+        </ul>
       </nav>
+    </div>
+    <div class="ds-hero__body">
+      <ol class="ds-hero__crumbs" aria-label="Você está em">
+        <li><a href="index.html">fael.tech</a></li>
+        <li aria-current="page">Trajetória</li>
+      </ol>
+      <h1 class="ds-hero__title">Rafael (Fael) Goulart</h1>
+      <p class="ds-hero__lead">
+      Software Engineer · Former CTO · Front-end, Full Stack &amp; AI Engineering · DPO &amp; InfoSec
+    </p>
     </div>
   </header>
 
-  <header class="site-cover no-border" style="padding-top:48px;">
-    <div class="site-eyebrow">Trajetória</div>
-    <h1 class="site-cover__word" style="font-size:32px;">Rafael (Fael) Goulart</h1>
-    <p class="site-cover__lead">
-      Software Engineer · Former CTO · Front-end, Full Stack &amp; AI Engineering · DPO &amp; InfoSec
-    </p>
-  </header>
-
-  <div class="site-page">
+  <main class="site-page site-container" id="main">
 
     <!-- ═══ Perfil profissional ═══ -->
     <section class="site-section" id="perfil">
@@ -170,34 +183,36 @@
     <section class="site-section" id="formacao">
       <div class="site-section__head"><span class="site-section__num">03</span><h2>Formação, certificação e idiomas</h2></div>
       <div class="site-grid-2">
-        <div class="site-panel" style="padding:20px 22px;">
-          <h3 style="margin-top:0;">Formação acadêmica</h3>
+        <div class="site-panel site-panel--body">
+          <h3>Formação acadêmica</h3>
           <p><strong>Bacharelado em Sistemas de Informação</strong><br>Universidade Federal de Minas Gerais (UFMG), 2008-2012.</p>
           <p><strong>Pós-graduação em Engenharia de Software com IA Aplicada</strong><br>UNIPDS (Anhanguera), 2026-2027, em andamento.</p>
         </div>
-        <div class="site-panel" style="padding:20px 22px;">
-          <h3 style="margin-top:0;">Idiomas</h3>
+        <div class="site-panel site-panel--body">
+          <h3>Idiomas</h3>
           <p>Português (nativo) · Inglês (fluente) · Espanhol (intermediário)</p>
         </div>
       </div>
-      <div class="site-panel" style="padding:20px 22px; margin-top:18px;">
-        <h3 style="margin-top:0;">Certificação</h3>
+      <div class="site-panel site-panel--body">
+        <h3>Certificação</h3>
         <p><strong>Inteligência Artificial Agêntica Aplicada à Transformação Empresarial</strong><br>MIT Professional Education, jul 2026, 70 horas.</p>
       </div>
-      <div style="margin-top:28px;">
+      <div class="site-actions">
         <a class="site-btn site-btn--secondary" href="contato.html">Entre em contato →</a>
       </div>
     </section>
 
     <footer class="site-footer">
       <span class="site-cover__tagline">fael.tech · trajetória</span>
-      <img src="brand/assets/faeltech-mark-circle.svg" width="20" height="20" alt="">
+      <span class="ds-mark ds-mark--circle" aria-hidden="true"></span>
     </footer>
 
-  </div>
+  </main>
 
   <script defer src="/_vercel/insights/script.js"></script>
   <script defer src="/_vercel/speed-insights/script.js"></script>
+  <script src="assets/canvas.js"></script>
+  <script src="assets/hero.js"></script>
   <script src="assets/main.js"></script>
 </body>
 </html>
