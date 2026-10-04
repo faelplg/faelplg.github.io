@@ -24,14 +24,17 @@ en/
   sobre.html                  → en · Career
   contato.html                → en · Contact
 assets/
-  site.css                    → CSS do site inteiro (consome tokens de brand/tokens.css)
-  main.js                      → topbar global, scroll-spy do manual, menus mobile
+  site.css, hero.css          → cópias exatas do fael-tech-design-system (componentes e heróis)
+  canvas.js, hero.js          → cópias exatas do fael-tech-design-system (palcos animados dos heróis)
+  main.css                    → estilos próprios do site (consome tokens semânticos de brand/tokens.css)
+  main.js                      → menu da barra do hero, scroll-spy do manual, menu lateral mobile
   img/
-    fael-portrait.jpg           → retrato de perfil
+    avatar/avatar-busto.png     → avatar em busto do hero da home
+    fael-portrait.jpg           → retrato de perfil (fora de uso desde o hero novo)
     foundation-horizon.jpg      → arte original da página Horizonte
 brand/          → fonte única de verdade da marca - NÃO modificar a partir deste projeto
   manual-identidade-visual.html   → manual original imprimível
-  tokens.css                → tokens de cor/tipografia/liquid glass (--ft-*)
+  tokens.css                → tokens primitivos e semânticos, claro/escuro, espaço, tipografia (--ft-*)
   assets/*.svg               → símbolo, ícone, favicon
   README.md                  → guia rápido do kit de marca
 docs/

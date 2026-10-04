@@ -8,46 +8,60 @@
 <link rel="icon" href="../brand/assets/faeltech-favicon.svg">
 <link rel="alternate" hreflang="pt-BR" href="../manual.html">
 <link rel="alternate" hreflang="en" href="manual.html">
+<meta name="color-scheme" content="light dark" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600..700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" />
 <link rel="stylesheet" href="../brand/tokens.css">
 <link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/hero.css">
+<link rel="stylesheet" href="../assets/main.css">
 </head>
 <body>
 
-  <header class="site-topbar">
-    <div class="site-topbar__inner">
-      <a class="site-topbar__brand" href="index.html">
-        <img src="../brand/assets/faeltech-mark.svg" width="26" height="26" alt="">
-        <span class="site-word" style="font-size:19px;">fael<span class="tld">.tech</span></span>
-      </a>
-      <button class="site-topbar__toggle" type="button" data-topbar-toggle aria-expanded="false" aria-controls="site-topbar-nav">☰</button>
-      <nav class="site-topbar__nav" id="site-topbar-nav" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="manual.html" class="site-topbar__link--active" aria-current="page">Brand manual</a>
-        <!-- <a href="horizonte.html">Horizon</a> -->
-        <a href="sobre.html">Career</a>
-        <a href="contato.html">Contact</a>
-        <a class="site-topbar__lang" href="../manual.html" hreflang="pt-BR" lang="pt-BR">EN->PT</a>
-      </nav>
-    </div>
-  </header>
+  <a class="site-skip" href="#main">Skip to content</a>
 
-  <!-- ═══ Cover ═══ -->
-  <header class="site-cover">
-    <img src="../brand/assets/faeltech-mark-circle.svg" width="120" height="120" alt="fael.tech symbol">
-    <h1 class="site-cover__word">fael<span class="tld">.tech</span></h1>
-    <div class="site-cover__tagline">Brand identity manual · v3.0</div>
-    <p class="site-cover__lead">
-      <strong>Forward through technology — technology is not the destination, it's how we move forward.</strong><br>
-      Browse the symbol, lockups, colors, typography and usage rules for the fael.tech brand — and
-      download the official assets directly from each section.
-    </p>
-    <div class="site-cover__actions">
-      <a class="site-btn site-btn--primary" href="#assets">View kit assets</a>
-      <a class="site-btn site-btn--secondary" href="../brand/manual-identidade-visual.html" target="_blank" rel="noopener">Open printable manual</a>
-    </div>
-  </header>
+  <div class="site-stage site-container">
+    <header class="ds-hero ds-hero--page ds-hero--halftone" data-hero="halftone">
+      <canvas class="ds-hero__canvas" aria-hidden="true"></canvas>
+      <div class="ds-hero__bar">
+        <a class="ds-hero__brand" href="index.html"><span class="ds-mark" aria-hidden="true"></span><span class="site-word">fael<span class="tld">.tech</span></span></a>
+        <button class="site-menu-btn" type="button" hidden data-menu-toggle aria-expanded="false" aria-controls="site-menu">
+          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          Menu
+        </button>
+        <nav class="site-menu" id="site-menu" data-menu aria-label="Main navigation">
+          <ul class="ds-hero__nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="manual.html" aria-current="page">Brand manual</a></li>
+            <!-- <li><a href="horizonte.html">Horizon</a></li> -->
+            <li><a href="sobre.html">Career</a></li>
+            <li><a href="contato.html">Contact</a></li>
+            <li><a class="site-lang" href="../manual.html" hreflang="pt-BR" lang="pt-BR">EN->PT</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="ds-hero__body">
+        <ol class="ds-hero__crumbs" aria-label="You are here">
+          <li><a href="index.html">fael.tech</a></li>
+          <li aria-current="page">Brand manual</li>
+        </ol>
+        <h1 class="ds-hero__title site-hero-word">fael<span class="tld">.tech</span></h1>
+        <p class="site-cover__tagline">Brand identity manual · v3.0</p>
+        <p class="ds-hero__lead">
+        <strong>Forward through technology — technology is not the destination, it's how we move forward.</strong><br>
+        Browse the symbol, lockups, colors, typography and usage rules for the fael.tech brand — and
+        download the official assets directly from each section.
+      </p>
+        <div class="ds-hero__actions">
+          <a class="site-btn site-btn--primary" href="#assets">View kit assets</a>
+          <a class="site-btn site-btn--secondary" href="../brand/manual-identidade-visual.html" target="_blank" rel="noopener">Open printable manual</a>
+        </div>
+      </div>
+    </header>
+  </div>
 
-  <div class="site-layout">
+  <div class="site-layout site-page site-container">
     <button class="site-nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">
       <span>Brand sections</span>
       <span aria-hidden="true">☰</span>
@@ -65,7 +79,7 @@
       <a class="site-nav__link" href="#assets" data-nav-target="assets"><span class="site-nav__num">09</span>Kit assets</a>
     </nav>
 
-    <main class="site-main">
+    <main class="site-main" id="main">
 
       <!-- ═══ 01 Concept ═══ -->
       <section class="site-section" id="conceito">
@@ -88,20 +102,20 @@
         <h3>Brand essence</h3>
         <p>Three core ideas structure fael.tech:</p>
         <div class="site-grid-3">
-          <div class="site-panel" style="padding:18px 20px;">
+          <div class="site-panel site-panel--body">
             <div class="site-eyebrow">Direction</div>
-            <p style="margin:8px 0 0;">Technology needs to be connected to an intention — understanding the problem and desired outcome before building.</p>
+            <p>Technology needs to be connected to an intention — understanding the problem and desired outcome before building.</p>
           </div>
-          <div class="site-panel" style="padding:18px 20px;">
+          <div class="site-panel site-panel--body">
             <div class="site-eyebrow">Motion</div>
-            <p style="margin:8px 0 0;">Knowledge needs to generate motion — strategy, architecture, design and engineering turning ideas into something concrete.</p>
+            <p>Knowledge needs to generate motion — strategy, architecture, design and engineering turning ideas into something concrete.</p>
           </div>
-          <div class="site-panel" style="padding:18px 20px;">
+          <div class="site-panel site-panel--body">
             <div class="site-eyebrow">Impact</div>
-            <p style="margin:8px 0 0;">Technological motion only has value when it produces real transformation — better products, organizations and experiences.</p>
+            <p>Technological motion only has value when it produces real transformation — better products, organizations and experiences.</p>
           </div>
         </div>
-        <p style="margin-top:20px;">Secondary signature, used in presentations and institutional content: <strong>Direction. Motion. Impact.</strong></p>
+        <p>Secondary signature, used in presentations and institutional content: <strong>Direction. Motion. Impact.</strong></p>
       </section>
 
       <!-- ═══ 02 Symbol ═══ -->
@@ -109,25 +123,25 @@
         <div class="site-section__head"><span class="site-section__num">02</span><h2>Symbol</h2></div>
         <div class="site-grid-2">
           <div>
-            <div class="site-panel site-specimen" style="padding:56px 24px;">
+            <div class="site-panel site-specimen site-specimen--tall">
               <img src="../brand/assets/faeltech-mark-circle.svg" width="160" height="160" alt="fael.tech symbol with circle">
             </div>
             <div class="site-cap">With circle — standalone symbol, favicon, app icon and vertical lockups</div>
           </div>
           <div>
-            <div class="site-panel site-specimen" style="padding:56px 24px;">
+            <div class="site-panel site-specimen site-specimen--tall">
               <img src="../brand/assets/faeltech-mark.svg" width="160" height="160" alt="fael.tech symbol without circle">
             </div>
             <div class="site-cap">Without circle — next to the wordmark, in horizontal lockups</div>
           </div>
           <div>
-            <div class="site-specimen site-specimen--ink site-panel" style="padding:56px 24px; border:none;">
+            <div class="site-panel site-specimen site-specimen--ink site-specimen--tall">
               <img src="../brand/assets/faeltech-mark-circle-dark.svg" width="160" height="160" alt="fael.tech symbol with circle, dark background version">
             </div>
             <div class="site-cap">On dark backgrounds the symbol switches to #2DD4BF</div>
           </div>
           <div>
-            <div class="site-specimen site-specimen--ink site-panel" style="padding:56px 24px; border:none;">
+            <div class="site-panel site-specimen site-specimen--ink site-specimen--tall">
               <img src="../brand/assets/faeltech-mark-dark.svg" width="160" height="160" alt="fael.tech symbol without circle, dark background version">
             </div>
             <div class="site-cap">Circle-free version for dark backgrounds</div>
@@ -165,7 +179,7 @@
             <div class="site-cap">Horizontal lockup — the default. Pointer without circle on the left, height ≈ 1.1× the wordmark's x-height.</div>
           </div>
           <div>
-            <div class="site-specimen site-specimen--ink site-panel" style="border:none;">
+            <div class="site-panel site-specimen site-specimen--ink">
               <div class="site-lockup">
                 <img src="../brand/assets/faeltech-mark-dark.svg" width="46" height="46" alt="">
                 <span class="site-word on-ink">fael<span class="tld">.tech</span></span>
@@ -174,20 +188,20 @@
             <div class="site-cap">Dark background version — text in paper, symbol and .tech in light teal.</div>
           </div>
           <div>
-            <div class="site-panel site-specimen" style="background:var(--ft-surface);">
-              <div style="display:flex; flex-direction:column; align-items:center;">
+            <div class="site-panel site-specimen">
+              <div class="site-lockup site-lockup--stack">
                 <img src="../brand/assets/faeltech-mark-circle.svg" width="64" height="64" alt="">
-                <span class="site-word" style="font-size:24px; margin-top:12px;">fael<span class="tld">.tech</span></span>
+                <span class="site-word">fael<span class="tld">.tech</span></span>
                 <span class="site-cover__tagline">Forward through technology</span>
               </div>
             </div>
             <div class="site-cap">Vertical lockup with circle — covers, presentation openers, signatures.</div>
           </div>
           <div>
-            <div class="site-specimen site-specimen--muted site-panel" style="border:none;">
+            <div class="site-panel site-specimen site-specimen--muted">
               <div class="site-lockup">
                 <img src="../brand/assets/faeltech-mark-ink.svg" width="46" height="46" alt="">
-                <span class="site-word" style="color:var(--ft-ink);">fael<span style="color:var(--ft-ink);">.tech</span></span>
+                <span class="site-word site-word--ink">fael<span class="tld">.tech</span></span>
               </div>
             </div>
             <div class="site-cap">1 color (ink) — stamping, embossing, monochrome printing. No teal .tech.</div>
@@ -195,21 +209,21 @@
         </div>
 
         <h3>Clear space</h3>
-        <div style="display:flex; align-items:center; gap:28px; flex-wrap:wrap;">
+        <div class="site-clearspace-row">
           <div class="site-clearspace">
             <div class="site-lockup">
-              <img src="../brand/assets/faeltech-mark.svg" width="46" height="46" alt="">
+              <span class="ds-mark" aria-hidden="true"></span>
               <span class="site-word">fael<span class="tld">.tech</span></span>
             </div>
           </div>
-          <p style="max-width:340px;">Keep a clear space equal to <strong>half the symbol's height</strong> on all sides of the lockup. Nothing enters this area — text, borders or other logos.</p>
+          <p>Keep a clear space equal to <strong>half the symbol's height</strong> on all sides of the lockup. Nothing enters this area — text, borders or other logos.</p>
         </div>
       </section>
 
       <!-- ═══ 04 Icon ═══ -->
       <section class="site-section" id="icone">
         <div class="site-section__head"><span class="site-section__num">04</span><h2>Icon and favicon</h2></div>
-        <div class="site-panel site-specimen" style="padding:40px 24px;">
+        <div class="site-panel site-specimen">
           <div class="site-icon-row">
             <div class="site-icon-wrap">
               <img src="../brand/assets/faeltech-mark-circle.svg" width="96" height="96" alt="">
@@ -252,13 +266,13 @@
           <div class="site-swatch"><div class="site-swatch__chip" style="background:var(--ft-teal-100);"></div><div class="site-swatch__meta"><div class="site-swatch__name">Teal 100 — detail</div><div class="site-swatch__hex">#5EEAD4</div></div></div>
         </div>
         <h3>Neutrals</h3>
-        <div class="site-grid-4" style="margin-bottom:16px;">
+        <div class="site-grid-4">
           <div class="site-swatch"><div class="site-swatch__chip" style="background:var(--ft-ink);"></div><div class="site-swatch__meta"><div class="site-swatch__name">Ink</div><div class="site-swatch__hex">#111827</div></div></div>
-          <div class="site-swatch"><div class="site-swatch__chip" style="background:var(--ft-paper); border-bottom:1px solid var(--ft-border);"></div><div class="site-swatch__meta"><div class="site-swatch__name">Paper</div><div class="site-swatch__hex">#F7F8F5</div></div></div>
-          <div class="site-swatch"><div class="site-swatch__chip" style="background:var(--ft-surface); border-bottom:1px solid var(--ft-border);"></div><div class="site-swatch__meta"><div class="site-swatch__name">Surface</div><div class="site-swatch__hex">#FFFFFF</div></div></div>
-          <div class="site-swatch"><div class="site-swatch__chip" style="background:var(--ft-surface-muted);"></div><div class="site-swatch__meta"><div class="site-swatch__name">Muted surface</div><div class="site-swatch__hex">#EEF2ED</div></div></div>
+          <div class="site-swatch"><div class="site-swatch__chip site-swatch__chip--edge" style="background:var(--ft-paper);"></div><div class="site-swatch__meta"><div class="site-swatch__name">Paper</div><div class="site-swatch__hex">#F7F8F5</div></div></div>
+          <div class="site-swatch"><div class="site-swatch__chip site-swatch__chip--edge" style="background:var(--ft-white);"></div><div class="site-swatch__meta"><div class="site-swatch__name">Surface</div><div class="site-swatch__hex">#FFFFFF</div></div></div>
+          <div class="site-swatch"><div class="site-swatch__chip" style="background:var(--ft-stone-100);"></div><div class="site-swatch__meta"><div class="site-swatch__name">Muted surface</div><div class="site-swatch__hex">#EEF2ED</div></div></div>
         </div>
-        <p style="margin-top:4px;"><strong>One brand color per application.</strong> The symbol is always flat — gradients and transparency belong to surfaces (section 06), never to the mark itself.</p>
+        <p><strong>One brand color per application.</strong> The symbol is always flat — gradients and transparency belong to surfaces (section 06), never to the mark itself.</p>
         <div class="site-download-row">
           <a class="site-download" href="../brand/tokens.css" download>⬇ tokens.css (all colors as custom properties)</a>
         </div>
@@ -276,21 +290,21 @@
         </p>
         <div class="site-grid-2">
           <div>
-            <div style="background:var(--ft-depth-bg); border-radius:12px; padding:44px 24px; display:flex; align-items:center; justify-content:center;">
-              <div class="ft-glass ft-glass--dark" style="padding:28px 40px; display:flex; flex-direction:column; align-items:center;">
+            <div class="site-glass-demo site-glass-demo--depth">
+              <div class="ft-glass ft-glass--dark">
                 <img src="../brand/assets/faeltech-mark-circle-white.svg" width="56" height="56" alt="">
-                <span class="site-word" style="font-size:22px; margin-top:12px; color:#FFFFFF;">fael<span style="color:var(--ft-teal-100);">.tech</span></span>
+                <span class="site-word">fael<span class="tld">.tech</span></span>
               </div>
             </div>
             <div class="site-cap">Glass panel over the depth gradient (<code class="site-code">--ft-depth-bg</code>) — the identity's only gradient, always behind the glass.</div>
           </div>
           <div>
-            <div style="background:var(--ft-paper); border:1px solid var(--ft-border); border-radius:12px; padding:44px 24px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;">
-              <div style="position:absolute; width:130px; height:130px; border-radius:50%; background:var(--ft-teal-300); opacity:0.35; filter:blur(6px); left:18%; top:-30px;"></div>
-              <div style="position:absolute; width:90px; height:90px; border-radius:50%; background:var(--ft-teal-500); opacity:0.25; filter:blur(6px); right:14%; bottom:-20px;"></div>
-              <div class="ft-glass" style="padding:16px 26px; display:flex; align-items:center; gap:12px; position:relative;">
+            <div class="site-glass-demo site-glass-demo--light site-scheme-light">
+              <div class="site-glass-demo__blob site-glass-demo__blob--one"></div>
+              <div class="site-glass-demo__blob site-glass-demo__blob--two"></div>
+              <div class="ft-glass">
                 <img src="../brand/assets/faeltech-mark.svg" width="30" height="30" alt="">
-                <span class="site-word" style="font-size:19px;">fael<span class="tld">.tech</span></span>
+                <span class="site-word">fael<span class="tld">.tech</span></span>
               </div>
             </div>
             <div class="site-cap">Glass over light — floating bar or card using <code class="site-code">.ft-glass</code>; the blur reveals what's behind it.</div>
@@ -309,18 +323,18 @@
       <!-- ═══ 07 Typography ═══ -->
       <section class="site-section" id="tipografia">
         <div class="site-section__head"><span class="site-section__num">07</span><h2>Typography</h2></div>
-        <div class="site-panel" style="padding:26px 28px; display:flex; flex-direction:column; gap:20px;">
-          <div style="display:flex; align-items:baseline; gap:20px; flex-wrap:wrap;">
-            <span style="font-size:30px; font-weight:700; letter-spacing:var(--ft-tracking-tight); width:280px;">fael<span style="color:var(--ft-teal);">.tech</span></span>
-            <span style="font-size:13px; color:var(--ft-text-muted);">Wordmark — IBM Plex Sans 700, lowercase, -0.025em tracking, <code class="site-code">.tech</code> in teal</span>
+        <div class="site-panel site-type-specimen">
+          <div class="site-type-row">
+            <span class="site-type-row__word">fael<span class="tld">.tech</span></span>
+            <span>Wordmark — IBM Plex Sans 700, lowercase, -0.025em tracking, <code class="site-code">.tech</code> in teal</span>
           </div>
-          <div style="display:flex; align-items:baseline; gap:20px; flex-wrap:wrap;">
-            <span style="font-size:22px; font-weight:600; width:280px;">Headings and interface</span>
-            <span style="font-size:13px; color:var(--ft-text-muted);">IBM Plex Sans 400–700, sentence case — never title case</span>
+          <div class="site-type-row">
+            <span class="site-type-row__title">Headings and interface</span>
+            <span>IBM Plex Sans 400–700, sentence case — never title case</span>
           </div>
-          <div style="display:flex; align-items:baseline; gap:20px; flex-wrap:wrap;">
-            <span style="font-family:var(--ft-font-mono); font-size:14px; width:280px;">FORWARD THROUGH TECHNOLOGY · $ deploy --prod</span>
-            <span style="font-size:13px; color:var(--ft-text-muted);">JetBrains Mono — tagline, uppercase eyebrows (0.06em tracking), commands and technical literals</span>
+          <div class="site-type-row">
+            <span class="site-type-row__mono">FORWARD THROUGH TECHNOLOGY · $ deploy --prod</span>
+            <span>JetBrains Mono — tagline, uppercase eyebrows (0.06em tracking), commands and technical literals</span>
           </div>
         </div>
       </section>
@@ -343,7 +357,7 @@
           </div>
           <div class="site-dont">
             <div class="site-dont__vis">
-              <svg width="60" height="60" viewBox="0 0 400 400"><path d="M208.99 0C255.205 0 297.554 16.4093 330.531 43.6606L312.256 48.5835L310.089 49.1695C281.622 28.775 246.712 16.8196 208.99 16.8196C160.9 16.8196 117.38 36.335 85.8667 67.8644C71.6918 82.0468 59.9183 98.6906 51.3079 117.093L30.6897 122.426C40.413 97.2842 55.2325 74.7212 73.9763 55.9676C108.535 21.3907 156.273 0 208.99 0ZM381.256 108.361C393.264 133.385 400 161.457 400 191.111C400 243.855 378.62 291.618 344.062 326.195C309.503 360.772 261.765 382.163 208.99 382.163H206.94L217.834 365.167C262.409 362.94 302.591 343.952 332.171 314.298C363.684 282.769 383.189 239.225 383.189 191.111C383.189 167.844 378.679 145.692 370.42 125.414L381.256 108.361ZM146.198 371.614C118.727 362.061 94.1258 346.355 73.9763 326.195C39.4175 291.618 18.0379 243.855 18.0379 191.111C18.0379 188.962 18.0768 186.833 18.1549 184.723L34.9072 194.686C35.8443 241.335 55.1153 283.589 85.8667 314.298C101.857 330.356 121.011 343.308 142.274 352.098L146.198 371.614Z" fill="var(--ft-teal)"/><path d="M263.581 261.905L147.37 291.97C154.34 326.664 161.252 361.416 168.281 396.111C168.691 398.103 170.155 399.568 172.147 399.92C174.138 400.272 176.013 399.451 177.067 397.752L188.723 379.232V379.35C189.27 378.568 189.816 377.748 190.363 376.888L263.581 261.905ZM70.989 196.561L351.618 123.539L369.073 96.2293C369.854 94.979 370.557 93.7483 371.182 92.5371L396.662 51.9825C397.716 50.283 397.657 48.2317 396.427 46.5908C395.256 44.9498 393.264 44.2467 391.331 44.7741L316.649 64.817L131.848 113.693C129.973 114.123 128.079 114.494 126.166 114.807L80.185 126.88L3.57007 146.922C1.6957 147.45 0.348493 148.974 0.0556223 150.908C-0.237249 152.9 0.641307 154.717 2.33996 155.713L51.8938 185.191L70.989 196.561ZM333.518 152.08L99.5145 213.556L135.889 235.181L142.918 269.876L281.739 233.423L333.518 152.08Z" fill="#F97316"/></svg>
+              <svg width="60" height="60" viewBox="0 0 400 400"><path d="M208.99 0C255.205 0 297.554 16.4093 330.531 43.6606L312.256 48.5835L310.089 49.1695C281.622 28.775 246.712 16.8196 208.99 16.8196C160.9 16.8196 117.38 36.335 85.8667 67.8644C71.6918 82.0468 59.9183 98.6906 51.3079 117.093L30.6897 122.426C40.413 97.2842 55.2325 74.7212 73.9763 55.9676C108.535 21.3907 156.273 0 208.99 0ZM381.256 108.361C393.264 133.385 400 161.457 400 191.111C400 243.855 378.62 291.618 344.062 326.195C309.503 360.772 261.765 382.163 208.99 382.163H206.94L217.834 365.167C262.409 362.94 302.591 343.952 332.171 314.298C363.684 282.769 383.189 239.225 383.189 191.111C383.189 167.844 378.679 145.692 370.42 125.414L381.256 108.361ZM146.198 371.614C118.727 362.061 94.1258 346.355 73.9763 326.195C39.4175 291.618 18.0379 243.855 18.0379 191.111C18.0379 188.962 18.0768 186.833 18.1549 184.723L34.9072 194.686C35.8443 241.335 55.1153 283.589 85.8667 314.298C101.857 330.356 121.011 343.308 142.274 352.098L146.198 371.614Z" fill="var(--ft-accent)"/><path d="M263.581 261.905L147.37 291.97C154.34 326.664 161.252 361.416 168.281 396.111C168.691 398.103 170.155 399.568 172.147 399.92C174.138 400.272 176.013 399.451 177.067 397.752L188.723 379.232V379.35C189.27 378.568 189.816 377.748 190.363 376.888L263.581 261.905ZM70.989 196.561L351.618 123.539L369.073 96.2293C369.854 94.979 370.557 93.7483 371.182 92.5371L396.662 51.9825C397.716 50.283 397.657 48.2317 396.427 46.5908C395.256 44.9498 393.264 44.2467 391.331 44.7741L316.649 64.817L131.848 113.693C129.973 114.123 128.079 114.494 126.166 114.807L80.185 126.88L3.57007 146.922C1.6957 147.45 0.348493 148.974 0.0556223 150.908C-0.237249 152.9 0.641307 154.717 2.33996 155.713L51.8938 185.191L70.989 196.561ZM333.518 152.08L99.5145 213.556L135.889 235.181L142.918 269.876L281.739 233.423L333.518 152.08Z" fill="#F97316"/></svg>
             </div>
             <div class="site-dont__lbl"><strong>Don't</strong> recolor the circle and pointer with different colors — always a single color</div>
           </div>
@@ -354,7 +368,7 @@
             <div class="site-dont__lbl"><strong>Don't</strong> distort the proportions</div>
           </div>
           <div class="site-dont">
-            <div class="site-dont__vis" style="background:var(--ft-teal);">
+            <div class="site-dont__vis site-dont__vis--accent">
               <svg width="60" height="60" viewBox="0 0 400 400"><path d="M265.302 244.575L148.332 278.412C155.348 317.46 162.305 356.574 169.38 395.622C169.793 397.865 171.266 399.514 173.271 399.91C175.275 400.306 177.162 399.382 178.223 397.469L189.956 376.626V376.758C190.506 375.878 191.056 374.955 191.606 373.988L265.302 244.575ZM71.4527 171.03L353.914 88.8439L371.483 58.1068C372.27 56.6997 372.977 55.3145 373.606 53.9513L399.252 8.30727C400.313 6.39444 400.254 4.08572 399.016 2.23885C397.837 0.391982 395.833 -0.399437 393.887 0.1942L318.717 22.7524L132.709 77.7627C130.822 78.2464 128.916 78.6642 126.99 79.016L80.7087 92.6036L3.59339 115.162C1.70677 115.756 0.350769 117.47 0.0559856 119.647C-0.238798 121.89 0.645495 123.935 2.35524 125.056L52.2327 158.233L71.4527 171.03ZM335.697 120.966L100.164 190.158L136.777 214.497L143.851 253.545L283.579 212.518L335.697 120.966Z" fill="#115E59"/></svg>
             </div>
             <div class="site-dont__lbl"><strong>Don't</strong> use with low contrast — over teal, use the white version</div>
@@ -371,7 +385,7 @@
       <!-- ═══ 09 Assets ═══ -->
       <section class="site-section" id="assets">
         <div class="site-section__head"><span class="site-section__num">09</span><h2>Kit assets</h2></div>
-        <div class="site-panel" style="overflow:hidden;">
+        <div class="site-panel site-panel--clip">
           <table class="site-filetable">
             <tbody>
               <tr>
@@ -436,12 +450,12 @@
     fael&lt;span style="color:<span class="t">var(--ft-teal)</span>"&gt;.tech&lt;/span&gt;
   &lt;/span&gt;
 &lt;/div&gt;</div>
-        <p style="margin-top:20px;">For the complete, printable specification, see the <a href="../brand/manual-identidade-visual.html" target="_blank" rel="noopener">original visual identity manual</a>.</p>
+        <p>For the complete, printable specification, see the <a href="../brand/manual-identidade-visual.html" target="_blank" rel="noopener">original visual identity manual</a>.</p>
       </section>
 
       <footer class="site-footer">
         <span class="site-cover__tagline">fael.tech · brand manual · v3.0</span>
-        <img src="../brand/assets/faeltech-mark-circle.svg" width="20" height="20" alt="">
+        <span class="ds-mark ds-mark--circle" aria-hidden="true"></span>
       </footer>
 
     </main>
@@ -449,6 +463,8 @@
 
   <script defer src="/_vercel/insights/script.js"></script>
   <script defer src="/_vercel/speed-insights/script.js"></script>
+  <script src="../assets/canvas.js"></script>
+  <script src="../assets/hero.js"></script>
   <script src="../assets/main.js"></script>
 </body>
 </html>
