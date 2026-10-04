@@ -1,27 +1,145 @@
 /* ═══════════════════════════════════════════════
    fael.tech — tokens de marca
    AI as an Arrow · identidade visual v2.0
+
+   Duas camadas:
+   1. Primitivos: valores brutos (hex, rgba). Só este arquivo os usa.
+   2. Semânticos: nomes por função. Componentes consomem apenas estes.
+
+   Tema: cada semântico que muda com o tema usa light-dark(claro, escuro).
+   O valor segue o color-scheme do elemento, então:
+   - :root segue o sistema, ou o data-theme="light|dark" escolhido;
+   - qualquer trecho pode fixar um tema com color-scheme: light|dark.
    ═══════════════════════════════════════════════ */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+/* Fontes: quem consome este arquivo carrega as três famílias num único <link>:
+   https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600..700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap
+
+   Fallback métrico da Fraunces: Georgia ajustada para ocupar a mesma largura
+   e altura, então a troca de fonte (display=swap) não empurra o layout.
+   Largura medida nos títulos reais da página, em 375px e 1440px, contra a
+   Georgia Bold: 92.8% no peso 600 e 92.5% no 650. Medir no canvas não serve:
+   ele ignora o tamanho óptico e o letter-spacing de cada título.
+   Métricas verticais da Fraunces: ascent 0.98 em, descent 0.26 em,
+   divididas pelo size-adjust. */
+@font-face {
+  font-family: 'Fraunces Fallback';
+  src: local('Georgia Bold'), local('Georgia-Bold');
+  font-weight: 600;
+  size-adjust: 92.8%;
+  ascent-override: 105.6%;
+  descent-override: 28%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'Fraunces Fallback';
+  src: local('Georgia Bold'), local('Georgia-Bold');
+  font-weight: 650;
+  size-adjust: 92.5%;
+  ascent-override: 105.9%;
+  descent-override: 28.1%;
+  line-gap-override: 0%;
+}
+
+:root { color-scheme: light dark; }
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
 
 :root {
-  /* ── Cores de marca — escala teal ── */
+  /* ═══ 1. Primitivos ═══ */
+
+  /* ── Escala teal de marca ── */
   --ft-teal-900: #042F2E;    /* profundidade — fundos imersivos */
+  --ft-teal-800: #115E59;    /* hover no claro — 7.6:1 com texto branco */
   --ft-teal-700: #0F766E;    /* marca — fundos claros */
-  --ft-teal-500: #14B8A6;    /* interação — hover, links, realces */
+  --ft-teal-500: #14B8A6;    /* realce — anéis, pressionado no escuro */
   --ft-teal-300: #2DD4BF;    /* marca — fundos escuros */
   --ft-teal-100: #5EEAD4;    /* detalhe — texto ativo sobre escuro */
-  --ft-teal: var(--ft-teal-700);
-  --ft-teal-light: var(--ft-teal-300);
 
   /* ── Neutros ── */
   --ft-ink: #111827;         /* tinta — texto e 1 cor */
   --ft-paper: #F7F8F5;       /* papel — canvas padrão */
-  --ft-surface: #FFFFFF;
-  --ft-surface-muted: #EEF2ED;
-  --ft-border: #D9DED7;
-  --ft-text: #111827;
-  --ft-text-muted: #6B7280;
+  --ft-white: #FFFFFF;
+  --ft-stone-100: #EEF2ED;
+  --ft-stone-200: #D9DED7;
+  --ft-stone-300: #BFC8BD;
+  --ft-gray-500: #636A76;   /* 5.1:1 sobre paper, 4.8:1 sobre stone-100 */
+  --ft-slate-200: #E2E8F0;
+  --ft-slate-400: #94A3B8;  /* 6.9:1 sobre ink */
+  --ft-ivory: #FFFDF0;       /* fundo marfim quente do deck do avatar */
+
+  /* ── Neutros noturnos (modo escuro, levemente esverdeados como o papel) ── */
+  --ft-night-950: #0A0F10;
+  --ft-night-900: #121A1B;
+  --ft-night-800: #1A2426;
+  --ft-night-700: #263133;
+  --ft-night-600: #3A4749;
+  --ft-mist-400: #9AA3A0;
+  --ft-mist-200: #E6EBE8;
+
+  /* ── Estado ── */
+  --ft-green-500: #10B981;
+
+  /* ═══ 2. Semânticos ═══ */
+
+  /* ── Fundos ── */
+  --ft-bg: light-dark(var(--ft-paper), var(--ft-night-950));            /* canvas da página */
+  --ft-bg-raised: light-dark(var(--ft-white), var(--ft-night-900));      /* cards, painéis, campos */
+  --ft-bg-sunken: light-dark(var(--ft-stone-100), var(--ft-night-800));  /* áreas recuadas, hover de lista, código inline */
+  --ft-bg-inverse: var(--ft-ink);        /* blocos que ficam escuros em qualquer tema */
+
+  /* ── Texto ── */
+  --ft-fg: light-dark(var(--ft-ink), var(--ft-mist-200));
+  --ft-fg-muted: light-dark(var(--ft-gray-500), var(--ft-mist-400));
+  --ft-fg-inverse: var(--ft-paper);      /* texto sobre --ft-bg-inverse */
+
+  /* ── Linhas ── */
+  --ft-line: light-dark(var(--ft-stone-200), var(--ft-night-700));
+  --ft-line-strong: light-dark(var(--ft-stone-300), var(--ft-night-600));
+  --ft-line-inverse: rgba(255, 255, 255, 0.2);   /* linhas sobre --ft-bg-inverse */
+
+  /* ── Destaque (marca) ── */
+  --ft-accent: light-dark(var(--ft-teal-700), var(--ft-teal-300));
+  --ft-accent-hover: light-dark(var(--ft-teal-800), var(--ft-teal-100));
+  --ft-accent-pressed: light-dark(var(--ft-teal-900), var(--ft-teal-500));
+  --ft-accent-ring: light-dark(rgba(20, 184, 166, 0.18), rgba(45, 212, 191, 0.24));
+  --ft-on-accent: light-dark(var(--ft-white), var(--ft-ink));
+
+  /* Destaque sobre fundo inverso (escuro) */
+  --ft-accent-inverse: var(--ft-teal-300);
+  --ft-accent-inverse-strong: var(--ft-teal-100);  /* texto de destaque sobre escuro */
+  --ft-accent-inverse-hover: var(--ft-accent-inverse-strong);
+  --ft-on-accent-inverse: var(--ft-ink);
+
+  /* ── Estado ── */
+  --ft-success: var(--ft-green-500);
+  --ft-success-glow: rgba(16, 185, 129, 0.4);
+
+  /* ── Código ── */
+  --ft-code-bg: var(--ft-ink);
+  --ft-code-fg: var(--ft-slate-200);
+  --ft-code-comment: var(--ft-slate-400);
+  --ft-code-token: var(--ft-teal-300);
+
+  /* ── Elevação ── */
+  --ft-shadow-sm: 0 4px 12px light-dark(rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.4));
+  --ft-shadow-md: 0 8px 20px light-dark(rgba(4, 47, 46, 0.12), rgba(0, 0, 0, 0.5));
+  --ft-shadow-lg: 0 12px 32px light-dark(rgba(4, 47, 46, 0.08), rgba(0, 0, 0, 0.45));
+  --ft-shadow-accent: 0 16px 36px light-dark(rgba(15, 118, 110, 0.16), rgba(45, 212, 191, 0.14));
+  --ft-shadow-drawer: 16px 0 40px light-dark(rgba(4, 47, 46, 0.12), rgba(0, 0, 0, 0.6));
+  --ft-scrim: light-dark(rgba(17, 24, 39, 0.32), rgba(0, 0, 0, 0.6));  /* véu atrás de gavetas e modais */
+
+  /* ── Centro óptico do ponteiro sem círculo ──
+     O SVG ocupa o quadro 400×400 inteiro, mas o peso visual do ponteiro está
+     em (51.9%, 38.8%). Deslocar metade do caminho é o ajuste óptico usual.
+     As versões com círculo já têm o anel no centro do próprio arquivo. */
+  --ft-mark-optical: -1% 5%;
+
+  /* ── Textura do fundo ──
+     Ruído SVG (160px, sem emenda) usado como máscara: onde o ruído é claro,
+     aparece --ft-grain. A cor com transparência dá a intensidade por tema. */
+  --ft-grain: light-dark(rgba(17, 24, 39, 0.05), rgba(230, 235, 232, 0.045));
+  --ft-grain-texture: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.6 0 0 0 -0.45'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 
   /* ── Liquid glass — o campo por onde a seta atravessa ──
      Superfícies translúcidas para camadas digitais.
@@ -37,13 +155,60 @@
   --ft-glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.6);
 
   /* Fundo imersivo padrão para camadas glass (nunca no símbolo) */
-  --ft-depth-bg: radial-gradient(120% 90% at 20% 10%, #0F766E 0%, #042F2E 70%);
+  --ft-depth-bg: radial-gradient(120% 90% at 20% 10%, var(--ft-teal-700) 0%, var(--ft-teal-900) 70%);
 
   /* ── Tipografia ── */
-  --ft-font-sans: 'IBM Plex Sans', system-ui, sans-serif;
-  --ft-font-mono: 'JetBrains Mono', ui-monospace, monospace;
-  --ft-tracking-tight: -0.025em; /* wordmark e títulos grandes */
+  --ft-font-display: 'Fraunces', 'Fraunces Fallback', Georgia, serif;  /* h1 e h2 */
+  --ft-font-sans: 'IBM Plex Sans', system-ui, sans-serif;                /* texto, botões, h3+ */
+  --ft-font-mono: 'JetBrains Mono', ui-monospace, monospace;             /* rótulos, números, código */
+  --ft-weight-display: 650;       /* h1 */
+  --ft-weight-display-sub: 600;   /* h2 */
+  --ft-tracking-display: -0.02em; /* títulos em Fraunces */
+  --ft-tracking-tight: -0.025em; /* wordmark e títulos grandes em sans */
   --ft-tracking-wide: 0.06em;    /* eyebrows uppercase */
+
+  /* ── Espaçamento — escala base 4px ──
+     Todo margin, padding e gap deve sair desta escala. */
+  --ft-space-1: 4px;
+  --ft-space-2: 8px;
+  --ft-space-3: 12px;
+  --ft-space-4: 16px;
+  --ft-space-5: 20px;
+  --ft-space-6: 24px;
+  --ft-space-8: 32px;
+  --ft-space-10: 40px;
+  --ft-space-12: 48px;
+  --ft-space-16: 64px;
+  --ft-space-20: 80px;
+  --ft-space-24: 96px;
+
+  /* ── Raios ── */
+  --ft-radius-sm: 6px;
+  --ft-radius-md: 10px;
+  --ft-radius-lg: 16px;
+  --ft-radius-xl: 24px;
+
+  /* ── Movimento ── */
+  --ft-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ft-duration-fast: 120ms;
+  --ft-duration-base: 220ms;
+  --ft-duration-slow: 420ms;
+
+  /* ── Avatar — Identidade Ilustrada 2D ── */
+  --ft-avatar-size-xl: 120px;
+  --ft-avatar-size-lg: 64px;
+  --ft-avatar-size-md: 48px;
+  --ft-avatar-size-sm: 36px;
+  --ft-avatar-size-xs: 24px;
+  /* Raio do squircle: 25% do lado, ajustado à grade de 4px */
+  --ft-avatar-radius-xl: 32px;
+  --ft-avatar-radius-lg: 16px;
+  --ft-avatar-radius-md: 12px;
+  --ft-avatar-radius-sm: 8px;
+  --ft-avatar-radius-xs: 4px;
+  --ft-avatar-radius: var(--ft-avatar-radius-lg);
+  --ft-avatar-bg: var(--ft-ivory);
+  --ft-avatar-border: 1px solid var(--ft-line);
 }
 
 /* Superfície liquid glass pronta para uso */
