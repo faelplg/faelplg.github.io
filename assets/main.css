@@ -41,16 +41,12 @@
 .site-skip:focus { top: var(--ft-space-4); color: var(--ft-fg-inverse); }
 
 /* ── Moldura ──
-   Uma coluna de até 1120px com margem lateral fluida (ritmo do design system). */
-:root { --site-gutter: clamp(var(--ft-space-6), 5vw, var(--ft-space-20)); }
-.site-container {
-  width: min(1120px, 100% - 2 * var(--site-gutter));
-  margin-inline: auto;
-}
-/* O palco do hero fica dentro de um contêiner próprio: container query não
+   A coluna (.site-container) e a margem lateral vêm do design system. O hero
+   é uma faixa da largura da tela que recua o conteúdo para a mesma linha.
+   O palco do hero fica dentro de um contêiner próprio: container query não
    consulta o elemento em si, então as regras de palco estreito do hero.css
    (inclusive a altura mínima de página interna) dependem deste ancestral. */
-.site-stage { container-type: inline-size; margin-top: var(--ft-space-6); }
+.site-stage { container-type: inline-size; }
 .site-page { padding: var(--ft-space-16) 0 var(--ft-space-24); }
 
 /* ── Hero: complementos do site ── */
@@ -122,17 +118,14 @@
 }
 
 /* ── Seções de página ──
-   :where() deixa a especificidade em zero, então componentes (.site-pillar p,
-   .site-node__text...) continuam mandando nos próprios textos. */
+   O parágrafo da seção vem do .site-text do design system. :where() deixa a
+   especificidade em zero, então componentes continuam mandando nos próprios textos. */
 .site-section { scroll-margin-top: var(--ft-space-6); }
 .site-page .site-section + .site-section { margin-top: var(--ft-space-16); }
 :where(.site-section) h3 { margin: var(--ft-space-8) 0 var(--ft-space-3); font-size: 17px; font-weight: 600; line-height: 1.35; }
-:where(.site-section) p { margin: 0 0 var(--ft-space-4); max-width: 720px; color: var(--ft-fg-muted); }
 :where(.site-section) :is(p, li) strong { color: var(--ft-fg); }
 /* Texto que fecha uma grade, um painel ou um bloco de código */
 :where(.site-section) :is(.site-grid-2, .site-grid-3, .site-grid-4, .site-grid-5, .site-panel, .site-codeblock) + p { margin-top: var(--ft-space-5); }
-/* Pilares dentro de uma seção ocupam a coluna, sem a moldura de página */
-.site-section .site-pillars { max-width: none; margin: 0; padding: 0; }
 .site-section * + .site-pillars { margin-top: var(--ft-space-5); }
 
 .site-block { margin-top: var(--ft-space-8); }
@@ -375,9 +368,11 @@
   width: min(1184px, 100%);
   margin-inline: auto;
 }
-/* alinha a marca à coluna do texto do hero (32px de cada lado) */
+/* Fora de um .ds-hero não há --hero-inset: a barra recua 24px e, com espaço,
+   32px, alinhando a marca à coluna do texto do hero de 1184px */
+.foundation-bar .ds-hero__bar { --hero-inset: var(--ft-space-6); }
 @container (min-width: 641px) {
-  .foundation-bar .ds-hero__bar { padding-inline: var(--ft-space-8); }
+  .foundation-bar .ds-hero__bar { --hero-inset: var(--ft-space-8); }
 }
 
 .foundation-hero {

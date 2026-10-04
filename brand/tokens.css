@@ -167,6 +167,25 @@
   --ft-tracking-tight: -0.025em; /* wordmark e títulos grandes em sans */
   --ft-tracking-wide: 0.06em;    /* eyebrows uppercase */
 
+  /* ── Texto corrido: três papéis ──
+     lead abre a página ou a seção, body é o parágrafo comum, small vive
+     dentro de cards e listas. Quem usa: .site-text e o lead do hero. */
+  --ft-text-lead-size: 18px;
+  --ft-text-lead-leading: 1.55;
+  --ft-text-body-size: 16px;
+  --ft-text-body-leading: 1.6;
+  --ft-text-small-size: 14px;
+  --ft-text-small-leading: 1.55;
+  /* Largura de linha em ch: acompanha o tamanho da fonte de quem a usa */
+  --ft-measure: 65ch;         /* body */
+  --ft-measure-narrow: 44ch;  /* lead, small e texto centralizado */
+
+  /* ── Página ──
+     A linha de alinhamento do site: uma coluna de até 1120px com margem
+     lateral fluida. Texto e caixas começam nela, inclusive dentro do hero. */
+  --ft-page-max: 1120px;
+  --ft-gutter: clamp(var(--ft-space-6), 5vw, var(--ft-space-20));
+
   /* ── Espaçamento — escala base 4px ──
      Todo margin, padding e gap deve sair desta escala. */
   --ft-space-1: 4px;
