@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  html:
+    name: HTML validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+      - run: bun run lint:html
+
+  links:
+    name: Internal links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      # Offline: só links locais (páginas, assets, âncoras). /_vercel/* é injetado pela Vercel no deploy.
+      - uses: lycheeverse/lychee-action@v2
+        with:
+          fail: true
+          args: >-
+            --offline
+            --include-fragments
+            --no-progress
+            --root-dir ${{ github.workspace }}
+            --exclude '/_vercel/'
+            './*.html' './en/*.html'

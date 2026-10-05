@@ -3,10 +3,13 @@
    O Busto abre a home; Agulhas e Retícula abrem páginas internas
    (.ds-hero--page). Três palcos independentes da documentação: este arquivo, o canvas.js e
    o hero.js podem ir para o site sem levar o design-system.css.
+   O palco é uma faixa da largura da tela, sem moldura. Barra, texto e busto
+   ficam na linha do .site-container (--hero-inset), a mesma do texto abaixo.
    Cor só por tokens semânticos; margin, padding e gap só por --ft-space-*.
    ═══════════════════════════════════════════════ */
 
 /* ── Palco ── */
+/* A borda de baixo é o chão do busto e o limite do campo do canvas */
 .ds-hero {
   position: relative;
   isolation: isolate;
@@ -15,11 +18,14 @@
   flex-direction: column;
   min-height: 560px;
   overflow: hidden;
-  border: 1px solid var(--ft-line);
-  border-radius: var(--ft-radius-lg);
-  background: var(--ft-bg);
+  border-bottom: 1px solid var(--ft-line);
+  background: var(--ft-bg-sunken);
   color: var(--ft-fg);
 }
+/* Recuo lateral do conteúdo: a mesma conta do .site-container
+   (min(--ft-page-max, 100% - 2 × --ft-gutter), centralizado), feita na largura
+   do palco. Fica nos filhos porque cqi não consulta o próprio contêiner. */
+.ds-hero > * { --hero-inset: max(var(--ft-gutter), (100cqi - var(--ft-page-max)) / 2); }
 
 /* Camada de creative coding: sempre atrás do conteúdo e fora da leitura */
 .ds-hero__canvas {
@@ -37,7 +43,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--ft-space-4);
-  padding: var(--ft-space-6) var(--ft-space-12) 0;
+  padding: var(--ft-space-6) var(--hero-inset) 0;
 }
 .ds-hero__brand {
   display: inline-flex;
@@ -74,7 +80,7 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
-  padding: var(--ft-space-12);
+  padding: var(--ft-space-12) var(--hero-inset);
 }
 .ds-hero__title {
   margin: 0;
@@ -87,10 +93,10 @@
 }
 .ds-hero__title .tld { color: var(--ft-accent); }
 .ds-hero__lead {
-  max-width: 44ch;
+  max-width: var(--ft-measure-narrow);
   margin: var(--ft-space-5) 0 0;
-  font-size: 17px;
-  line-height: 1.55;
+  font-size: var(--ft-text-lead-size);
+  line-height: var(--ft-text-lead-leading);
   color: var(--ft-fg-muted);
   text-wrap: pretty;
 }
@@ -147,18 +153,17 @@
 .ds-hero--bust {
   --hero-px: 0;
   --hero-py: 0;
-  background: var(--ft-bg-sunken);
 }
 /* a largura do busto depende do palco, então é definida nos filhos (cqi) */
 .ds-hero--bust > * { --hero-bust-w: min(392px, 46cqi); }
 .ds-hero--bust .ds-hero__body {
-  /* o texto termina 24px antes do busto, que fica a 48px da borda direita */
-  max-width: calc(100% - var(--hero-bust-w) - var(--ft-space-12) - var(--ft-space-6));
+  /* o texto termina 24px antes do busto, que fica na linha direita do container */
+  max-width: calc(100% - var(--hero-bust-w) - var(--hero-inset) - var(--ft-space-6));
   padding-right: 0;
 }
 .ds-hero__figure {
   position: absolute;
-  right: var(--ft-space-12);
+  right: var(--hero-inset);
   bottom: 0;
   z-index: -1;
   width: var(--hero-bust-w);
@@ -200,18 +205,20 @@
 
 /* ── 3 · Retícula ── */
 /* Palco escuro nos dois temas: o esquema fica no próprio componente, para valer
-   fora da documentação. Fundo, texto e as cores que o shader lê da sonda seguem ele. */
-.ds-hero--halftone { color-scheme: dark; }
+   fora da documentação. Fundo, texto e as cores que o shader lê da sonda seguem ele.
+   O fundo é o --ft-bg que o shader pinta, para o campo não ter emenda; no tema
+   escuro a faixa se separa da página pela linha de baixo. */
+.ds-hero--halftone { color-scheme: dark; background: var(--ft-bg); }
 .ds-hero--halftone .ds-hero__title { max-width: 10em; }
 
 /* ── Página interna: campo fora do texto ── */
 /* No palco baixo o texto ocupa uma fatia maior: o campo abre só depois dele
    e abaixo da barra. Vem depois das regras de cada hero para valer sobre elas.
-   A borda do campo segue o fim do texto de apoio (padding + 44ch), não a largura
-   do palco: com a fonte do texto de apoio aqui, 44ch dá a mesma medida. */
+   A borda do campo segue o fim do texto de apoio (recuo + medida), não a largura
+   do palco: com a fonte do texto de apoio aqui, a medida em ch dá a mesma largura. */
 .ds-hero--page .ds-hero__canvas {
-  font-size: 17px;
-  --hero-text-end: calc(var(--ft-space-12) + 44ch);
+  font-size: var(--ft-text-lead-size);
+  --hero-text-end: calc(var(--hero-inset) + var(--ft-measure-narrow));
   --hero-mask: linear-gradient(to right, transparent var(--hero-text-end), black calc(var(--hero-text-end) + 160px)), linear-gradient(to bottom, transparent 64px, black 128px);
   -webkit-mask-image: var(--hero-mask);
   mask-image: var(--hero-mask);
@@ -234,7 +241,7 @@
    Texto em cima, busto embaixo, apoiado na borda. */
 @container (max-width: 760px) {
   .ds-hero--bust > * { --hero-bust-w: 264px; }
-  .ds-hero--bust .ds-hero__body { flex: none; max-width: none; padding-right: var(--ft-space-12); }
+  .ds-hero--bust .ds-hero__body { flex: none; max-width: none; padding-right: var(--hero-inset); }
   .ds-hero__figure {
     position: relative;
     right: auto;
@@ -243,11 +250,10 @@
   }
 }
 @container (max-width: 640px) {
-  .ds-hero__bar { padding: var(--ft-space-5) var(--ft-space-6) 0; }
+  .ds-hero__bar { padding-top: var(--ft-space-5); }
   .ds-hero__nav { display: none; }
-  .ds-hero__body { padding: var(--ft-space-8) var(--ft-space-6); }
-  .ds-hero--bust .ds-hero__body { padding-right: var(--ft-space-6); }
-  .ds-hero__lead { font-size: 16px; }
+  .ds-hero__body { padding-block: var(--ft-space-8); }
+  .ds-hero__lead { font-size: var(--ft-text-body-size); line-height: var(--ft-text-body-leading); }
 
   .ds-hero--needles .ds-hero__canvas {
     --hero-mask: linear-gradient(to top, transparent 48%, black 80%), linear-gradient(to bottom, transparent 56px, black 104px);

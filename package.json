@@ -4,7 +4,8 @@
   "type": "module",
   "private": true,
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "html-validate": "^11.16.2"
   },
   "peerDependencies": {
     "typescript": "^5"
@@ -12,5 +13,8 @@
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0"
+  },
+  "scripts": {
+    "lint:html": "html-validate \"*.html\" \"en/*.html\""
   }
 }
