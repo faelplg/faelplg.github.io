@@ -1004,7 +1004,7 @@
 /* o link do título cobre o card inteiro */
 .study-card__link::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
 .study-card__link:focus-visible { outline: none; }
-.study-card:has(.study-card__link:focus-visible) { outline: 2px solid var(--ft-accent-ring); outline-offset: 2px; }
+.study-card:has(.study-card__link:focus-visible) { outline: 2px solid var(--ft-accent); outline-offset: 2px; }
 .study-card .site-node__id time { white-space: nowrap; }
 .study-card__updated { color: var(--ft-fg-muted); }
 /* Rodapé do card: estado à esquerda, convite de leitura à direita */
@@ -1158,25 +1158,6 @@
   .study-card__read,
   .study-card__read span { transition: none; }
   .study-card:hover .study-card__read span { translate: none; }
-}
-
-/* Link de leitura: a seta anda um pouco no hover */
-.home-link {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--ft-space-2);
-  font-weight: 600;
-  color: var(--ft-accent);
-  text-decoration: none;
-}
-.home-link::after {
-  content: "→";
-  transition: translate var(--ft-duration-fast) var(--ft-ease-out);
-}
-.home-link:hover::after { translate: var(--ft-space-1) 0; }
-.home-archs .home-link { align-self: flex-start; }
-@media (prefers-reduced-motion: reduce) {
-  .home-link::after { transition: none; }
 }
 
 /* Link de leitura: a seta anda um pouco no hover */
