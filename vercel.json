@@ -1,0 +1,34 @@
+{
+  "redirects": [
+    {
+      "source": "/manual.html",
+      "destination": "/estudos/historia-da-fael-tech.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/manual.html",
+      "destination": "/en/studies/fael-tech-story.html",
+      "permanent": true
+    },
+    {
+      "source": "/horizonte.html",
+      "destination": "/longward.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/horizonte.html",
+      "destination": "/en/longward.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/sobre.html",
+      "destination": "/en/career.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/contato.html",
+      "destination": "/en/contact.html",
+      "permanent": true
+    }
+  ]
+}

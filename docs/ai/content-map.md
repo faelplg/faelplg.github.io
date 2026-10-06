@@ -1,7 +1,9 @@
 # docs/ai/content-map.md - Mapa de páginas (pt/en)
 
 > Mapa de propósito e principais afirmações de cada página do site, para agentes que precisem
-> localizar rapidamente onde uma informação está publicada.
+> localizar rapidamente onde uma informação está publicada. As páginas em inglês usam nomes de
+> arquivo em inglês. Endereços antigos (`manual.html`, `horizonte.html`, `en/sobre.html`,
+> `en/contato.html`) redirecionam pelo `vercel.json`.
 
 ## Início - `index.html` / `en/index.html`
 
@@ -10,8 +12,8 @@
   existe" (onde estuda, constrói e publica, e a assinatura do trabalho independente); "No que estou
   trabalhando" com architecture cards animados para Longward, AIKM (com trecho real do terminal) e
   Radiant (com trecho real do contrato de tarefa); "Vamos conversar" com consultorias e parcerias.
-- **Não contém:** linha do tempo de carreira (está em Trajetória) nem detalhes da identidade
-  visual (está no Manual da marca).
+- **Não contém:** linha do tempo de carreira (está em Trajetória). A história da marca está no
+  estudo "A história da fael.tech".
 
 ## Estudos - `estudos/` / `en/studies/`
 
@@ -32,38 +34,25 @@
 - **Regra:** estudos descrevem o funcionamento, não o histórico interno de desenvolvimento
   (datas de commits, registros de verificação, reusos observados).
 
-## Manual da marca - `manual.html` / `en/manual.html`
+## Longward - `longward.html` / `en/longward.html`
 
-- **Propósito:** especificação da identidade visual fael.tech (não é sobre a pessoa, é sobre a
-  marca fael.tech como produto de design).
-- **Conteúdo:** conceito (ponteiro, F+T, nave, trajetória, órbita), essência da marca
-  (Direction/Motion/Impact), símbolo, lockups, ícone/favicon, cores, liquid glass, tipografia,
-  usos incorretos, tabela de download de todos os assets oficiais.
-- **Fonte de verdade dos assets:** `brand/` - os SVGs e `tokens.css` não são modificados a partir
-  do site; o texto do conceito (seção 01) é mantido em paridade manual com
-  `brand/manual-identidade-visual.html`, que é o documento original imprimível da marca.
+- **Propósito:** apresentar a tese da Longward, a empresa que Fael está fundando.
+- **Conteúdo:** linha de metadados (empresa, em formação); a motivação a partir de *Fundação*, de
+  Isaac Asimov; a tese da continuidade coletiva; o papel da IA (sem apagar a origem); as quatro
+  perguntas que uma ideia precisa responder para virar produto; e como os produtos serão
+  construídos (processos agênticos semi-autônomos com o Radiant e outras metodologias; podem
+  começar gratuitos e ganhar planos pagos, premium ou para empresas; sem depender de prender a
+  atenção ou os dados das pessoas).
+- **Não contém, por decisão:** nomes, ideias ou experimentos de produto da Longward.
 
-## Horizonte - `horizonte.html` / `en/horizonte.html`
-
-- **Propósito:** apresentar uma proposta de evolução conceitual para a identidade fael.tech,
-  inspirada pela escala temporal, pela preservação do conhecimento e pelos futuros possíveis da
-  saga *Foundation*, de Isaac Asimov.
-- **Conteúdo:** princípios de horizonte longo, conhecimento como infraestrutura e preparação para
-  futuros possíveis; continuidade entre Direction/Motion/Impact e a nova linguagem; paleta oficial,
-  geometria orbital, demonstração de aplicação digital, voz e manifesto.
-- **Relação com a marca atual:** é uma exploração aplicada e explicitamente apresentada como
-  proposta conceitual. O manual e os assets em `brand/` continuam sendo a fonte oficial da marca.
-- **Imagem:** `assets/img/foundation-horizon.jpg` é uma arte original criada para a página a partir
-  do moodboard de referência. A luz quente existe apenas na imagem e não cria um novo token de cor.
-
-## Trajetória - `sobre.html` / `en/sobre.html`
+## Trajetória - `sobre.html` / `en/career.html`
 
 - **Propósito:** carreira profissional detalhada (equivalente a um currículo em formato web), em tom sóbrio.
 - **Conteúdo:** perfil em dois parágrafos, linha do tempo completa com entregas e responsabilidades
   por cargo, formação, pós-graduação em andamento, certificação do MIT e idiomas.
 - **Fatos citados aqui devem bater literalmente com** [facts.md](./facts.md).
 
-## Contato - `contato.html` / `en/contato.html`
+## Contato - `contato.html` / `en/contact.html`
 
 - **Propósito:** canais de contato.
 - **Conteúdo:** consultorias e parcerias pela fael.tech (engenharia e liderança técnica, IA no
