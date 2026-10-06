@@ -1,13 +1,10 @@
 # fael.tech - site pessoal e laboratório da marca
 
-Site pessoal estático de Rafael (Fael) Goulart, Software Engineer e estrategista de tecnologia,
-former CTO e DPO, com atuação em front-end, full stack, AI Engineering, arquitetura e segurança,
-e laboratório de aplicação da identidade
+Site pessoal estático de Rafael (Fael) Goulart, engenheiro de software especializado em UX e IA,
+cofundador de duas empresas e ex-CTO, e laboratório de aplicação da identidade
 visual da marca **fael.tech**. O próprio site, construído com os tokens e regras da marca, é a
 prova viva do sistema (não há uma página separada de "componentes"). Bilíngue: pt-BR na raiz,
 inglês em `en/`.
-
-**Forward through technology.**
 
 ## Estrutura
 
@@ -25,7 +22,7 @@ en/
   contato.html                → en · Contact
 assets/
   site.css, hero.css          → cópias exatas do fael-tech-design-system (componentes e heróis)
-  canvas.js, hero.js          → cópias exatas do fael-tech-design-system (palcos animados dos heróis)
+  canvas.js, hero.js, cards.js → cópias exatas do fael-tech-design-system (palcos animados dos heróis e dos architecture cards)
   main.css                    → estilos próprios do site (consome tokens semânticos de brand/tokens.css)
   main.js                      → menu da barra do hero, scroll-spy do manual, menu lateral mobile
   img/
