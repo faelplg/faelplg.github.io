@@ -32,6 +32,7 @@ assets/
   img/
     avatar/avatar-busto.png     → avatar em busto do hero da home
     fael-portrait.jpg           → retrato de perfil (fora de uso desde o hero novo)
+    og/fael-tech.png            → imagem de compartilhamento (Open Graph) de todas as páginas
 brand/          → fonte única de verdade da marca - NÃO modificar a partir deste projeto
   manual-identidade-visual.html   → manual original imprimível
   tokens.css                → tokens primitivos e semânticos, claro/escuro, espaço, tipografia (--ft-*)
@@ -42,6 +43,9 @@ docs/
     overview.md                → propósito do site, estrutura, tom de voz
     facts.md                    → fatos canônicos de carreira/bio (fonte única de números e datas)
     content-map.md              → mapa de páginas pt/en com propósito de cada uma
+    linkedin.md                 → textos oficiais do perfil no LinkedIn
+tools/
+  og-image.html              → fonte da imagem de compartilhamento (comando para gerar no comentário do topo)
 llms.txt                  → índice machine-readable na raiz (convenção llms.txt)
 vercel.json               → redirecionamentos de endereços antigos (manual, horizonte, en/sobre, en/contato)
 AGENTS.md                 → instruções para agentes de IA que trabalharem neste repositório

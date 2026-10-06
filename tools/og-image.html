@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+  Fonte da imagem de compartilhamento (Open Graph) do site: assets/img/og/fael-tech.png.
+  Para gerar de novo, a partir da raiz do repositório:
+
+  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --hide-scrollbars \
+    --window-size=1200,630 --virtual-time-budget=5000 \
+    --screenshot=assets/img/og/fael-tech.png "file://$PWD/tools/og-image.html"
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>fael.tech share image</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,600..700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=block" />
+<link rel="stylesheet" href="../brand/tokens.css">
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--ft-space-24) 96px;
+    background: var(--ft-bg);
+    color: var(--ft-fg);
+    font-family: var(--ft-font-sans);
+  }
+  .lockup { display: flex; align-items: center; gap: 20px; }
+  .lockup img { width: 64px; height: 64px; }
+  .word { font-size: 52px; font-weight: 700; letter-spacing: var(--ft-tracking-tight); line-height: 1; }
+  .word .tld { color: var(--ft-accent); }
+  .name {
+    margin: 0;
+    font-family: var(--ft-font-display);
+    font-weight: var(--ft-weight-display);
+    font-size: 88px;
+    line-height: 1.04;
+    letter-spacing: var(--ft-tracking-display);
+  }
+  .name .tld { color: var(--ft-accent); }
+  .line {
+    margin: var(--ft-space-5) 0 0;
+    font-family: var(--ft-font-mono);
+    font-size: 26px;
+    color: var(--ft-fg-muted);
+  }
+</style>
+</head>
+<body>
+  <div class="lockup">
+    <img src="../brand/assets/faeltech-mark-dark.svg" alt="">
+    <span class="word">fael<span class="tld">.tech</span></span>
+  </div>
+  <div>
+    <p class="name">Rafael Goulart<span class="tld">.</span></p>
+    <p class="line">Software engineering · AI · UX</p>
+  </div>
+</body>
+</html>
