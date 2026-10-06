@@ -13,6 +13,25 @@
 - **Não contém:** linha do tempo de carreira (está em Trajetória) nem detalhes da identidade
   visual (está no Manual da marca).
 
+## Estudos - `estudos/` / `en/studies/`
+
+- **Propósito:** projetos, métodos e teses de Fael, com o que ele aprendeu construindo cada um.
+  Os caminhos em inglês ficam em inglês (`en/studies/`), sem misturar idiomas.
+- **Índice:** `estudos/index.html` / `en/studies/index.html`, com um node card clicável por estudo,
+  do mais recente para o mais antigo. Todo card tem o mesmo formato: data (e atualização), tipo,
+  título, resumo e estado.
+- **Página de estudo:** linha de metadados (tipo, estado, publicado em, atualizado em) e, no fim,
+  a lista "Atualizações" com o histórico datado. Ver `AGENTS.md` para o procedimento de atualização.
+- **A história da fael.tech** (ensaio): `estudos/historia-da-fael-tech.html` /
+  `en/studies/fael-tech-story.html`. Por que a fael.tech existe, como Fael trabalha, o que a marca
+  representa e o site como primeira aplicação do design system.
+- **AIKM** (projeto, open source em breve): `estudos/aikm.html` / `en/studies/aikm.html`. Problema,
+  conhecimento local, distribuição controlada, registros de aprendizado e privacidade.
+- **Radiant** (método, em andamento): `estudos/radiant.html` / `en/studies/radiant.html`. A
+  pergunta central, o ciclo em seis etapas, o contrato de tarefa e a constituição.
+- **Regra:** estudos descrevem o funcionamento, não o histórico interno de desenvolvimento
+  (datas de commits, registros de verificação, reusos observados).
+
 ## Manual da marca - `manual.html` / `en/manual.html`
 
 - **Propósito:** especificação da identidade visual fael.tech (não é sobre a pessoa, é sobre a

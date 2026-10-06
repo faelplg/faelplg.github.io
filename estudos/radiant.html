@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Radiant - Fael Goulart</title>
+<meta name="description" content="Como transformo uma intenção em software com agentes, com contrato, verificação e aprendizado em cada ciclo." />
+<link rel="icon" href="../brand/assets/faeltech-favicon.svg">
+<link rel="alternate" hreflang="en" href="../en/studies/radiant.html">
+<link rel="alternate" hreflang="pt-BR" href="radiant.html">
+<meta name="color-scheme" content="light dark" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600..700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+<link rel="stylesheet" href="../brand/tokens.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/hero.css">
+<link rel="stylesheet" href="../assets/main.css">
+</head>
+<body>
+
+  <a class="site-skip" href="#main">Pular para o conteúdo</a>
+
+  <div class="site-stage">
+    <header class="ds-hero ds-hero--page ds-hero--halftone" data-hero="halftone">
+      <canvas class="ds-hero__canvas" aria-hidden="true"></canvas>
+      <div class="ds-hero__bar">
+        <a class="ds-hero__brand" href="../index.html"><span class="ds-mark" aria-hidden="true"></span><span class="site-word">fael<span class="tld">.tech</span></span></a>
+        <button class="site-menu-btn" type="button" hidden data-menu-toggle aria-expanded="false" aria-controls="site-menu">
+          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          Menu
+        </button>
+        <nav class="site-menu" id="site-menu" data-menu aria-label="Navegação principal">
+          <ul class="ds-hero__nav">
+            <li><a href="../index.html">Início</a></li>
+            <li><a href="../estudos/index.html" aria-current="page">Estudos</a></li>
+            <li><a href="../manual.html">Manual da marca</a></li>
+            <li><a href="../sobre.html">Trajetória</a></li>
+            <li><a href="../contato.html">Contato</a></li>
+            <li><a class="site-lang" href="../en/studies/radiant.html" hreflang="en" lang="en">PT->EN</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="ds-hero__body">
+        <ol class="ds-hero__crumbs" aria-label="Você está em">
+          <li><a href="../index.html">fael.tech</a></li>
+          <li><a href="index.html">Estudos</a></li>
+          <li aria-current="page">Radiant</li>
+        </ol>
+        <h1 class="ds-hero__title">Radiant<span class="tld">.</span></h1>
+        <p class="ds-hero__lead">Como transformo uma intenção em software com agentes, com contrato, verificação e aprendizado em cada ciclo.</p>
+      </div>
+    </header>
+  </div>
+
+  <main class="site-page site-container" id="main">
+
+    <article class="site-section study">
+        <dl class="study-meta">
+          <div><dt>Tipo</dt><dd>Método</dd></div>
+          <div><dt>Estado</dt><dd><span class="study-status">Em andamento</span></dd></div>
+          <div><dt>Publicado em</dt><dd><time datetime="2026-10-06">6 de outubro de 2026</time></dd></div>
+        </dl>
+        <h2>A pergunta</h2>
+        <p>Como transformar uma intenção em um sistema real sem perder clareza, contexto, evidência e aprendizado no caminho? Trabalhar com agentes torna essa pergunta mais urgente. Um agente executa rápido, mas executa o que entendeu, e o que ele entendeu depende do que foi escrito antes.</p>
+
+        <h2>O ciclo</h2>
+        <p>O Radiant organiza o trabalho em etapas, cada uma com um documento próprio.</p>
+        <ol class="study-steps">
+          <li><strong>Enquadrar.</strong> O Project Frame registra a intenção, o problema e o que está fora do escopo. O Design Frame faz o mesmo para a experiência de quem vai usar.</li>
+          <li><strong>Especificar e planejar.</strong> A Spec e o Plan descrevem o sistema e a ordem de construção. A especificação da experiência fica num documento separado.</li>
+          <li><strong>Contratar.</strong> Cada tarefa vira um contrato com uma única mudança observável como objetivo, o escopo permitido, os resultados esperados, o que não fazer e como verificar.</li>
+          <li><strong>Construir.</strong> Um agente executa o contrato, e só ele.</li>
+          <li><strong>Verificar.</strong> Checagens automáticas, uma verificação focada no que mudou, uma releitura do resultado e uma crítica independente.</li>
+          <li><strong>Aprender.</strong> O que deu certo ou errado volta para o lugar responsável: o contrato, o template, o procedimento ou o próprio método.</li>
+        </ol>
+        <figure class="home-artifact">
+          <pre class="site-codeblock"><span class="t"># Radiant Task Contract</span>
+Status: READY | HOLD | IN_PROGRESS | VERIFY | DONE | FAIL
+Risk tier: 0 | 1 | 2 | 3
+
+<span class="t">## 1. Objective</span>
+<span class="c">Descreva uma única mudança observável.</span>
+
+<span class="t">## 6. Non-goals</span></pre>
+          <figcaption>Trecho do contrato que cada tarefa preenche antes de um agente começar.</figcaption>
+        </figure>
+
+        <h2>Regras que valem para tudo</h2>
+        <p>Acima dos documentos fica uma constituição, com os invariantes do método e a ordem de precedência quando duas regras entram em conflito. Ela separa o desenho do sistema do desenho da experiência e define que um aprendizado só vira regra geral quando se repete. Um problema isolado é corrigido no projeto onde apareceu.</p>
+
+        <section class="study-changes" aria-labelledby="changes-title">
+          <h2 id="changes-title">Atualizações</h2>
+          <ol>
+          <li><time datetime="2026-10-06">6 de outubro de 2026</time><span>Primeira publicação.</span></li>
+          </ol>
+        </section>
+    </article>
+
+    <a class="study-back" href="index.html">← Todos os estudos</a>
+
+
+    <footer class="site-footer">
+      <span class="site-cover__tagline">© <span data-year>2026</span> fael.tech. Todos os direitos reservados.</span>
+      <span class="ds-mark ds-mark--circle" aria-hidden="true"></span>
+    </footer>
+
+  </main>
+
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+  <script src="../assets/canvas.js"></script>
+  <script src="../assets/hero.js"></script>
+  <script src="../assets/main.js"></script>
+</body>
+</html>

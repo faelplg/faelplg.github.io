@@ -14,12 +14,18 @@ manual.html               → pt-BR · Manual da identidade visual
 horizonte.html              → pt-BR · Horizonte (evolução conceitual da identidade)
 sobre.html                → pt-BR · Trajetória / carreira
 contato.html              → pt-BR · Contato
+estudos/
+  index.html                → pt-BR · índice dos Estudos
+  historia-da-fael-tech.html, aikm.html, radiant.html → estudos
 en/
   index.html                → en · Home
   manual.html                 → en · Brand manual
   horizonte.html              → en · Horizon (conceptual identity evolution)
   sobre.html                  → en · Career
   contato.html                → en · Contact
+  studies/
+    index.html                → en · Studies index
+    fael-tech-story.html, aikm.html, radiant.html → studies
 assets/
   site.css, hero.css          → cópias exatas do fael-tech-design-system (componentes e heróis)
   canvas.js, hero.js, cards.js → cópias exatas do fael-tech-design-system (palcos animados dos heróis e dos architecture cards)

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AIKM - Fael Goulart</title>
+<meta name="description" content="Um gerenciador de conhecimento local para não reconstruir, a cada projeto, o que já se aprendeu trabalhando com IA." />
+<link rel="icon" href="../brand/assets/faeltech-favicon.svg">
+<link rel="alternate" hreflang="en" href="../en/studies/aikm.html">
+<link rel="alternate" hreflang="pt-BR" href="aikm.html">
+<meta name="color-scheme" content="light dark" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600..700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+<link rel="stylesheet" href="../brand/tokens.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/hero.css">
+<link rel="stylesheet" href="../assets/main.css">
+</head>
+<body>
+
+  <a class="site-skip" href="#main">Pular para o conteúdo</a>
+
+  <div class="site-stage">
+    <header class="ds-hero ds-hero--page ds-hero--halftone" data-hero="halftone">
+      <canvas class="ds-hero__canvas" aria-hidden="true"></canvas>
+      <div class="ds-hero__bar">
+        <a class="ds-hero__brand" href="../index.html"><span class="ds-mark" aria-hidden="true"></span><span class="site-word">fael<span class="tld">.tech</span></span></a>
+        <button class="site-menu-btn" type="button" hidden data-menu-toggle aria-expanded="false" aria-controls="site-menu">
+          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          Menu
+        </button>
+        <nav class="site-menu" id="site-menu" data-menu aria-label="Navegação principal">
+          <ul class="ds-hero__nav">
+            <li><a href="../index.html">Início</a></li>
+            <li><a href="../estudos/index.html" aria-current="page">Estudos</a></li>
+            <li><a href="../manual.html">Manual da marca</a></li>
+            <li><a href="../sobre.html">Trajetória</a></li>
+            <li><a href="../contato.html">Contato</a></li>
+            <li><a class="site-lang" href="../en/studies/aikm.html" hreflang="en" lang="en">PT->EN</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="ds-hero__body">
+        <ol class="ds-hero__crumbs" aria-label="Você está em">
+          <li><a href="../index.html">fael.tech</a></li>
+          <li><a href="index.html">Estudos</a></li>
+          <li aria-current="page">AIKM</li>
+        </ol>
+        <h1 class="ds-hero__title">AIKM<span class="tld">.</span></h1>
+        <p class="ds-hero__lead">Um gerenciador de conhecimento local para não reconstruir, a cada projeto, o que já se aprendeu trabalhando com IA.</p>
+      </div>
+    </header>
+  </div>
+
+  <main class="site-page site-container" id="main">
+
+    <article class="site-section study">
+        <dl class="study-meta">
+          <div><dt>Tipo</dt><dd>Projeto</dd></div>
+          <div><dt>Estado</dt><dd><span class="study-status">Open source em breve</span></dd></div>
+          <div><dt>Publicado em</dt><dd><time datetime="2026-10-06">6 de outubro de 2026</time></dd></div>
+        </dl>
+        <h2>O problema</h2>
+        <p>Trabalhar com IA produz muito material: prompts, contextos, skills, configurações de agentes, decisões, critérios de avaliação, falhas e lições. Esse material fica espalhado entre repositórios, conversas, arquivos locais, IDEs e a memória de cada ferramenta.</p>
+        <p>O resultado é reconstruir, em cada projeto, coisas que já foram produzidas, testadas e usadas em outro. O AIKM parte de duas perguntas: como não reconstruir esse conhecimento, e como fazer o resultado de uma execução melhorar as próximas.</p>
+
+        <h2>Conhecimento local</h2>
+        <p>O AIKM é uma CLI que trabalha sobre um workspace local. Tudo começa com uma captura rápida, que entra na caixa de entrada sem exigir classificação. Depois, cada item recebe um papel (fonte, conhecimento, contexto, procedimento, ação, avaliação ou entrega) e um tipo (skill, prompt, checklist, padrão...), e só então passa a valer como conhecimento ativo.</p>
+        <figure class="home-artifact">
+          <pre class="site-codeblock"><span class="c">$</span> aikm init ~/aikm
+workspace initialized at "~/aikm"
+<span class="c">$</span> aikm capture --text "Revisar contraste do link no tema escuro antes de publicar"
+captured <span class="t">aikm:01M47JE4W14MN5FR2DD20NHMAT</span> -> "~/aikm/inbox/2026-10-06-revisar-contraste-do-link-no-tema-escuro.md"</pre>
+          <figcaption>Um workspace novo. Tudo o que é capturado entra na caixa de entrada e só vira conhecimento depois de classificado.</figcaption>
+        </figure>
+
+        <h2>Distribuição controlada</h2>
+        <p>Uma skill ou um prompt que vive em outro diretório é registrado no AIKM, revisado e aprovado. A partir daí, pode ser selecionado para um projeto e publicado nele como cópia. A fonte original continua sendo a referência: o AIKM nunca a altera e avisa quando a cópia publicada ficou para trás.</p>
+
+        <h2>Aprender com cada execução</h2>
+        <p>Guardar é só metade do trabalho. Depois de usar um recurso num projeto e verificar o resultado, o AIKM ajuda a criar um registro de aprendizado com o que foi observado, a evidência, o diagnóstico, o menor ponto de correção, o que mudou e como foi verificado. Esse registro entra no acervo e serve de contexto para a próxima decisão.</p>
+
+        <h2>Privacidade por padrão</h2>
+        <p>O acervo é local. Agentes podem consultá-lo por um servidor MCP somente leitura, que devolve apenas registros marcados como públicos ou não sensíveis e com saída autorizada. O que é privado não sai da máquina.</p>
+        <p class="study-note"><span>Repositório do AIKM</span><span>Open source em breve</span></p>
+
+        <section class="study-changes" aria-labelledby="changes-title">
+          <h2 id="changes-title">Atualizações</h2>
+          <ol>
+          <li><time datetime="2026-10-06">6 de outubro de 2026</time><span>Primeira publicação.</span></li>
+          </ol>
+        </section>
+    </article>
+
+    <a class="study-back" href="index.html">← Todos os estudos</a>
+
+
+    <footer class="site-footer">
+      <span class="site-cover__tagline">© <span data-year>2026</span> fael.tech. Todos os direitos reservados.</span>
+      <span class="ds-mark ds-mark--circle" aria-hidden="true"></span>
+    </footer>
+
+  </main>
+
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+  <script src="../assets/canvas.js"></script>
+  <script src="../assets/hero.js"></script>
+  <script src="../assets/main.js"></script>
+</body>
+</html>
