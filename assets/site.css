@@ -16,6 +16,7 @@ body {
   font-family: var(--ft-font-sans);
   font-size: var(--ft-text-body-size);
   line-height: var(--ft-text-body-leading);
+  letter-spacing: var(--ft-tracking-text);
 }
 
 /* Textura do fundo: fica atrás do conteúdo (z-index -1), então cards,
@@ -107,11 +108,12 @@ a:hover { color: var(--ft-accent-hover); }
   padding: 16px 18px;
   white-space: pre;
   overflow-x: auto;
+  letter-spacing: 0;
 }
 .site-codeblock .c { color: var(--ft-code-comment); }
 .site-codeblock .t { color: var(--ft-code-token); }
 
-.site-rules { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; max-width: var(--ft-measure); }
+.site-rules { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--ft-text-item-gap); max-width: var(--ft-measure); }
 .site-rules li { display: flex; gap: 12px; font-size: var(--ft-text-small-size); line-height: var(--ft-text-small-leading); color: var(--ft-fg-muted); }
 .site-rules .glyph { color: var(--ft-accent); flex-shrink: 0; }
 
@@ -182,10 +184,10 @@ a:hover { color: var(--ft-accent-hover); }
   color: var(--ft-fg);
   text-wrap: pretty;
 }
-.site-text + .site-text { margin-top: var(--ft-space-4); }
-/* Na seção, o parágrafo deixa 16px para o que vier depois dele: outro
+.site-text + .site-text { margin-top: var(--ft-text-gap); }
+/* Na seção, o parágrafo deixa --ft-text-gap (24px) para o que vier depois dele: outro
    parágrafo, uma lista, uma grade ou um botão */
-:where(.site-section p:not(:last-child)) { margin-bottom: var(--ft-space-4); }
+:where(.site-section p:not(:last-child)) { margin-bottom: var(--ft-text-gap); }
 .site-text--lead {
   max-width: var(--ft-measure-narrow);
   font-size: var(--ft-text-lead-size);
@@ -351,7 +353,7 @@ a:hover { color: var(--ft-accent-hover); }
 }
 .site-timeline__role { font-size: 15.5px; font-weight: 600; margin: 0 0 2px; }
 .site-timeline__org { font-size: 13px; color: var(--ft-accent); margin: 0 0 10px; }
-.site-timeline__desc { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; max-width: var(--ft-measure); }
+.site-timeline__desc { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--ft-text-item-gap); max-width: var(--ft-measure); }
 .site-timeline__desc li {
   font-size: var(--ft-text-small-size);
   color: var(--ft-fg-muted);
@@ -565,7 +567,7 @@ a:hover { color: var(--ft-accent-hover); }
 }
 
 .site-node__body { display: flex; flex-direction: column; gap: var(--ft-space-2); }
-.site-node__title { margin: 0; font-size: 16px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.3; }
+.site-node__title { margin: 0; font-size: 16px; font-weight: 600; letter-spacing: var(--ft-tracking-text); line-height: 1.3; }
 .site-node__title--sm { font-size: 14px; }
 .site-node__text { margin: 0; font-size: 13.5px; line-height: 1.55; color: var(--ft-fg-muted); text-wrap: pretty; }
 
@@ -743,7 +745,7 @@ a:hover { color: var(--ft-accent-hover); }
   margin-bottom: var(--ft-space-3);
 }
 .site-arch__id svg { color: var(--ft-accent); flex-shrink: 0; }
-.site-arch__text h3 { margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.015em; line-height: 1.25; text-wrap: balance; }
+.site-arch__text h3 { margin: 0; font-size: 22px; font-weight: 600; letter-spacing: var(--ft-tracking-text); line-height: 1.25; text-wrap: balance; }
 .site-arch__text p { margin: 0; font-size: var(--ft-text-small-size); line-height: var(--ft-text-small-leading); color: var(--ft-fg-muted); text-wrap: pretty; max-width: var(--ft-measure-narrow); }
 
 .site-arch__stage {

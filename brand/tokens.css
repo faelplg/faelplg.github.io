@@ -13,31 +13,32 @@
    ═══════════════════════════════════════════════ */
 
 /* Fontes: quem consome este arquivo carrega as três famílias num único <link>:
-   https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600..700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap
+   https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,600..700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap
 
-   Fallback métrico da Fraunces: Georgia ajustada para ocupar a mesma largura
+   Fallback métrico da Newsreader: Georgia ajustada para ocupar a mesma largura
    e altura, então a troca de fonte (display=swap) não empurra o layout.
-   Largura medida nos títulos reais da página, em 375px e 1440px, contra a
-   Georgia Bold: 92.8% no peso 600 e 92.5% no 650. Medir no canvas não serve:
-   ele ignora o tamanho óptico e o letter-spacing de cada título.
-   Métricas verticais da Fraunces: ascent 0.98 em, descent 0.26 em,
+   Largura medida nos títulos reais do site, em 375px e 1440px, contra a
+   Georgia Bold e sem letter-spacing (o fallback recebe o mesmo tracking, que
+   o size-adjust não escala): 84.9% no peso 600 e 86.9% no 650. Medir no
+   canvas não serve: ele ignora o tamanho óptico de cada título.
+   Métricas verticais da Newsreader: ascent 0.74 em, descent 0.26 em,
    divididas pelo size-adjust. */
 @font-face {
-  font-family: 'Fraunces Fallback';
+  font-family: 'Newsreader Fallback';
   src: local('Georgia Bold'), local('Georgia-Bold');
   font-weight: 600;
-  size-adjust: 92.8%;
-  ascent-override: 105.6%;
-  descent-override: 28%;
+  size-adjust: 84.9%;
+  ascent-override: 87.2%;
+  descent-override: 30.6%;
   line-gap-override: 0%;
 }
 @font-face {
-  font-family: 'Fraunces Fallback';
+  font-family: 'Newsreader Fallback';
   src: local('Georgia Bold'), local('Georgia-Bold');
   font-weight: 650;
-  size-adjust: 92.5%;
-  ascent-override: 105.9%;
-  descent-override: 28.1%;
+  size-adjust: 86.9%;
+  ascent-override: 85.2%;
+  descent-override: 29.9%;
   line-gap-override: 0%;
 }
 
@@ -158,24 +159,30 @@
   --ft-depth-bg: radial-gradient(120% 90% at 20% 10%, var(--ft-teal-700) 0%, var(--ft-teal-900) 70%);
 
   /* ── Tipografia ── */
-  --ft-font-display: 'Fraunces', 'Fraunces Fallback', Georgia, serif;  /* h1 e h2 */
+  --ft-font-display: 'Newsreader', 'Newsreader Fallback', Georgia, serif;  /* h1 e h2 */
   --ft-font-sans: 'IBM Plex Sans', system-ui, sans-serif;                /* texto, botões, h3+ */
   --ft-font-mono: 'JetBrains Mono', ui-monospace, monospace;             /* rótulos, números, código */
   --ft-weight-display: 650;       /* h1 */
   --ft-weight-display-sub: 600;   /* h2 */
-  --ft-tracking-display: -0.02em; /* títulos em Fraunces */
+  --ft-tracking-display: 0.01em;  /* títulos em Newsreader: o mesmo ar do texto */
   --ft-tracking-tight: -0.025em; /* wordmark e títulos grandes em sans */
   --ft-tracking-wide: 0.06em;    /* eyebrows uppercase */
 
   /* ── Texto corrido: três papéis ──
      lead abre a página ou a seção, body é o parágrafo comum, small vive
-     dentro de cards e listas. Quem usa: .site-text e o lead do hero. */
-  --ft-text-lead-size: 18px;
-  --ft-text-lead-leading: 1.55;
-  --ft-text-body-size: 16px;
-  --ft-text-body-leading: 1.6;
-  --ft-text-small-size: 14px;
-  --ft-text-small-leading: 1.55;
+     dentro de cards e listas. Quem usa: .site-text e o lead do hero.
+     A IBM Plex Sans é estreita e tem o x alto: em tamanhos menores ela pede
+     entrelinha generosa e um pouco de ar entre as letras para a leitura
+     dinâmica (varrer o texto com o olho) não cansar. */
+  --ft-text-lead-size: 19px;
+  --ft-text-lead-leading: 1.6;
+  --ft-text-body-size: 17px;
+  --ft-text-body-leading: 1.7;
+  --ft-text-small-size: 15px;
+  --ft-text-small-leading: 1.65;
+  --ft-tracking-text: 0.01em;    /* texto corrido em IBM Plex Sans */
+  --ft-text-gap: var(--ft-space-6);     /* entre parágrafos */
+  --ft-text-item-gap: var(--ft-space-3); /* entre itens de lista */
   /* Largura de linha em ch: acompanha o tamanho da fonte de quem a usa */
   --ft-measure: 65ch;         /* body */
   --ft-measure-narrow: 44ch;  /* lead, small e texto centralizado */
