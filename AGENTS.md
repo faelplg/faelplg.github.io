@@ -27,6 +27,8 @@ página separada de "componentes".
 
 ```
 index.html / manual.html / sobre.html / contato.html   → páginas pt-BR (raiz)
+estudos/*.html                                          → seção Estudos pt-BR (índice + um arquivo por estudo)
+en/studies/*.html                                       → seção Studies em inglês (caminhos sempre em inglês)
 en/{index,manual,sobre,contato}.html                    → páginas en (espelho 1:1 das pt-BR)
 assets/site.css, hero.css, canvas.js, hero.js, cards.js → cópias exatas do fael-tech-design-system (não editar aqui)
 assets/main.css                                          → estilos próprios do site (moldura, menu, manual, Horizonte);
@@ -76,10 +78,24 @@ manual completo.
 Cada página HTML é standalone (sem includes/templates), então elementos compartilhados - a barra
 de navegação (`.ds-hero__bar`, dentro do hero de cada página), `<link rel="alternate" hreflang>`,
 tags do Vercel, `<link rel="stylesheet">` - existem duplicados em cada arquivo. Ao mudar um desses
-elementos (ex.: um link da nav), replique a mudança nas 8 páginas (4 pt + 4 en), não só na que
-motivou a edição. Ao criar uma página nova, copie a estrutura de `<head>` e do
+elementos (ex.: um link da nav), replique a mudança em todas as páginas pt e en, não só na que
+motivou a edição. Isso inclui as páginas de `estudos/` e `en/studies/`, que ficam em subpastas
+(caminhos com `../` e `../../`). Ao criar uma página nova, copie a estrutura de `<head>` e do
 `<header class="ds-hero ...">` de uma página existente do mesmo idioma para não perder um `hreflang`
 ou a inclusão dos scripts.
+
+## Estudos: datas e atualizações
+
+Todo estudo tem os mesmos metadados: tipo, estado, data de publicação e, quando houver, data de
+atualização. Ao mudar o conteúdo de um estudo, na mesma edição e nos dois idiomas:
+
+1. acrescente "Atualizado em" / "Updated" na `.study-meta` da página (ou troque a data existente);
+2. acrescente a entrada no topo da lista `.study-changes`, com a data e uma frase sobre o que mudou;
+3. no card do índice (`estudos/index.html` e `en/studies/index.html`), acrescente
+   `· atualizado em <data>` / `· updated <date>` ao lado da data e mantenha a ordem do mais
+   recente para o mais antigo.
+
+Correções de digitação não contam como atualização. Datas usam `<time datetime="AAAA-MM-DD">`.
 
 ## Design system
 
@@ -87,7 +103,7 @@ O visual segue o [fael-tech-design-system](https://github.com/faelplg/design-sys
 `brand/tokens.css`, `brand/assets/*.svg`, `assets/site.css`, `assets/hero.css`, `assets/canvas.js`,
 `assets/hero.js` e `assets/cards.js` são cópias exatas de lá: para mudar algum deles, mude no design system e copie de
 novo. O que só existe no site vai em `assets/main.css`. Cada página abre com um hero do design system:
-Busto na home, Agulhas na Trajetória e Retícula no Manual e no Contato. O tema segue o sistema
+Busto na home, Agulhas na Trajetória e Retícula no Manual, nos Estudos e no Contato. O tema segue o sistema
 operacional (`light-dark()` nos tokens semânticos); componentes nunca usam hex, `rgba()` ou
 primitivos (`--ft-teal-*`, `--ft-ink`...), só os semânticos (`--ft-fg`, `--ft-bg-raised`,
 `--ft-accent`...), e espaçamento sai de `--ft-space-*`.

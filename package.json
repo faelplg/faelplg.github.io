@@ -15,6 +15,6 @@
     "@vercel/speed-insights": "^2.0.0"
   },
   "scripts": {
-    "lint:html": "html-validate \"*.html\" \"en/*.html\""
+    "lint:html": "html-validate \"*.html\" \"en/*.html\" \"estudos/*.html\" \"en/studies/*.html\""
   }
 }

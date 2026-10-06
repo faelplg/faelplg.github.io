@@ -21,6 +21,7 @@ Estático, sem framework/bundler, bilíngue (pt-BR na raiz, inglês em `en/`).
 | Página | pt-BR | en |
 |---|---|---|
 | Início (landing pessoal) | `index.html` | `en/index.html` |
+| Estudos (índice e estudos) | `estudos/*.html` | `en/studies/*.html` |
 | Manual da marca | `manual.html` | `en/manual.html` |
 | Horizonte (evolução conceitual) | `horizonte.html` | `en/horizonte.html` |
 | Trajetória / carreira | `sobre.html` | `en/sobre.html` |
