@@ -23,10 +23,6 @@
   mask-image: url("../brand/assets/faeltech-mark-circle.svg");
 }
 
-/* Trecho que documenta um contexto de tema fixo (espécimes do manual).
-   color é herdado já resolvido: redeclarar faz o texto seguir o tema do trecho. */
-.site-scheme-light { color-scheme: light; color: var(--ft-fg); }
-.site-scheme-dark { color-scheme: dark; color: var(--ft-fg); }
 
 .site-skip {
   position: absolute;
@@ -50,15 +46,8 @@
 .site-page { padding: var(--ft-space-16) 0 var(--ft-space-24); }
 
 /* ── Hero: complementos do site ── */
-.ds-hero__body > .site-eyebrow { margin-bottom: var(--ft-space-4); }
 .ds-hero__body > .site-cover__tagline { margin: var(--ft-space-3) 0 0; }
 .ds-hero__lead strong { color: var(--ft-fg); }
-/* O manual abre com o wordmark: IBM Plex Sans 700, não a Fraunces dos títulos */
-.site-hero-word {
-  font-family: var(--ft-font-sans);
-  font-weight: 700;
-  letter-spacing: var(--ft-tracking-tight);
-}
 
 /* Barra: a nav vive num <nav>; o botão de menu só existe no palco estreito.
    Sem JS o botão fica oculto (atributo hidden) e a lista aparece aberta; o
@@ -138,23 +127,9 @@
 .site-page .site-section + .site-section { margin-top: var(--ft-space-16); }
 :where(.site-section) h3 { margin: var(--ft-space-8) 0 var(--ft-space-3); font-size: 17px; font-weight: 600; line-height: 1.35; }
 :where(.site-section) :is(p, li) strong { color: var(--ft-fg); }
-/* Texto que fecha uma grade, um painel ou um bloco de código */
-:where(.site-section) :is(.site-grid-2, .site-grid-3, .site-grid-4, .site-grid-5, .site-panel, .site-codeblock) + p { margin-top: var(--ft-space-5); }
-.site-section * + .site-pillars { margin-top: var(--ft-space-5); }
 
-.site-block { margin-top: var(--ft-space-8); }
 .site-actions { display: flex; flex-wrap: wrap; gap: var(--ft-space-3); margin-top: var(--ft-space-6); }
 
-.site-panel--body { padding: var(--ft-space-5) var(--ft-space-6); }
-.site-panel--body > :first-child { margin-top: 0; }
-.site-panel--body > :last-child { margin-bottom: 0; }
-.site-panel--body > .site-eyebrow + p { margin-top: var(--ft-space-2); }
-/* Painel solto logo abaixo de uma grade mantém o mesmo respiro da grade */
-.site-grid-2 + .site-panel { margin-top: var(--ft-space-5); }
-
-.site-grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--ft-space-5); }
-.site-grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--ft-space-4); }
-.site-grid-5 { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--ft-space-4); }
 
 /* ── Rodapé ── */
 .site-footer {
@@ -269,7 +244,7 @@
 /* ═══════════════════════════════════════════════
    Estudos
    Índice com node cards clicáveis (o card inteiro é o link) e páginas de
-   leitura numa coluna só, com títulos em Fraunces e artefatos com legenda.
+   leitura numa coluna só, com títulos em Newsreader e artefatos com legenda.
    ═══════════════════════════════════════════════ */
 .study-cards {
   display: grid;
