@@ -2,8 +2,8 @@
 
 > Mapa de propósito e principais afirmações de cada página do site, para agentes que precisem
 > localizar rapidamente onde uma informação está publicada. As páginas em inglês usam nomes de
-> arquivo em inglês. Endereços antigos (`manual.html`, `horizonte.html`, `en/sobre.html`,
-> `en/contato.html`) redirecionam pelo `vercel.json`.
+> arquivo em inglês. Endereços antigos (`manual.html`, `en/manual.html`, `horizonte.html`,
+> `en/horizonte.html`, `en/sobre.html`, `en/contato.html`) redirecionam pelo `vercel.json`.
 
 ## Início - `index.html` / `en/index.html`
 

@@ -98,7 +98,7 @@ atualização. Ao mudar o conteúdo de um estudo, na mesma edição e nos dois i
    `· atualizado em <data>` / `· updated <date>` ao lado da data e mantenha a ordem do mais
    recente para o mais antigo.
 
-Correções de digitação não contam como atualização. Datas usam `<time datetime="AAAA-MM-DD">`.
+Correções de digitação não contam como atualização, nem mudanças feitas no mesmo dia da publicação: elas fazem parte da publicação. Datas usam `<time datetime="AAAA-MM-DD">`.
 
 ## Design system
 
@@ -106,7 +106,7 @@ O visual segue o [fael-tech-design-system](https://github.com/faelplg/design-sys
 `brand/tokens.css`, `brand/assets/*.svg`, `assets/site.css`, `assets/hero.css`, `assets/canvas.js`,
 `assets/hero.js` e `assets/cards.js` são cópias exatas de lá: para mudar algum deles, mude no design system e copie de
 novo. O que só existe no site vai em `assets/main.css`. Cada página abre com um hero do design system:
-Busto na home, Agulhas na Trajetória, Retícula nos Estudos, Estratos na Longward e Interferência no Contato. Cada página tem um hero próprio; não repita um hero em outra página. O tema segue o sistema
+Busto na home, Agulhas na Trajetória, Retícula nos Estudos, Estratos na Longward e Interferência no Contato. Cada seção principal (Início, Trajetória, Estudos, Longward, Contato) tem um hero próprio, que não se repete em outra seção. Dentro de uma seção o hero é o mesmo: o índice e todas as páginas de Estudos usam a Retícula, e cada par pt/en compartilha o hero. O tema segue o sistema
 operacional (`light-dark()` nos tokens semânticos); componentes nunca usam hex, `rgba()` ou
 primitivos (`--ft-teal-*`, `--ft-ink`...), só os semânticos (`--ft-fg`, `--ft-bg-raised`,
 `--ft-accent`...), e espaçamento sai de `--ft-space-*`.
