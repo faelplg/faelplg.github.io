@@ -156,6 +156,103 @@
 .site-footer .ds-mark { --ds-mark-size: 20px; }
 
 /* ═══════════════════════════════════════════════
+   Início
+   Composição editorial: título grande, prosa e listas com uma coluna de
+   contexto à esquerda. Sem grade de cartões; o único momento visual forte
+   da página é o hero.
+   ═══════════════════════════════════════════════ */
+.page-title {
+  margin: 0 0 var(--ft-space-5);
+  font-family: var(--ft-font-display);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: var(--ft-weight-display-sub);
+  line-height: 1.15;
+  letter-spacing: var(--ft-tracking-display);
+  text-wrap: balance;
+}
+.site-page .page-section + .page-section { margin-top: var(--ft-space-24); }
+
+/* Lista de fatos (formação, idiomas): rótulo em mono à esquerda */
+.page-facts { margin: 0; border-top: 1px solid var(--ft-line); }
+.page-facts > div {
+  display: grid;
+  /* mesmas colunas da .site-timeline, para alinhar com a Experiência */
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: var(--ft-space-5);
+  padding: var(--ft-space-5) 0;
+  border-bottom: 1px solid var(--ft-line);
+}
+.page-facts dt {
+  padding-top: var(--ft-space-1);
+  font-family: var(--ft-font-mono);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--ft-accent);
+}
+.page-facts dd { margin: 0; line-height: var(--ft-text-body-leading); color: var(--ft-fg-muted); }
+.page-facts dd strong { color: var(--ft-fg); font-weight: 600; }
+@media (max-width: 720px) {
+  .page-facts > div { grid-template-columns: minmax(0, 1fr); gap: var(--ft-space-1); }
+}
+
+/* Abertura da fael.tech: uma frase grande antes da prosa */
+.home-statement {
+  max-width: var(--ft-measure-narrow);
+  font-family: var(--ft-font-display);
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: var(--ft-weight-display-sub);
+  line-height: 1.3;
+  letter-spacing: var(--ft-tracking-display);
+  text-wrap: balance;
+}
+
+/* Rótulo de tipo e estágio de um projeto */
+.home-tag {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ft-space-1) var(--ft-space-3);
+  margin: 0 0 var(--ft-space-3);
+  font-family: var(--ft-font-mono);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--ft-fg-muted);
+}
+.home-tag span:first-child { color: var(--ft-accent); }
+
+/* Projetos: architecture cards do design system, com o nome em escala de
+   display. Longward ocupa a linha inteira; AIKM e Radiant dividem a seguinte. */
+.home-archs { margin-top: var(--ft-space-10); }
+@container archs (min-width: 720px) {
+  .home-archs .site-arch--6 { grid-column: span 6; }
+}
+.home-archs .site-arch__text { justify-content: flex-start; }
+.home-archs .site-arch__text .home-tag { margin: 0; }
+.home-archs .site-arch__text h3 {
+  font-family: var(--ft-font-display);
+  font-size: clamp(30px, 4cqi, 40px);
+  font-weight: var(--ft-weight-display-sub);
+  letter-spacing: var(--ft-tracking-display);
+  line-height: 1.1;
+}
+.home-archs .site-arch--wide .site-arch__text h3 { font-size: clamp(40px, 7cqi, 64px); line-height: 1; }
+/* No card estreito o palco vem primeiro e mais baixo, para o texto respirar */
+.home-archs .site-arch--stage-first .site-arch__stage { height: 192px; min-height: 192px; }
+.home-archs .site-arch--stage-first .site-arch__text { flex: 1; }
+.home-archs .home-artifact { margin-top: auto; padding-top: var(--ft-space-3); }
+
+/* Artefato real: um trecho de terminal com legenda */
+.home-artifact { margin: 0; }
+.home-artifact .site-codeblock { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.home-artifact figcaption {
+  margin-top: var(--ft-space-2);
+  font-size: var(--ft-text-small-size);
+  line-height: var(--ft-text-small-leading);
+  color: var(--ft-fg-muted);
+}
+
+
+
+/* ═══════════════════════════════════════════════
    Manual da marca
    ═══════════════════════════════════════════════ */
 .site-layout {

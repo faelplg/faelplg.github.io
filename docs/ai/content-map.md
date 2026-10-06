@@ -5,14 +5,13 @@
 
 ## Início - `index.html` / `en/index.html`
 
-- **Propósito:** landing pessoal. Responde "quem é Fael" e "o que ele faz" em poucos segundos.
-- **Conteúdo:** hero com avatar ilustrado em busto e autodescrição curta (ver `facts.md`), apresentação
-  completa no início da seção 01, posicionamento de Software Engineer, former CTO e DPO, missão de criar
-  sistemas coerentes, seguros e centrados em pessoas, princípios de trabalho, áreas de atuação
-  (front-end, full stack/arquitetura, AI Engineering, estratégia, segurança e DPO), métricas de
-  execução e a nova fase em três linhas - produtos, consultoria e engenharia/liderança/executivo.
-- **Não contém:** linha do tempo completa de experiência (está em Trajetória) nem detalhes da
-  identidade visual (está no Manual da marca).
+- **Propósito:** responder em poucos segundos quem é Fael e o que ele está construindo.
+- **Conteúdo:** hero com avatar em busto e a autodescrição (ver `facts.md`); "Por que a fael.tech
+  existe" (onde estuda, constrói e publica, e a assinatura do trabalho independente); "No que estou
+  trabalhando" com architecture cards animados para Longward, AIKM (com trecho real do terminal) e
+  Radiant (com trecho real do contrato de tarefa); "Vamos conversar" com consultorias e parcerias.
+- **Não contém:** linha do tempo de carreira (está em Trajetória) nem detalhes da identidade
+  visual (está no Manual da marca).
 
 ## Manual da marca - `manual.html` / `en/manual.html`
 
@@ -40,14 +39,14 @@
 
 ## Trajetória - `sobre.html` / `en/sobre.html`
 
-- **Propósito:** carreira profissional detalhada (equivalente a um currículo em formato web).
-- **Conteúdo:** perfil profissional de Software Engineer, linha do tempo completa com entregas
-  técnicas e responsabilidades de liderança por cargo, métricas de escala, formação acadêmica,
-  certificação do MIT, idiomas e as três linhas da nova fase profissional.
+- **Propósito:** carreira profissional detalhada (equivalente a um currículo em formato web), em tom sóbrio.
+- **Conteúdo:** perfil em dois parágrafos, linha do tempo completa com entregas e responsabilidades
+  por cargo, formação, pós-graduação em andamento, certificação do MIT e idiomas.
 - **Fatos citados aqui devem bater literalmente com** [facts.md](./facts.md).
 
 ## Contato - `contato.html` / `en/contato.html`
 
 - **Propósito:** canais de contato.
-- **Conteúdo:** síntese das três linhas da nova fase profissional, e-mail (r@fael.tech), LinkedIn,
+- **Conteúdo:** consultorias e parcerias pela fael.tech (engenharia e liderança técnica, IA no
+  desenvolvimento de software, projetos de produto ou pesquisa), e-mail (r@fael.tech), LinkedIn,
   GitHub e localização (Florianópolis, SC).

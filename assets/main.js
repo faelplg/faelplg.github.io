@@ -91,3 +91,8 @@
     });
   }
 })();
+
+// Ano do rodapé: o HTML já traz o ano da publicação; o script só o mantém atual.
+document.querySelectorAll('[data-year]').forEach((el) => {
+  el.textContent = String(new Date().getFullYear());
+});

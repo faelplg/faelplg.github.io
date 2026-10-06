@@ -28,7 +28,7 @@ página separada de "componentes".
 ```
 index.html / manual.html / sobre.html / contato.html   → páginas pt-BR (raiz)
 en/{index,manual,sobre,contato}.html                    → páginas en (espelho 1:1 das pt-BR)
-assets/site.css, hero.css, canvas.js, hero.js           → cópias exatas do fael-tech-design-system (não editar aqui)
+assets/site.css, hero.css, canvas.js, hero.js, cards.js → cópias exatas do fael-tech-design-system (não editar aqui)
 assets/main.css                                          → estilos próprios do site (moldura, menu, manual, Horizonte);
                                                              só consome var(--ft-*) semânticos de brand/tokens.css
 assets/main.js                                            → menu da barra do hero, scroll-spy do manual, menu lateral mobile
@@ -51,8 +51,8 @@ llms.txt                                                  → índice machine-re
    nunca devem divergir em fatos, apenas em idioma.
 3. **Tom de voz:** direto, sem hype, sem superlativos vazios ("revolucionário", "world-class").
    Ver [docs/ai/overview.md](docs/ai/overview.md#tom-de-voz-e-diretrizes-de-conteúdo) para a lista
-   completa de diretrizes (posicionamento como engenheiro antes de executivo, as três linhas da
-   nova fase profissional, etc.).
+   completa de diretrizes (engenharia e portfólio antes de cargos, primeira pessoa sem tom de
+   diálogo com IA, números sem causalidade inventada, Longward só pela tese, etc.).
 4. **Sentence case, nunca title case** em títulos e headlines - convenção da marca, vale para
    pt e en.
 5. Ao mudar a estrutura de páginas (nova seção, página nova, título), atualize
@@ -84,13 +84,30 @@ ou a inclusão dos scripts.
 ## Design system
 
 O visual segue o [fael-tech-design-system](https://github.com/faelplg/design-systems/tree/main/fael-tech-design-system).
-`brand/tokens.css`, `brand/assets/*.svg`, `assets/site.css`, `assets/hero.css`, `assets/canvas.js` e
-`assets/hero.js` são cópias exatas de lá: para mudar algum deles, mude no design system e copie de
+`brand/tokens.css`, `brand/assets/*.svg`, `assets/site.css`, `assets/hero.css`, `assets/canvas.js`,
+`assets/hero.js` e `assets/cards.js` são cópias exatas de lá: para mudar algum deles, mude no design system e copie de
 novo. O que só existe no site vai em `assets/main.css`. Cada página abre com um hero do design system:
 Busto na home, Agulhas na Trajetória e Retícula no Manual e no Contato. O tema segue o sistema
 operacional (`light-dark()` nos tokens semânticos); componentes nunca usam hex, `rgba()` ou
 primitivos (`--ft-teal-*`, `--ft-ink`...), só os semânticos (`--ft-fg`, `--ft-bg-raised`,
 `--ft-accent`...), e espaçamento sai de `--ft-space-*`.
+
+### Composição das páginas
+
+O site deve ter vida sem ficar carregado. Regras para qualquer página nova ou alterada:
+
+- **Momentos visuais com intenção.** O hero é o momento forte da página. Palcos animados (como os
+  architecture cards de `cards.js`) entram onde ilustram o assunto, nunca como decoração solta.
+- **Movimento responsável.** Animação pausa fora da tela, respeita `prefers-reduced-motion` e não
+  fica em loop chamando atenção.
+- **Funciona sem JavaScript.** Todo texto e link fica legível e utilizável sem JS.
+- **Orçamento de peso.** Cada página fica em torno de 150 KB transferidos, sem contar imagens
+  otimizadas, e sem dependência externa além das fontes.
+- **Nada fictício.** Sem números, mockups ou painéis inventados; artefatos mostrados (terminal,
+  trechos de documento) vêm de execuções e arquivos reais.
+- **Sem grade de cards como padrão.** Nada de "rótulo numerado + 3 cards". Seções variam entre
+  prosa, listas editoriais com rótulo à esquerda, artefatos com legenda e cards só quando cada
+  item é uma unidade própria.
 
 ## Testar localmente
 

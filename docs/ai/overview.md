@@ -7,9 +7,10 @@
 
 ## O que é este site
 
-Site pessoal de Rafael (Fael) Goulart, Software Engineer e estrategista de tecnologia, former CTO
-e DPO, com atuação em front-end, full stack, AI Engineering, arquitetura e segurança, publicado
-em `fael.tech`. É também o laboratório de aplicação da identidade visual da marca fael.tech: o
+Site pessoal de Rafael (Fael) Goulart, engenheiro de software especializado em UX e, mais
+recentemente, em IA, cofundador de duas empresas e ex-CTO da Aurum Software, publicado em
+`fael.tech`. A fael.tech é onde ele estuda, constrói e publica, e o nome com que assina seu
+trabalho independente. É também o laboratório de aplicação da identidade visual da marca fael.tech: o
 próprio site, construído com os tokens e
 regras da marca, é a prova viva do sistema (não existe uma página separada de "componentes").
 
@@ -31,19 +32,20 @@ Cada par pt/en usa `<link rel="alternate" hreflang>` para se referenciar mutuame
 
 - **Direto e sem hype.** Evitar superlativos vazios ("revolucionário", "world-class"). Preferir
   afirmações concretas e verificáveis.
-- **Fatos canônicos.** Datas, cargos e métricas devem permanecer alinhados com
-  [facts.md](./facts.md) e com os textos-fonte da `career-library`.
+- **Fatos canônicos.** Datas, cargos e métricas devem permanecer alinhados com [facts.md](./facts.md).
 - **Sentence case, nunca title case** em títulos e headlines (convenção da marca).
-- **Engenharia como identidade central.** Apresentar Fael prioritariamente como Software Engineer
-  e estrategista de tecnologia experiente e hands-on. A experiência como CTO e DPO comprova visão
-  sistêmica, liderança, segurança e contexto de negócio, sem transformar o site em anúncio explícito
-  de busca por emprego.
-- **Três linhas de atuação.** Comunicar a nova fase por meio de empreendedorismo e produtos,
-  consultoria e transformação, e possibilidades em engenharia, liderança ou cargos executivos.
-- **Sistemas centrados em pessoas.** Conectar engenharia, produto, design, segurança e IA à missão
-  de reduzir o atrito entre intenção humana, complexidade organizacional e capacidade tecnológica.
-- **Marca:** a filosofia é "Forward through technology" - tecnologia como meio, não como fim.
-  Assinatura secundária: "Direction. Motion. Impact."
+- **Engenharia primeiro, portfólio primeiro.** A Home mostra quem Fael é e o que está construindo
+  (Longward, AIKM, Radiant); a carreira fica na Trajetória. Não abrir com inventário de títulos
+  (CTO, DPO, AI Engineer, músico...) nem com anúncio de busca por emprego.
+- **Primeira pessoa, sem diálogo com IA.** O texto fala com o visitante. Evitar comentários sobre o
+  próprio texto, contrastes do tipo "um portfólio mostra X, aqui eu mostro Y", ressalvas de
+  estágio em prosa (o estágio vai em rótulos) e introduções que resumem o que vem a seguir.
+- **Tom por página.** Home e estudos em tom de conversa; Trajetória sóbria, como currículo.
+- **Números sem causalidade inventada.** Resultados da empresa (receita, base) aparecem como
+  contexto do período, separados do que Fael fez.
+- **Sem slogans.** "Forward through technology" e "Direction. Motion. Impact." não são usados no
+  texto do site.
+- **Longward com reserva.** Falar da tese, nunca de produtos ou experimentos.
 - **Não inventar cargos, empresas, datas ou números** que não estejam em [facts.md](./facts.md)
   ou nas páginas publicadas. Se uma pergunta exigir um dado que não existe aqui, é preferível dizer
   que a informação não está disponível a especular.
