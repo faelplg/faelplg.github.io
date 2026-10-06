@@ -35,11 +35,13 @@ assets/main.css                                          → estilos próprios d
                                                              só consome var(--ft-*) semânticos de brand/tokens.css
 assets/main.js                                            → menu da barra do hero e ano do rodapé
 vercel.json                                               → redirecionamentos de endereços antigos
-assets/img/                                               → imagens do site (ex.: avatar/avatar-busto.png do hero da home)
+assets/img/                                               → imagens do site (ex.: avatar/avatar-busto.png do hero da home, og/fael-tech.png de compartilhamento)
+tools/og-image.html                                       → fonte da imagem de compartilhamento; o comando para gerar o PNG está no topo do arquivo
 brand/                                                    → fonte única de verdade da marca (ver seção abaixo)
 docs/ai/overview.md                                       → propósito, tom de voz, diretrizes de conteúdo
 docs/ai/facts.md                                          → fatos canônicos de carreira/bio (única fonte de números/datas)
 docs/ai/content-map.md                                    → mapa de páginas pt/en com propósito e afirmações-chave de cada uma
+docs/ai/linkedin.md                                       → textos oficiais do perfil no LinkedIn (headline sincronizado com facts.md)
 llms.txt                                                  → índice machine-readable na raiz (convenção llms.txt)
 ```
 
@@ -80,6 +82,8 @@ manual completo.
 
 Cada página HTML é standalone (sem includes/templates), então elementos compartilhados - a barra
 de navegação (`.ds-hero__bar`, dentro do hero de cada página, com as bandeiras de idioma `.site-langs`), `<link rel="alternate" hreflang>`,
+as tags de compartilhamento (`og:*` e `twitter:card`, com `og:title` e `og:description` iguais ao `<title>` e à
+`meta description` da página e `og:url` com o endereço dela),
 tags do Vercel, `<link rel="stylesheet">` - existem duplicados em cada arquivo. Ao mudar um desses
 elementos (ex.: um link da nav), replique a mudança em todas as páginas pt e en, não só na que
 motivou a edição. Isso inclui as páginas de `estudos/` e `en/studies/`, que ficam em subpastas

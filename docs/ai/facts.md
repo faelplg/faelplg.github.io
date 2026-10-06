@@ -6,7 +6,7 @@
 
 ## Identidade
 
-- Nome: Rafael (Fael) Goulart
+- Nome: Rafael Goulart, conhecido como Fael. Na Trajetória e no LinkedIn o nome aparece como "Rafael Goulart", com "Fael" como apelido (segunda linha no site, campo "Additional name" no LinkedIn).
 - Localização: Florianópolis, SC - Brasil
 - Contato: r@fael.tech · linkedin.com/in/faelplg · github.com/faelplg
 - Identidade principal: engenheiro de software, especializado em UX e, mais recentemente, em IA. Cofundou duas empresas e foi CTO da Aurum Software.
@@ -14,13 +14,25 @@
 - fael.tech: onde Fael estuda, constrói e publica, e o nome com que assina seu trabalho independente (consultorias e parcerias em engenharia e liderança técnica, IA no desenvolvimento de software e projetos de produto ou pesquisa).
 - Longward: empresa em formação para criar produtos que ajudem comunidades a guardar e desenvolver o que aprendem juntas, usando IA sem apagar quem produziu o conhecimento. Não citar produtos, experimentos ou nomes de produto da Longward.
 
+## Headline oficial
+
+Mesmo conteúdo em todos os lugares, formato adaptado a cada um. Ao mudar, mude aqui primeiro e
+depois no site (hero de `sobre.html` / `en/career.html`) e no LinkedIn
+([linkedin.md](./linkedin.md)).
+
+- LinkedIn (en, com palavras-chave): Software engineer | AI engineering, UX and software architecture | 10+ years as CTO, led a 50-person tech org | Building AI tools at fael.tech
+- Site (pt): Engenheiro de software com foco em IA, UX e arquitetura. Mais de dez anos como CTO, liderando times de tecnologia de até 50 pessoas. Hoje construo ferramentas de IA pela fael.tech.
+- Site (en): Software engineer focused on AI, UX and architecture. More than ten years as CTO, leading technology teams of up to 50 people. Today I build AI tools through fael.tech.
+
 ## Experiência (ordem cronológica reversa)
 
 | Período | Cargo | Empresa |
 |---|---|---|
+| Ago 2026 - atual | Engenheiro de software e consultor em tecnologia, liderança e IA | fael.tech (autônomo), Florianópolis |
 | Abr 2021 - Jun 2026 (5a 3m) | Diretor de Tecnologia (CTO) | Aurum Software, Florianópolis |
 | Out 2020 - Abr 2021 (7m) | Desenvolvedor front-end sênior e Tech Lead | Aurum Software, Florianópolis |
-| Ago 2015 - Mai 2022 (6a 10m) | Cofundador / CTO | Yattó (antes Residuall), Belo Horizonte |
+| Abr 2021 - Mai 2022 (1a 2m) | Cofundador (meio período) | Yattó, Belo Horizonte |
+| Ago 2015 - Abr 2021 (5a 9m) | Cofundador / CTO | Yattó (antes Residuall), Belo Horizonte |
 | Set 2013 - Jun 2016 (2a 10m) | Cofundador, engenheiro de software e QA | Interact Software, Belo Horizonte |
 | Jul 2013 - Jul 2015 (2a) | Gestor de TI na CEGUAI - SEPLAG | Governo de Minas Gerais, Belo Horizonte |
 | Abr 2011 - Jul 2013 (2a 4m) | Assessor/Gerente de TI na SEPLAG | Governo de Minas Gerais, Belo Horizonte |

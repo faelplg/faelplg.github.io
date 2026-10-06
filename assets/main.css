@@ -48,6 +48,14 @@
 /* ── Hero: complementos do site ── */
 .ds-hero__body > .site-cover__tagline { margin: var(--ft-space-3) 0 0; }
 .ds-hero__lead strong { color: var(--ft-fg); }
+/* Apelido abaixo do nome na Trajetória: segunda linha discreta do título. */
+.site-alias {
+  margin: var(--ft-space-2) 0 0;
+  font-family: var(--ft-font-mono);
+  font-size: var(--ft-text-small-size);
+  line-height: var(--ft-text-small-leading);
+  color: var(--ft-fg-muted);
+}
 
 /* Barra: a nav vive num <nav>; o botão de menu só existe no palco estreito.
    Sem JS o botão fica oculto (atributo hidden) e a lista aparece aberta; o
