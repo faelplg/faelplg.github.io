@@ -51,7 +51,7 @@ Motion, Impact.**
 - O único gradiente da identidade é `--ft-depth-bg`, sempre atrás do vidro.
 - O círculo nunca é recolorido separadamente do ponteiro — ambos usam sempre a mesma cor.
 - Área de proteção: metade da altura do símbolo em todos os lados.
-- Fontes: IBM Plex Sans (interface e wordmark) + JetBrains Mono (tagline, comandos).
+- Fontes: Newsreader (títulos h1 e h2) + IBM Plex Sans (texto, interface e wordmark) + JetBrains Mono (tagline, comandos).
 
 Ver o manual completo em [manual-identidade-visual.html](manual-identidade-visual.html) para todas
 as regras, specimens e a tabela de assets.
