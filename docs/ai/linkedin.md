@@ -62,7 +62,7 @@ Também escrevo código criativo: sketches generativos em p5.js, alguns deles na
 
 fael.tech · r@fael.tech
 
-Foco: Engenharia de software · Arquitetura de software · Engenharia de IA · Spec-driven development · Front-end · React · TypeScript · UX Engineering · Liderança técnica
+Foco: Engenharia de software · Arquitetura de software · Engenharia de IA · Spec-driven development · Front-end · React · TypeScript · UX engineering · Liderança técnica
 ```
 
 ## Página da fael.tech
@@ -153,13 +153,16 @@ Nesta ordem:
 
 Top skills, nesta ordem:
 
-Software Architecture · Artificial Intelligence (AI) · React.js · User Experience (UX) · Technical Leadership
+Software Architecture · Artificial Intelligence (AI) · React.js · User Experience · Technical Leadership
 
-Lista completa (o LinkedIn aceita até 50; quando um nome não existir na lista dele, use o mais
-próximo que ele sugerir):
+Skills acrescentadas em out/2026, ligadas às posições em que foram usadas quando isso é claro:
 
-Software Engineering · Software Architecture · Artificial Intelligence (AI) · AI Engineering ·
-Generative AI · AI Agents · Spec-Driven Development · React.js · TypeScript · JavaScript ·
-Front-End Development · Micro Frontends · AngularJS · Full-Stack Development · Go (Programming Language) ·
-User Experience (UX) · UX Engineering · Creative Coding · p5.js · Technical Leadership ·
-Engineering Management · Data Governance · Cloud Computing
+- React.js (Aurum front-end, Yattó) · TypeScript · AngularJS (Yattó, Interact) · Go (Programming Language) (Yattó) · Micro Frontends (Aurum front-end)
+- Software Architecture (Aurum CTO, Yattó) · Engineering Management (Aurum CTO) · Data Governance (Aurum CTO)
+- Generative AI · AI Agents · UX Engineering (fael.tech; UX Engineering também na Aurum front-end)
+- Creative Coding · p5.js
+
+"Software Engineering" e "AI Engineering" não existem na lista do LinkedIn; ficam no headline e na
+linha de foco do About. Equivalentes que já estavam no perfil: Software Development,
+Spec-Driven Software Development, Front-end Engineering, User Experience, Full-Stack Development,
+JavaScript, Cloud Computing, Technical Leadership.
