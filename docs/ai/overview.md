@@ -22,10 +22,9 @@ Estático, sem framework/bundler, bilíngue (pt-BR na raiz, inglês em `en/`).
 |---|---|---|
 | Início (landing pessoal) | `index.html` | `en/index.html` |
 | Estudos (índice e estudos) | `estudos/*.html` | `en/studies/*.html` |
-| Manual da marca | `manual.html` | `en/manual.html` |
-| Horizonte (evolução conceitual) | `horizonte.html` | `en/horizonte.html` |
-| Trajetória / carreira | `sobre.html` | `en/sobre.html` |
-| Contato | `contato.html` | `en/contato.html` |
+| Longward (tese da empresa) | `longward.html` | `en/longward.html` |
+| Trajetória / carreira | `sobre.html` | `en/career.html` |
+| Contato | `contato.html` | `en/contact.html` |
 
 Cada par pt/en usa `<link rel="alternate" hreflang>` para se referenciar mutuamente.
 

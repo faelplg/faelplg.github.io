@@ -10,8 +10,7 @@ inglês em `en/`.
 
 ```
 index.html              → pt-BR · Início (landing pessoal)
-manual.html               → pt-BR · Manual da identidade visual
-horizonte.html              → pt-BR · Horizonte (evolução conceitual da identidade)
+longward.html             → pt-BR · Longward (tese da empresa)
 sobre.html                → pt-BR · Trajetória / carreira
 contato.html              → pt-BR · Contato
 estudos/
@@ -19,10 +18,9 @@ estudos/
   historia-da-fael-tech.html, aikm.html, radiant.html → estudos
 en/
   index.html                → en · Home
-  manual.html                 → en · Brand manual
-  horizonte.html              → en · Horizon (conceptual identity evolution)
-  sobre.html                  → en · Career
-  contato.html                → en · Contact
+  longward.html               → en · Longward
+  career.html                 → en · Career
+  contact.html                → en · Contact
   studies/
     index.html                → en · Studies index
     fael-tech-story.html, aikm.html, radiant.html → studies
@@ -30,11 +28,10 @@ assets/
   site.css, hero.css          → cópias exatas do fael-tech-design-system (componentes e heróis)
   canvas.js, hero.js, cards.js → cópias exatas do fael-tech-design-system (palcos animados dos heróis e dos architecture cards)
   main.css                    → estilos próprios do site (consome tokens semânticos de brand/tokens.css)
-  main.js                      → menu da barra do hero, scroll-spy do manual, menu lateral mobile
+  main.js                      → menu da barra do hero e ano do rodapé
   img/
     avatar/avatar-busto.png     → avatar em busto do hero da home
     fael-portrait.jpg           → retrato de perfil (fora de uso desde o hero novo)
-    foundation-horizon.jpg      → arte original da página Horizonte
 brand/          → fonte única de verdade da marca - NÃO modificar a partir deste projeto
   manual-identidade-visual.html   → manual original imprimível
   tokens.css                → tokens primitivos e semânticos, claro/escuro, espaço, tipografia (--ft-*)
@@ -46,6 +43,7 @@ docs/
     facts.md                    → fatos canônicos de carreira/bio (fonte única de números e datas)
     content-map.md              → mapa de páginas pt/en com propósito de cada uma
 llms.txt                  → índice machine-readable na raiz (convenção llms.txt)
+vercel.json               → redirecionamentos de endereços antigos (manual, horizonte, en/sobre, en/contato)
 AGENTS.md                 → instruções para agentes de IA que trabalharem neste repositório
 ```
 

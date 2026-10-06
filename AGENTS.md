@@ -26,14 +26,15 @@ página separada de "componentes".
 ## Estrutura
 
 ```
-index.html / manual.html / sobre.html / contato.html   → páginas pt-BR (raiz)
+index.html / longward.html / sobre.html / contato.html → páginas pt-BR (raiz)
 estudos/*.html                                          → seção Estudos pt-BR (índice + um arquivo por estudo)
 en/studies/*.html                                       → seção Studies em inglês (caminhos sempre em inglês)
-en/{index,manual,sobre,contato}.html                    → páginas en (espelho 1:1 das pt-BR)
+en/{index,longward,career,contact}.html                 → páginas en (espelho 1:1 das pt-BR, nomes em inglês)
 assets/site.css, hero.css, canvas.js, hero.js, cards.js → cópias exatas do fael-tech-design-system (não editar aqui)
-assets/main.css                                          → estilos próprios do site (moldura, menu, manual, Horizonte);
+assets/main.css                                          → estilos próprios do site (moldura, menu, Início, Estudos, Longward);
                                                              só consome var(--ft-*) semânticos de brand/tokens.css
-assets/main.js                                            → menu da barra do hero, scroll-spy do manual, menu lateral mobile
+assets/main.js                                            → menu da barra do hero e ano do rodapé
+vercel.json                                               → redirecionamentos de endereços antigos
 assets/img/                                               → imagens do site (ex.: avatar/avatar-busto.png do hero da home)
 brand/                                                    → fonte única de verdade da marca (ver seção abaixo)
 docs/ai/overview.md                                       → propósito, tom de voz, diretrizes de conteúdo
@@ -46,11 +47,13 @@ llms.txt                                                  → índice machine-re
 
 1. **`docs/ai/facts.md` é a fonte única de verdade** para datas, cargos, métricas e formação. Se
    um fato de carreira muda, edite `facts.md` primeiro e só depois replique nas páginas públicas
-   (principalmente `sobre.html` / `en/sobre.html`). Nunca invente cargo, empresa, data ou número
+   (principalmente `sobre.html` / `en/career.html`). Nunca invente cargo, empresa, data ou número
    que não esteja lá ou nas páginas já publicadas.
 2. **Paridade pt/en obrigatória.** Qualquer mudança de conteúdo em uma página pt-BR deve ser
    replicada na página `en/` correspondente (e vice-versa) na mesma sessão de edição. As duas
-   nunca devem divergir em fatos, apenas em idioma.
+   nunca devem divergir em fatos, apenas em idioma. Páginas em inglês usam nomes de arquivo e
+   pastas em inglês (`en/career.html`, `en/studies/`), sem misturar idiomas. Ao renomear ou remover
+   uma página publicada, acrescente o redirecionamento em `vercel.json`.
 3. **Tom de voz:** direto, sem hype, sem superlativos vazios ("revolucionário", "world-class").
    Ver [docs/ai/overview.md](docs/ai/overview.md#tom-de-voz-e-diretrizes-de-conteúdo) para a lista
    completa de diretrizes (engenharia e portfólio antes de cargos, primeira pessoa sem tom de
@@ -76,7 +79,7 @@ manual completo.
 ## Fluxo de trabalho ao editar uma página HTML
 
 Cada página HTML é standalone (sem includes/templates), então elementos compartilhados - a barra
-de navegação (`.ds-hero__bar`, dentro do hero de cada página), `<link rel="alternate" hreflang>`,
+de navegação (`.ds-hero__bar`, dentro do hero de cada página, com as bandeiras de idioma `.site-langs`), `<link rel="alternate" hreflang>`,
 tags do Vercel, `<link rel="stylesheet">` - existem duplicados em cada arquivo. Ao mudar um desses
 elementos (ex.: um link da nav), replique a mudança em todas as páginas pt e en, não só na que
 motivou a edição. Isso inclui as páginas de `estudos/` e `en/studies/`, que ficam em subpastas
@@ -95,7 +98,7 @@ atualização. Ao mudar o conteúdo de um estudo, na mesma edição e nos dois i
    `· atualizado em <data>` / `· updated <date>` ao lado da data e mantenha a ordem do mais
    recente para o mais antigo.
 
-Correções de digitação não contam como atualização. Datas usam `<time datetime="AAAA-MM-DD">`.
+Correções de digitação não contam como atualização, nem mudanças feitas no mesmo dia da publicação: elas fazem parte da publicação. Datas usam `<time datetime="AAAA-MM-DD">`.
 
 ## Design system
 
@@ -103,7 +106,7 @@ O visual segue o [fael-tech-design-system](https://github.com/faelplg/design-sys
 `brand/tokens.css`, `brand/assets/*.svg`, `assets/site.css`, `assets/hero.css`, `assets/canvas.js`,
 `assets/hero.js` e `assets/cards.js` são cópias exatas de lá: para mudar algum deles, mude no design system e copie de
 novo. O que só existe no site vai em `assets/main.css`. Cada página abre com um hero do design system:
-Busto na home, Agulhas na Trajetória e Retícula no Manual, nos Estudos e no Contato. O tema segue o sistema
+Busto na home, Agulhas na Trajetória, Retícula nos Estudos, Estratos na Longward e Interferência no Contato. Cada seção principal (Início, Trajetória, Estudos, Longward, Contato) tem um hero próprio, que não se repete em outra seção. Dentro de uma seção o hero é o mesmo: o índice e todas as páginas de Estudos usam a Retícula, e cada par pt/en compartilha o hero. O tema segue o sistema
 operacional (`light-dark()` nos tokens semânticos); componentes nunca usam hex, `rgba()` ou
 primitivos (`--ft-teal-*`, `--ft-ink`...), só os semânticos (`--ft-fg`, `--ft-bg-raised`,
 `--ft-accent`...), e espaçamento sai de `--ft-space-*`.

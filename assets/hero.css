@@ -1,7 +1,7 @@
 /* ═══════════════════════════════════════════════
    fael.tech - heróis
-   O Busto abre a home; Agulhas e Retícula abrem páginas internas
-   (.ds-hero--page). Três palcos independentes da documentação: este arquivo, o canvas.js e
+   O Busto abre a home; Agulhas, Retícula, Estratos e Interferência abrem
+   páginas internas (.ds-hero--page). Palcos independentes da documentação: este arquivo, o canvas.js e
    o hero.js podem ir para o site sem levar o design-system.css.
    O palco é uma faixa da largura da tela, sem moldura. Barra, texto e busto
    ficam na linha do .site-container (--hero-inset), a mesma do texto abaixo.
@@ -210,6 +210,12 @@
    escuro a faixa se separa da página pela linha de baixo. */
 .ds-hero--halftone { color-scheme: dark; background: var(--ft-bg); }
 .ds-hero--halftone .ds-hero__title { max-width: 10em; }
+
+/* ── 4 · Estratos e 5 · Interferência ── */
+/* Linhas finas em Canvas 2D sobre o fundo da página interna; o campo fica
+   fora do texto pela máscara comum abaixo. */
+.ds-hero--strata .ds-hero__title,
+.ds-hero--interference .ds-hero__title { max-width: 10em; }
 
 /* ── Página interna: campo fora do texto ── */
 /* No palco baixo o texto ocupa uma fatia maior: o campo abre só depois dele

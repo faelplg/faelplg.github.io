@@ -2,6 +2,8 @@
 // - agulhas: campo de ponteiros em Canvas 2D que se alinha ao cursor
 // - busto: paralaxe entre o disco e o retrato
 // - retícula: meio-tom em WebGL (um fragment shader, sem biblioteca)
+// - estratos: linhas em Op Art que guardam por um tempo a marca do cursor
+// - interferência: moiré entre dois conjuntos de círculos, um deles no cursor
 //
 // Tudo pausa fora da tela. Com "reduzir movimento", cada hero desenha um
 // quadro parado e não responde ao cursor.
@@ -233,6 +235,148 @@
     onThemeChange(() => { readColors(); loop.redraw(); });
   }
 
-  const INIT = { needles: initNeedles, bust: initBust, halftone: initHalftone };
+  // Monta canvas 2D, tamanho e cores comuns aos palcos de linha.
+  // `setup(width, height)` recalcula a cena; `draw(ctx, colors, time, animated, size)` pinta.
+  function lineStage(stage, readColors, setup, draw) {
+    const canvas = stage.querySelector('canvas');
+    const ctx = canvas.getContext('2d');
+    const size = { width: 0, height: 0 };
+    let colors = readColors();
+
+    function resize() {
+      const dpr = Math.min(window.devicePixelRatio || 1, DPR_MAX);
+      size.width = stage.clientWidth;
+      size.height = stage.clientHeight;
+      canvas.width = Math.round(size.width * dpr);
+      canvas.height = Math.round(size.height * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      setup(size.width, size.height);
+    }
+
+    resize();
+    const loop = createLoop(stage, (time, animated) => {
+      ctx.clearRect(0, 0, size.width, size.height);
+      draw(ctx, colors, time, animated, size);
+    });
+    new ResizeObserver(() => { resize(); loop.redraw(); }).observe(stage);
+    onThemeChange(() => { colors = readColors(); loop.redraw(); });
+  }
+
+  // ── 4 · Estratos ──
+  // Linhas horizontais que ondulam como um quadro de Op Art. O cursor deixa
+  // marcas que afastam as linhas e demoram a se desfazer: a passagem fica.
+  function initStrata(stage) {
+    const pointer = trackPointer(stage);
+    const GAP = 8;           // distância entre linhas, na grade de 4px
+    const STEP = 6;          // resolução horizontal de cada linha
+    const RADIUS = 72;       // alcance de uma marca
+    const LIFE = 7;          // segundos até uma marca sumir
+    const MAX_MARKS = 32;
+    let rows = [];
+    let marks = [];
+    let last = { x: -1e4, y: -1e4, time: -1 };
+
+    function setup(width, height) {
+      rows = [];
+      for (let y = GAP; y < height; y += GAP) rows.push(y);
+    }
+
+    function addMark(x, y, time) {
+      marks.push({ x, y, born: time });
+      if (marks.length > MAX_MARKS) marks.shift();
+      last = { x, y, time };
+    }
+
+    function draw(ctx, colors, time, animated, size) {
+      if (animated) {
+        // sem cursor, o ponto que deixa marcas vaga devagar pelo campo
+        const x = pointer.active ? pointer.x : size.width * (0.7 + 0.18 * Math.sin(time * 0.17));
+        const y = pointer.active ? pointer.y : size.height * (0.55 + 0.3 * Math.sin(time * 0.29 + 1));
+        if (Math.hypot(x - last.x, y - last.y) > 18 || time - last.time > 0.6) addMark(x, y, time);
+        marks = marks.filter((mark) => time - mark.born < LIFE);
+      }
+
+      ctx.lineWidth = 1;
+      for (let index = 0; index < rows.length; index++) {
+        const base = rows[index];
+        let glow = 0;
+        ctx.beginPath();
+        for (let x = 0; x <= size.width + STEP; x += STEP) {
+          // a onda de fundo muda de fase a cada linha, como nas pinturas de Bridget Riley
+          let dy = Math.sin(x * 0.012 + index * 0.35 + (animated ? time * 0.6 : 0)) * 2.5;
+          if (animated) {
+            for (const mark of marks) {
+              const ox = x - mark.x;
+              const oy = base - mark.y;
+              const fade = 1 - (time - mark.born) / LIFE;
+              const push = Math.exp(-(ox * ox + oy * oy) / (2 * RADIUS * RADIUS)) * fade;
+              dy += Math.sign(oy || 1) * push * 14;
+              glow = Math.max(glow, push);
+            }
+          }
+          if (x === 0) ctx.moveTo(x, base + dy);
+          else ctx.lineTo(x, base + dy);
+        }
+        ctx.strokeStyle = colors.rest;
+        ctx.globalAlpha = 1;
+        ctx.stroke();
+        if (glow > 0.05) {
+          ctx.strokeStyle = colors.trace;
+          ctx.globalAlpha = Math.min(1, glow * 1.6);
+          ctx.stroke();
+        }
+      }
+      ctx.globalAlpha = 1;
+    }
+
+    lineStage(stage, () => ({ rest: tokenColor(stage, '--ft-line-strong'), trace: tokenColor(stage, '--ft-accent') }), setup, draw);
+  }
+
+  // ── 5 · Interferência ──
+  // Dois conjuntos de círculos concêntricos: um parado, outro seguindo o cursor.
+  // Onde se cruzam aparece um moiré que nenhum dos dois desenha sozinho.
+  function initInterference(stage) {
+    const pointer = trackPointer(stage);
+    const GAP = 8;
+    const home = { x: 0, y: 0 };
+    const guest = { x: 0, y: 0 };
+    let reach = 0;
+
+    function setup(width, height) {
+      home.x = width * 0.72;
+      home.y = height * 0.62;
+      guest.x = width * 0.86;
+      guest.y = height * 0.38;
+      reach = Math.hypot(width, height);
+    }
+
+    function rings(ctx, center, color, alpha) {
+      ctx.strokeStyle = color;
+      ctx.globalAlpha = alpha;
+      ctx.beginPath();
+      for (let radius = GAP; radius < reach; radius += GAP) {
+        ctx.moveTo(center.x + radius, center.y);
+        ctx.arc(center.x, center.y, radius, 0, Math.PI * 2);
+      }
+      ctx.stroke();
+    }
+
+    function draw(ctx, colors, time, animated, size) {
+      if (animated) {
+        const targetX = pointer.active ? pointer.x : size.width * (0.8 + 0.1 * Math.sin(time * 0.21));
+        const targetY = pointer.active ? pointer.y : size.height * (0.45 + 0.25 * Math.sin(time * 0.33 + 2));
+        guest.x += (targetX - guest.x) * 0.06;
+        guest.y += (targetY - guest.y) * 0.06;
+      }
+      ctx.lineWidth = 1;
+      rings(ctx, home, colors.home, 1);
+      rings(ctx, guest, colors.guest, 0.7);
+      ctx.globalAlpha = 1;
+    }
+
+    lineStage(stage, () => ({ home: tokenColor(stage, '--ft-line-strong'), guest: tokenColor(stage, '--ft-accent') }), setup, draw);
+  }
+
+  const INIT = { needles: initNeedles, bust: initBust, halftone: initHalftone, strata: initStrata, interference: initInterference };
   document.querySelectorAll('[data-hero]').forEach((stage) => INIT[stage.dataset.hero]?.(stage));
 })();
