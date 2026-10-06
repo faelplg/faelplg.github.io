@@ -236,7 +236,7 @@
 }
 .home-archs .site-arch--wide .site-arch__text h3 { font-size: clamp(40px, 7cqi, 64px); line-height: 1; }
 /* No card estreito o palco vem primeiro e mais baixo, para o texto respirar */
-.home-archs .site-arch--stage-first .site-arch__stage { height: 192px; }
+.home-archs .site-arch--stage-first .site-arch__stage { height: 192px; min-height: 192px; }
 .home-archs .site-arch--stage-first .site-arch__text { flex: 1; }
 .home-archs .home-artifact { margin-top: auto; padding-top: var(--ft-space-3); }
 
