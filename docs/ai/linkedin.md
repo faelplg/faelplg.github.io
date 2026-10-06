@@ -22,7 +22,7 @@
 ## Headline
 
 ```
-Software Engineer | AI Engineering, UX and Software Architecture | 10+ years as CTO, led a 50-person tech org | Building AI tools at fael.tech
+Software engineer | AI engineering, UX and software architecture | 10+ years as CTO, led a 50-person tech org | Building AI tools at fael.tech
 ```
 
 Português:
@@ -46,7 +46,7 @@ I also write creative code: generative sketches in p5.js, a few of them in Featu
 
 fael.tech · r@fael.tech
 
-Focus: Software Engineering · Software Architecture · AI Engineering · Spec-Driven Development · Front-end · React · TypeScript · UX Engineering · Technical Leadership
+Focus: Software engineering · Software architecture · AI engineering · Spec-driven development · Front-end · React · TypeScript · UX engineering · Technical leadership
 ```
 
 Português:
@@ -62,7 +62,7 @@ Também escrevo código criativo: sketches generativos em p5.js, alguns deles na
 
 fael.tech · r@fael.tech
 
-Foco: Engenharia de software · Arquitetura de software · Engenharia de IA · Spec-Driven Development · Front-end · React · TypeScript · UX Engineering · Liderança técnica
+Foco: Engenharia de software · Arquitetura de software · Engenharia de IA · Spec-driven development · Front-end · React · TypeScript · UX Engineering · Liderança técnica
 ```
 
 ## Página da fael.tech
@@ -76,7 +76,7 @@ linkedin.com/company/faeltech, criada em out/2026 para dar logo à posição atu
 
 ## Experiência: posição atual
 
-- Title: Software Engineer and Consultant in Technology, Leadership and AI
+- Title: Software engineer and consultant in technology, leadership and AI
 - Employment type: Self-employed
 - Company: fael.tech
 - Start date: Aug 2026 (current)

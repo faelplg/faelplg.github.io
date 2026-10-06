@@ -20,7 +20,7 @@ Mesmo conteúdo em todos os lugares, formato adaptado a cada um. Ao mudar, mude 
 depois no site (hero de `sobre.html` / `en/career.html`) e no LinkedIn
 ([linkedin.md](./linkedin.md)).
 
-- LinkedIn (en, com palavras-chave): Software Engineer | AI Engineering, UX and Software Architecture | 10+ years as CTO, led a 50-person tech org | Building AI tools at fael.tech
+- LinkedIn (en, com palavras-chave): Software engineer | AI engineering, UX and software architecture | 10+ years as CTO, led a 50-person tech org | Building AI tools at fael.tech
 - Site (pt): Engenheiro de software com foco em IA, UX e arquitetura. Mais de dez anos como CTO, liderando times de tecnologia de até 50 pessoas. Hoje construo ferramentas de IA pela fael.tech.
 - Site (en): Software engineer focused on AI, UX and architecture. More than ten years as CTO, leading technology teams of up to 50 people. Today I build AI tools through fael.tech.
 
@@ -31,7 +31,8 @@ depois no site (hero de `sobre.html` / `en/career.html`) e no LinkedIn
 | Ago 2026 - atual | Engenheiro de software e consultor em tecnologia, liderança e IA | fael.tech (autônomo), Florianópolis |
 | Abr 2021 - Jun 2026 (5a 3m) | Diretor de Tecnologia (CTO) | Aurum Software, Florianópolis |
 | Out 2020 - Abr 2021 (7m) | Desenvolvedor front-end sênior e Tech Lead | Aurum Software, Florianópolis |
-| Ago 2015 - Mai 2022 (6a 10m) | Cofundador / CTO | Yattó (antes Residuall), Belo Horizonte |
+| Abr 2021 - Mai 2022 (1a 2m) | Cofundador (meio período) | Yattó, Belo Horizonte |
+| Ago 2015 - Abr 2021 (5a 9m) | Cofundador / CTO | Yattó (antes Residuall), Belo Horizonte |
 | Set 2013 - Jun 2016 (2a 10m) | Cofundador, engenheiro de software e QA | Interact Software, Belo Horizonte |
 | Jul 2013 - Jul 2015 (2a) | Gestor de TI na CEGUAI - SEPLAG | Governo de Minas Gerais, Belo Horizonte |
 | Abr 2011 - Jul 2013 (2a 4m) | Assessor/Gerente de TI na SEPLAG | Governo de Minas Gerais, Belo Horizonte |
