@@ -31,9 +31,9 @@ O primeiro parágrafo é o que aparece antes do "...see more".
 ```
 I went from senior front-end engineer to CTO in six months, then spent five years leading technology at one of Brazil's top legal software companies. Now I'm back to building: AI tools, a method for building software with agents, and studies on UX for AI.
 
-I started in front-end and full stack development and co-founded two companies, where I built products from scratch with AngularJS, React, Go, PHP and MySQL. As CTO, I grew the technology team from 25 to 50 people across eight squads, built the data area from scratch and designed the company's AI adoption roadmap, from governance and security to AI in the development cycle and spec-driven development.
+I started in front-end and full stack development and co-founded two companies, where I built products from scratch with AngularJS, React, Go, PHP and MySQL. As tech lead, I led an incremental migration from AngularJS to React with micro-frontends without stopping product development. As CTO, I grew the technology team from 25 to 50 people across eight squads, set up the data team and its data marts, and designed the company's AI adoption roadmap, from governance and security to AI in the development cycle and spec-driven development.
 
-Today I work through fael.tech, where I study, build and publish. I'm building AIKM, a local knowledge manager for people who work with AI (open source soon), and Radiant, a method for building software with agents. I take on consulting work in engineering, technical leadership and AI in software development, and I'm founding Longward, a company that will build products to help communities keep and develop what they learn together.
+My work now goes through fael.tech. AIKM is a local knowledge manager for people who work with AI, and it will be open source soon. Radiant is my method for building software with agents. I also take on consulting in engineering, technical leadership and AI in software development, and I'm founding Longward, a company that will build products to help communities keep and develop what they learn together.
 
 I also write creative code: generative sketches in p5.js, a few of them in Featured.
 
@@ -52,7 +52,7 @@ Focus: Software Engineering · Software Architecture · AI Engineering · Spec-D
 - Notify network: desligado
 
 ```
-Independent work under fael.tech, where I study, build and publish.
+Independent work under fael.tech.
 
 - Consulting and partnerships in software engineering, technical leadership and AI in software development.
 - Building my own tools and methods: AIKM, a local knowledge manager for people who work with AI (open source soon), and Radiant, a method for building software with agents.
@@ -90,6 +90,17 @@ Nesta ordem:
 3. Radiant - https://fael.tech/en/studies/radiant.html
 4. Um sketch do OpenProcessing (Alien hills). Os outros saem do Featured.
 
-## Top skills
+## Skills
+
+Top skills, nesta ordem:
 
 Software Architecture · Artificial Intelligence (AI) · React.js · User Experience (UX) · Technical Leadership
+
+Lista completa (o LinkedIn aceita até 50; quando um nome não existir na lista dele, use o mais
+próximo que ele sugerir):
+
+Software Engineering · Software Architecture · Artificial Intelligence (AI) · AI Engineering ·
+Generative AI · AI Agents · Spec-Driven Development · React.js · TypeScript · JavaScript ·
+Front-End Development · Micro Frontends · AngularJS · Full-Stack Development · Go (Programming Language) ·
+User Experience (UX) · UX Engineering · Creative Coding · p5.js · Technical Leadership ·
+Engineering Management · Data Governance · Cloud Computing
