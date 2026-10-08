@@ -41,7 +41,6 @@ brand/                                                    → fonte única de ve
 docs/ai/overview.md                                       → propósito, tom de voz, diretrizes de conteúdo
 docs/ai/facts.md                                          → fatos canônicos de carreira/bio (única fonte de números/datas)
 docs/ai/content-map.md                                    → mapa de páginas pt/en com propósito e afirmações-chave de cada uma
-docs/ai/linkedin.md                                       → textos oficiais do perfil no LinkedIn (headline sincronizado com facts.md)
 llms.txt                                                  → índice machine-readable na raiz (convenção llms.txt)
 ```
 

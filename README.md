@@ -43,7 +43,6 @@ docs/
     overview.md                → propósito do site, estrutura, tom de voz
     facts.md                    → fatos canônicos de carreira/bio (fonte única de números e datas)
     content-map.md              → mapa de páginas pt/en com propósito de cada uma
-    linkedin.md                 → textos oficiais do perfil no LinkedIn
 tools/
   og-image.html              → fonte da imagem de compartilhamento (comando para gerar no comentário do topo)
 llms.txt                  → índice machine-readable na raiz (convenção llms.txt)

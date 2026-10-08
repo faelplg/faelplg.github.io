@@ -17,8 +17,8 @@
 ## Headline oficial
 
 Mesmo conteúdo em todos os lugares, formato adaptado a cada um. Ao mudar, mude aqui primeiro e
-depois no site (hero de `sobre.html` / `en/career.html`) e no LinkedIn
-([linkedin.md](./linkedin.md)).
+depois no site (hero de `sobre.html` / `en/career.html`) e no LinkedIn. Os textos do LinkedIn
+ficam no projeto career-library (`career-library/linkedin/linkedin.md`), junto do currículo.
 
 - LinkedIn (en, com palavras-chave): Software engineer | AI engineering, UX and software architecture | 10+ years as CTO, led a 50-person tech org | Building AI tools at fael.tech
 - Site (pt): Engenheiro de software com foco em IA, UX e arquitetura. Mais de dez anos como CTO, liderando times de tecnologia de até 50 pessoas. Hoje construo ferramentas de IA pela fael.tech.
