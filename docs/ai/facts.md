@@ -28,7 +28,7 @@ ficam no projeto career-library (`career-library/linkedin/linkedin.md`), junto d
 
 | Período | Cargo | Empresa |
 |---|---|---|
-| Ago 2026 - atual | Engenheiro de software e consultor em tecnologia, liderança e IA | fael.tech (autônomo), Florianópolis |
+| Ago 2026 - atual | Engenheiro de software e pesquisador em IA e UX | fael.tech (autônomo), Florianópolis |
 | Abr 2021 - Jun 2026 (5a 3m) | Diretor de Tecnologia (CTO) | Aurum Software, Florianópolis |
 | Out 2020 - Abr 2021 (7m) | Desenvolvedor front-end sênior e Tech Lead | Aurum Software, Florianópolis |
 | Abr 2021 - Mai 2022 (1a 2m) | Cofundador (meio período) | Yattó, Belo Horizonte |
@@ -54,14 +54,18 @@ enquanto já assumia o cargo de CTO na Aurum.
 - Produtos digitais entregues na Interact Software: 4.
 - Empresas cofundadas: 2 (Yattó/Residuall e Interact Software).
 - Clientes da Yattó no novo modelo de negócio (grandes empresas de bens de consumo e varejo), que podem ser citados: Cargill, Johnson & Johnson, Nestlé e Suvinil. Não associá-los à fase de logística reversa da Residuall.
-- eNPS do time na Aurum: acima de 80 em todos os anos como CTO.
+- eNPS e LNPS (avaliação da liderança pelo time) na Aurum: ambos acima de 80 em todos os anos como CTO.
+- Equipe da Aurum: estabilizada depois de um período de muitas saídas, anterior à chegada de Fael, o que permitiu crescer o quadro. Não há número de turnover confirmado: não publicar valores.
+- Cargos criados na Aurum: arquiteto de software, gerente de tecnologia e analista de suporte, com promoções internas para novas funções.
+- Orçamento de cloud na Aurum: R$300 a 400 mil por mês, só cloud e infraestrutura no GCP (não inclui folha).
+- Esteiras na Aurum: padronização das esteiras de produto, performance, cloud, dados e sistemas internos, com métricas de desenvolvimento implantadas junto.
 - Aurum certificada pelo Great Place to Work durante a gestão (certificação da empresa, não atribuir a Fael).
 - Aurum: uma das líderes em software jurídico no Brasil (produtos Astrea e Themis).
 - Modernização na Aurum: migração incremental de AngularJS para React com micro-frontends,
   preservando a evolução contínua do produto.
 - Promoção na Aurum: de Senior Front-end Engineer/Tech Lead a CTO cerca de seis meses depois de entrar (out/2020 a abr/2021).
 - Dados na Aurum: área estruturada do zero, incluindo time, data marts e planos de governança e confiabilidade.
-- Segurança na Aurum: programa baseado em CIS Controls e monitoramento automatizado, reduzindo de aproximadamente 30 para zero as solicitações mensais de investigação de vazamentos.
+- Segurança na Aurum: programa baseado em CIS Controls e monitoramento automatizado, reduzindo de aproximadamente 30 para zero as solicitações mensais de investigação de vazamentos. O programa inclui políticas de segurança da informação, plano de continuidade e recuperação de desastres. Não há números de incidentes, SLO ou uptime.
 - IA na Aurum: roadmap corporativo cobrindo governança e segurança, IA no SDLC, Spec-Driven Development e inovação no produto.
 - Privacidade na Aurum: atuação como DPO e implementação de práticas organizacionais de conformidade com a LGPD.
 
