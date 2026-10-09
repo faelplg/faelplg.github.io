@@ -406,6 +406,8 @@
   font-size: var(--ft-text-small-size);
   color: var(--ft-fg-muted);
 }
+/* a frase ocupa o resto da linha e só desce para baixo da data no palco estreito */
+.study-changes li span { flex: 1 1 16rem; }
 .study-changes time { min-width: 12rem; font-family: var(--ft-font-mono); font-size: 12px; line-height: 1.9; color: var(--ft-accent); }
 
 .study-back {

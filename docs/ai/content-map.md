@@ -30,7 +30,8 @@
 - **AIKM** (projeto, open source em breve): `estudos/aikm.html` / `en/studies/aikm.html`. Problema,
   conhecimento local, distribuição controlada, registros de aprendizado e privacidade.
 - **Radiant** (método, em andamento): `estudos/radiant.html` / `en/studies/radiant.html`. A
-  pergunta central, o ciclo em seis etapas, o contrato de tarefa e a constituição.
+  pergunta central, o ciclo em seis etapas, o contrato de tarefa, os papéis com delegação, as
+  capacidades (`deep`, `standard`, `light`), a Manutenção que só propõe e a constituição.
 - **Regra:** estudos descrevem o funcionamento, não o histórico interno de desenvolvimento
   (datas de commits, registros de verificação, reusos observados).
 

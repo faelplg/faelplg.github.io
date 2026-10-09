@@ -75,6 +75,7 @@
           <div><dt>Type</dt><dd>Method</dd></div>
           <div><dt>Status</dt><dd><span class="study-status">In progress</span></dd></div>
           <div><dt>Published</dt><dd><time datetime="2026-10-06">October 6, 2026</time></dd></div>
+          <div><dt>Updated</dt><dd><time datetime="2026-10-09">October 9, 2026</time></dd></div>
         </dl>
         <h2>The question</h2>
         <p>How do you turn an intent into a real system without losing clarity, context, evidence, and learning along the way? Working with agents makes that question more urgent. An agent executes fast, but it executes what it understood, and what it understood depends on what was written before.</p>
@@ -82,7 +83,7 @@
         <h2>The cycle</h2>
         <p>Radiant organizes the work into stages, each with its own document.</p>
         <ol class="study-steps">
-          <li><strong>Frame.</strong> The Project Frame records the intent, the problem, and what is out of scope. The Design Frame does the same for the experience of the people who will use it.</li>
+          <li><strong>Frame and challenge.</strong> The Project Frame records the intent, the problem, and what is out of scope. The Design Frame does the same for the experience of the people who will use it. Before moving on, the challenge asks which hypothesis the increment tests and which simpler alternative would do the job.</li>
           <li><strong>Specify and plan.</strong> The Spec and the Plan describe the system and the build order. The experience specification lives in a separate document.</li>
           <li><strong>Contract.</strong> Each task becomes a contract with a single observable change as its objective, the allowed scope, the expected outputs, what not to do, and how to verify it.</li>
           <li><strong>Build.</strong> An agent executes the contract, and only the contract.</li>
@@ -101,12 +102,45 @@ Risk tier: 0 | 1 | 2 | 3
           <figcaption>Excerpt from the contract every task fills in before an agent starts.</figcaption>
         </figure>
 
+        <h2>Roles</h2>
+        <p>Each stage of the cycle has a role responsible for it. One main session, the orchestrator, talks to me, decides what to delegate, and gives the final acceptance. The rest of the work goes to subagents with a closed scope. None of them talks to me directly, and none of them delegates to another.</p>
+        <dl class="page-facts">
+          <div><dt>Orchestrator</dt><dd>Runs the cycle, applies the approval gates, and keeps scope changes, contract activation, and irreversible actions to itself.</dd></div>
+          <div><dt>Ideation</dt><dd>Researches sources for the Frame and gives an adversarial critique of assumptions and scope, without deciding either.</dd></div>
+          <div><dt>Design</dt><dd>Drafts the Spec, the Design Spec, and architecture decisions as proposals. Approving them is my call.</dd></div>
+          <div><dt>Dev</dt><dd>Executes the contract. The contract is the request, and the completion report is the answer.</dd></div>
+          <div><dt>Verifier</dt><dd>Checks the result against the contract and the Spec and returns findings with evidence, without fixing what it verifies.</dd></div>
+          <div><dt>Maintenance</dt><dd>Sits outside the cycle. Watches the project and proposes what to do next.</dd></div>
+        </dl>
+        <p>The orchestrator does not accept work as done on the word of whoever did it. It rereads the change, runs the checks, and compares the result with the contract.</p>
+
+        <h2>Capabilities</h2>
+        <p>The method does not name models. It talks about three capabilities: <code>deep</code> for judgment, critique, and acceptance, <code>standard</code> for execution bounded by an approved document, and <code>light</code> for search, collection, and mechanical checks. Each role has a default capability, and only the task contract can change it, with a one-line justification. Acceptance never uses a lower capability than the one that produced the work. That makes bounded work cheaper without loosening verification.</p>
+        <p>Each tool's adapter translates capabilities into models. There are two today, for Codex and Claude Code, on top of the same core. Every delegation is recorded with its role, its capability, and the model that actually ran.</p>
+        <figure class="home-artifact">
+          <pre class="site-codeblock">{
+  "capabilities": ["deep", "standard", "light"],
+  "agents": [
+    {
+      "name": "radiant-verifier",
+      "role": "verificador",
+      "capability": "deep",
+      "description": "Verifica outputs contra contrato, Spec e critérios, sem corrigir o que verifica."
+    },</pre>
+          <figcaption>Excerpt from the file listing the profiles that can receive delegated work.</figcaption>
+        </figure>
+
+        <h2>Maintenance</h2>
+        <p>Maintenance runs on my machine, on demand or on a schedule, and only proposes. It looks at the state of the contracts, the checks the project declared safe, drift between the Spec and the code, dependencies and, when authorized, issues and CI. A source that is not authorized is skipped, and the report says why.</p>
+        <p>Every candidate needs evidence: command output, file, line. The result is a report with the proposals ranked by risk, value, and reversibility, and a draft contract for the top three. The only thing it writes is that report, in a folder outside Git. A report with nothing relevant is also a result. When I pick a proposal, the orchestrator creates the contract and the cycle starts.</p>
+
         <h2>Rules that apply to everything</h2>
         <p>Above the documents sits a constitution, with the method's invariants and the order of precedence when two rules conflict. It separates system design from experience design and holds that a lesson only becomes a general rule when it recurs. An isolated problem is fixed in the project where it showed up.</p>
 
         <section class="study-changes" aria-labelledby="changes-title">
           <h2 id="changes-title">Updates</h2>
           <ol>
+          <li><time datetime="2026-10-09">October 9, 2026</time><span>Roles with delegation, capabilities instead of models, Maintenance, and the challenge in framing.</span></li>
           <li><time datetime="2026-10-06">October 6, 2026</time><span>First published.</span></li>
           </ol>
         </section>
