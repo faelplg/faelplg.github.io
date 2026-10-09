@@ -35,7 +35,7 @@ assets/main.css                                          → estilos próprios d
                                                              só consome var(--ft-*) semânticos de brand/tokens.css
 assets/main.js                                            → menu da barra do hero e ano do rodapé
 vercel.json                                               → redirecionamentos de endereços antigos
-assets/img/                                               → imagens do site (ex.: avatar/avatar-busto.png do hero da home, og/fael-tech.png de compartilhamento)
+assets/img/                                               → imagens do site (ex.: avatar/avatar-busto.webp do hero da home, og/fael-tech.png de compartilhamento)
 tools/og-image.html                                       → fonte da imagem de compartilhamento; o comando para gerar o PNG está no topo do arquivo
 brand/                                                    → fonte única de verdade da marca (ver seção abaixo)
 docs/ai/overview.md                                       → propósito, tom de voz, diretrizes de conteúdo
@@ -107,7 +107,7 @@ Correções de digitação não contam como atualização, nem mudanças feitas 
 
 O visual segue o [fael-tech-design-system](https://github.com/faelplg/design-systems/tree/main/fael-tech-design-system).
 `brand/tokens.css`, `brand/assets/*.svg`, `assets/site.css`, `assets/hero.css`, `assets/canvas.js`,
-`assets/hero.js` e `assets/cards.js` são cópias exatas de lá: para mudar algum deles, mude no design system e copie de
+`assets/hero.js`, `assets/cards.js` e `assets/img/avatar/avatar-busto.webp` são cópias exatas de lá: para mudar algum deles, mude no design system e copie de
 novo. O que só existe no site vai em `assets/main.css`. Cada página abre com um hero do design system:
 Busto na home, Agulhas na Trajetória, Retícula nos Estudos, Estratos na Longward e Interferência no Contato. Cada seção principal (Início, Trajetória, Estudos, Longward, Contato) tem um hero próprio, que não se repete em outra seção. Dentro de uma seção o hero é o mesmo: o índice e todas as páginas de Estudos usam a Retícula, e cada par pt/en compartilha o hero. O tema segue o sistema
 operacional (`light-dark()` nos tokens semânticos); componentes nunca usam hex, `rgba()` ou

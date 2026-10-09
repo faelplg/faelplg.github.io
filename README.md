@@ -30,8 +30,7 @@ assets/
   main.css                    → estilos próprios do site (consome tokens semânticos de brand/tokens.css)
   main.js                      → menu da barra do hero e ano do rodapé
   img/
-    avatar/avatar-busto.png     → avatar em busto do hero da home
-    fael-portrait.jpg           → retrato de perfil (fora de uso desde o hero novo)
+    avatar/avatar-busto.webp    → avatar em busto do hero da home; cópia exata do WebP gerado no fael-tech-design-system
     og/fael-tech.png            → imagem de compartilhamento (Open Graph) de todas as páginas
 brand/          → fonte única de verdade da marca - NÃO modificar a partir deste projeto
   manual-identidade-visual.html   → manual original imprimível
