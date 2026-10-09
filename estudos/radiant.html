@@ -75,6 +75,7 @@
           <div><dt>Tipo</dt><dd>Método</dd></div>
           <div><dt>Estado</dt><dd><span class="study-status">Em andamento</span></dd></div>
           <div><dt>Publicado em</dt><dd><time datetime="2026-10-06">6 de outubro de 2026</time></dd></div>
+          <div><dt>Atualizado em</dt><dd><time datetime="2026-10-09">9 de outubro de 2026</time></dd></div>
         </dl>
         <h2>A pergunta</h2>
         <p>Como transformar uma intenção em um sistema real sem perder clareza, contexto, evidência e aprendizado no caminho? Trabalhar com agentes torna essa pergunta mais urgente. Um agente executa rápido, mas executa o que entendeu, e o que ele entendeu depende do que foi escrito antes.</p>
@@ -82,7 +83,7 @@
         <h2>O ciclo</h2>
         <p>O Radiant organiza o trabalho em etapas, cada uma com um documento próprio.</p>
         <ol class="study-steps">
-          <li><strong>Enquadrar.</strong> O Project Frame registra a intenção, o problema e o que está fora do escopo. O Design Frame faz o mesmo para a experiência de quem vai usar.</li>
+          <li><strong>Enquadrar e desafiar.</strong> O Project Frame registra a intenção, o problema e o que está fora do escopo. O Design Frame faz o mesmo para a experiência de quem vai usar. Antes de seguir, o desafio pergunta qual hipótese o incremento testa e qual alternativa mais simples atenderia.</li>
           <li><strong>Especificar e planejar.</strong> A Spec e o Plan descrevem o sistema e a ordem de construção. A especificação da experiência fica num documento separado.</li>
           <li><strong>Contratar.</strong> Cada tarefa vira um contrato com uma única mudança observável como objetivo, o escopo permitido, os resultados esperados, o que não fazer e como verificar.</li>
           <li><strong>Construir.</strong> Um agente executa o contrato, e só ele.</li>
@@ -101,12 +102,45 @@ Risk tier: 0 | 1 | 2 | 3
           <figcaption>Trecho do contrato que cada tarefa preenche antes de um agente começar.</figcaption>
         </figure>
 
+        <h2>Papéis</h2>
+        <p>Cada etapa do ciclo tem um papel responsável. Uma sessão principal, o orquestrador, conversa comigo, decide o que delegar e faz o aceite final. O resto do trabalho vai para subagentes com escopo fechado. Nenhum deles fala comigo diretamente, e nenhum delega para outro.</p>
+        <dl class="page-facts">
+          <div><dt>Orquestrador</dt><dd>Conduz o ciclo, aplica os gates de aprovação e guarda para si mudança de escopo, ativação de contrato e ações irreversíveis.</dd></div>
+          <div><dt>Ideação</dt><dd>Pesquisa fontes para o Frame e faz a crítica adversarial de premissas e escopo, sem decidir nenhum dos dois.</dd></div>
+          <div><dt>Design</dt><dd>Redige Spec, Design Spec e decisões de arquitetura como propostas. A aprovação é minha.</dd></div>
+          <div><dt>Dev</dt><dd>Executa o contrato. O contrato é o pedido, e o relatório de conclusão é a resposta.</dd></div>
+          <div><dt>Verificador</dt><dd>Confronta o resultado com o contrato e a Spec e devolve achados com evidência, sem corrigir o que verifica.</dd></div>
+          <div><dt>Manutenção</dt><dd>Fica fora do ciclo. Observa o projeto e propõe o que fazer em seguida.</dd></div>
+        </dl>
+        <p>O orquestrador não aceita um trabalho como pronto só pelo relato de quem o fez. Ele relê a mudança, roda as checagens e compara com o contrato.</p>
+
+        <h2>Capacidades</h2>
+        <p>O método não cita modelos. Ele fala em três capacidades: <code>deep</code> para julgamento, crítica e aceite, <code>standard</code> para execução delimitada por um documento aprovado e <code>light</code> para busca, coleta e checagens mecânicas. Cada papel tem uma capacidade padrão, e só o contrato da tarefa muda isso, com uma linha de justificativa. O aceite nunca usa uma capacidade menor que a de quem produziu o trabalho. Assim o trabalho delimitado fica mais barato sem afrouxar a verificação.</p>
+        <p>Quem traduz capacidade em modelo é o adaptador de cada ferramenta. Hoje são dois, para Codex e Claude Code, sobre o mesmo núcleo. Cada delegação fica registrada com papel, capacidade e o modelo que de fato rodou.</p>
+        <figure class="home-artifact">
+          <pre class="site-codeblock">{
+  "capabilities": ["deep", "standard", "light"],
+  "agents": [
+    {
+      "name": "radiant-verifier",
+      "role": "verificador",
+      "capability": "deep",
+      "description": "Verifica outputs contra contrato, Spec e critérios, sem corrigir o que verifica."
+    },</pre>
+          <figcaption>Trecho do arquivo com os perfis que podem receber trabalho delegado.</figcaption>
+        </figure>
+
+        <h2>Manutenção</h2>
+        <p>A Manutenção roda na minha máquina, por comando ou agendada, e só propõe. Ela olha o estado dos contratos, as checagens que o projeto declarou seguras, divergências entre Spec e código, dependências e, quando autorizado, issues e CI. Fonte não autorizada é pulada, e o relatório diz por quê.</p>
+        <p>Cada candidato precisa de evidência: saída de comando, arquivo, linha. O resultado é um relatório com as propostas ordenadas por risco, valor e reversibilidade e um rascunho de contrato para as três primeiras. A única coisa que ela grava é esse relatório, numa pasta fora do Git. Um relatório sem nada relevante também é um resultado. Quando escolho uma proposta, o orquestrador cria o contrato e o ciclo começa.</p>
+
         <h2>Regras que valem para tudo</h2>
         <p>Acima dos documentos fica uma constituição, com os invariantes do método e a ordem de precedência quando duas regras entram em conflito. Ela separa o desenho do sistema do desenho da experiência e define que um aprendizado só vira regra geral quando se repete. Um problema isolado é corrigido no projeto onde apareceu.</p>
 
         <section class="study-changes" aria-labelledby="changes-title">
           <h2 id="changes-title">Atualizações</h2>
           <ol>
+          <li><time datetime="2026-10-09">9 de outubro de 2026</time><span>Papéis com delegação, capacidades no lugar de modelos, a Manutenção e o desafio no enquadramento.</span></li>
           <li><time datetime="2026-10-06">6 de outubro de 2026</time><span>Primeira publicação.</span></li>
           </ol>
         </section>
