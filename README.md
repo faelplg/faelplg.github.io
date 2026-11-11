@@ -1,21 +1,24 @@
-# fael.tech - site pessoal e laboratório da marca
+# fael.tech - personal site and brand lab
 
-Site pessoal estático de Rafael (Fael) Goulart, engenheiro de software especializado em UX e IA,
-cofundador de duas empresas e ex-CTO, e laboratório de aplicação da identidade
-visual da marca **fael.tech**. O próprio site, construído com os tokens e regras da marca, é a
-prova viva do sistema (não há uma página separada de "componentes"). Bilíngue: pt-BR na raiz,
-inglês em `en/`.
+Static personal site of Rafael (Fael) Goulart, a software engineer specialized in UX and AI,
+co-founder of two companies and former CTO, and the lab where the **fael.tech** brand visual
+identity is applied. The site itself, built with the brand's tokens and rules, is the living
+proof of the system (there is no separate "components" page). Bilingual: pt-BR at the root,
+English in `en/`.
 
-## Estrutura
+## Structure
 
 ```
-index.html              → pt-BR · Início (landing pessoal)
-longward.html             → pt-BR · Longward (tese da empresa)
-sobre.html                → pt-BR · Trajetória / carreira
-contato.html              → pt-BR · Contato
+index.html              → pt-BR · Home (personal landing page)
+longward.html             → pt-BR · Longward (the company's thesis)
+sobre.html                → pt-BR · Career
+contato.html              → pt-BR · Contact
 estudos/
-  index.html                → pt-BR · índice dos Estudos
-  historia-da-fael-tech.html, aikm.html, radiant.html → estudos
+  index.html                → pt-BR · Studies index
+  historia-da-fael-tech.html, aikm.html, radiant.html, demerzel.html → studies
+boletins/
+  index.html                → pt-BR · monthly bulletins index
+  2026-10.html              → pt-BR · bulletin for October 2026 (one YYYY-MM.html per month)
 en/
   index.html                → en · Home
   longward.html               → en · Longward
@@ -23,34 +26,37 @@ en/
   contact.html                → en · Contact
   studies/
     index.html                → en · Studies index
-    fael-tech-story.html, aikm.html, radiant.html → studies
+    fael-tech-story.html, aikm.html, radiant.html, demerzel.html → studies
+  bulletins/
+    index.html                → en · Monthly bulletins index
+    2026-10.html              → en · Bulletin for October 2026
 assets/
-  site.css, hero.css          → cópias exatas do fael-tech-design-system (componentes e heróis)
-  canvas.js, hero.js, cards.js → cópias exatas do fael-tech-design-system (palcos animados dos heróis e dos architecture cards)
-  main.css                    → estilos próprios do site (consome tokens semânticos de brand/tokens.css)
-  main.js                      → menu da barra do hero e ano do rodapé
+  site.css, hero.css          → exact copies from the fael-tech-design-system (components and heroes)
+  canvas.js, hero.js, cards.js → exact copies from the fael-tech-design-system (animated stages for the heroes and the architecture cards)
+  main.css                    → the site's own styles (uses the semantic tokens from brand/tokens.css)
+  main.js                      → hero bar menu and footer year
   img/
-    avatar/avatar-busto.webp    → avatar em busto do hero da home; cópia exata do WebP gerado no fael-tech-design-system
-    og/fael-tech.png            → imagem de compartilhamento (Open Graph) de todas as páginas
-brand/          → fonte única de verdade da marca - NÃO modificar a partir deste projeto
-  manual-identidade-visual.html   → manual original imprimível
-  tokens.css                → tokens primitivos e semânticos, claro/escuro, espaço, tipografia (--ft-*)
-  assets/*.svg               → símbolo, ícone, favicon
-  README.md                  → guia rápido do kit de marca
+    avatar/avatar-busto.webp    → bust avatar for the home hero; exact copy of the WebP generated in the fael-tech-design-system
+    og/fael-tech.png            → sharing image (Open Graph) for every page
+brand/          → single source of truth for the brand - DO NOT modify from this project
+  manual-identidade-visual.html   → original printable manual
+  tokens.css                → primitive and semantic tokens, light/dark, spacing, typography (--ft-*)
+  assets/*.svg               → symbol, icon, favicon
+  README.md                  → quick guide to the brand kit
 docs/
-  ai/                        → documentação estruturada para agentes de IA/LLMs
-    overview.md                → propósito do site, estrutura, tom de voz
-    facts.md                    → fatos canônicos de carreira/bio (fonte única de números e datas)
-    content-map.md              → mapa de páginas pt/en com propósito de cada uma
+  ai/                        → structured documentation for AI agents/LLMs
+    overview.md                → site purpose, structure, tone of voice
+    facts.md                    → canonical career/bio facts (single source of numbers and dates)
+    content-map.md              → pt/en page map with the purpose of each page
 tools/
-  og-image.html              → fonte da imagem de compartilhamento (comando para gerar no comentário do topo)
-llms.txt                  → índice machine-readable na raiz (convenção llms.txt)
-vercel.json               → redirecionamentos de endereços antigos (manual, horizonte, en/sobre, en/contato)
-AGENTS.md                 → instruções para agentes de IA que trabalharem neste repositório
+  og-image.html              → source of the sharing image (the command to generate it is in the comment at the top)
+llms.txt                  → machine-readable index at the root (llms.txt convention)
+vercel.json               → redirects from old addresses (manual, horizonte, en/sobre, en/contato)
+AGENTS.md                 → instructions for AI agents working in this repository
 ```
 
-## Documentação
+## Documentation
 
-Para trabalhar no kit de marca em si (símbolo, cores, tokens), veja
-[brand/README.md](brand/README.md). Para agentes de IA/LLMs que precisem de
-fatos estruturados sobre o conteúdo do site, veja [llms.txt](llms.txt) e [docs/ai/](docs/ai/).
+To work on the brand kit itself (symbol, colors, tokens), see
+[brand/README.md](brand/README.md). For AI agents/LLMs that need
+structured facts about the site's content, see [llms.txt](llms.txt) and [docs/ai/](docs/ai/).

@@ -19,21 +19,45 @@
 
 - **Propósito:** projetos, métodos e teses de Fael, com o que ele aprendeu construindo cada um.
   Os caminhos em inglês ficam em inglês (`en/studies/`), sem misturar idiomas.
-- **Índice:** `estudos/index.html` / `en/studies/index.html`, com um node card clicável por estudo,
-  do mais recente para o mais antigo. Todo card tem o mesmo formato: data (e atualização), tipo,
-  título, resumo e estado.
+- **Índice:** `estudos/index.html` / `en/studies/index.html`, only the studies, as the design
+  system's node cards, newest first: the most recent (Demerzel) is the highlighted card on the
+  full row, and the others share the rows below.
+  Every card has the date (and update), type, title, summary, topics from the study's sections,
+  state and a link to read it.
 - **Página de estudo:** linha de metadados (tipo, estado, publicado em, atualizado em) e, no fim,
   a lista "Atualizações" com o histórico datado. Ver `AGENTS.md` para o procedimento de atualização.
 - **A história da fael.tech** (ensaio): `estudos/historia-da-fael-tech.html` /
   `en/studies/fael-tech-story.html`. Por que a fael.tech existe, como Fael trabalha, o que a marca
   representa e o site como primeira aplicação do design system.
-- **AIKM** (projeto, open source em breve): `estudos/aikm.html` / `en/studies/aikm.html`. Problema,
-  conhecimento local, distribuição controlada, registros de aprendizado e privacidade.
+- **AIKM** (project, open source soon): `estudos/aikm.html` / `en/studies/aikm.html`. A manager
+  for each project's agent environment: the problem and the hypothesis, the catalog, the
+  `aikm.yaml` manifest and `aikm sync` (with a manifest example), external sources pinned to a
+  commit, and the guarantees (fails closed, private pieces never reach public repositories).
 - **Radiant** (método, em andamento): `estudos/radiant.html` / `en/studies/radiant.html`. A
   pergunta central, o ciclo em seis etapas, o contrato de tarefa, os papéis com delegação, as
-  capacidades (`deep`, `standard`, `light`), a Manutenção que só propõe e a constituição.
+  capacidades (`deep`, `standard`, `light`), execution units and routing rules (dispatched by
+  Demerzel), a Manutenção que só propõe e a constituição. Repository note: public, MIT license.
+- **Demerzel** (project, in progress): `estudos/demerzel.html` / `en/studies/demerzel.html`. How
+  each unit of a Radiant contract becomes a Claude Code or Codex session in herdr: the question,
+  what it does (with an example unit block), the core and the Radiant integration, the dispatch
+  order in herdr, what it refuses, and how it relates to Radiant. Repository note: public, MIT license.
 - **Regra:** estudos descrevem o funcionamento, não o histórico interno de desenvolvimento
   (datas de commits, registros de verificação, reusos observados).
+
+## Boletins - `boletins/` / `en/bulletins/`
+
+- **Propósito:** a monthly series, not a study, on what mattered in AI and technology. Opens
+  with the Phases hero.
+- **Índice:** `boletins/index.html` / `en/bulletins/index.html`, the issues as a `.site-timeline`,
+  newest first.
+- **Edição:** each issue (`YYYY-MM.html`) has an issue marker (number,
+  month, publication date), an opening summary, the sections Agentes de IA / AI agents, Segundo
+  cérebro / Second brain, UX/UI and IA e ativismo cívico / AI and civic activism, and per item the
+  monthly rank, what happened, why it matters, an optional relation to Fael's projects and the
+  sources. October 2026 (issue 1): agents blocked by stores and banks, agents escaping their
+  controls, Claude Duet, skills instead of subagents, Ramp Glass, Canva Craft, model-generated
+  interfaces, cities stopping cameras and data centers, who pays for open data, and r/opensource
+  banning AI projects. Procedure for a new month in `AGENTS.md`.
 
 ## Longward - `longward.html` / `en/longward.html`
 

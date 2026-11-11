@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Demerzel - Fael Goulart</title>
+<meta name="description" content="Como cada unidade de um contrato do Radiant vira uma sessão do Claude Code ou do Codex no herdr, sem eu montar a sessão à mão." />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="fael.tech" />
+<meta property="og:title" content="Demerzel - Fael Goulart" />
+<meta property="og:description" content="Como cada unidade de um contrato do Radiant vira uma sessão do Claude Code ou do Codex no herdr, sem eu montar a sessão à mão." />
+<meta property="og:url" content="https://fael.tech/estudos/demerzel.html" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:image" content="https://fael.tech/assets/img/og/fael-tech.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="fael.tech - Rafael Goulart" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="../brand/assets/faeltech-favicon.svg">
+<link rel="alternate" hreflang="en" href="../en/studies/demerzel.html">
+<link rel="alternate" hreflang="pt-BR" href="demerzel.html">
+<meta name="color-scheme" content="light dark" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,600..700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+<link rel="stylesheet" href="../brand/tokens.css">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/hero.css">
+<link rel="stylesheet" href="../assets/main.css">
+</head>
+<body>
+
+  <a class="site-skip" href="#main">Pular para o conteúdo</a>
+
+  <div class="site-stage">
+    <header class="ds-hero ds-hero--page ds-hero--halftone" data-hero="halftone">
+      <canvas class="ds-hero__canvas" aria-hidden="true"></canvas>
+      <div class="ds-hero__bar">
+        <a class="ds-hero__brand" href="../index.html"><span class="ds-mark" aria-hidden="true"></span><span class="site-word">fael<span class="tld">.tech</span></span></a>
+        <button class="site-menu-btn" type="button" hidden data-menu-toggle aria-expanded="false" aria-controls="site-menu">
+          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          Menu
+        </button>
+        <nav class="site-menu" id="site-menu" data-menu aria-label="Navegação principal">
+          <ul class="ds-hero__nav">
+            <li><a href="../index.html">Início</a></li>
+            <li><a href="../estudos/index.html" aria-current="page">Estudos</a></li>
+            <li><a href="../boletins/index.html">Boletins</a></li>
+            <li><a href="../longward.html">Longward</a></li>
+            <li><a href="../sobre.html">Trajetória</a></li>
+            <li><a href="../contato.html">Contato</a></li>
+            <li class="site-langs">
+              <span class="site-flag site-flag--current"><img src="../assets/img/flags/br.svg" width="20" height="14" alt="Português (idioma atual)"></span>
+              <a class="site-flag" href="../en/studies/demerzel.html" hreflang="en" lang="en" title="Read in English"><img src="../assets/img/flags/us.svg" width="20" height="14" alt="English"></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="ds-hero__body">
+        <ol class="ds-hero__crumbs" aria-label="Você está em">
+          <li><a href="../index.html">fael.tech</a></li>
+          <li><a href="index.html">Estudos</a></li>
+          <li aria-current="page">Demerzel</li>
+        </ol>
+        <h1 class="ds-hero__title">Demerzel<span class="tld">.</span></h1>
+        <p class="ds-hero__lead">Como cada unidade de um contrato do Radiant vira uma sessão do Claude Code ou do Codex no herdr, sem eu montar a sessão à mão.</p>
+      </div>
+    </header>
+  </div>
+
+  <main class="site-page site-container" id="main">
+
+    <article class="site-section study">
+        <dl class="study-meta">
+          <div><dt>Tipo</dt><dd>Projeto</dd></div>
+          <div><dt>Estado</dt><dd><span class="study-status">Em andamento</span></dd></div>
+          <div><dt>Publicado em</dt><dd><time datetime="2026-11-11">11 de novembro de 2026</time></dd></div>
+        </dl>
+        <h2>A pergunta</h2>
+        <p>Como uma parte do trabalho vira uma sessão rodando, na ferramenta certa, sem que eu monte tudo à mão e sem tirar o aceite de quem orquestra?</p>
+        <p>Montar uma subtarefa à mão exige criar worktree e branch, abrir uma aba, escolher a ferramenta e o modelo, iniciar a ferramenta e colar o contexto e o contrato. O subagente nativo de cada ferramenta evita parte disso, mas prende a subtarefa à ferramenta da sessão principal e não deixa a divisão registrada.</p>
+
+        <h2>O que ele faz</h2>
+        <p>O Demerzel lê as unidades declaradas num contrato do <a href="radiant.html">Radiant</a> e despacha cada uma como uma sessão do Claude Code ou do Codex. Depois acompanha o estado dessa sessão e, quando ela termina, recolhe o relatório de conclusão e entrega ao orquestrador, que relê o resultado e decide se aceita.</p>
+        <p>Ele não tem julgamento. Não divide o trabalho, não escolhe a regra de roteamento e não aceita entregas. Valida e executa a regra que o orquestrador escolheu. O orquestrador chama o Demerzel no lugar da ferramenta nativa de subagente, e eu também posso chamá-lo direto.</p>
+        <p>É um CLI não interativo, em Bun e TypeScript, sem dependências de runtime. Os comandos são <code>dispatch</code>, <code>status</code>, <code>wait</code>, <code>collect</code>, <code>resume</code> e <code>close</code>, e a saída pode vir em JSON. O código de saída diz se deu certo, se há algo pendente ou se houve recusa sem efeito, e os erros dizem o que fazer em seguida.</p>
+        <figure class="home-artifact">
+          <pre class="site-codeblock">units:
+  - id: TC-0025.1
+    role: radiant-dev
+    requires: []
+    objective: Fetch external sources by rev for the cache.
+    writes: [src/sources/, tests/sources/]
+    depends_on: []
+    done_when: The tests in tests/sources pass and the cache refuses a mismatched digest.
+  - id: TC-0025.2
+    role: radiant-dev
+    capability: deep
+    capability_reason: Refusing a digest requires security judgment.
+    requires: []
+    objective: Wire digest verification into sync.
+    writes: [src/sync/]
+    depends_on: [TC-0025.1]
+    done_when: bun run check passes and sync refuses content without a matching digest.</pre>
+          <figcaption>Exemplo do bloco de unidades de um contrato, como a decisão do Radiant que deu origem ao Demerzel define o formato. É isso que o Demerzel lê.</figcaption>
+        </figure>
+
+        <h2>Núcleo e integração</h2>
+        <p>O Demerzel tem dois andares. O núcleo recebe tudo já resolvido (ferramenta, modelo, esforço, caminhos e pedido), guarda o registro dos despachos de cada projeto e acompanha as sessões. Ele não conhece o Radiant. A prova é a suíte de testes do núcleo, que roda com um backend falso e sem nenhuma cópia do Radiant no ambiente.</p>
+        <p>A integração com o Radiant acha o projeto, lê as unidades do contrato, confere se o projeto está na revisão do Radiant que declarou, aplica as regras de roteamento e espera o relatório de conclusão. Nesta primeira versão, ela é a única porta de entrada. Despachar fora de um projeto Radiant fica para quando houver um caso real que peça isso.</p>
+        <p>O Radiant também é o processo com que desenvolvo o Demerzel, com Frame, Spec, Plan e contratos. Essa dependência fica no processo. O código do núcleo continua sem ela.</p>
+
+        <h2>No herdr</h2>
+        <p>As sessões rodam no herdr, o primeiro backend, atrás de uma interface do próprio Demerzel. Um despacho segue esta ordem:</p>
+        <ol class="study-steps">
+          <li>Confere o projeto e a revisão do Radiant.</li>
+          <li>Lê a unidade e confere se as dependências terminaram e se os caminhos que ela escreve não se sobrepõem aos de outra unidade em andamento.</li>
+          <li>Aplica a regra de roteamento e registra a decisão antes de lançar.</li>
+          <li>No herdr, cria o worktree com uma branch própria, inicia a ferramenta e envia o pedido.</li>
+          <li><code>status</code> e <code>wait</code> acompanham a sessão até ela terminar ou travar.</li>
+          <li><code>collect</code> lê o relatório de conclusão no worktree e entrega ao orquestrador.</li>
+        </ol>
+        <p>O pedido leva só caminhos: o papel, onde está o Radiant, o contrato, a unidade e onde deixar o retorno. Nunca leva o conteúdo do contrato nem segredos. A ferramenta lançada lê o contrato e o envia ao seu provedor de modelo, como numa sessão aberta à mão. Por isso, escolher a ferramenta também é escolher para onde o contrato vai.</p>
+
+        <h2>O que ele recusa</h2>
+        <p>Algumas decisões ficam fora do Demerzel de propósito:</p>
+        <ul class="site-rules">
+          <li><span class="glyph" aria-hidden="true">→</span><span>Não altera contratos nem muda escopo.</span></li>
+          <li><span class="glyph" aria-hidden="true">→</span><span>Não faz merge, push nem abre PR, e não remove branch. Worktree e branch só são apagados com uma flag explícita de descarte que eu dou.</span></li>
+          <li><span class="glyph" aria-hidden="true">→</span><span>Não responde pedidos de permissão. Quando uma sessão para num deles, ele avisa o orquestrador, que traz a pergunta para mim.</span></li>
+          <li><span class="glyph" aria-hidden="true">→</span><span>Não rebaixa capacidade em silêncio. Sem candidato viável na capacidade pedida, a unidade fica em HOLD.</span></li>
+        </ul>
+        <p>Todas as checagens rodam antes do primeiro efeito, e uma recusa não cria nada.</p>
+
+        <h2>Com o Radiant</h2>
+        <p>O Demerzel nasceu de uma decisão do Radiant, que passou a dividir contratos em unidades e a rotear cada uma para uma ferramenta. O Radiant define o formato das unidades e das regras, e o Demerzel faz a parte mecânica. Já usei o Demerzel para despachar as unidades de um contrato real do <a href="aikm.html">AIKM</a>.</p>
+        <p class="study-note"><span>Repositório do Demerzel</span><span><a href="https://github.com/faelplg/demerzel">Público, licença MIT</a></span></p>
+
+        <section class="study-changes" aria-labelledby="changes-title">
+          <h2 id="changes-title">Atualizações</h2>
+          <ol>
+          <li><time datetime="2026-11-11">11 de novembro de 2026</time><span>Primeira publicação.</span></li>
+          </ol>
+        </section>
+    </article>
+
+    <a class="study-back" href="index.html">← Todos os estudos</a>
+
+
+    <footer class="site-footer">
+      <span class="site-cover__tagline">© <span data-year>2026</span> fael.tech. Todos os direitos reservados.</span>
+      <span class="ds-mark ds-mark--circle" aria-hidden="true"></span>
+    </footer>
+
+  </main>
+
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+  <script src="../assets/canvas.js"></script>
+  <script src="../assets/hero.js"></script>
+  <script src="../assets/main.js"></script>
+</body>
+</html>

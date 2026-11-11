@@ -85,6 +85,7 @@ Português (nativo) · Inglês (fluente) · Espanhol (intermediário)
 ## Projetos atuais
 
 - Longward: empresa em formação (ver Identidade).
-- AIKM (AI Knowledge Manager): gerenciador de conhecimento local para quem trabalha com IA. Será aberto como open source ("open source em breve").
-- Radiant: método para construir software com agentes, em andamento. Não é open source por enquanto.
+- AIKM: a manager for each project's agent environment. Pieces are declared once in a catalog and a per-project manifest, and AIKM generates the files each agent tool reads. The repository is still private; the site says "open source em breve" / "open source soon".
+- Radiant: method for building software with agents, in progress. Open source: the repository is public under the MIT license (github.com/faelplg/radiant).
+- Demerzel: a CLI that dispatches each unit of a Radiant contract as a Claude Code or Codex session in herdr and collects the completion report for the orchestrator. In progress. Open source: the repository is public under the MIT license (github.com/faelplg/demerzel).
 - Linha de estudos: experiência do usuário aplicada à IA (sistemas construídos com agentes e produtos que usam IA nas suas funcionalidades).

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Demerzel - Fael Goulart</title>
+<meta name="description" content="How each unit of a Radiant contract becomes a Claude Code or Codex session in herdr, without me setting it up by hand." />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="fael.tech" />
+<meta property="og:title" content="Demerzel - Fael Goulart" />
+<meta property="og:description" content="How each unit of a Radiant contract becomes a Claude Code or Codex session in herdr, without me setting it up by hand." />
+<meta property="og:url" content="https://fael.tech/en/studies/demerzel.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:image" content="https://fael.tech/assets/img/og/fael-tech.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="fael.tech - Rafael Goulart" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="../../brand/assets/faeltech-favicon.svg">
+<link rel="alternate" hreflang="pt-BR" href="../../estudos/demerzel.html">
+<link rel="alternate" hreflang="en" href="demerzel.html">
+<meta name="color-scheme" content="light dark" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,600..700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+<link rel="stylesheet" href="../../brand/tokens.css">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/hero.css">
+<link rel="stylesheet" href="../../assets/main.css">
+</head>
+<body>
+
+  <a class="site-skip" href="#main">Skip to content</a>
+
+  <div class="site-stage">
+    <header class="ds-hero ds-hero--page ds-hero--halftone" data-hero="halftone">
+      <canvas class="ds-hero__canvas" aria-hidden="true"></canvas>
+      <div class="ds-hero__bar">
+        <a class="ds-hero__brand" href="../../en/index.html"><span class="ds-mark" aria-hidden="true"></span><span class="site-word">fael<span class="tld">.tech</span></span></a>
+        <button class="site-menu-btn" type="button" hidden data-menu-toggle aria-expanded="false" aria-controls="site-menu">
+          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          Menu
+        </button>
+        <nav class="site-menu" id="site-menu" data-menu aria-label="Main navigation">
+          <ul class="ds-hero__nav">
+            <li><a href="../../en/index.html">Home</a></li>
+            <li><a href="../../en/studies/index.html" aria-current="page">Studies</a></li>
+            <li><a href="../../en/bulletins/index.html">Bulletins</a></li>
+            <li><a href="../../en/longward.html">Longward</a></li>
+            <li><a href="../../en/career.html">Career</a></li>
+            <li><a href="../../en/contact.html">Contact</a></li>
+            <li class="site-langs">
+              <a class="site-flag" href="../../estudos/demerzel.html" hreflang="pt-BR" lang="pt-BR" title="Ler em português"><img src="../../assets/img/flags/br.svg" width="20" height="14" alt="Português"></a>
+              <span class="site-flag site-flag--current"><img src="../../assets/img/flags/us.svg" width="20" height="14" alt="English (current language)"></span>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="ds-hero__body">
+        <ol class="ds-hero__crumbs" aria-label="You are here">
+          <li><a href="../../en/index.html">fael.tech</a></li>
+          <li><a href="index.html">Studies</a></li>
+          <li aria-current="page">Demerzel</li>
+        </ol>
+        <h1 class="ds-hero__title">Demerzel<span class="tld">.</span></h1>
+        <p class="ds-hero__lead">How each unit of a Radiant contract becomes a Claude Code or Codex session in herdr, without me setting it up by hand.</p>
+      </div>
+    </header>
+  </div>
+
+  <main class="site-page site-container" id="main">
+
+    <article class="site-section study">
+        <dl class="study-meta">
+          <div><dt>Type</dt><dd>Project</dd></div>
+          <div><dt>Status</dt><dd><span class="study-status">In progress</span></dd></div>
+          <div><dt>Published</dt><dd><time datetime="2026-11-11">November 11, 2026</time></dd></div>
+        </dl>
+        <h2>The question</h2>
+        <p>How does a piece of work become a running session, on the right tool, without me setting everything up by hand and without taking acceptance away from whoever orchestrates?</p>
+        <p>Setting up a subtask by hand means creating a worktree and a branch, opening a tab, picking the tool and the model, starting the tool, and pasting in the context and the contract. Each tool's native subagent saves part of that, but it ties the subtask to the main session's tool and leaves no record of the split.</p>
+
+        <h2>What it does</h2>
+        <p>Demerzel reads the units declared in a <a href="radiant.html">Radiant</a> contract and dispatches each one as a Claude Code or Codex session. Then it tracks that session's state and, when it finishes, collects the completion report and hands it to the orchestrator, which rereads the result and decides whether to accept it.</p>
+        <p>It has no judgment. It doesn't split the work, doesn't pick the routing rule, and doesn't accept deliveries. It validates and runs the rule the orchestrator chose. The orchestrator calls Demerzel instead of the native subagent tool, and I can call it directly too.</p>
+        <p>It's a non-interactive CLI, in Bun and TypeScript, with no runtime dependencies. The commands are <code>dispatch</code>, <code>status</code>, <code>wait</code>, <code>collect</code>, <code>resume</code>, and <code>close</code>, and the output can come as JSON. The exit code says whether it worked, whether something is pending, or whether it refused without side effects, and errors say what to do next.</p>
+        <figure class="home-artifact">
+          <pre class="site-codeblock">units:
+  - id: TC-0025.1
+    role: radiant-dev
+    requires: []
+    objective: Fetch external sources by rev for the cache.
+    writes: [src/sources/, tests/sources/]
+    depends_on: []
+    done_when: The tests in tests/sources pass and the cache refuses a mismatched digest.
+  - id: TC-0025.2
+    role: radiant-dev
+    capability: deep
+    capability_reason: Refusing a digest requires security judgment.
+    requires: []
+    objective: Wire digest verification into sync.
+    writes: [src/sync/]
+    depends_on: [TC-0025.1]
+    done_when: bun run check passes and sync refuses content without a matching digest.</pre>
+          <figcaption>An example of a contract's unit block, in the format defined by the Radiant decision that gave rise to Demerzel. This is what Demerzel reads.</figcaption>
+        </figure>
+
+        <h2>Core and integration</h2>
+        <p>Demerzel has two layers. The core receives everything already resolved (tool, model, effort, paths, and request), keeps each project's dispatch log, and tracks the sessions. It doesn't know about Radiant. The proof is the core's test suite, which runs with a fake backend and no copy of Radiant in the environment.</p>
+        <p>The Radiant integration finds the project, reads the contract's units, checks that the project is on the Radiant revision it declared, applies the routing rules, and waits for the completion report. In this first version, it's the only way in. Dispatching outside a Radiant project waits until a real case calls for it.</p>
+        <p>Radiant is also the process I use to build Demerzel, with a Frame, a Spec, a Plan, and contracts. That dependency stays in the process. The core's code still doesn't have it.</p>
+
+        <h2>In herdr</h2>
+        <p>Sessions run in herdr, the first backend, behind an interface of Demerzel's own. A dispatch goes in this order:</p>
+        <ol class="study-steps">
+          <li>Checks the project and the Radiant revision.</li>
+          <li>Reads the unit and checks that its dependencies are done and that the paths it writes don't overlap with another unit in progress.</li>
+          <li>Applies the routing rule and records the decision before launching.</li>
+          <li>In herdr, creates the worktree with its own branch, starts the tool, and sends the request.</li>
+          <li><code>status</code> and <code>wait</code> follow the session until it finishes or gets stuck.</li>
+          <li><code>collect</code> reads the completion report in the worktree and hands it to the orchestrator.</li>
+        </ol>
+        <p>The request carries only paths: the role, where Radiant is, the contract, the unit, and where to leave the return. It never carries the contract's content or secrets. The launched tool reads the contract and sends it to its model provider, as it would in a session opened by hand. So picking the tool also means picking where the contract goes.</p>
+
+        <h2>What it refuses</h2>
+        <p>Some decisions stay outside Demerzel on purpose:</p>
+        <ul class="site-rules">
+          <li><span class="glyph" aria-hidden="true">→</span><span>It doesn't change contracts or scope.</span></li>
+          <li><span class="glyph" aria-hidden="true">→</span><span>It doesn't merge, push, or open a PR, and doesn't remove branches. A worktree or branch is only deleted with an explicit discard flag that I give.</span></li>
+          <li><span class="glyph" aria-hidden="true">→</span><span>It doesn't answer permission prompts. When a session stops at one, it tells the orchestrator, which brings the question to me.</span></li>
+          <li><span class="glyph" aria-hidden="true">→</span><span>It doesn't lower the capability quietly. With no viable candidate at the requested capability, the unit stays in HOLD.</span></li>
+        </ul>
+        <p>Every check runs before the first side effect, and a refusal creates nothing.</p>
+
+        <h2>With Radiant</h2>
+        <p>Demerzel came out of a Radiant decision to split contracts into units and route each one to a tool. Radiant defines the format of units and rules, and Demerzel does the mechanical part. I've already used Demerzel to dispatch the units of a real <a href="aikm.html">AIKM</a> contract.</p>
+        <p class="study-note"><span>Demerzel repository</span><span><a href="https://github.com/faelplg/demerzel">Public, MIT license</a></span></p>
+
+        <section class="study-changes" aria-labelledby="changes-title">
+          <h2 id="changes-title">Updates</h2>
+          <ol>
+          <li><time datetime="2026-11-11">November 11, 2026</time><span>First published.</span></li>
+          </ol>
+        </section>
+    </article>
+
+    <a class="study-back" href="index.html">← All studies</a>
+
+
+    <footer class="site-footer">
+      <span class="site-cover__tagline">© <span data-year>2026</span> fael.tech. All rights reserved.</span>
+      <span class="ds-mark ds-mark--circle" aria-hidden="true"></span>
+    </footer>
+
+  </main>
+
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+  <script src="../../assets/canvas.js"></script>
+  <script src="../../assets/hero.js"></script>
+  <script src="../../assets/main.js"></script>
+</body>
+</html>

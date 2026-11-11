@@ -28,6 +28,8 @@ página separada de "componentes".
 ```
 index.html / longward.html / sobre.html / contato.html → páginas pt-BR (raiz)
 estudos/*.html                                          → seção Estudos pt-BR (índice + um arquivo por estudo)
+boletins/*.html                                         → monthly bulletins in pt-BR (index + one file per month, YYYY-MM.html)
+en/bulletins/*.html                                     → monthly bulletins in English (same file names as pt-BR)
 en/studies/*.html                                       → seção Studies em inglês (caminhos sempre em inglês)
 en/{index,longward,career,contact}.html                 → páginas en (espelho 1:1 das pt-BR, nomes em inglês)
 assets/site.css, hero.css, canvas.js, hero.js, cards.js → cópias exatas do fael-tech-design-system (não editar aqui)
@@ -62,7 +64,7 @@ llms.txt                                                  → índice machine-re
 4. **Sentence case, nunca title case** em títulos e headlines - convenção da marca, vale para
    pt e en.
 5. Ao mudar a estrutura de páginas (nova seção, página nova, título), atualize
-   `docs/ai/content-map.md`, `llms.txt` e o bloco "Estrutura" do `README.md` junto.
+   `docs/ai/content-map.md`, `llms.txt` e o bloco "Structure" do `README.md` junto.
 6. Nunca use travessão/em dash "—" no conteúdo; use hífen simples "-" (convenção já aplicada em
    todo o repositório).
 
@@ -85,7 +87,7 @@ as tags de compartilhamento (`og:*` e `twitter:card`, com `og:title` e `og:descr
 `meta description` da página e `og:url` com o endereço dela),
 tags do Vercel, `<link rel="stylesheet">` - existem duplicados em cada arquivo. Ao mudar um desses
 elementos (ex.: um link da nav), replique a mudança em todas as páginas pt e en, não só na que
-motivou a edição. Isso inclui as páginas de `estudos/` e `en/studies/`, que ficam em subpastas
+motivou a edição. Isso inclui as páginas de `estudos/`, `en/studies/`, `boletins/` and `en/bulletins/`, que ficam em subpastas
 (caminhos com `../` e `../../`). Ao criar uma página nova, copie a estrutura de `<head>` e do
 `<header class="ds-hero ...">` de uma página existente do mesmo idioma para não perder um `hreflang`
 ou a inclusão dos scripts.
@@ -97,11 +99,31 @@ atualização. Ao mudar o conteúdo de um estudo, na mesma edição e nos dois i
 
 1. acrescente "Atualizado em" / "Updated" na `.study-meta` da página (ou troque a data existente);
 2. acrescente a entrada no topo da lista `.study-changes`, com a data e uma frase sobre o que mudou;
-3. no card do índice (`estudos/index.html` e `en/studies/index.html`), acrescente
+3. na linha do estudo no índice (`estudos/index.html` e `en/studies/index.html`), acrescente
    `· atualizado em <data>` / `· updated <date>` ao lado da data e mantenha a ordem do mais
    recente para o mais antigo.
 
-Correções de digitação não contam como atualização, nem mudanças feitas no mesmo dia da publicação: elas fazem parte da publicação. Datas usam `<time datetime="AAAA-MM-DD">`.
+Correções de digitação não contam como atualização, nem mudanças feitas no mesmo dia da publicação: elas fazem parte da publicação. Datas usam `<time datetime="YYYY-MM-DD">`.
+
+## Monthly bulletins
+
+Bulletins are a monthly series with their own section, not studies: they have no type, status or
+`.study-changes` list. Each month is one file per language, named `YYYY-MM.html`
+(`boletins/2026-10.html` and `en/bulletins/2026-10.html`). To add a month:
+
+1. Copy the latest bulletin in each language to the new `YYYY-MM.html` and update `<title>`,
+   `meta description`, `og:*` (including `og:url`), `hreflang`, the language flag link, the crumbs
+   and the `.study-meta` line (issue number, month, publication date).
+2. Keep the structure: opening summary, the "Nesta edição" / "In this issue" list, one
+   `.bulletin-section` per section and one `.bulletin-item` per item, with its monthly rank, "O que
+   aconteceu" / "What happened", "Por que importa" / "Why it matters", an optional
+   `.bulletin-relation` (linking to the project's study page when one exists) and the sources.
+3. Sources show the newsletter name and date, linking to the public URL with its domain as the
+   link text. Never publish internal paths, radar tags or review notes from the draft. A source
+   without a public URL gets only the newsletter name and date.
+4. Add the edition as the first `.site-timeline__item` in `boletins/index.html` and
+   `en/bulletins/index.html`.
+5. Bulletins are not updated after publication, apart from typo fixes.
 
 ## Design system
 
@@ -109,7 +131,7 @@ O visual segue o [fael-tech-design-system](https://github.com/faelplg/design-sys
 `brand/tokens.css`, `brand/assets/*.svg`, `assets/site.css`, `assets/hero.css`, `assets/canvas.js`,
 `assets/hero.js`, `assets/cards.js` e `assets/img/avatar/avatar-busto.webp` são cópias exatas de lá: para mudar algum deles, mude no design system e copie de
 novo. O que só existe no site vai em `assets/main.css`. Cada página abre com um hero do design system:
-Busto na home, Agulhas na Trajetória, Retícula nos Estudos, Estratos na Longward e Interferência no Contato. Cada seção principal (Início, Trajetória, Estudos, Longward, Contato) tem um hero próprio, que não se repete em outra seção. Dentro de uma seção o hero é o mesmo: o índice e todas as páginas de Estudos usam a Retícula, e cada par pt/en compartilha o hero. O tema segue o sistema
+Busto na home, Agulhas na Trajetória, Retícula nos Estudos, Estratos na Longward, Interferência no Contato and Phases in the bulletins (Boletins). Cada seção principal (Início, Trajetória, Estudos, Boletins, Longward, Contato) tem um hero próprio, que não se repete em outra seção. Dentro de uma seção o hero é o mesmo: o índice e todas as páginas de Estudos usam a Retícula, the bulletins index and every issue use Phases, e cada par pt/en compartilha o hero. O tema segue o sistema
 operacional (`light-dark()` nos tokens semânticos); componentes nunca usam hex, `rgba()` ou
 primitivos (`--ft-teal-*`, `--ft-ink`...), só os semânticos (`--ft-fg`, `--ft-bg-raised`,
 `--ft-accent`...), e espaçamento sai de `--ft-space-*`.
