@@ -16,6 +16,9 @@ contato.html              → pt-BR · Contato
 estudos/
   index.html                → pt-BR · índice dos Estudos
   historia-da-fael-tech.html, aikm.html, radiant.html → estudos
+  boletins/
+    index.html              → pt-BR · monthly bulletins index
+    2026-10.html            → pt-BR · bulletin for October 2026 (one YYYY-MM.html per month)
 en/
   index.html                → en · Home
   longward.html               → en · Longward
@@ -24,6 +27,9 @@ en/
   studies/
     index.html                → en · Studies index
     fael-tech-story.html, aikm.html, radiant.html → studies
+    bulletins/
+      index.html              → en · Monthly bulletins index
+      2026-10.html            → en · Bulletin for October 2026
 assets/
   site.css, hero.css          → cópias exatas do fael-tech-design-system (componentes e heróis)
   canvas.js, hero.js, cards.js → cópias exatas do fael-tech-design-system (palcos animados dos heróis e dos architecture cards)

@@ -32,6 +32,16 @@
 - **Radiant** (método, em andamento): `estudos/radiant.html` / `en/studies/radiant.html`. A
   pergunta central, o ciclo em seis etapas, o contrato de tarefa, os papéis com delegação, as
   capacidades (`deep`, `standard`, `light`), a Manutenção que só propõe e a constituição.
+- **Monthly bulletins** (series, not a study): `estudos/boletins/` / `en/studies/bulletins/`.
+  The index (`index.html`) lists the issues, newest first, and the Studies index links to it in
+  a separate panel below the study cards. Each issue (`YYYY-MM.html`) has an issue marker (number,
+  month, publication date), an opening summary, the sections Agentes de IA / AI agents, Segundo
+  cérebro / Second brain, UX/UI and IA e ativismo cívico / AI and civic activism, and per item the
+  monthly rank, what happened, why it matters, an optional relation to Fael's projects and the
+  sources. October 2026 (issue 1): agents blocked by stores and banks, agents escaping their
+  controls, Claude Duet, skills instead of subagents, Ramp Glass, Canva Craft, model-generated
+  interfaces, cities stopping cameras and data centers, who pays for open data, and r/opensource
+  banning AI projects. Procedure for a new month in `AGENTS.md`.
 - **Regra:** estudos descrevem o funcionamento, não o histórico interno de desenvolvimento
   (datas de commits, registros de verificação, reusos observados).
 

@@ -2,7 +2,7 @@
    fael.tech - estilos próprios do site
    site.css, hero.css (e canvas.js/hero.js/cards.js) são cópias do fael-tech-design-system
    e não são editados aqui. Este arquivo só monta as páginas com eles: moldura,
-   navegação, Início, Trajetória, Estudos e Longward.
+   navegação, Início, Trajetória, Estudos, Boletins e Longward.
    Cor só por tokens semânticos; margin, padding e gap só por --ft-space-*.
    ═══════════════════════════════════════════════ */
 
@@ -442,4 +442,205 @@
 .home-archs .home-link { align-self: flex-start; }
 @media (prefers-reduced-motion: reduce) {
   .home-link::after { transition: none; }
+}
+
+
+/* ═══════════════════════════════════════════════
+   Boletins
+   Série mensal dentro de Estudos, com identidade própria: entrada no índice
+   dos Estudos num painel recuado (não é um card de estudo), lista de edições
+   com rótulo à esquerda e, na página da edição, itens com o ranking do mês
+   numa coluna estreita à esquerda.
+   ═══════════════════════════════════════════════ */
+
+/* Entrada no índice dos Estudos */
+.site-page .page-section + .series-entry { margin-top: var(--ft-space-16); }
+.series-entry {
+  max-width: var(--ft-measure);
+  padding: var(--ft-space-8);
+  background: var(--ft-bg-sunken);
+  border-left: 3px solid var(--ft-accent);
+  border-radius: var(--ft-radius-md);
+}
+.series-entry__kicker,
+.series-entry__latest span,
+.bulletin-toc h2,
+.bulletin-rank__label,
+.bulletin-rank__of,
+.bulletin-facts dt,
+.bulletin-sources h4 {
+  font-family: var(--ft-font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: var(--ft-tracking-wide);
+  text-transform: uppercase;
+  color: var(--ft-fg-muted);
+}
+.series-entry .series-entry__kicker { margin: 0 0 var(--ft-space-2); color: var(--ft-accent); }
+.series-entry__title {
+  margin: 0 0 var(--ft-space-3);
+  font-family: var(--ft-font-display);
+  font-size: clamp(26px, 3.5vw, 34px);
+  font-weight: var(--ft-weight-display-sub);
+  line-height: 1.15;
+  letter-spacing: var(--ft-tracking-display);
+}
+.series-entry__title a { color: inherit; text-decoration: none; }
+.series-entry__title a:hover { color: var(--ft-accent); }
+.series-entry .series-entry__latest {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--ft-space-1) var(--ft-space-3);
+  margin-bottom: var(--ft-space-5);
+  padding-top: var(--ft-space-4);
+  border-top: 1px solid var(--ft-line);
+}
+.series-entry__latest a { font-weight: 600; }
+
+/* Lista de edições, a mais recente primeiro */
+.bulletin-list { max-width: var(--ft-measure); margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--ft-line); }
+.bulletin-entry {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: var(--ft-space-5);
+  padding: var(--ft-space-6) 0;
+  border-bottom: 1px solid var(--ft-line);
+}
+.bulletin-entry .bulletin-entry__issue {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ft-space-1);
+  margin: 0;
+  padding-top: var(--ft-space-1);
+  font-family: var(--ft-font-mono);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--ft-fg-muted);
+}
+.bulletin-entry__issue span { color: var(--ft-accent); }
+.bulletin-entry__title {
+  margin: 0 0 var(--ft-space-3);
+  font-family: var(--ft-font-display);
+  font-size: clamp(22px, 3vw, 26px);
+  font-weight: var(--ft-weight-display-sub);
+  line-height: 1.2;
+  letter-spacing: var(--ft-tracking-display);
+  text-wrap: balance;
+}
+.bulletin-entry__title a { color: inherit; text-decoration: none; }
+.bulletin-entry__title a:hover { color: var(--ft-accent); }
+.bulletin-entry .bulletin-entry__date { font-family: var(--ft-font-mono); font-size: 12px; color: var(--ft-fg-muted); }
+
+/* Página da edição */
+.bulletin { max-width: var(--ft-measure); }
+.bulletin-summary { margin-bottom: var(--ft-space-12); }
+.bulletin-summary .bulletin-summary__lead {
+  font-family: var(--ft-font-display);
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: var(--ft-weight-display-sub);
+  line-height: 1.3;
+  letter-spacing: var(--ft-tracking-display);
+  text-wrap: pretty;
+}
+.bulletin-summary p:last-child { color: var(--ft-fg-muted); }
+
+/* Sumário da edição: as seções e a nota sobre a ordem */
+.bulletin-toc {
+  margin-bottom: var(--ft-space-16);
+  padding: var(--ft-space-5) 0;
+  border-top: 1px solid var(--ft-line);
+  border-bottom: 1px solid var(--ft-line);
+}
+.bulletin-toc h2 { margin: 0 0 var(--ft-space-3); }
+.bulletin-toc ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ft-space-2) var(--ft-space-6);
+  margin: 0 0 var(--ft-space-4);
+  padding: 0;
+  list-style: none;
+}
+.bulletin-toc a { font-weight: 600; text-decoration: none; }
+.bulletin-toc a:hover { text-decoration: underline; }
+.bulletin-toc p {
+  font-size: var(--ft-text-small-size);
+  line-height: var(--ft-text-small-leading);
+  color: var(--ft-fg-muted);
+}
+
+.bulletin-section { scroll-margin-top: var(--ft-space-6); }
+.bulletin-section + .bulletin-section { margin-top: var(--ft-space-16); }
+.bulletin-section > h2 {
+  margin: 0;
+  padding-bottom: var(--ft-space-4);
+  font-family: var(--ft-font-display);
+  font-size: clamp(26px, 3.5vw, 32px);
+  font-weight: var(--ft-weight-display-sub);
+  line-height: 1.2;
+  letter-spacing: var(--ft-tracking-display);
+  border-bottom: 1px solid var(--ft-line-strong);
+}
+
+/* Item: ranking à esquerda, texto à direita */
+.bulletin-item {
+  display: grid;
+  grid-template-columns: var(--ft-space-16) minmax(0, 1fr);
+  gap: var(--ft-space-6);
+  padding: var(--ft-space-8) 0;
+}
+.bulletin-item + .bulletin-item { border-top: 1px solid var(--ft-line); }
+.bulletin-item .bulletin-rank {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0;
+  line-height: 1.2;
+}
+.bulletin-rank__no {
+  font-family: var(--ft-font-display);
+  font-size: 40px;
+  font-weight: var(--ft-weight-display-sub);
+  line-height: 1;
+  color: var(--ft-accent);
+}
+.bulletin-rank__of { text-transform: none; letter-spacing: 0; }
+.bulletin-item h3 { margin: 0 0 var(--ft-space-5); font-size: 20px; line-height: 1.3; text-wrap: balance; }
+.bulletin-facts { margin: 0; }
+.bulletin-facts > div + div { margin-top: var(--ft-space-4); }
+.bulletin-facts dt { margin-bottom: var(--ft-space-1); }
+.bulletin-facts dd { margin: 0; line-height: var(--ft-text-body-leading); color: var(--ft-fg); }
+
+/* Relação com um projeto meu */
+.bulletin-item .bulletin-relation {
+  margin: var(--ft-space-5) 0 0;
+  padding-left: var(--ft-space-4);
+  border-left: 2px solid var(--ft-accent);
+  color: var(--ft-fg-muted);
+}
+.bulletin-relation > span {
+  display: block;
+  margin-bottom: var(--ft-space-1);
+  font-family: var(--ft-font-mono);
+  font-size: 12px;
+  color: var(--ft-accent);
+}
+
+.bulletin-sources { margin-top: var(--ft-space-5); }
+.bulletin-sources h4 { margin: 0 0 var(--ft-space-2); }
+.bulletin-sources ul { margin: 0; padding: 0; list-style: none; }
+.bulletin-sources li {
+  font-size: var(--ft-text-small-size);
+  line-height: var(--ft-text-small-leading);
+  color: var(--ft-fg-muted);
+}
+.bulletin-sources li + li { margin-top: var(--ft-space-1); }
+
+@media (max-width: 720px) {
+  .bulletin-entry { grid-template-columns: minmax(0, 1fr); gap: var(--ft-space-2); }
+  .bulletin-entry .bulletin-entry__issue { flex-direction: row; gap: var(--ft-space-3); }
+  .bulletin-item { grid-template-columns: minmax(0, 1fr); gap: var(--ft-space-3); }
+  .bulletin-item .bulletin-rank { flex-direction: row; align-items: baseline; gap: var(--ft-space-2); }
+  .bulletin-rank__no { font-size: 32px; }
+  .series-entry { padding: var(--ft-space-6); }
 }

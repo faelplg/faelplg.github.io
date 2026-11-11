@@ -28,6 +28,8 @@ página separada de "componentes".
 ```
 index.html / longward.html / sobre.html / contato.html → páginas pt-BR (raiz)
 estudos/*.html                                          → seção Estudos pt-BR (índice + um arquivo por estudo)
+estudos/boletins/*.html                                 → monthly bulletins in pt-BR (index + one file per month, YYYY-MM.html)
+en/studies/bulletins/*.html                             → monthly bulletins in English (same file names as pt-BR)
 en/studies/*.html                                       → seção Studies em inglês (caminhos sempre em inglês)
 en/{index,longward,career,contact}.html                 → páginas en (espelho 1:1 das pt-BR, nomes em inglês)
 assets/site.css, hero.css, canvas.js, hero.js, cards.js → cópias exatas do fael-tech-design-system (não editar aqui)
@@ -101,7 +103,28 @@ atualização. Ao mudar o conteúdo de um estudo, na mesma edição e nos dois i
    `· atualizado em <data>` / `· updated <date>` ao lado da data e mantenha a ordem do mais
    recente para o mais antigo.
 
-Correções de digitação não contam como atualização, nem mudanças feitas no mesmo dia da publicação: elas fazem parte da publicação. Datas usam `<time datetime="AAAA-MM-DD">`.
+Correções de digitação não contam como atualização, nem mudanças feitas no mesmo dia da publicação: elas fazem parte da publicação. Datas usam `<time datetime="YYYY-MM-DD">`.
+
+## Monthly bulletins
+
+Bulletins are a monthly series inside Studies, not studies: they have no type, status or
+`.study-changes` list. Each month is one file per language, named `YYYY-MM.html`
+(`estudos/boletins/2026-10.html` and `en/studies/bulletins/2026-10.html`). To add a month:
+
+1. Copy the latest bulletin in each language to the new `YYYY-MM.html` and update `<title>`,
+   `meta description`, `og:*` (including `og:url`), `hreflang`, the language flag link, the crumbs
+   and the `.study-meta` line (issue number, month, publication date).
+2. Keep the structure: opening summary, the "Nesta edição" / "In this issue" list, one
+   `.bulletin-section` per section and one `.bulletin-item` per item, with its monthly rank, "O que
+   aconteceu" / "What happened", "Por que importa" / "Why it matters", an optional
+   `.bulletin-relation` (linking to the project's study page when one exists) and the sources.
+3. Sources show the newsletter name and date, linking to the public URL with its domain as the
+   link text. Never publish internal paths, radar tags or review notes from the draft. A source
+   without a public URL gets only the newsletter name and date.
+4. Add the edition at the top of `.bulletin-list` in `estudos/boletins/index.html` and
+   `en/studies/bulletins/index.html`, and point "Edição mais recente" / "Latest issue" in
+   `estudos/index.html` and `en/studies/index.html` to it.
+5. Bulletins are not updated after publication, apart from typo fixes.
 
 ## Design system
 

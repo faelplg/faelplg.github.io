@@ -22,6 +22,7 @@ Estático, sem framework/bundler, bilíngue (pt-BR na raiz, inglês em `en/`).
 |---|---|---|
 | Início (landing pessoal) | `index.html` | `en/index.html` |
 | Estudos (índice e estudos) | `estudos/*.html` | `en/studies/*.html` |
+| Monthly bulletins (inside Studies) | `estudos/boletins/*.html` | `en/studies/bulletins/*.html` |
 | Longward (tese da empresa) | `longward.html` | `en/longward.html` |
 | Trajetória / carreira | `sobre.html` | `en/career.html` |
 | Contato | `contato.html` | `en/contact.html` |
@@ -58,7 +59,7 @@ para isso, use [facts.md](./facts.md).
 
 ## Estado do projeto
 
-O site mantém 10 páginas, a identidade visual em `brand/` e esta documentação como referências
+O site mantém 20 páginas, a identidade visual em `brand/` e esta documentação como referências
 vivas do projeto. Não existem mais `docs/SPEC.md` nem uma pasta `tasks/` (o
 fluxo de spec-driven development usado durante a construção foi descontinuado após a conclusão) -
 `docs/ai/` é hoje a documentação de referência viva. Materiais brutos de rascunho (versões antigas
