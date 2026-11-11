@@ -19,12 +19,10 @@
 
 - **Propósito:** projetos, métodos e teses de Fael, com o que ele aprendeu construindo cada um.
   Os caminhos em inglês ficam em inglês (`en/studies/`), sem misturar idiomas.
-- **Índice:** `estudos/index.html` / `en/studies/index.html`, one editorial page in three parts
-  joined by a vertical line: the Longward thesis first (quoted from `longward.html`, with a link
-  to it), then the studies as clickable rows, newest first, each with type, date (and update),
-  title, summary, state and, when the site supports it, how it relates to Longward (Radiant is how
-  the products will be built; AIKM shares the wish to preserve what was learned), and last the
-  monthly bulletins with the latest issue and a link to the archive.
+- **Índice:** `estudos/index.html` / `en/studies/index.html`, only the studies, as the design
+  system's node cards, newest first: the most recent is the highlighted card spanning two rows.
+  Every card has the date (and update), type, title, summary, topics from the study's sections,
+  state and a link to read it.
 - **Página de estudo:** linha de metadados (tipo, estado, publicado em, atualizado em) e, no fim,
   a lista "Atualizações" com o histórico datado. Ver `AGENTS.md` para o procedimento de atualização.
 - **A história da fael.tech** (ensaio): `estudos/historia-da-fael-tech.html` /
@@ -36,8 +34,7 @@
   pergunta central, o ciclo em seis etapas, o contrato de tarefa, os papéis com delegação, as
   capacidades (`deep`, `standard`, `light`), a Manutenção que só propõe e a constituição.
 - **Monthly bulletins** (series, not a study): `estudos/boletins/` / `en/studies/bulletins/`.
-  The index (`index.html`) lists the issues, newest first, and the Studies index shows the latest
-  issue in its last part. Each issue (`YYYY-MM.html`) has an issue marker (number,
+  The index (`index.html`) lists the issues, newest first, and the Studies index no longer lists them. Each issue (`YYYY-MM.html`) has an issue marker (number,
   month, publication date), an opening summary, the sections Agentes de IA / AI agents, Segundo
   cérebro / Second brain, UX/UI and IA e ativismo cívico / AI and civic activism, and per item the
   monthly rank, what happened, why it matters, an optional relation to Fael's projects and the
