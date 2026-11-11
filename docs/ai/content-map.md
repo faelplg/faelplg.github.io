@@ -40,8 +40,7 @@
 - **Demerzel** (project, in progress): `estudos/demerzel.html` / `en/studies/demerzel.html`. How
   each unit of a Radiant contract becomes a Claude Code or Codex session in herdr: the question,
   what it does (with an example unit block), the core and the Radiant integration, the dispatch
-  order in herdr, what it refuses, and how it relates to Radiant. Repository note links to the
-  public repository, without calling it open source.
+  order in herdr, what it refuses, and how it relates to Radiant. Repository note: public, MIT license.
 - **Regra:** estudos descrevem o funcionamento, não o histórico interno de desenvolvimento
   (datas de commits, registros de verificação, reusos observados).
 

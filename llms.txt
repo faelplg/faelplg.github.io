@@ -13,7 +13,7 @@
 - [Studies (pt-BR)](https://fael.tech/estudos/index.html): index of studies - the story of
   fael.tech, AIKM (manager for each project's agent environment), Radiant (method for building
   software with agents, public under the MIT license), and Demerzel (dispatches the units of a
-  Radiant contract as agent sessions in herdr).
+  Radiant contract as agent sessions in herdr, public under the MIT license).
 - [Studies (en)](https://fael.tech/en/studies/index.html): English version of the above.
 - [Monthly bulletins (pt-BR)](https://fael.tech/boletins/index.html): a monthly series on what mattered in AI agents, second brain, UX/UI, and AI and civic activism,
   with a monthly rank, why each item matters, and its sources. First issue: October 2026.
