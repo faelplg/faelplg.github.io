@@ -64,7 +64,7 @@ llms.txt                                                  → índice machine-re
 4. **Sentence case, nunca title case** em títulos e headlines - convenção da marca, vale para
    pt e en.
 5. Ao mudar a estrutura de páginas (nova seção, página nova, título), atualize
-   `docs/ai/content-map.md`, `llms.txt` e o bloco "Estrutura" do `README.md` junto.
+   `docs/ai/content-map.md`, `llms.txt` e o bloco "Structure" do `README.md` junto.
 6. Nunca use travessão/em dash "—" no conteúdo; use hífen simples "-" (convenção já aplicada em
    todo o repositório).
 
