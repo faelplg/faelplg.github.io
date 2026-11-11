@@ -59,7 +59,7 @@ para isso, use [facts.md](./facts.md).
 
 ## Estado do projeto
 
-O site mantém 20 páginas, a identidade visual em `brand/` e esta documentação como referências
+O site mantém 22 páginas, a identidade visual em `brand/` e esta documentação como referências
 vivas do projeto. Não existem mais `docs/SPEC.md` nem uma pasta `tasks/` (o
 fluxo de spec-driven development usado durante a construção foi descontinuado após a conclusão) -
 `docs/ai/` é hoje a documentação de referência viva. Materiais brutos de rascunho (versões antigas

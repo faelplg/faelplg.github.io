@@ -20,7 +20,8 @@
 - **Propósito:** projetos, métodos e teses de Fael, com o que ele aprendeu construindo cada um.
   Os caminhos em inglês ficam em inglês (`en/studies/`), sem misturar idiomas.
 - **Índice:** `estudos/index.html` / `en/studies/index.html`, only the studies, as the design
-  system's node cards, newest first: the most recent is the highlighted card spanning two rows.
+  system's node cards, newest first: the most recent (Demerzel) is the highlighted card on the
+  full row, and the others share the rows below.
   Every card has the date (and update), type, title, summary, topics from the study's sections,
   state and a link to read it.
 - **Página de estudo:** linha de metadados (tipo, estado, publicado em, atualizado em) e, no fim,
@@ -28,11 +29,19 @@
 - **A história da fael.tech** (ensaio): `estudos/historia-da-fael-tech.html` /
   `en/studies/fael-tech-story.html`. Por que a fael.tech existe, como Fael trabalha, o que a marca
   representa e o site como primeira aplicação do design system.
-- **AIKM** (projeto, open source em breve): `estudos/aikm.html` / `en/studies/aikm.html`. Problema,
-  conhecimento local, distribuição controlada, registros de aprendizado e privacidade.
+- **AIKM** (project, open source soon): `estudos/aikm.html` / `en/studies/aikm.html`. A manager
+  for each project's agent environment: the problem and the hypothesis, the catalog, the
+  `aikm.yaml` manifest and `aikm sync` (with a manifest example), external sources pinned to a
+  commit, and the guarantees (fails closed, private pieces never reach public repositories).
 - **Radiant** (método, em andamento): `estudos/radiant.html` / `en/studies/radiant.html`. A
   pergunta central, o ciclo em seis etapas, o contrato de tarefa, os papéis com delegação, as
-  capacidades (`deep`, `standard`, `light`), a Manutenção que só propõe e a constituição.
+  capacidades (`deep`, `standard`, `light`), execution units and routing rules (dispatched by
+  Demerzel), a Manutenção que só propõe e a constituição. Repository note: public, MIT license.
+- **Demerzel** (project, in progress): `estudos/demerzel.html` / `en/studies/demerzel.html`. How
+  each unit of a Radiant contract becomes a Claude Code or Codex session in herdr: the question,
+  what it does (with an example unit block), the core and the Radiant integration, the dispatch
+  order in herdr, what it refuses, and how it relates to Radiant. Repository note links to the
+  public repository, without calling it open source.
 - **Regra:** estudos descrevem o funcionamento, não o histórico interno de desenvolvimento
   (datas de commits, registros de verificação, reusos observados).
 

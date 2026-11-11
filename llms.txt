@@ -11,8 +11,9 @@
   building now (Longward, AIKM, Radiant), and consulting/partnership contact.
 - [Home (en)](https://fael.tech/en/index.html): English version of the above.
 - [Studies (pt-BR)](https://fael.tech/estudos/index.html): index of studies - the story of
-  fael.tech, AIKM (local knowledge manager for AI work), and Radiant (method for building software
-  with agents).
+  fael.tech, AIKM (manager for each project's agent environment), Radiant (method for building
+  software with agents, public under the MIT license), and Demerzel (dispatches the units of a
+  Radiant contract as agent sessions in herdr).
 - [Studies (en)](https://fael.tech/en/studies/index.html): English version of the above.
 - [Monthly bulletins (pt-BR)](https://fael.tech/boletins/index.html): a monthly series on what mattered in AI agents, second brain, UX/UI, and AI and civic activism,
   with a monthly rank, why each item matters, and its sources. First issue: October 2026.

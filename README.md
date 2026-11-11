@@ -15,7 +15,7 @@ sobre.html                → pt-BR · Trajetória / carreira
 contato.html              → pt-BR · Contato
 estudos/
   index.html                → pt-BR · índice dos Estudos
-  historia-da-fael-tech.html, aikm.html, radiant.html → estudos
+  historia-da-fael-tech.html, aikm.html, radiant.html, demerzel.html → estudos
 boletins/
   index.html                → pt-BR · monthly bulletins index
   2026-10.html              → pt-BR · bulletin for October 2026 (one YYYY-MM.html per month)
@@ -26,7 +26,7 @@ en/
   contact.html                → en · Contact
   studies/
     index.html                → en · Studies index
-    fael-tech-story.html, aikm.html, radiant.html → studies
+    fael-tech-story.html, aikm.html, radiant.html, demerzel.html → studies
   bulletins/
     index.html                → en · Monthly bulletins index
     2026-10.html              → en · Bulletin for October 2026

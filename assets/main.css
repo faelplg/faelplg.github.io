@@ -256,7 +256,7 @@
    Páginas de leitura numa coluna só, com títulos em Newsreader e artefatos com legenda.
    ═══════════════════════════════════════════════ */
 /* Grade dos node cards: o estudo em destaque ocupa a linha inteira e os
-   outros dividem a seguinte (a composição dos node cards na documentação do
+   outros dividem as seguintes (a composição dos node cards na documentação do
    design system). Estreita, uma coluna. */
 .study-nodes {
   display: grid;
@@ -266,6 +266,12 @@
 @media (min-width: 720px) {
   .study-nodes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .study-node--lead { grid-column: 1 / -1; }
+  /* com um número ímpar de cards depois do destaque, o último não fica sozinho */
+  .study-node:last-child:nth-child(even) { grid-column: 1 / -1; }
+}
+@media (min-width: 1080px) {
+  .study-nodes { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .study-node:last-child:nth-child(even) { grid-column: auto; }
 }
 .study-node--lead .site-node__title {
   font-family: var(--ft-font-display);
@@ -324,6 +330,9 @@
 }
 .study > .study-meta + h2 { margin-top: 0; }
 .study .home-artifact { margin: var(--ft-space-6) 0; }
+
+/* Lista com glifo do design system dentro do texto do estudo */
+.study .site-rules { margin: var(--ft-space-5) 0; }
 
 /* Etapas numeradas do método */
 .study-steps {
