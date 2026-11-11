@@ -76,7 +76,7 @@
           <div><dt>Type</dt><dd>Method</dd></div>
           <div><dt>Status</dt><dd><span class="study-status">In progress</span></dd></div>
           <div><dt>Published</dt><dd><time datetime="2026-10-06">October 6, 2026</time></dd></div>
-          <div><dt>Updated</dt><dd><time datetime="2026-10-09">October 9, 2026</time></dd></div>
+          <div><dt>Updated</dt><dd><time datetime="2026-11-11">November 11, 2026</time></dd></div>
         </dl>
         <h2>The question</h2>
         <p>How do you turn an intent into a real system without losing clarity, context, evidence, and learning along the way? Working with agents makes that question more urgent. An agent executes fast, but it executes what it understood, and what it understood depends on what was written before.</p>
@@ -131,6 +131,12 @@ Risk tier: 0 | 1 | 2 | 3
           <figcaption>Excerpt from the file listing the profiles that can receive delegated work.</figcaption>
         </figure>
 
+        <h2>Units and routing</h2>
+        <p>A contract can be split into execution units. Each unit declares its role, capability, and requirements, but never the tool or the model. Without that split, the whole contract is a single unit.</p>
+        <p>Which tool each kind of unit runs on is decided by routing rules that live on my machine, outside any project, because the installed tools and subscriptions are facts about the machine. The orchestrator picks the rule that describes the unit. From that rule's candidates, the ones without a Radiant adapter or that don't meet the unit's requirements drop out, and the first one left gets the work. The decision is recorded before launch.</p>
+        <p>A candidate never runs at a lower capability than the unit asks for. With no viable candidate, the unit stays in HOLD. A rule can also require my confirmation before dispatching.</p>
+        <p>The tool that reads the units and opens a session for each one is <a href="demerzel.html">Demerzel</a>, a separate tool with its own study. Radiant defines the format of units and rules, and its validators check the contract's unit block.</p>
+
         <h2>Maintenance</h2>
         <p>Maintenance runs on my machine, on demand or on a schedule, and only proposes. It looks at the state of the contracts, the checks the project declared safe, drift between the Spec and the code, dependencies and, when authorized, issues and CI. A source that is not authorized is skipped, and the report says why.</p>
         <p>Every candidate needs evidence: command output, file, line. The result is a report with the proposals ranked by risk, value, and reversibility, and a draft contract for the top three. The only thing it writes is that report, in a folder outside Git. A report with nothing relevant is also a result. When I pick a proposal, the orchestrator creates the contract and the cycle starts.</p>
@@ -138,9 +144,12 @@ Risk tier: 0 | 1 | 2 | 3
         <h2>Rules that apply to everything</h2>
         <p>Above the documents sits a constitution, with the method's invariants and the order of precedence when two rules conflict. It separates system design from experience design and holds that a lesson only becomes a general rule when it recurs. An isolated problem is fixed in the project where it showed up.</p>
 
+        <p class="study-note"><span>Radiant repository</span><span><a href="https://github.com/faelplg/radiant">Public, MIT license</a></span></p>
+
         <section class="study-changes" aria-labelledby="changes-title">
           <h2 id="changes-title">Updates</h2>
           <ol>
+          <li><time datetime="2026-11-11">November 11, 2026</time><span>Execution units, routing rules, dispatch through Demerzel, and the public repository under the MIT license.</span></li>
           <li><time datetime="2026-10-09">October 9, 2026</time><span>Roles with delegation, capabilities instead of models, Maintenance, and the challenge in framing.</span></li>
           <li><time datetime="2026-10-06">October 6, 2026</time><span>First published.</span></li>
           </ol>

@@ -4,11 +4,11 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>AIKM - Fael Goulart</title>
-<meta name="description" content="Um gerenciador de conhecimento local para não reconstruir, a cada projeto, o que já se aprendeu trabalhando com IA." />
+<meta name="description" content="Um gerenciador do ambiente de agentes de cada projeto: declaro as peças uma vez, e o AIKM gera os arquivos que cada ferramenta lê." />
 <meta property="og:type" content="article" />
 <meta property="og:site_name" content="fael.tech" />
 <meta property="og:title" content="AIKM - Fael Goulart" />
-<meta property="og:description" content="Um gerenciador de conhecimento local para não reconstruir, a cada projeto, o que já se aprendeu trabalhando com IA." />
+<meta property="og:description" content="Um gerenciador do ambiente de agentes de cada projeto: declaro as peças uma vez, e o AIKM gera os arquivos que cada ferramenta lê." />
 <meta property="og:url" content="https://fael.tech/estudos/aikm.html" />
 <meta property="og:locale" content="pt_BR" />
 <meta property="og:locale:alternate" content="en_US" />
@@ -64,7 +64,7 @@
           <li aria-current="page">AIKM</li>
         </ol>
         <h1 class="ds-hero__title">AIKM<span class="tld">.</span></h1>
-        <p class="ds-hero__lead">Um gerenciador de conhecimento local para não reconstruir, a cada projeto, o que já se aprendeu trabalhando com IA.</p>
+        <p class="ds-hero__lead">Um gerenciador do ambiente de agentes de cada projeto: declaro as peças uma vez, e o AIKM gera os arquivos que cada ferramenta lê.</p>
       </div>
     </header>
   </div>
@@ -76,34 +76,37 @@
           <div><dt>Tipo</dt><dd>Projeto</dd></div>
           <div><dt>Estado</dt><dd><span class="study-status">Open source em breve</span></dd></div>
           <div><dt>Publicado em</dt><dd><time datetime="2026-10-06">6 de outubro de 2026</time></dd></div>
+          <div><dt>Atualizado em</dt><dd><time datetime="2026-11-11">11 de novembro de 2026</time></dd></div>
         </dl>
         <h2>O problema</h2>
-        <p>Trabalhar com IA produz muito material: prompts, contextos, skills, configurações de agentes, decisões, critérios de avaliação, falhas e lições. Esse material fica espalhado entre repositórios, conversas, arquivos locais, IDEs e a memória de cada ferramenta.</p>
-        <p>O resultado é reconstruir, em cada projeto, coisas que já foram produzidas, testadas e usadas em outro. O AIKM parte de duas perguntas: como não reconstruir esse conhecimento, e como fazer o resultado de uma execução melhorar as próximas.</p>
+        <p>Trabalho em muitos repositórios com quatro ferramentas de agentes: Claude Code, Codex, GitHub Copilot e Antigravity. Cada projeto deveria dar aos seus agentes um conjunto próprio de skills, contexto e servidores MCP. Na prática, esses conjuntos eram copiados à mão ou instalados para a máquina inteira. Com o tempo eles se desatualizam, se duplicam, e fica difícil responder o que o agente de um projeto enxerga e de onde aquilo veio.</p>
+        <p>O AIKM parte de uma hipótese: declarar o ambiente de agentes de um projeto uma vez, num formato neutro, e gerar os arquivos nativos de cada ferramenta sai mais barato e é mais confiável do que manter os arquivos de cada ferramenta à mão.</p>
 
-        <h2>Conhecimento local</h2>
-        <p>O AIKM é uma CLI que trabalha sobre um workspace local. Tudo começa com uma captura rápida, que entra na caixa de entrada sem exigir classificação. Depois, cada item recebe um papel (fonte, conhecimento, contexto, procedimento, ação, avaliação ou entrega) e um tipo (skill, prompt, checklist, padrão...), e só então passa a valer como conhecimento ativo.</p>
+        <h2>Catálogo, manifesto e sync</h2>
+        <p>As peças reutilizáveis ficam num catálogo, que é um repositório git próprio. Cada projeto declara no <code>aikm.yaml</code> quais peças usa e para quais ferramentas. O <code>aikm sync</code> escreve os arquivos que cada ferramenta lê e registra no <code>aikm.lock</code> o commit do catálogo usado, o digest de cada peça e os arquivos que passou a controlar.</p>
+        <p>Cada skill é escrita uma vez em <code>.agents/skills/</code>, que Codex, Copilot e Antigravity leem. Para o Claude Code, <code>.claude/skills/</code> aponta para essa pasta com um link simbólico. Quando uma ferramenta precisa de algo diferente, a peça pode levar uma versão nativa só para ela.</p>
+        <p>Hoje as peças são skills. Contexto (<code>AGENTS.md</code> e <code>CLAUDE.md</code>) e servidores MCP do projeto são os próximos tipos de peça.</p>
         <figure class="home-artifact">
-          <pre class="site-codeblock"><span class="c">$</span> aikm init ~/aikm
-workspace initialized at "~/aikm"
-<span class="c">$</span> aikm capture --text "Revisar contraste do link no tema escuro antes de publicar"
-captured <span class="t">aikm:01M47JE4W14MN5FR2DD20NHMAT</span> -> "~/aikm/inbox/2026-10-06-revisar-contraste-do-link-no-tema-escuro.md"</pre>
-          <figcaption>Um workspace novo. Tudo o que é capturado entra na caixa de entrada e só vira conhecimento depois de classificado.</figcaption>
+          <pre class="site-codeblock">visibility: public # public | private
+harnesses: [claude-code, codex, copilot, antigravity]
+pieces: [tdd, opinions, github]</pre>
+          <figcaption>O manifesto de um projeto: a visibilidade, as ferramentas e as peças do catálogo que ele usa.</figcaption>
         </figure>
 
-        <h2>Distribuição controlada</h2>
-        <p>Uma skill ou um prompt que vive em outro diretório é registrado no AIKM, revisado e aprovado. A partir daí, pode ser selecionado para um projeto e publicado nele como cópia. A fonte original continua sendo a referência: o AIKM nunca a altera e avisa quando a cópia publicada ficou para trás.</p>
+        <h2>Fontes externas</h2>
+        <p>Uma skill do catálogo pode trazer o conteúdo de outro repositório git, fixado num commit. O <code>sync</code> busca só as peças que o projeto declara e só usa o conteúdo quando o digest bate com o que está registrado na peça. O commit de cada fonte fica no <code>aikm.lock</code>, e uma segunda execução lê do cache, sem rede.</p>
+        <p>Por enquanto, as fontes precisam ser legíveis sem credenciais, então só repositórios públicos entram.</p>
 
-        <h2>Aprender com cada execução</h2>
-        <p>Guardar é só metade do trabalho. Depois de usar um recurso num projeto e verificar o resultado, o AIKM ajuda a criar um registro de aprendizado com o que foi observado, a evidência, o diagnóstico, o menor ponto de correção, o que mudou e como foi verificado. Esse registro entra no acervo e serve de contexto para a próxima decisão.</p>
-
-        <h2>Privacidade por padrão</h2>
-        <p>O acervo é local. Agentes podem consultá-lo por um servidor MCP somente leitura, que devolve apenas registros marcados como públicos ou não sensíveis e com saída autorizada. O que é privado não sai da máquina.</p>
+        <h2>Garantias</h2>
+        <p>O <code>sync</code> falha fechado. Com uma entrada inválida, ele sai sem escrever nada no projeto e diz o que fazer em seguida. Todas as checagens rodam antes da primeira escrita.</p>
+        <p>Uma peça privada nunca chega a um repositório público. O AIKM não confia só na visibilidade declarada no manifesto: pergunta ao GitHub, pelo <code>gh</code>, se cada remoto do projeto é privado, e recusa se algum não for.</p>
+        <p>Além do <code>aikm.lock</code>, ele só escreve e apaga caminhos que o lock diz que são dele. Não executa scripts das skills e não toca nas configurações de usuário das ferramentas. Rodar o <code>sync</code> de novo sem mudanças não gera diff, então o <code>git diff</code> mostra exatamente o que ele fez.</p>
         <p class="study-note"><span>Repositório do AIKM</span><span>Open source em breve</span></p>
 
         <section class="study-changes" aria-labelledby="changes-title">
           <h2 id="changes-title">Atualizações</h2>
           <ol>
+          <li><time datetime="2026-11-11">11 de novembro de 2026</time><span>O AIKM passou a gerenciar o ambiente de agentes de cada projeto, e o estudo foi reescrito para descrever o catálogo, o manifesto, o sync, as fontes externas e as garantias.</span></li>
           <li><time datetime="2026-10-06">6 de outubro de 2026</time><span>Primeira publicação.</span></li>
           </ol>
         </section>

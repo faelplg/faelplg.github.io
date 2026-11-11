@@ -4,11 +4,11 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>AIKM - Fael Goulart</title>
-<meta name="description" content="A local knowledge manager so you don't rebuild, project after project, what you've already learned working with AI." />
+<meta name="description" content="A manager for each project's agent environment: I declare the pieces once, and AIKM generates the files each tool reads." />
 <meta property="og:type" content="article" />
 <meta property="og:site_name" content="fael.tech" />
 <meta property="og:title" content="AIKM - Fael Goulart" />
-<meta property="og:description" content="A local knowledge manager so you don't rebuild, project after project, what you've already learned working with AI." />
+<meta property="og:description" content="A manager for each project's agent environment: I declare the pieces once, and AIKM generates the files each tool reads." />
 <meta property="og:url" content="https://fael.tech/en/studies/aikm.html" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:locale:alternate" content="pt_BR" />
@@ -64,7 +64,7 @@
           <li aria-current="page">AIKM</li>
         </ol>
         <h1 class="ds-hero__title">AIKM<span class="tld">.</span></h1>
-        <p class="ds-hero__lead">A local knowledge manager so you don't rebuild, project after project, what you've already learned working with AI.</p>
+        <p class="ds-hero__lead">A manager for each project's agent environment: I declare the pieces once, and AIKM generates the files each tool reads.</p>
       </div>
     </header>
   </div>
@@ -76,34 +76,37 @@
           <div><dt>Type</dt><dd>Project</dd></div>
           <div><dt>Status</dt><dd><span class="study-status">Open source soon</span></dd></div>
           <div><dt>Published</dt><dd><time datetime="2026-10-06">October 6, 2026</time></dd></div>
+          <div><dt>Updated</dt><dd><time datetime="2026-11-11">November 11, 2026</time></dd></div>
         </dl>
         <h2>The problem</h2>
-        <p>Working with AI produces a lot of material: prompts, context, skills, agent configurations, decisions, evaluation criteria, failures, and lessons. That material ends up scattered across repositories, chats, local files, IDEs, and each tool's own memory.</p>
-        <p>The result is rebuilding, in every project, things that were already produced, tested, and used in another one. AIKM starts from two questions: how to stop rebuilding that knowledge, and how to make the result of one run improve the next ones.</p>
+        <p>I work across many repositories with four agent tools: Claude Code, Codex, GitHub Copilot, and Antigravity. Each project should give its agents its own set of skills, context, and MCP servers. In practice, those sets were copied by hand or installed for the whole machine. Over time they drift, get duplicated, and it gets hard to answer what a project's agent sees and where it came from.</p>
+        <p>AIKM starts from a hypothesis: declaring a project's agent environment once, in a neutral format, and generating each tool's native files is cheaper and more trustworthy than maintaining every tool's files by hand.</p>
 
-        <h2>Local knowledge</h2>
-        <p>AIKM is a CLI that works on a local workspace. Everything starts with a quick capture that lands in the inbox without any classification. Then each item gets a role (source, knowledge, context, procedure, action, evaluation, or output) and a kind (skill, prompt, checklist, standard...), and only then does it count as active knowledge.</p>
+        <h2>Catalog, manifest, and sync</h2>
+        <p>Reusable pieces live in a catalog, which is a git repository of its own. Each project declares in <code>aikm.yaml</code> which pieces it uses and for which tools. <code>aikm sync</code> writes the files each tool reads and records in <code>aikm.lock</code> the catalog commit it used, the digest of each piece, and the files it now owns.</p>
+        <p>Each skill is written once to <code>.agents/skills/</code>, which Codex, Copilot, and Antigravity read. For Claude Code, <code>.claude/skills/</code> points to that folder through a symlink. When one tool needs something different, a piece can carry a native version just for it.</p>
+        <p>Today the pieces are skills. Context (<code>AGENTS.md</code> and <code>CLAUDE.md</code>) and project MCP servers are the next kinds of piece.</p>
         <figure class="home-artifact">
-          <pre class="site-codeblock"><span class="c">$</span> aikm init ~/aikm
-workspace initialized at "~/aikm"
-<span class="c">$</span> aikm capture --text "Revisar contraste do link no tema escuro antes de publicar"
-captured <span class="t">aikm:01M47JE4W14MN5FR2DD20NHMAT</span> -> "~/aikm/inbox/2026-10-06-revisar-contraste-do-link-no-tema-escuro.md"</pre>
-          <figcaption>A new workspace. Everything captured lands in the inbox and only becomes knowledge once it's classified.</figcaption>
+          <pre class="site-codeblock">visibility: public # public | private
+harnesses: [claude-code, codex, copilot, antigravity]
+pieces: [tdd, opinions, github]</pre>
+          <figcaption>A project's manifest: its visibility, its tools, and the catalog pieces it uses.</figcaption>
         </figure>
 
-        <h2>Controlled distribution</h2>
-        <p>A skill or prompt that lives in another directory is registered in AIKM, reviewed, and approved. From there, it can be selected for a project and published to it as a copy. The original source stays the reference: AIKM never changes it and flags when a published copy falls behind.</p>
+        <h2>External sources</h2>
+        <p>A catalog skill can take its content from another git repository, pinned to a commit. <code>sync</code> fetches only the pieces the project declares and uses the content only when its digest matches the one recorded in the piece. Each source's commit goes into <code>aikm.lock</code>, and a second run reads from the cache, with no network.</p>
+        <p>For now, sources have to be readable without credentials, so only public repositories work.</p>
 
-        <h2>Learning from every run</h2>
-        <p>Storing is only half the job. After using a resource in a project and verifying the result, AIKM helps create a learning record with what was observed, the evidence, the diagnosis, the smallest fix target, what changed, and how it was verified. That record goes back into the collection and becomes context for the next decision.</p>
-
-        <h2>Private by default</h2>
-        <p>The collection is local. Agents can query it through a read-only MCP server that only returns records marked public or non-sensitive and cleared to leave the machine. Anything private stays local.</p>
+        <h2>Guarantees</h2>
+        <p><code>sync</code> fails closed. With invalid input, it exits without writing anything to the project and says what to do next. Every check runs before the first write.</p>
+        <p>A private piece never reaches a public repository. AIKM doesn't rely only on the visibility declared in the manifest: it asks GitHub, through <code>gh</code>, whether each of the project's remotes is private, and refuses if any isn't.</p>
+        <p>Besides <code>aikm.lock</code>, it only writes and deletes paths the lock says it owns. It doesn't run skill scripts and doesn't touch the tools' user settings. Running <code>sync</code> again with no changes produces no diff, so <code>git diff</code> shows exactly what it did.</p>
         <p class="study-note"><span>AIKM repository</span><span>Open source soon</span></p>
 
         <section class="study-changes" aria-labelledby="changes-title">
           <h2 id="changes-title">Updates</h2>
           <ol>
+          <li><time datetime="2026-11-11">November 11, 2026</time><span>AIKM now manages each project's agent environment, and the study was rewritten to cover the catalog, the manifest, sync, external sources, and the guarantees.</span></li>
           <li><time datetime="2026-10-06">October 6, 2026</time><span>First published.</span></li>
           </ol>
         </section>

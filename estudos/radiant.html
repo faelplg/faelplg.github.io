@@ -76,7 +76,7 @@
           <div><dt>Tipo</dt><dd>Método</dd></div>
           <div><dt>Estado</dt><dd><span class="study-status">Em andamento</span></dd></div>
           <div><dt>Publicado em</dt><dd><time datetime="2026-10-06">6 de outubro de 2026</time></dd></div>
-          <div><dt>Atualizado em</dt><dd><time datetime="2026-10-09">9 de outubro de 2026</time></dd></div>
+          <div><dt>Atualizado em</dt><dd><time datetime="2026-11-11">11 de novembro de 2026</time></dd></div>
         </dl>
         <h2>A pergunta</h2>
         <p>Como transformar uma intenção em um sistema real sem perder clareza, contexto, evidência e aprendizado no caminho? Trabalhar com agentes torna essa pergunta mais urgente. Um agente executa rápido, mas executa o que entendeu, e o que ele entendeu depende do que foi escrito antes.</p>
@@ -131,6 +131,12 @@ Risk tier: 0 | 1 | 2 | 3
           <figcaption>Trecho do arquivo com os perfis que podem receber trabalho delegado.</figcaption>
         </figure>
 
+        <h2>Unidades e roteamento</h2>
+        <p>Um contrato pode se dividir em unidades de execução. Cada unidade declara o papel, a capacidade e os requisitos, mas nunca a ferramenta nem o modelo. Sem essa divisão, o contrato inteiro é uma unidade só.</p>
+        <p>Em qual ferramenta cada tipo de unidade roda é decidido por regras de roteamento que ficam na minha máquina, fora de qualquer projeto, porque as ferramentas instaladas e as assinaturas são fatos da máquina. O orquestrador escolhe a regra que descreve a unidade. Dos candidatos dessa regra, saem os que não têm adaptador do Radiant ou não atendem aos requisitos da unidade, e o primeiro que sobra fica com o trabalho. A decisão é registrada antes do lançamento.</p>
+        <p>Um candidato nunca roda numa capacidade abaixo da que a unidade pede. Sem candidato viável, a unidade fica parada em HOLD. Uma regra também pode exigir minha confirmação antes de despachar.</p>
+        <p>Quem lê as unidades e abre uma sessão para cada uma é o <a href="demerzel.html">Demerzel</a>, uma ferramenta à parte, com estudo próprio. O Radiant define o formato das unidades e das regras, e os validadores dele conferem o bloco de unidades do contrato.</p>
+
         <h2>Manutenção</h2>
         <p>A Manutenção roda na minha máquina, por comando ou agendada, e só propõe. Ela olha o estado dos contratos, as checagens que o projeto declarou seguras, divergências entre Spec e código, dependências e, quando autorizado, issues e CI. Fonte não autorizada é pulada, e o relatório diz por quê.</p>
         <p>Cada candidato precisa de evidência: saída de comando, arquivo, linha. O resultado é um relatório com as propostas ordenadas por risco, valor e reversibilidade e um rascunho de contrato para as três primeiras. A única coisa que ela grava é esse relatório, numa pasta fora do Git. Um relatório sem nada relevante também é um resultado. Quando escolho uma proposta, o orquestrador cria o contrato e o ciclo começa.</p>
@@ -138,9 +144,12 @@ Risk tier: 0 | 1 | 2 | 3
         <h2>Regras que valem para tudo</h2>
         <p>Acima dos documentos fica uma constituição, com os invariantes do método e a ordem de precedência quando duas regras entram em conflito. Ela separa o desenho do sistema do desenho da experiência e define que um aprendizado só vira regra geral quando se repete. Um problema isolado é corrigido no projeto onde apareceu.</p>
 
+        <p class="study-note"><span>Repositório do Radiant</span><span><a href="https://github.com/faelplg/radiant">Público, licença MIT</a></span></p>
+
         <section class="study-changes" aria-labelledby="changes-title">
           <h2 id="changes-title">Atualizações</h2>
           <ol>
+          <li><time datetime="2026-11-11">11 de novembro de 2026</time><span>Unidades de execução, regras de roteamento, o despacho pelo Demerzel e o repositório público com licença MIT.</span></li>
           <li><time datetime="2026-10-09">9 de outubro de 2026</time><span>Papéis com delegação, capacidades no lugar de modelos, a Manutenção e o desafio no enquadramento.</span></li>
           <li><time datetime="2026-10-06">6 de outubro de 2026</time><span>Primeira publicação.</span></li>
           </ol>
