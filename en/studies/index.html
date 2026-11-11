@@ -69,52 +69,62 @@
 
   <main class="site-page site-container" id="main">
 
-    <section class="site-section page-section" id="studies">
-      <div class="study-cards">
-        <article class="site-node study-card">
-          <div class="site-node__head"><span class="site-node__id"><time datetime="2026-10-06">Oct 6, 2026</time> · updated <time datetime="2026-10-09">Oct 9, 2026</time></span><span class="site-node__chip">Method</span></div>
-          <div class="site-node__body">
-            <h2 class="site-node__title"><a class="study-card__link" href="radiant.html">Radiant</a></h2>
-            <p class="site-node__text">How I turn an intent into software with agents, with a contract, verification, and learning in every cycle.</p>
-          </div>
-          <div class="study-card__foot site-node__push">
-            <span class="study-status">In progress</span>
-            <span class="study-card__read" aria-hidden="true">Read the study <span>→</span></span>
-          </div>
-        </article>
-        <article class="site-node study-card">
-          <div class="site-node__head"><span class="site-node__id"><time datetime="2026-10-06">Oct 6, 2026</time></span><span class="site-node__chip">Essay</span></div>
-          <div class="site-node__body">
-            <h2 class="site-node__title"><a class="study-card__link" href="fael-tech-story.html">The story of fael.tech</a></h2>
-            <p class="site-node__text">Why I created fael.tech, what the brand stands for, and how this site was built.</p>
-          </div>
-          <div class="study-card__foot site-node__push">
-            <span class="study-status">Complete</span>
-            <span class="study-card__read" aria-hidden="true">Read the study <span>→</span></span>
-          </div>
-        </article>
-        <article class="site-node study-card">
-          <div class="site-node__head"><span class="site-node__id"><time datetime="2026-10-06">Oct 6, 2026</time></span><span class="site-node__chip">Project</span></div>
-          <div class="site-node__body">
-            <h2 class="site-node__title"><a class="study-card__link" href="aikm.html">AIKM</a></h2>
-            <p class="site-node__text">A local knowledge manager so you don't rebuild, project after project, what you've already learned working with AI.</p>
-          </div>
-          <div class="study-card__foot site-node__push">
-            <span class="study-status">Open source soon</span>
-            <span class="study-card__read" aria-hidden="true">Read the study <span>→</span></span>
-          </div>
-        </article>
-      </div>
-      <a class="home-link study-more" href="../longward.html">The Longward thesis</a>
-    </section>
+    <div class="studies-map">
 
-    <section class="site-section page-section series-entry" aria-labelledby="bulletins-title">
-      <p class="series-entry__kicker">Monthly series</p>
-      <h2 class="series-entry__title" id="bulletins-title"><a href="bulletins/index.html">Bulletins</a></h2>
-      <p>One bulletin a month on what mattered in AI agents, second brain, UX/UI, and AI and civic activism.</p>
-      <p class="series-entry__latest"><span>Latest issue</span><a href="bulletins/2026-10.html">No. 1 · October 2026</a></p>
-      <a class="home-link" href="bulletins/index.html">All bulletins</a>
-    </section>
+      <section class="site-section studies-part studies-part--thesis" aria-labelledby="part-thesis">
+        <h2 class="studies-part__label" id="part-thesis">The thesis</h2>
+        <div class="studies-part__body">
+          <p class="studies-thesis__tag"><span>Longward</span><span>Company in formation</span></p>
+          <p class="studies-thesis__quote"><a href="../longward.html">Products where taking part leaves something for whoever comes next.</a></p>
+          <p>I call this collective continuity: a community's ability to preserve, understand, develop, and pass on what it has built.</p>
+          <a class="home-link" href="../longward.html">The Longward thesis</a>
+        </div>
+      </section>
+
+      <section class="site-section studies-part" id="studies" aria-labelledby="part-studies">
+        <h2 class="studies-part__label" id="part-studies">The studies</h2>
+        <div class="studies-part__body">
+          <p class="studies-part__intro">What I build and test at fael.tech. An idea that does not pass Longward's four questions can stay here, as a study or a tool.</p>
+          <ol class="studies-list">
+            <li class="studies-item">
+              <p class="studies-item__meta"><span class="studies-item__type">Method</span><span><time datetime="2026-10-06">Oct 6, 2026</time> · updated <time datetime="2026-10-09">Oct 9, 2026</time></span></p>
+              <h3 class="studies-item__title"><a class="studies-item__link" href="radiant.html">Radiant</a></h3>
+              <p class="studies-item__text">How I turn an intent into software with agents, with a contract, verification, and learning in every cycle.</p>
+              <p class="studies-item__relation"><span>In Longward</span> It is how I will build the products.</p>
+              <p class="studies-item__foot"><span class="study-status">In progress</span><span class="studies-item__read" aria-hidden="true">Read the study <span>→</span></span></p>
+            </li>
+            <li class="studies-item">
+              <p class="studies-item__meta"><span class="studies-item__type">Essay</span><span><time datetime="2026-10-06">Oct 6, 2026</time></span></p>
+              <h3 class="studies-item__title"><a class="studies-item__link" href="fael-tech-story.html">The story of fael.tech</a></h3>
+              <p class="studies-item__text">Why I created fael.tech, what the brand stands for, and how this site was built.</p>
+              <p class="studies-item__foot"><span class="study-status">Complete</span><span class="studies-item__read" aria-hidden="true">Read the study <span>→</span></span></p>
+            </li>
+            <li class="studies-item">
+              <p class="studies-item__meta"><span class="studies-item__type">Project</span><span><time datetime="2026-10-06">Oct 6, 2026</time></span></p>
+              <h3 class="studies-item__title"><a class="studies-item__link" href="aikm.html">AIKM</a></h3>
+              <p class="studies-item__text">A local knowledge manager so you don't rebuild, project after project, what you've already learned working with AI.</p>
+              <p class="studies-item__relation"><span>In Longward</span> The same wish to preserve what has already been learned, applied to working with AI.</p>
+              <p class="studies-item__foot"><span class="study-status">Open source soon</span><span class="studies-item__read" aria-hidden="true">Read the study <span>→</span></span></p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="site-section studies-part" id="bulletins" aria-labelledby="part-bulletins">
+        <h2 class="studies-part__label" id="part-bulletins">The bulletins</h2>
+        <div class="studies-part__body">
+          <p class="studies-part__intro">Every month, what mattered in AI agents, second brain, UX/UI, and AI and civic activism, and where it touches Longward and these studies.</p>
+          <div class="studies-issue">
+            <p class="studies-item__meta"><span class="studies-item__type">Latest issue</span><span>No. 1 · <time datetime="2026-10">October 2026</time></span></p>
+            <h3 class="studies-item__title"><a class="studies-item__link" href="bulletins/2026-10.html">AI and technology in October 2026</a></h3>
+            <p class="studies-item__text">In October, the big companies launched personal agents one after another, and the rest of the internet started deciding whether to let those agents in.</p>
+            <p class="studies-item__foot"><span class="study-status">Monthly series</span><span class="studies-item__read" aria-hidden="true">Read the bulletin <span>→</span></span></p>
+          </div>
+          <a class="home-link studies-archive" href="bulletins/index.html">All bulletins</a>
+        </div>
+      </section>
+
+    </div>
 
 
     <footer class="site-footer">

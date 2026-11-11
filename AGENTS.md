@@ -99,7 +99,7 @@ atualização. Ao mudar o conteúdo de um estudo, na mesma edição e nos dois i
 
 1. acrescente "Atualizado em" / "Updated" na `.study-meta` da página (ou troque a data existente);
 2. acrescente a entrada no topo da lista `.study-changes`, com a data e uma frase sobre o que mudou;
-3. no card do índice (`estudos/index.html` e `en/studies/index.html`), acrescente
+3. na linha do estudo no índice (`estudos/index.html` e `en/studies/index.html`), acrescente
    `· atualizado em <data>` / `· updated <date>` ao lado da data e mantenha a ordem do mais
    recente para o mais antigo.
 
