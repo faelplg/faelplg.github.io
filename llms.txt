@@ -14,10 +14,9 @@
   fael.tech, AIKM (local knowledge manager for AI work), and Radiant (method for building software
   with agents).
 - [Studies (en)](https://fael.tech/en/studies/index.html): English version of the above.
-- [Monthly bulletins (pt-BR)](https://fael.tech/estudos/boletins/index.html): a monthly series
-  inside Studies on what mattered in AI agents, second brain, UX/UI, and AI and civic activism,
+- [Monthly bulletins (pt-BR)](https://fael.tech/boletins/index.html): a monthly series on what mattered in AI agents, second brain, UX/UI, and AI and civic activism,
   with a monthly rank, why each item matters, and its sources. First issue: October 2026.
-- [Monthly bulletins (en)](https://fael.tech/en/studies/bulletins/index.html): English version of
+- [Monthly bulletins (en)](https://fael.tech/en/bulletins/index.html): English version of
   the above.
 - [Longward (pt-BR)](https://fael.tech/longward.html): thesis of Longward, the company Fael is
   founding - collective continuity, the role of AI, the four questions an idea must pass, and how

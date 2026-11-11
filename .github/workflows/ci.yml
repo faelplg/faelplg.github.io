@@ -37,4 +37,4 @@ jobs:
             --no-progress
             --root-dir ${{ github.workspace }}
             --exclude '/_vercel/'
-            './*.html' './en/*.html' './estudos/*.html' './en/studies/*.html' './estudos/boletins/*.html' './en/studies/bulletins/*.html'
+            './*.html' './en/*.html' './estudos/*.html' './en/studies/*.html' './boletins/*.html' './en/bulletins/*.html'

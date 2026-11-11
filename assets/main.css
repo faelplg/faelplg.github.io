@@ -434,44 +434,15 @@
 
 /* ═══════════════════════════════════════════════
    Boletins
-   Série mensal dentro de Estudos, com identidade própria: lista de edições
-   com rótulo à esquerda e, na página da edição, itens com o ranking do mês
-   numa coluna estreita à esquerda.
+   Seção própria, com o hero Phases. O índice usa a .site-timeline do design
+   system; na página da edição, as seções usam o .site-section__head e cada
+   item tem o ranking do mês numa coluna estreita à esquerda.
    ═══════════════════════════════════════════════ */
 
-/* Lista de edições, a mais recente primeiro */
-.bulletin-list { max-width: var(--ft-measure); margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--ft-line); }
-.bulletin-entry {
-  display: grid;
-  grid-template-columns: 150px minmax(0, 1fr);
-  gap: var(--ft-space-5);
-  padding: var(--ft-space-6) 0;
-  border-bottom: 1px solid var(--ft-line);
-}
-.bulletin-entry .bulletin-entry__issue {
-  display: flex;
-  flex-direction: column;
-  gap: var(--ft-space-1);
-  margin: 0;
-  padding-top: var(--ft-space-1);
-  font-family: var(--ft-font-mono);
-  font-size: 12px;
-  line-height: 1.5;
-  color: var(--ft-fg-muted);
-}
-.bulletin-entry__issue span { color: var(--ft-accent); }
-.bulletin-entry__title {
-  margin: 0 0 var(--ft-space-3);
-  font-family: var(--ft-font-display);
-  font-size: clamp(22px, 3vw, 26px);
-  font-weight: var(--ft-weight-display-sub);
-  line-height: 1.2;
-  letter-spacing: var(--ft-tracking-display);
-  text-wrap: balance;
-}
-.bulletin-entry__title a { color: inherit; text-decoration: none; }
-.bulletin-entry__title a:hover { color: var(--ft-accent); }
-.bulletin-entry .bulletin-entry__date { font-family: var(--ft-font-mono); font-size: 12px; color: var(--ft-fg-muted); }
+/* Índice: a .site-timeline numa lista ordenada, a mais recente primeiro */
+.bulletin-issues .site-timeline { margin: 0; padding: 0; list-style: none; }
+.bulletin-issues .site-timeline__role a { color: var(--ft-fg); text-decoration: none; }
+.bulletin-issues .site-timeline__role a:hover { color: var(--ft-accent); }
 
 /* Página da edição */
 /* rótulos em mono: sumário, ranking, campos do item e fontes */
@@ -525,16 +496,6 @@
 
 .bulletin-section { scroll-margin-top: var(--ft-space-6); }
 .bulletin-section + .bulletin-section { margin-top: var(--ft-space-16); }
-.bulletin-section > h2 {
-  margin: 0;
-  padding-bottom: var(--ft-space-4);
-  font-family: var(--ft-font-display);
-  font-size: clamp(26px, 3.5vw, 32px);
-  font-weight: var(--ft-weight-display-sub);
-  line-height: 1.2;
-  letter-spacing: var(--ft-tracking-display);
-  border-bottom: 1px solid var(--ft-line-strong);
-}
 
 /* Item: ranking à esquerda, texto à direita */
 .bulletin-item {
@@ -591,8 +552,6 @@
 .bulletin-sources li + li { margin-top: var(--ft-space-1); }
 
 @media (max-width: 720px) {
-  .bulletin-entry { grid-template-columns: minmax(0, 1fr); gap: var(--ft-space-2); }
-  .bulletin-entry .bulletin-entry__issue { flex-direction: row; gap: var(--ft-space-3); }
   .bulletin-item { grid-template-columns: minmax(0, 1fr); gap: var(--ft-space-3); }
   .bulletin-item .bulletin-rank { flex-direction: row; align-items: baseline; gap: var(--ft-space-2); }
   .bulletin-rank__no { font-size: 32px; }

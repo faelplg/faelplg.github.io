@@ -4,6 +4,8 @@
 // - retícula: meio-tom em WebGL (um fragment shader, sem biblioteca)
 // - estratos: linhas em Op Art que guardam por um tempo a marca do cursor
 // - interferência: moiré entre dois conjuntos de círculos, um deles no cursor
+// - phases: a grid of moon phases, one lunar month every 29.5 columns; the
+//   cursor brings the discs near it to full
 //
 // Tudo pausa fora da tela. Com "reduzir movimento", cada hero desenha um
 // quadro parado e não responde ao cursor.
@@ -377,6 +379,106 @@
     lineStage(stage, () => ({ home: tokenColor(stage, '--ft-line-strong'), guest: tokenColor(stage, '--ft-accent') }), setup, draw);
   }
 
-  const INIT = { needles: initNeedles, bust: initBust, halftone: initHalftone, strata: initStrata, interference: initInterference };
+  // ── 6 · Phases ──
+  // A grid of small discs, each one a moon phase. Each disc is a day and each
+  // row starts a week after the one above, like a calendar, so the phases run
+  // in diagonal bands of lunar months (29.5 days). The field advances slowly,
+  // and the cursor brings the discs near it toward full.
+  function initPhases(stage) {
+    const pointer = trackPointer(stage);
+    const STEP = 24;          // on the 4px grid
+    const RADIUS = 7;
+    const LUNATION = 29.5;    // days in a lunar month
+    const WEEK = 7;           // days between one row and the next
+    const SPEED = 0.02;       // cycles per second: one day every ~1.7s
+    const REACH = 56;         // cursor reach
+    const SEGMENTS = 12;      // points on each terminator
+    let discs = [];
+    const focus = { x: 0, y: 0, presence: 0 };
+
+    function setup(width, height) {
+      discs = [];
+      const cols = Math.floor(width / STEP);
+      const rows = Math.floor(height / STEP);
+      const left = (width - (cols - 1) * STEP) / 2;
+      const top = (height - (rows - 1) * STEP) / 2;
+      for (let row = 0; row < rows; row++) {
+        for (let col = 0; col < cols; col++) {
+          discs.push({ x: left + col * STEP, y: top + row * STEP, phase: ((col + row * WEEK) / LUNATION) % 1 });
+        }
+      }
+      focus.x = width * 0.75;
+      focus.y = height * 0.5;
+    }
+
+    // Lit part of a disc at phase p (0 new, 0.5 full): the bright limb on one
+    // side and the terminator, an ellipse with x-radius r·cos(2πp), on the other.
+    function litPath(ctx, x, y, p) {
+      const theta = p * Math.PI * 2;
+      const waxing = p < 0.5;
+      const side = waxing ? 1 : -1;
+      const k = RADIUS * Math.cos(theta);
+      ctx.moveTo(x, y - RADIUS);
+      ctx.arc(x, y, RADIUS, -Math.PI / 2, Math.PI / 2, !waxing);
+      for (let i = 1; i <= SEGMENTS; i++) {
+        const t = Math.PI / 2 - (i / SEGMENTS) * Math.PI;
+        ctx.lineTo(x + side * k * Math.cos(t), y + RADIUS * Math.sin(t));
+      }
+      ctx.closePath();
+    }
+
+    function draw(ctx, colors, time, animated, size) {
+      if (animated) {
+        // with no cursor, a point drifts slowly across the field
+        const targetX = pointer.active ? pointer.x : size.width * (0.74 + 0.16 * Math.sin(time * 0.19));
+        const targetY = pointer.active ? pointer.y : size.height * (0.5 + 0.28 * Math.sin(time * 0.27 + 1));
+        focus.x += (targetX - focus.x) * 0.06;
+        focus.y += (targetY - focus.y) * 0.06;
+        focus.presence += (1 - focus.presence) * 0.04;
+      } else {
+        focus.presence = 0;
+      }
+      const shift = animated ? time * SPEED : 0;
+
+      ctx.fillStyle = colors.disc;
+      ctx.globalAlpha = 1;
+      ctx.beginPath();
+      for (const disc of discs) {
+        ctx.moveTo(disc.x + RADIUS, disc.y);
+        ctx.arc(disc.x, disc.y, RADIUS, 0, Math.PI * 2);
+      }
+      ctx.fill();
+
+      // phases in two passes: the field, then the discs the cursor lights up
+      const near = [];
+      ctx.fillStyle = colors.lit;
+      ctx.beginPath();
+      for (const disc of discs) {
+        let p = (disc.phase + shift) % 1;
+        const dx = disc.x - focus.x;
+        const dy = disc.y - focus.y;
+        const pull = focus.presence * Math.exp(-(dx * dx + dy * dy) / (2 * REACH * REACH));
+        // the cursor pulls the phase toward full
+        p += (0.5 - p) * Math.min(0.7, pull);
+        if (pull > 0.08) { near.push([disc, p, pull]); continue; }
+        if (p < 0.01 || p > 0.99) continue;
+        litPath(ctx, disc.x, disc.y, p);
+      }
+      ctx.globalAlpha = 0.6;
+      ctx.fill();
+
+      for (const [disc, p, pull] of near) {
+        ctx.globalAlpha = 0.6 + 0.4 * Math.min(1, pull * 1.6);
+        ctx.beginPath();
+        litPath(ctx, disc.x, disc.y, p);
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+    }
+
+    lineStage(stage, () => ({ disc: tokenColor(stage, '--ft-line'), lit: tokenColor(stage, '--ft-accent') }), setup, draw);
+  }
+
+  const INIT = { needles: initNeedles, bust: initBust, halftone: initHalftone, strata: initStrata, interference: initInterference, phases: initPhases };
   document.querySelectorAll('[data-hero]').forEach((stage) => INIT[stage.dataset.hero]?.(stage));
 })();

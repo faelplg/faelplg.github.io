@@ -22,7 +22,7 @@ Estático, sem framework/bundler, bilíngue (pt-BR na raiz, inglês em `en/`).
 |---|---|---|
 | Início (landing pessoal) | `index.html` | `en/index.html` |
 | Estudos (índice e estudos) | `estudos/*.html` | `en/studies/*.html` |
-| Monthly bulletins (inside Studies) | `estudos/boletins/*.html` | `en/studies/bulletins/*.html` |
+| Monthly bulletins | `boletins/*.html` | `en/bulletins/*.html` |
 | Longward (tese da empresa) | `longward.html` | `en/longward.html` |
 | Trajetória / carreira | `sobre.html` | `en/career.html` |
 | Contato | `contato.html` | `en/contact.html` |
