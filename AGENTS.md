@@ -60,7 +60,7 @@ llms.txt                                                  → machine-readable i
 3. **Tone of voice:** direct, no hype, no empty superlatives ("revolutionary", "world-class").
    See [docs/ai/overview.md](docs/ai/overview.md#tone-of-voice-and-content-guidelines) for the full
    guidelines (engineering and portfolio before titles, first person without sounding like a
-   dialogue with AI, numbers without invented causality, Longward's thesis only, etc.).
+   dialogue with AI, numbers without invented causality, Longward only through its thesis, etc.).
 4. **Sentence case, never title case** in titles and headlines - a brand convention that applies
    to both pt and en.
 5. When changing the page structure (new section, new page, title), update
@@ -162,18 +162,12 @@ The site should feel alive without becoming cluttered. Rules for any new or modi
 
 ## Local testing
 
-No dev server is configured in `package.json`. To preview, serve the repository root as static
-files, for example:
+No dev server is configured in `package.json`. CI runs `bun run lint:html` and the offline
+internal-links check, including fragments. See [Local development in README.md](README.md#local-development)
+for installation, static preview and validation commands.
 
-```
-bunx serve .
-# or
-npx serve .
-```
-
-There is no automated test suite in this project. Validation is visual/manual: open the page in
-a browser, check layout, internal links, pt<->en `hreflang` and readability in light/dark mode
-(the tokens in `brand/tokens.css` respond to the system theme).
+Also check pages visually in a browser: verify layout, internal links, pt<->en `hreflang` and
+readability in light/dark mode (the tokens in `brand/tokens.css` respond to the system theme).
 
 ## What to avoid
 

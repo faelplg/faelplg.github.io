@@ -60,7 +60,7 @@ AGENTS.md                 → instructions for AI agents working in this reposit
 Install dependencies with Bun:
 
 ```sh
-bun install
+bun install --frozen-lockfile
 ```
 
 There is no build step. Serve the repository root with any static server, for example:

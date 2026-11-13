@@ -48,7 +48,7 @@ on the CTO role at Aurum.
 - Software experience: more than 15 years.
 - Combined experience as a technology director and executive at Yattó and Aurum: more than 10 years.
 - Aurum technology team growth: from 25 to 50 people across eight squads.
-- Aurum revenue growth during his tenure: from around R$60 million to more than R$100 million. A company result during the period: never write that Fael "scaled" or "doubled" revenue.
+- Aurum revenue growth during his tenure: from around R$60 million to more than R$100 million. This is the company's result for the period: never write that Fael "scaled" or "doubled" revenue.
 - Aurum user base growth: nearly doubled, to more than 200 thousand users.
 - Size of the squad coordinated as senior front-end developer and Tech Lead: an average of 6 to 8 professionals.
 - Digital products built from scratch at Yattó with AngularJS and Go: 3.
@@ -56,7 +56,7 @@ on the CTO role at Aurum.
 - Companies co-founded: 2 (Yattó/Residuall and Interact Software).
 - Yattó clients under the new business model (large consumer goods and retail companies) that may be named: Cargill, Johnson & Johnson, Nestlé and Suvinil. Do not associate them with Residuall's reverse logistics phase.
 - eNPS and LNPS (the team's assessment of leadership) at Aurum: both above 80 in every year as CTO.
-- Aurum team: stabilized after a period of many departures before Fael's arrival, which allowed headcount to grow. There is no confirmed turnover figure: do not publish values.
+- Aurum team: stabilized during Fael's tenure after a period of many departures that preceded his arrival, allowing headcount to grow. There is no confirmed turnover figure: do not publish values.
 - Roles created at Aurum: software architect, technology manager and support analyst, with internal promotions into new roles.
 - Aurum cloud budget: R$300 to 400 thousand per month, cloud and infrastructure on GCP only (excludes payroll).
 - Pipelines at Aurum: standardization of product, performance, cloud, data and internal systems pipelines, with development metrics introduced alongside them.
