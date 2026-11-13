@@ -1,67 +1,67 @@
-# docs/ai/overview.md - Visão do site para agentes de IA / LLMs
+# docs/ai/overview.md - site overview for AI agents / LLMs
 
-> Este arquivo é a porta de entrada para agentes de IA e LLMs que precisem entender o site
-> fael.tech antes de responder perguntas sobre Rafael (Fael) Goulart ou sobre a marca fael.tech.
-> Ver também [facts.md](./facts.md) (fatos canônicos) e [content-map.md](./content-map.md) (mapa
-> de páginas).
+> This file is the entry point for AI agents and LLMs that need to understand the fael.tech
+> site before answering questions about Rafael (Fael) Goulart or the fael.tech brand.
+> See also [facts.md](./facts.md) (canonical facts) and [content-map.md](./content-map.md)
+> (page map).
 
-## O que é este site
+## What this site is
 
-Site pessoal de Rafael (Fael) Goulart, engenheiro de software especializado em UX e, mais
-recentemente, em IA, cofundador de duas empresas e ex-CTO da Aurum Software, publicado em
-`fael.tech`. A fael.tech é onde ele estuda, constrói e publica, e o nome com que assina seu
-trabalho independente. É também o laboratório de aplicação da identidade visual da marca fael.tech: o
-próprio site, construído com os tokens e
-regras da marca, é a prova viva do sistema (não existe uma página separada de "componentes").
+Personal site of Rafael (Fael) Goulart, a software engineer specialized in UX and, more recently,
+AI, co-founder of two companies and former CTO of Aurum Software, published at `fael.tech`.
+fael.tech is where he studies, builds and publishes, and the name he uses for his independent
+work. It is also the lab for applying the fael.tech brand's visual identity: the site itself,
+built with the brand's tokens and rules, is the living proof of the system (there is no separate
+"components" page).
 
-Estático, sem framework/bundler, bilíngue (pt-BR na raiz, inglês em `en/`).
+Static, with no framework/bundler, bilingual (pt-BR at the root, English in `en/`).
 
-## Estrutura
+## Structure
 
-| Página | pt-BR | en |
+| Page | pt-BR | en |
 |---|---|---|
-| Início (landing pessoal) | `index.html` | `en/index.html` |
-| Estudos (índice e estudos) | `estudos/*.html` | `en/studies/*.html` |
+| "Início" (Home, personal landing page) | `index.html` | `en/index.html` |
+| "Estudos" (Studies, index and studies) | `estudos/*.html` | `en/studies/*.html` |
 | Monthly bulletins | `boletins/*.html` | `en/bulletins/*.html` |
-| Longward (tese da empresa) | `longward.html` | `en/longward.html` |
-| Trajetória / carreira | `sobre.html` | `en/career.html` |
-| Contato | `contato.html` | `en/contact.html` |
+| Longward (the company's thesis) | `longward.html` | `en/longward.html` |
+| "Trajetória" (Career) | `sobre.html` | `en/career.html` |
+| "Contato" (Contact) | `contato.html` | `en/contact.html` |
 
-Cada par pt/en usa `<link rel="alternate" hreflang>` para se referenciar mutuamente.
+Each pt/en pair uses `<link rel="alternate" hreflang>` to reference the other version.
 
-## Tom de voz e diretrizes de conteúdo
+## Tone of voice and content guidelines
 
-- **Direto e sem hype.** Evitar superlativos vazios ("revolucionário", "world-class"). Preferir
-  afirmações concretas e verificáveis.
-- **Fatos canônicos.** Datas, cargos e métricas devem permanecer alinhados com [facts.md](./facts.md).
-- **Sentence case, nunca title case** em títulos e headlines (convenção da marca).
-- **Engenharia primeiro, portfólio primeiro.** A Home mostra quem Fael é e o que está construindo
-  (Longward, AIKM, Radiant); a carreira fica na Trajetória. Não abrir com inventário de títulos
-  (CTO, DPO, AI Engineer, músico...) nem com anúncio de busca por emprego.
-- **Primeira pessoa, sem diálogo com IA.** O texto fala com o visitante. Evitar comentários sobre o
-  próprio texto, contrastes do tipo "um portfólio mostra X, aqui eu mostro Y", ressalvas de
-  estágio em prosa (o estágio vai em rótulos) e introduções que resumem o que vem a seguir.
-- **Tom por página.** Home e estudos em tom de conversa; Trajetória sóbria, como currículo.
-- **Números sem causalidade inventada.** Resultados da empresa (receita, base) aparecem como
-  contexto do período, separados do que Fael fez.
-- **Sem slogans.** "Forward through technology" e "Direction. Motion. Impact." não são usados no
-  texto do site.
-- **Longward com reserva.** Falar da tese, nunca de produtos ou experimentos.
-- **Não inventar cargos, empresas, datas ou números** que não estejam em [facts.md](./facts.md)
-  ou nas páginas publicadas. Se uma pergunta exigir um dado que não existe aqui, é preferível dizer
-  que a informação não está disponível a especular.
+- **Direct and without hype.** Avoid empty superlatives ("revolutionary", "world-class"). Prefer
+  concrete, verifiable statements.
+- **Canonical facts.** Dates, roles and metrics must stay aligned with [facts.md](./facts.md).
+- **Sentence case, never title case** in titles and headlines (brand convention).
+- **Engineering first, portfolio first.** Home shows who Fael is and what he is building
+  (Longward, AIKM, Radiant); his career belongs on "Trajetória" (Career). Do not open with an
+  inventory of titles (CTO, DPO, AI Engineer, musician...) or a job search announcement.
+- **First person, without dialogue with AI.** The text speaks to the visitor. Avoid commentary
+  about the text itself, contrasts such as "a portfolio shows X, here I show Y", caveats about
+  project status in prose (status belongs in labels) and introductions summarizing what follows.
+- **Tone by page.** Home and studies are conversational; Career is restrained, like a resume.
+- **Numbers without invented causality.** Company results (revenue, user base) provide context
+  for the period, separate from what Fael did.
+- **No slogans.** "Forward through technology" and "Direction. Motion. Impact." are not used in
+  the site's text.
+- **Longward with restraint.** Discuss the thesis, never products or experiments.
+- **Do not invent roles, companies, dates or numbers** that are not in [facts.md](./facts.md)
+  or the published pages. If a question requires a fact that is not here, prefer saying the
+  information is unavailable to speculating.
 
-## Fonte de verdade da marca
+## Brand source of truth
 
-`brand/` é a fonte única de verdade dos assets visuais da marca (símbolo em SVG,
-`tokens.css`, manual original imprimível). Não deve ser citada como fonte de fatos biográficos -
-para isso, use [facts.md](./facts.md).
+`brand/` is the single source of truth for the brand's visual assets (SVG symbol, `tokens.css`,
+original printable manual). It must not be cited as a source of biographical facts - use
+[facts.md](./facts.md) for those.
 
-## Estado do projeto
+## Project status
 
-O site mantém 22 páginas, a identidade visual em `brand/` e esta documentação como referências
-vivas do projeto. Não existem mais `docs/SPEC.md` nem uma pasta `tasks/` (o
-fluxo de spec-driven development usado durante a construção foi descontinuado após a conclusão) -
-`docs/ai/` é hoje a documentação de referência viva. Materiais brutos de rascunho (versões antigas
-de currículo, brainstorm de conceito de marca) foram removidos por estarem já incorporados às
-páginas publicadas e a este diretório.
+The site maintains 22 pages, the visual identity in `brand/` and this documentation as the
+project's living references. Neither `docs/SPEC.md` nor a `tasks/` folder exists anymore (the
+spec-driven development workflow used during construction was discontinued after completion) -
+`docs/ai/` is now the living reference documentation. Raw draft materials (old resume versions,
+brand concept brainstorms) were removed because they had already been incorporated into the
+published pages and this directory.

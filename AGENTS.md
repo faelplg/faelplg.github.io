@@ -1,109 +1,109 @@
-# AGENTS.md - instruções para agentes de IA neste repositório
+# AGENTS.md - instructions for AI agents in this repository
 
-> Contexto operacional para qualquer agente (Claude Code, Codex, Copilot, etc.) que edite este
-> repositório. Para contexto de *conteúdo* (fatos biográficos, tom de voz, mapa de páginas), a
-> fonte é [docs/ai/](docs/ai/) - leia [docs/ai/overview.md](docs/ai/overview.md) antes de tocar em
-> qualquer texto visível ao usuário.
+> Operational context for any agent (Claude Code, Codex, Copilot, etc.) editing this
+> repository. For *content* context (biographical facts, tone of voice, page map), the
+> source is [docs/ai/](docs/ai/) - read [docs/ai/overview.md](docs/ai/overview.md) before touching
+> any user-visible text.
 
-## O que é este projeto
+## What this project is
 
-Site pessoal estático de Rafael (Fael) Goulart (Software Engineer, estrategista de tecnologia,
-former CTO e DPO) publicado em `fael.tech`. É também o laboratório de aplicação da identidade
-visual da marca fael.tech - o próprio site é a prova viva do sistema de marca, não existe uma
-página separada de "componentes".
+Static personal site of Rafael (Fael) Goulart (Software Engineer, technology strategist,
+former CTO and DPO), published at `fael.tech`. It is also the lab for applying the fael.tech
+brand's visual identity - the site itself is the living proof of the brand system; there is
+no separate "components" page.
 
-- **Sem framework, sem bundler, sem build step.** HTML/CSS/JS puros servidos como estão.
-- **Bilíngue por duplicação de arquivo:** pt-BR na raiz, inglês espelhado em `en/`, sem i18n
-  runtime. Cada página existe como dois arquivos HTML independentes.
-- **Hospedado na Vercel.** As tags `<script defer src="/_vercel/insights/script.js">` e
-  `/_vercel/speed-insights/script.js` em cada página são endpoints injetados automaticamente pela
-  Vercel (habilitados pelas dependências `@vercel/analytics` e `@vercel/speed-insights` em
-  `package.json`) - não apontam para arquivos deste repo e não devem ser "corrigidos" para isso.
-  Apesar do nome do repositório (`faelplg.github.io`), o deploy real não é GitHub Pages.
-- **Bun** é o runtime/gerenciador de pacotes (`bun.lock`), mas não há script de build/dev definido
-  em `package.json` - o site não precisa de um passo de compilação para ser servido.
+- **No framework, no bundler, no build step.** Plain HTML/CSS/JS served as-is.
+- **Bilingual through file duplication:** pt-BR at the root, English mirrored in `en/`, with no
+  runtime i18n. Each page exists as two independent HTML files.
+- **Hosted on Vercel.** The `<script defer src="/_vercel/insights/script.js">` and
+  `/_vercel/speed-insights/script.js` tags on each page are endpoints automatically injected by
+  Vercel (enabled by the `@vercel/analytics` and `@vercel/speed-insights` dependencies in
+  `package.json`) - they do not point to files in this repo and must not be "fixed" to do so.
+  Despite the repository name (`faelplg.github.io`), the actual deployment is not on GitHub Pages.
+- **Bun** is the runtime/package manager (`bun.lock`), but no build/dev script is defined in
+  `package.json` - the site needs no compilation step to be served.
 
-## Estrutura
+## Structure
 
 ```
-index.html / longward.html / sobre.html / contato.html → páginas pt-BR (raiz)
-estudos/*.html                                          → seção Estudos pt-BR (índice + um arquivo por estudo)
+index.html / longward.html / sobre.html / contato.html → pt-BR pages (root)
+estudos/*.html                                          → pt-BR "Estudos" (Studies) section (index + one file per study)
 boletins/*.html                                         → monthly bulletins in pt-BR (index + one file per month, YYYY-MM.html)
 en/bulletins/*.html                                     → monthly bulletins in English (same file names as pt-BR)
-en/studies/*.html                                       → seção Studies em inglês (caminhos sempre em inglês)
-en/{index,longward,career,contact}.html                 → páginas en (espelho 1:1 das pt-BR, nomes em inglês)
-assets/site.css, hero.css, canvas.js, hero.js, cards.js → cópias exatas do fael-tech-design-system (não editar aqui)
-assets/main.css                                          → estilos próprios do site (moldura, menu, Início, Estudos, Longward);
-                                                             só consome var(--ft-*) semânticos de brand/tokens.css
-assets/main.js                                            → menu da barra do hero e ano do rodapé
-vercel.json                                               → redirecionamentos de endereços antigos
-assets/img/                                               → imagens do site (ex.: avatar/avatar-busto.webp do hero da home, og/fael-tech.png de compartilhamento)
-tools/og-image.html                                       → fonte da imagem de compartilhamento; o comando para gerar o PNG está no topo do arquivo
-brand/                                                    → fonte única de verdade da marca (ver seção abaixo)
-docs/ai/overview.md                                       → propósito, tom de voz, diretrizes de conteúdo
-docs/ai/facts.md                                          → fatos canônicos de carreira/bio (única fonte de números/datas)
-docs/ai/content-map.md                                    → mapa de páginas pt/en com propósito e afirmações-chave de cada uma
-llms.txt                                                  → índice machine-readable na raiz (convenção llms.txt)
+en/studies/*.html                                       → English Studies section (paths always in English)
+en/{index,longward,career,contact}.html                 → en pages (1:1 mirror of pt-BR, English names)
+assets/site.css, hero.css, canvas.js, hero.js, cards.js → exact copies from fael-tech-design-system (do not edit here)
+assets/main.css                                          → site-specific styles (frame, menu, Home, Studies, Longward);
+                                                             consumes only semantic var(--ft-*) tokens from brand/tokens.css
+assets/main.js                                            → hero bar menu and footer year
+vercel.json                                               → redirects from old addresses
+assets/img/                                               → site images (e.g. avatar/avatar-busto.webp for the home hero, og/fael-tech.png for sharing)
+tools/og-image.html                                       → sharing image source; the command to generate the PNG is at the top of the file
+brand/                                                    → single source of truth for the brand (see section below)
+docs/ai/overview.md                                       → purpose, tone of voice, content guidelines
+docs/ai/facts.md                                          → canonical career/bio facts (single source of numbers/dates)
+docs/ai/content-map.md                                    → pt/en page map with each page's purpose and key claims
+llms.txt                                                  → machine-readable index at the root (llms.txt convention)
 ```
 
-## Regras de conteúdo (obrigatórias)
+## Content rules (mandatory)
 
-1. **`docs/ai/facts.md` é a fonte única de verdade** para datas, cargos, métricas e formação. Se
-   um fato de carreira muda, edite `facts.md` primeiro e só depois replique nas páginas públicas
-   (principalmente `sobre.html` / `en/career.html`). Nunca invente cargo, empresa, data ou número
-   que não esteja lá ou nas páginas já publicadas.
-2. **Paridade pt/en obrigatória.** Qualquer mudança de conteúdo em uma página pt-BR deve ser
-   replicada na página `en/` correspondente (e vice-versa) na mesma sessão de edição. As duas
-   nunca devem divergir em fatos, apenas em idioma. Páginas em inglês usam nomes de arquivo e
-   pastas em inglês (`en/career.html`, `en/studies/`), sem misturar idiomas. Ao renomear ou remover
-   uma página publicada, acrescente o redirecionamento em `vercel.json`.
-3. **Tom de voz:** direto, sem hype, sem superlativos vazios ("revolucionário", "world-class").
-   Ver [docs/ai/overview.md](docs/ai/overview.md#tom-de-voz-e-diretrizes-de-conteúdo) para a lista
-   completa de diretrizes (engenharia e portfólio antes de cargos, primeira pessoa sem tom de
-   diálogo com IA, números sem causalidade inventada, Longward só pela tese, etc.).
-4. **Sentence case, nunca title case** em títulos e headlines - convenção da marca, vale para
-   pt e en.
-5. Ao mudar a estrutura de páginas (nova seção, página nova, título), atualize
-   `docs/ai/content-map.md`, `llms.txt` e o bloco "Structure" do `README.md` junto.
-6. Nunca use travessão/em dash "—" no conteúdo; use hífen simples "-" (convenção já aplicada em
-   todo o repositório).
+1. **`docs/ai/facts.md` is the single source of truth** for dates, roles, metrics and education. If
+   a career fact changes, edit `facts.md` first and only then replicate it on the public pages
+   (especially `sobre.html` / `en/career.html`). Never invent a role, company, date or number
+   that is not there or on the already published pages.
+2. **pt/en parity is mandatory.** Any content change to a pt-BR page must be replicated on the
+   corresponding `en/` page (and vice versa) in the same editing session. The two must never
+   diverge in facts, only in language. English pages use English file and folder names
+   (`en/career.html`, `en/studies/`), without mixing languages. When renaming or removing a
+   published page, add the redirect to `vercel.json`.
+3. **Tone of voice:** direct, no hype, no empty superlatives ("revolutionary", "world-class").
+   See [docs/ai/overview.md](docs/ai/overview.md#tone-of-voice-and-content-guidelines) for the full
+   guidelines (engineering and portfolio before titles, first person without sounding like a
+   dialogue with AI, numbers without invented causality, Longward's thesis only, etc.).
+4. **Sentence case, never title case** in titles and headlines - a brand convention that applies
+   to both pt and en.
+5. When changing the page structure (new section, new page, title), update
+   `docs/ai/content-map.md`, `llms.txt` and the "Structure" block in `README.md` together.
+6. Never use an em dash in content; use a plain hyphen "-" (a convention already applied
+   throughout the repository).
 
-## `brand/` - não modificar sem confirmação
+## `brand/` - do not modify without confirmation
 
-`brand/` é a fonte única de verdade da identidade visual (símbolo SVG, `tokens.css`, manual
-original imprimível) e **não é editada a partir do resto do site**. Se uma tarefa parecer exigir
-mudar uma cor, token ou asset de marca, pare e confirme com o usuário antes de tocar em qualquer
-arquivo dentro de `brand/` - trate como uma dependência externa vendorizada, não como código do
-site. `assets/site.css` só deve consumir os tokens `var(--ft-*)` já expostos por
-`brand/tokens.css`; nunca redeclare valores de cor/tipografia localmente. Detalhes de uso e regras
-da marca (liquid glass, área de proteção, cores) estão em [brand/README.md](brand/README.md) e no
-manual completo.
+`brand/` is the single source of truth for the visual identity (SVG symbol, `tokens.css`, original
+printable manual) and **is not edited from the rest of the site**. If a task appears to require
+changing a brand color, token or asset, stop and confirm with the user before touching any file
+inside `brand/` - treat it as a vendored external dependency, not site code. `assets/site.css`
+should only consume the `var(--ft-*)` tokens already exposed by `brand/tokens.css`; never redeclare
+color/typography values locally. Usage details and brand rules (liquid glass, clear space, colors)
+are in [brand/README.md](brand/README.md) and the full manual.
 
-## Fluxo de trabalho ao editar uma página HTML
+## Workflow when editing an HTML page
 
-Cada página HTML é standalone (sem includes/templates), então elementos compartilhados - a barra
-de navegação (`.ds-hero__bar`, dentro do hero de cada página, com as bandeiras de idioma `.site-langs`), `<link rel="alternate" hreflang>`,
-as tags de compartilhamento (`og:*` e `twitter:card`, com `og:title` e `og:description` iguais ao `<title>` e à
-`meta description` da página e `og:url` com o endereço dela),
-tags do Vercel, `<link rel="stylesheet">` - existem duplicados em cada arquivo. Ao mudar um desses
-elementos (ex.: um link da nav), replique a mudança em todas as páginas pt e en, não só na que
-motivou a edição. Isso inclui as páginas de `estudos/`, `en/studies/`, `boletins/` and `en/bulletins/`, que ficam em subpastas
-(caminhos com `../` e `../../`). Ao criar uma página nova, copie a estrutura de `<head>` e do
-`<header class="ds-hero ...">` de uma página existente do mesmo idioma para não perder um `hreflang`
-ou a inclusão dos scripts.
+Each HTML page is standalone (no includes/templates), so shared elements - the navigation bar
+(`.ds-hero__bar`, inside each page's hero, with the `.site-langs` language flags),
+`<link rel="alternate" hreflang>`, sharing tags (`og:*` and `twitter:card`, with `og:title` and
+`og:description` matching the page's `<title>` and `meta description`, and `og:url` containing its
+address), Vercel tags, `<link rel="stylesheet">` - are duplicated in every file. When changing one
+of these elements (e.g. a navigation link), replicate the change across all pt and en pages, not
+just the one that prompted the edit. This includes pages in `estudos/`, `en/studies/`, `boletins/`
+and `en/bulletins/`, which are in subfolders (paths with `../` and `../../`). When creating a page,
+copy the `<head>` and `<header class="ds-hero ...">` structure from an existing page in the same
+language to avoid missing a `hreflang` or script inclusion.
 
-## Estudos: datas e atualizações
+## Studies: dates and updates
 
-Todo estudo tem os mesmos metadados: tipo, estado, data de publicação e, quando houver, data de
-atualização. Ao mudar o conteúdo de um estudo, na mesma edição e nos dois idiomas:
+Every study has the same metadata: type, status, publication date and, when applicable, update
+date. When changing a study's content, in the same edit and in both languages:
 
-1. acrescente "Atualizado em" / "Updated" na `.study-meta` da página (ou troque a data existente);
-2. acrescente a entrada no topo da lista `.study-changes`, com a data e uma frase sobre o que mudou;
-3. na linha do estudo no índice (`estudos/index.html` e `en/studies/index.html`), acrescente
-   `· atualizado em <data>` / `· updated <date>` ao lado da data e mantenha a ordem do mais
-   recente para o mais antigo.
+1. add "Atualizado em" / "Updated" to the page's `.study-meta` (or replace the existing date);
+2. add an entry at the top of the `.study-changes` list, with the date and a sentence about what changed;
+3. in the study's entry in the index (`estudos/index.html` and `en/studies/index.html`), add
+   `· atualizado em <data>` / `· updated <date>` next to the date and keep the order from newest
+   to oldest.
 
-Correções de digitação não contam como atualização, nem mudanças feitas no mesmo dia da publicação: elas fazem parte da publicação. Datas usam `<time datetime="YYYY-MM-DD">`.
+Typo fixes do not count as updates, nor do changes made on the publication date: they are part of
+the publication. Dates use `<time datetime="YYYY-MM-DD">`.
 
 ## Monthly bulletins
 
@@ -127,53 +127,60 @@ Bulletins are a monthly series with their own section, not studies: they have no
 
 ## Design system
 
-O visual segue o [fael-tech-design-system](https://github.com/faelplg/design-systems/tree/main/fael-tech-design-system).
+The visuals follow the [fael-tech-design-system](https://github.com/faelplg/design-systems/tree/main/fael-tech-design-system).
 `brand/tokens.css`, `brand/assets/*.svg`, `assets/site.css`, `assets/hero.css`, `assets/canvas.js`,
-`assets/hero.js`, `assets/cards.js` e `assets/img/avatar/avatar-busto.webp` são cópias exatas de lá: para mudar algum deles, mude no design system e copie de
-novo. O que só existe no site vai em `assets/main.css`. Cada página abre com um hero do design system:
-Busto na home, Agulhas na Trajetória, Retícula nos Estudos, Estratos na Longward, Interferência no Contato and Phases in the bulletins (Boletins). Cada seção principal (Início, Trajetória, Estudos, Boletins, Longward, Contato) tem um hero próprio, que não se repete em outra seção. Dentro de uma seção o hero é o mesmo: o índice e todas as páginas de Estudos usam a Retícula, the bulletins index and every issue use Phases, e cada par pt/en compartilha o hero. O tema segue o sistema
-operacional (`light-dark()` nos tokens semânticos); componentes nunca usam hex, `rgba()` ou
-primitivos (`--ft-teal-*`, `--ft-ink`...), só os semânticos (`--ft-fg`, `--ft-bg-raised`,
-`--ft-accent`...), e espaçamento sai de `--ft-space-*`.
+`assets/hero.js`, `assets/cards.js` and `assets/img/avatar/avatar-busto.webp` are exact copies from
+there: to change any of them, change the design system and copy them again. Site-only styles go
+in `assets/main.css`. Each page opens with a design system hero: Busto (Bust) on Home, Agulhas
+(Needles) on "Trajetória" (Career), Retícula (Grid) on "Estudos" (Studies), Estratos (Strata) on
+Longward, Interferência (Interference) on "Contato" (Contact) and Phases on "Boletins" (Bulletins).
+Each main section ("Início", "Trajetória", "Estudos", "Boletins", Longward, "Contato") has its own
+hero, which is not repeated in another section. Within a section, the hero stays the same: the
+Studies index and all study pages use Retícula, the bulletins index and every issue use Phases,
+and each pt/en pair shares its hero. The theme follows the operating system (`light-dark()` in
+the semantic tokens); components never use hex, `rgba()` or primitives (`--ft-teal-*`,
+`--ft-ink`...), only semantic tokens (`--ft-fg`, `--ft-bg-raised`, `--ft-accent`...), and spacing
+comes from `--ft-space-*`.
 
-### Composição das páginas
+### Page composition
 
-O site deve ter vida sem ficar carregado. Regras para qualquer página nova ou alterada:
+The site should feel alive without becoming cluttered. Rules for any new or modified page:
 
-- **Momentos visuais com intenção.** O hero é o momento forte da página. Palcos animados (como os
-  architecture cards de `cards.js`) entram onde ilustram o assunto, nunca como decoração solta.
-- **Movimento responsável.** Animação pausa fora da tela, respeita `prefers-reduced-motion` e não
-  fica em loop chamando atenção.
-- **Funciona sem JavaScript.** Todo texto e link fica legível e utilizável sem JS.
-- **Orçamento de peso.** Cada página fica em torno de 150 KB transferidos, sem contar imagens
-  otimizadas, e sem dependência externa além das fontes.
-- **Nada fictício.** Sem números, mockups ou painéis inventados; artefatos mostrados (terminal,
-  trechos de documento) vêm de execuções e arquivos reais.
-- **Sem grade de cards como padrão.** Nada de "rótulo numerado + 3 cards". Seções variam entre
-  prosa, listas editoriais com rótulo à esquerda, artefatos com legenda e cards só quando cada
-  item é uma unidade própria.
+- **Purposeful visual moments.** The hero is the page's main visual moment. Animated stages (such
+  as the architecture cards in `cards.js`) belong where they illustrate the subject, never as
+  unrelated decoration.
+- **Responsible motion.** Animation pauses offscreen, respects `prefers-reduced-motion` and does
+  not loop to draw attention.
+- **Works without JavaScript.** All text and links remain readable and usable without JS.
+- **Transfer budget.** Each page stays around 150 KB transferred, excluding optimized images,
+  with no external dependency other than fonts.
+- **Nothing fictional.** No invented numbers, mockups or dashboards; displayed artifacts
+  (terminal output, document excerpts) come from real runs and files.
+- **No card grid by default.** No "numbered label + 3 cards". Sections vary between prose,
+  editorial lists with labels on the left, captioned artifacts and cards only when each item
+  is a unit of its own.
 
-## Testar localmente
+## Local testing
 
-Não há dev server configurado no `package.json`. Para pré-visualizar, sirva a raiz do repo como
-arquivos estáticos, por exemplo:
+No dev server is configured in `package.json`. To preview, serve the repository root as static
+files, for example:
 
 ```
 bunx serve .
-# ou
+# or
 npx serve .
 ```
 
-Não há suíte de testes automatizados neste projeto. Validação é visual/manual: abra a página no
-navegador, confira layout, links internos, `hreflang` pt<->en, e leitura em light/dark (tokens de
-`brand/tokens.css` respondem a tema do sistema).
+There is no automated test suite in this project. Validation is visual/manual: open the page in
+a browser, check layout, internal links, pt<->en `hreflang` and readability in light/dark mode
+(the tokens in `brand/tokens.css` respond to the system theme).
 
-## O que evitar
+## What to avoid
 
-- Não adicionar framework, bundler ou dependência de build - a natureza estática/zero-build é
-  intencional.
-- Não criar uma página de "componentes" ou storybook separada - o próprio site é a demonstração
-  viva do sistema de marca.
-- Não editar `brand/` sem confirmação prévia do usuário (ver seção acima).
-- Não publicar fato biográfico/de carreira que não esteja em `docs/ai/facts.md` ou já publicado.
-- Não deixar pt-BR e en divergirem em conteúdo ou estrutura.
+- Do not add a framework, bundler or build dependency - the static/zero-build nature is
+  intentional.
+- Do not create a separate "components" page or storybook - the site itself is the living
+  demonstration of the brand system.
+- Do not edit `brand/` without prior user confirmation (see section above).
+- Do not publish a biographical/career fact that is not in `docs/ai/facts.md` or already published.
+- Do not let pt-BR and en diverge in content or structure.

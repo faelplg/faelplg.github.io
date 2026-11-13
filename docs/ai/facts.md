@@ -1,91 +1,92 @@
-# docs/ai/facts.md - Fatos canônicos (fonte única para números e datas)
+# docs/ai/facts.md - canonical facts (single source for numbers and dates)
 
-> Fonte única de verdade para qualquer fato biográfico ou de carreira citado no site. Qualquer
-> mudança em datas, cargos ou métricas de carreira deve ser aplicada primeiro aqui e só depois
-> replicada nas páginas públicas.
+> Single source of truth for any biographical or career fact cited on the site. Any change to
+> career dates, roles or metrics must be applied here first and only then replicated on the
+> public pages.
 
-## Identidade
+## Identity
 
-- Nome: Rafael Goulart, conhecido como Fael. Na Trajetória e no LinkedIn o nome aparece como "Rafael Goulart", com "Fael" como apelido (segunda linha no site, campo "Additional name" no LinkedIn).
-- Localização: Florianópolis, SC - Brasil
-- Contato: r@fael.tech · linkedin.com/in/faelplg · github.com/faelplg
-- Identidade principal: engenheiro de software, especializado em UX e, mais recentemente, em IA. Cofundou duas empresas e foi CTO da Aurum Software.
-- Autodescrição (hero da home): Sou engenheiro de software, especializado em UX e, mais recentemente, em IA. Cofundei duas empresas e fui CTO de uma das líderes em software jurídico no Brasil. Agora, estou fundando um novo negócio, publicando estudos e métodos e construindo ferramentas open source.
-- fael.tech: onde Fael estuda, constrói e publica, e o nome com que assina seu trabalho independente (consultorias e parcerias em engenharia e liderança técnica, IA no desenvolvimento de software e projetos de produto ou pesquisa).
-- Longward: empresa em formação para criar produtos que ajudem comunidades a guardar e desenvolver o que aprendem juntas, usando IA sem apagar quem produziu o conhecimento. Não citar produtos, experimentos ou nomes de produto da Longward.
+- Name: Rafael Goulart, known as Fael. On "Trajetória" (Career) and LinkedIn, the name appears as "Rafael Goulart", with "Fael" as a nickname (second line on the site, "Additional name" field on LinkedIn).
+- Location: Florianópolis, SC - Brazil
+- Contact: r@fael.tech · linkedin.com/in/faelplg · github.com/faelplg
+- Primary identity: software engineer, specialized in UX and, more recently, AI. Co-founded two companies and was CTO of Aurum Software.
+- Self-description (home hero): I am a software engineer, specialized in UX and, more recently, AI. I co-founded two companies and was CTO of one of Brazil's leading legal software companies. Now I am founding a new business, publishing studies and methods and building open source tools.
+- fael.tech: where Fael studies, builds and publishes, and the name he uses for his independent work (consulting and partnerships in engineering and technical leadership, AI in software development, and product or research projects).
+- Longward: a company being formed to create products that help communities preserve and develop what they learn together, using AI without erasing who produced the knowledge. Do not mention Longward products, experiments or product names.
 
-## Headline oficial
+## Official headline
 
-Mesmo conteúdo em todos os lugares, formato adaptado a cada um. Ao mudar, mude aqui primeiro e
-depois no site (hero de `sobre.html` / `en/career.html`) e no LinkedIn. Os textos do LinkedIn
-ficam no projeto career-library (`career-library/linkedin/linkedin.md`), junto do currículo.
+The same content everywhere, with the format adapted to each place. When changing it, change it
+here first, then on the site (hero in `sobre.html` / `en/career.html`) and on LinkedIn. LinkedIn
+texts are in the career-library project (`career-library/linkedin/linkedin.md`), alongside the
+resume.
 
-- LinkedIn (en, com palavras-chave): Software engineer | AI engineering, UX and software architecture | 10+ years as CTO, led a 50-person tech org | Building AI tools at fael.tech
-- Site (pt): Engenheiro de software com foco em IA, UX e arquitetura. Mais de dez anos como CTO, liderando times de tecnologia de até 50 pessoas. Hoje construo ferramentas de IA pela fael.tech.
+- LinkedIn (en, with keywords): Software engineer | AI engineering, UX and software architecture | 10+ years as CTO, led a 50-person tech org | Building AI tools at fael.tech
+- Site (pt, quoted page text): "Engenheiro de software com foco em IA, UX e arquitetura. Mais de dez anos como CTO, liderando times de tecnologia de até 50 pessoas. Hoje construo ferramentas de IA pela fael.tech."
 - Site (en): Software engineer focused on AI, UX and architecture. More than ten years as CTO, leading technology teams of up to 50 people. Today I build AI tools through fael.tech.
 
-## Experiência (ordem cronológica reversa)
+## Experience (reverse chronological order)
 
-| Período | Cargo | Empresa |
+| Period | Role | Company |
 |---|---|---|
-| Ago 2026 - atual | Engenheiro de software e pesquisador em IA e UX | fael.tech (autônomo), Florianópolis |
-| Abr 2021 - Jun 2026 (5a 3m) | Diretor de Tecnologia (CTO) | Aurum Software, Florianópolis |
-| Out 2020 - Abr 2021 (7m) | Desenvolvedor front-end sênior e Tech Lead | Aurum Software, Florianópolis |
-| Abr 2021 - Mai 2022 (1a 2m) | Cofundador (meio período) | Yattó, Belo Horizonte |
-| Ago 2015 - Abr 2021 (5a 9m) | Cofundador / CTO | Yattó (antes Residuall), Belo Horizonte |
-| Set 2013 - Jun 2016 (2a 10m) | Cofundador, engenheiro de software e QA | Interact Software, Belo Horizonte |
-| Jul 2013 - Jul 2015 (2a) | Gestor de TI na CEGUAI - SEPLAG | Governo de Minas Gerais, Belo Horizonte |
-| Abr 2011 - Jul 2013 (2a 4m) | Assessor/Gerente de TI na SEPLAG | Governo de Minas Gerais, Belo Horizonte |
-| Mai 2009 - Mar 2011 (1a 11m) | Estagiário | Diários Associados (TV Alterosa), Belo Horizonte |
+| Aug 2026 - present | Software engineer and AI and UX researcher | fael.tech (self-employed), Florianópolis |
+| Apr 2021 - Jun 2026 (5y 3m) | Chief Technology Officer (CTO) | Aurum Software, Florianópolis |
+| Oct 2020 - Apr 2021 (7m) | Senior front-end developer and Tech Lead | Aurum Software, Florianópolis |
+| Apr 2021 - May 2022 (1y 2m) | Co-founder (part-time) | Yattó, Belo Horizonte |
+| Aug 2015 - Apr 2021 (5y 9m) | Co-founder / CTO | Yattó (formerly Residuall), Belo Horizonte |
+| Sep 2013 - Jun 2016 (2y 10m) | Co-founder, software engineer and QA | Interact Software, Belo Horizonte |
+| Jul 2013 - Jul 2015 (2y) | IT manager at CEGUAI - SEPLAG | Governo de Minas Gerais (Minas Gerais state government), Belo Horizonte |
+| Apr 2011 - Jul 2013 (2y 4m) | IT advisor/manager at SEPLAG | Governo de Minas Gerais (Minas Gerais state government), Belo Horizonte |
+| May 2009 - Mar 2011 (1y 11m) | Intern | Diários Associados (TV Alterosa), Belo Horizonte |
 
-Observação: o período na Yattó/Residuall (2015-2022) se sobrepõe parcialmente ao início da Aurum.
-Ele permaneceu como cofundador da Yattó durante a transição de refundação (2021-2022)
-enquanto já assumia o cargo de CTO na Aurum.
+Note: the period at Yattó/Residuall (2015-2022) partially overlaps with the start at Aurum.
+He remained a Yattó co-founder during its refounding transition (2021-2022) while already taking
+on the CTO role at Aurum.
 
-## Fatos confirmados
+## Confirmed facts
 
-- Experiência em software: mais de 15 anos.
-- Experiência acumulada como diretor e executivo de tecnologia na Yattó e na Aurum: mais de 10 anos.
-- Crescimento do time de tecnologia da Aurum: de 25 para 50 pessoas em oito squads.
-- Crescimento da receita da Aurum durante a gestão: de cerca de R$60 milhões para mais de R$100 milhões. Resultado da empresa no período: nunca escrever que Fael "escalou" ou "dobrou" a receita.
-- Crescimento da base da Aurum: quase dobrou, para mais de 200 mil usuários.
-- Tamanho do squad coordenado como desenvolvedor front-end sênior e Tech Lead: média de 6 a 8 profissionais.
-- Produtos digitais construídos do zero na Yattó com AngularJS e Go: 3.
-- Produtos digitais entregues na Interact Software: 4.
-- Empresas cofundadas: 2 (Yattó/Residuall e Interact Software).
-- Clientes da Yattó no novo modelo de negócio (grandes empresas de bens de consumo e varejo), que podem ser citados: Cargill, Johnson & Johnson, Nestlé e Suvinil. Não associá-los à fase de logística reversa da Residuall.
-- eNPS e LNPS (avaliação da liderança pelo time) na Aurum: ambos acima de 80 em todos os anos como CTO.
-- Equipe da Aurum: estabilizada depois de um período de muitas saídas, anterior à chegada de Fael, o que permitiu crescer o quadro. Não há número de turnover confirmado: não publicar valores.
-- Cargos criados na Aurum: arquiteto de software, gerente de tecnologia e analista de suporte, com promoções internas para novas funções.
-- Orçamento de cloud na Aurum: R$300 a 400 mil por mês, só cloud e infraestrutura no GCP (não inclui folha).
-- Esteiras na Aurum: padronização das esteiras de produto, performance, cloud, dados e sistemas internos, com métricas de desenvolvimento implantadas junto.
-- Aurum certificada pelo Great Place to Work durante a gestão (certificação da empresa, não atribuir a Fael).
-- Aurum: uma das líderes em software jurídico no Brasil (produtos Astrea e Themis).
-- Modernização na Aurum: migração incremental de AngularJS para React com micro-frontends,
-  preservando a evolução contínua do produto.
-- Promoção na Aurum: de Senior Front-end Engineer/Tech Lead a CTO cerca de seis meses depois de entrar (out/2020 a abr/2021).
-- Dados na Aurum: área estruturada do zero, incluindo time, data marts e planos de governança e confiabilidade.
-- Segurança na Aurum: programa baseado em CIS Controls e monitoramento automatizado, reduzindo de aproximadamente 30 para zero as solicitações mensais de investigação de vazamentos. O programa inclui políticas de segurança da informação, plano de continuidade e recuperação de desastres. Não há números de incidentes, SLO ou uptime.
-- IA na Aurum: roadmap corporativo cobrindo governança e segurança, IA no SDLC, Spec-Driven Development e inovação no produto.
-- Privacidade na Aurum: atuação como DPO e implementação de práticas organizacionais de conformidade com a LGPD.
+- Software experience: more than 15 years.
+- Combined experience as a technology director and executive at Yattó and Aurum: more than 10 years.
+- Aurum technology team growth: from 25 to 50 people across eight squads.
+- Aurum revenue growth during his tenure: from around R$60 million to more than R$100 million. A company result during the period: never write that Fael "scaled" or "doubled" revenue.
+- Aurum user base growth: nearly doubled, to more than 200 thousand users.
+- Size of the squad coordinated as senior front-end developer and Tech Lead: an average of 6 to 8 professionals.
+- Digital products built from scratch at Yattó with AngularJS and Go: 3.
+- Digital products delivered at Interact Software: 4.
+- Companies co-founded: 2 (Yattó/Residuall and Interact Software).
+- Yattó clients under the new business model (large consumer goods and retail companies) that may be named: Cargill, Johnson & Johnson, Nestlé and Suvinil. Do not associate them with Residuall's reverse logistics phase.
+- eNPS and LNPS (the team's assessment of leadership) at Aurum: both above 80 in every year as CTO.
+- Aurum team: stabilized after a period of many departures before Fael's arrival, which allowed headcount to grow. There is no confirmed turnover figure: do not publish values.
+- Roles created at Aurum: software architect, technology manager and support analyst, with internal promotions into new roles.
+- Aurum cloud budget: R$300 to 400 thousand per month, cloud and infrastructure on GCP only (excludes payroll).
+- Pipelines at Aurum: standardization of product, performance, cloud, data and internal systems pipelines, with development metrics introduced alongside them.
+- Aurum certified by Great Place to Work during his tenure (company certification, do not attribute it to Fael).
+- Aurum: one of Brazil's leading legal software companies (Astrea and Themis products).
+- Modernization at Aurum: incremental migration from AngularJS to React with micro-frontends,
+  preserving continuous product evolution.
+- Promotion at Aurum: from Senior Front-end Engineer/Tech Lead to CTO about six months after joining (Oct/2020 to Apr/2021).
+- Data at Aurum: function built from scratch, including the team, data marts and governance and reliability plans.
+- Security at Aurum: a program based on CIS Controls and automated monitoring, reducing monthly requests to investigate data leaks from approximately 30 to zero. The program includes information security policies and a business continuity and disaster recovery plan. There are no incident, SLO or uptime figures.
+- AI at Aurum: a corporate roadmap covering governance and security, AI in the SDLC, Spec-Driven Development and product innovation.
+- Privacy at Aurum: served as DPO and implemented organizational practices for LGPD compliance.
 
-## Formação
+## Education
 
-- Bacharelado em Sistemas de Informação - Universidade Federal de Minas Gerais (UFMG), 2008-2012.
-- Pós-graduação em Engenharia de Software com IA Aplicada - UNIPDS (Anhanguera), 2026-2027, em andamento.
+- Bachelor's degree in Information Systems - Universidade Federal de Minas Gerais (UFMG), 2008-2012.
+- Postgraduate program in Software Engineering with Applied AI - UNIPDS (Anhanguera), 2026-2027, in progress.
 
-## Certificação
+## Certification
 
-- Inteligência Artificial Agêntica Aplicada à Transformação Empresarial - MIT Professional Education, jul 2026, 70 horas.
+- Agentic AI Applied to Business Transformation ("Inteligência Artificial Agêntica Aplicada à Transformação Empresarial") - MIT Professional Education, Jul 2026, 70 hours.
 
-## Idiomas
+## Languages
 
-Português (nativo) · Inglês (fluente) · Espanhol (intermediário)
+Portuguese (native) · English (fluent) · Spanish (intermediate)
 
-## Projetos atuais
+## Current projects
 
-- Longward: empresa em formação (ver Identidade).
+- Longward: a company being formed (see Identity).
 - AIKM: a manager for each project's agent environment. Pieces are declared once in a catalog and a per-project manifest, and AIKM generates the files each agent tool reads. The repository is still private; the site says "open source em breve" / "open source soon".
 - Radiant: method for building software with agents, in progress. Open source: the repository is public under the MIT license (github.com/faelplg/radiant).
 - Demerzel: a CLI that dispatches each unit of a Radiant contract as a Claude Code or Codex session in herdr and collects the completion report for the orchestrator. In progress. Open source: the repository is public under the MIT license (github.com/faelplg/demerzel).
-- Linha de estudos: experiência do usuário aplicada à IA (sistemas construídos com agentes e produtos que usam IA nas suas funcionalidades).
+- Research focus: user experience applied to AI (systems built with agents and products that use AI in their features).
