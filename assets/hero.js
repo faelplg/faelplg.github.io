@@ -136,7 +136,6 @@
     uniform float uTime;
     uniform vec3 uPointer;   // xy em pixels do dispositivo, z = presença (0 a 1)
     uniform vec3 uInk;
-    uniform vec3 uPaper;
 
     float hash(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
     float noise(vec2 p) {
@@ -171,12 +170,15 @@
       float on = step(bayer8(cell) + 0.02, tone * 0.72);
       // ponto de 3/4 da célula: a retícula lê como grade, não como mancha
       vec2 inside = step(fract(gl_FragCoord.xy / uCell), vec2(0.75));
-      gl_FragColor = vec4(mix(uPaper, uInk, on * inside.x * inside.y), 1.0);
+      // só os pontos são pintados (alfa pré-multiplicado): o fundo é o do palco,
+      // como nos outros heróis de página interna, e segue o tema
+      float alpha = on * inside.x * inside.y;
+      gl_FragColor = vec4(uInk * alpha, alpha);
     }`;
 
   function initHalftone(stage) {
     const canvas = stage.querySelector('canvas');
-    const gl = canvas.getContext('webgl', { antialias: false, alpha: false });
+    const gl = canvas.getContext('webgl', { antialias: false, premultipliedAlpha: true });
     if (!gl) return; // sem WebGL fica o fundo liso do palco
 
     const program = gl.createProgram();
@@ -203,7 +205,6 @@
     const uTime = uniform('uTime');
     const uPointer = uniform('uPointer');
     const uInk = uniform('uInk');
-    const uPaper = uniform('uPaper');
 
     const pointer = trackPointer(stage);
     let dpr = 1;
@@ -211,7 +212,6 @@
 
     function readColors() {
       gl.uniform3fv(uInk, toUnitRgb(tokenColor(stage, '--ft-accent')));
-      gl.uniform3fv(uPaper, toUnitRgb(tokenColor(stage, '--ft-bg')));
     }
 
     function resize() {
