@@ -55,6 +55,40 @@ vercel.json               → redirects from old addresses (manual, horizonte, e
 AGENTS.md                 → instructions for AI agents working in this repository
 ```
 
+## Local development
+
+Install dependencies with Bun:
+
+```sh
+bun install --frozen-lockfile
+```
+
+There is no build step. Serve the repository root with any static server, for example:
+
+```sh
+bunx serve .
+```
+
+Validate the HTML before opening a pull request:
+
+```sh
+bun run lint:html
+```
+
+[CI](.github/workflows/ci.yml) runs HTML validation and the internal-links check on pull requests
+and pushes to `master`. The links job uses `lycheeverse/lychee-action@v2` offline to check local
+pages, assets and fragments, excluding `/_vercel/` endpoints injected at deployment. With the
+Lychee CLI installed, run the equivalent check locally from the repository root:
+
+```sh
+lychee --offline --include-fragments --no-progress --root-dir "$PWD" \
+  --exclude '/_vercel/' \
+  './*.html' './en/*.html' './estudos/*.html' './en/studies/*.html' \
+  './boletins/*.html' './en/bulletins/*.html'
+```
+
+Deployments run on Vercel from `master`.
+
 ## Documentation
 
 To work on the brand kit itself (symbol, colors, tokens), see
