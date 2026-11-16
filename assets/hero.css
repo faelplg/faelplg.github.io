@@ -1,15 +1,16 @@
 /* ═══════════════════════════════════════════════
-   fael.tech - heróis
-   O Busto abre a home; Agulhas, Retícula, Estratos, Interferência e Phases abrem
-   páginas internas (.ds-hero--page). Palcos independentes da documentação: este arquivo, o canvas.js e
-   o hero.js podem ir para o site sem levar o design-system.css.
-   O palco é uma faixa da largura da tela, sem moldura. Barra, texto e busto
-   ficam na linha do .site-container (--hero-inset), a mesma do texto abaixo.
-   Cor só por tokens semânticos; margin, padding e gap só por --ft-space-*.
+   fael.tech - heroes
+   Bust opens the home page. Every inner page opens with the same stage
+   (.ds-hero--page): one structure, one mask and the page theme, light or dark.
+   Only the art on the canvas (data-hero) and the copy change. Stages independent of the documentation: this file, canvas.js and
+   hero.js can go to the site without bringing design-system.css.
+   The stage is a full-width band, with no frame. Bar, text and bust
+   sit on the .site-container line (--hero-inset), the same as the text below.
+   Color only through semantic tokens; margin, padding and gap only through --ft-space-*.
    ═══════════════════════════════════════════════ */
 
-/* ── Palco ── */
-/* A borda de baixo é o chão do busto e o limite do campo do canvas */
+/* ── Stage ── */
+/* The bottom edge is the bust's floor and the limit of the canvas field */
 .ds-hero {
   position: relative;
   isolation: isolate;
@@ -22,12 +23,12 @@
   background: var(--ft-bg-sunken);
   color: var(--ft-fg);
 }
-/* Recuo lateral do conteúdo: a mesma conta do .site-container
-   (min(--ft-page-max, 100% - 2 × --ft-gutter), centralizado), feita na largura
-   do palco. Fica nos filhos porque cqi não consulta o próprio contêiner. */
+/* Side inset of the content: the same calculation as .site-container
+   (min(--ft-page-max, 100% - 2 × --ft-gutter), centered), done on the width
+   of the stage. It lives on the children because cqi does not query the container itself. */
 .ds-hero > * { --hero-inset: max(var(--ft-gutter), (100cqi - var(--ft-page-max)) / 2); }
 
-/* Camada de creative coding: sempre atrás do conteúdo e fora da leitura */
+/* Creative coding layer: always behind the content and out of the reading area */
 .ds-hero__canvas {
   position: absolute;
   inset: 0;
@@ -37,7 +38,7 @@
   pointer-events: none;
 }
 
-/* ── Barra do site ── */
+/* ── Site bar ── */
 .ds-hero__bar {
   display: flex;
   align-items: center;
@@ -66,14 +67,14 @@
 }
 .ds-hero__nav a { color: var(--ft-fg-muted); text-decoration: none; }
 .ds-hero__nav a:hover { color: var(--ft-fg); }
-/* Página atual: texto cheio e um fio na cor da marca embaixo */
+/* Current page: full-strength text and a brand-colored line underneath */
 .ds-hero__nav a[aria-current="page"] {
   color: var(--ft-fg);
   text-decoration: underline 2px var(--ft-accent);
   text-underline-offset: var(--ft-space-2);
 }
 
-/* ── Conteúdo ── */
+/* ── Content ── */
 .ds-hero__body {
   flex: 1;
   display: flex;
@@ -107,11 +108,11 @@
   margin-top: var(--ft-space-8);
 }
 
-/* ── Página interna ── */
-/* Mais baixo que o da home e sem botões: a trilha diz onde a pessoa está,
-   o título é o nome da página e o texto de apoio resume o que vem abaixo. */
+/* ── Inner page ── */
+/* Shorter than the home hero and without buttons: the breadcrumb says where the person is,
+   the title is the page name and the supporting text summarizes what comes below. */
 .ds-hero--page { min-height: 360px; }
-.ds-hero--page .ds-hero__title { font-size: clamp(32px, 5.5cqi, 52px); }
+.ds-hero--page .ds-hero__title { max-width: 10em; font-size: clamp(32px, 5.5cqi, 52px); }
 .ds-hero__crumbs {
   display: flex;
   flex-wrap: wrap;
@@ -135,29 +136,33 @@
 .ds-hero__crumbs a:hover { color: var(--ft-fg); }
 .ds-hero__crumbs [aria-current="page"] { color: var(--ft-accent); }
 
-/* ── 1 · Agulhas ── */
-/* O campo some atrás do texto e da barra: uma máscara abre da esquerda para
-   a direita, a outra de cima para baixo, e vale a interseção das duas */
-.ds-hero--needles .ds-hero__canvas {
-  --hero-mask: linear-gradient(100deg, transparent 22%, black 68%), linear-gradient(to bottom, transparent 56px, black 120px);
+/* ── Inner page: field outside the text ── */
+/* On the short stage the text takes a bigger slice: the field opens only after it
+   and below the bar. Every inner page art draws over the whole canvas and this mask
+   keeps it out of the text, so no hero needs a mask of its own.
+   The field edge follows the end of the supporting text (inset + measure), not the width
+   of the stage: with the supporting text font here, the measure in ch gives the same width. */
+.ds-hero--page .ds-hero__canvas {
+  font-size: var(--ft-text-lead-size);
+  --hero-text-end: calc(var(--hero-inset) + var(--ft-measure-narrow));
+  --hero-mask: linear-gradient(to right, transparent var(--hero-text-end), black calc(var(--hero-text-end) + 160px)), linear-gradient(to bottom, transparent 64px, black 128px);
   -webkit-mask-image: var(--hero-mask);
   mask-image: var(--hero-mask);
   -webkit-mask-composite: source-in;
   mask-composite: intersect;
 }
-.ds-hero--needles .ds-hero__title { max-width: 9em; }
 
-/* ── 2 · Busto ── */
-/* Três camadas: disco, texto e busto. O cursor desloca o disco e o busto
-   em sentidos opostos (--hero-px e --hero-py vão de -1 a 1). */
+/* ── Bust (home) ── */
+/* Three layers: disc, text and bust. The cursor shifts the disc and the bust
+   in opposite directions (--hero-px and --hero-py range from -1 to 1). */
 .ds-hero--bust {
   --hero-px: 0;
   --hero-py: 0;
 }
-/* a largura do busto depende do palco, então é definida nos filhos (cqi) */
+/* the bust width depends on the stage, so it is defined on the children (cqi) */
 .ds-hero--bust > * { --hero-bust-w: min(392px, 46cqi); }
 .ds-hero--bust .ds-hero__body {
-  /* o texto termina 24px antes do busto, que fica na linha direita do container */
+  /* the text ends 24px before the bust, which sits on the container's right line */
   max-width: calc(100% - var(--hero-bust-w) - var(--hero-inset) - var(--ft-space-6));
   padding-right: 0;
 }
@@ -180,8 +185,8 @@
   translate: calc(-50% + var(--hero-px) * 12px) calc(var(--hero-py) * 8px);
   transition: translate var(--ft-duration-slow) var(--ft-ease-out);
 }
-/* No escuro o disco vira vidro: o halo que acende de dentro vem do Node card
-   de destaque; o fio e o anel de 16px vêm da órbita. No claro segue chapado. */
+/* In dark the disc becomes glass: the halo that lights up from inside comes from the Node card
+   highlight; the line and the 16px ring come from the orbit. In light it stays flat. */
 .ds-hero--bust .ds-hero__disc {
   background: radial-gradient(
     circle at 50% 30%,
@@ -197,43 +202,13 @@
   display: block;
   width: 100%;
   height: auto;
-  /* a base sobra 8px para o deslocamento não descolar o busto da borda */
+  /* the base has 8px extra so the shift does not detach the bust from the edge */
   margin-bottom: calc(-1 * var(--ft-space-2));
   translate: calc(var(--hero-px) * -8px) calc(var(--hero-py) * -4px);
   transition: translate var(--ft-duration-slow) var(--ft-ease-out);
 }
 
-/* ── 3 · Retícula ── */
-/* Palco escuro nos dois temas: o esquema fica no próprio componente, para valer
-   fora da documentação. Fundo, texto e as cores que o shader lê da sonda seguem ele.
-   O fundo é o --ft-bg que o shader pinta, para o campo não ter emenda; no tema
-   escuro a faixa se separa da página pela linha de baixo. */
-.ds-hero--halftone { color-scheme: dark; background: var(--ft-bg); }
-.ds-hero--halftone .ds-hero__title { max-width: 10em; }
-
-/* ── 4 · Estratos, 5 · Interferência e 6 · Phases ── */
-/* Linhas finas em Canvas 2D sobre o fundo da página interna; o campo fica
-   fora do texto pela máscara comum abaixo. */
-.ds-hero--strata .ds-hero__title,
-.ds-hero--interference .ds-hero__title,
-.ds-hero--phases .ds-hero__title { max-width: 10em; }
-
-/* ── Página interna: campo fora do texto ── */
-/* No palco baixo o texto ocupa uma fatia maior: o campo abre só depois dele
-   e abaixo da barra. Vem depois das regras de cada hero para valer sobre elas.
-   A borda do campo segue o fim do texto de apoio (recuo + medida), não a largura
-   do palco: com a fonte do texto de apoio aqui, a medida em ch dá a mesma largura. */
-.ds-hero--page .ds-hero__canvas {
-  font-size: var(--ft-text-lead-size);
-  --hero-text-end: calc(var(--hero-inset) + var(--ft-measure-narrow));
-  --hero-mask: linear-gradient(to right, transparent var(--hero-text-end), black calc(var(--hero-text-end) + 160px)), linear-gradient(to bottom, transparent 64px, black 128px);
-  -webkit-mask-image: var(--hero-mask);
-  mask-image: var(--hero-mask);
-  -webkit-mask-composite: source-in;
-  mask-composite: intersect;
-}
-
-/* ── Ficha de cada proposta ── */
+/* ── Card for each proposal ── */
 .ds-hero-spec {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -243,9 +218,9 @@
 .ds-hero-spec dt { margin-bottom: var(--ft-space-1); }
 .ds-hero-spec dd { margin: 0; font-size: 14px; color: var(--ft-fg-muted); }
 
-/* ── Palco estreito ── */
-/* O busto empilha antes dos outros: ao lado dele o título fica sem largura.
-   Texto em cima, busto embaixo, apoiado na borda. */
+/* ── Narrow stage ── */
+/* The bust stacks before the others: beside it the title runs out of width.
+   Text on top, bust below, resting on the edge. */
 @container (max-width: 760px) {
   .ds-hero--bust > * { --hero-bust-w: 264px; }
   .ds-hero--bust .ds-hero__body { flex: none; max-width: none; padding-right: var(--hero-inset); }
@@ -262,11 +237,8 @@
   .ds-hero__body { padding-block: var(--ft-space-8); }
   .ds-hero__lead { font-size: var(--ft-text-body-size); line-height: var(--ft-text-body-leading); }
 
-  .ds-hero--needles .ds-hero__canvas {
-    --hero-mask: linear-gradient(to top, transparent 48%, black 80%), linear-gradient(to bottom, transparent 56px, black 104px);
-  }
-  /* página interna: o texto ocupa quase todo o palco, e o campo vira uma
-     faixa entre a barra e a trilha */
+  /* inner page: the text takes almost the whole stage, and the field becomes a
+     band between the bar and the breadcrumb */
   .ds-hero--page { min-height: 420px; }
   .ds-hero--page .ds-hero__canvas {
     --hero-mask: linear-gradient(to top, transparent 66%, black 76%), linear-gradient(to bottom, transparent 48px, black 80px);

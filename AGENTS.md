@@ -137,7 +137,9 @@ Longward, Interferência (Interference) on "Contato" (Contact) and Phases on "Bo
 Each main section ("Início", "Trajetória", "Estudos", "Boletins", Longward, "Contato") has its own
 hero, which is not repeated in another section. Within a section, the hero stays the same: the
 Studies index and all study pages use Retícula, the bulletins index and every issue use Phases,
-and each pt/en pair shares its hero. The theme follows the operating system (`light-dark()` in
+and each pt/en pair shares its hero. Every hero except Home's is an inner page stage
+(`ds-hero--page`) with the same structure, mask and theme behavior: only the art on the canvas
+(`data-hero`) and the copy change, so no inner page hero is fixed to light or dark. The theme follows the operating system (`light-dark()` in
 the semantic tokens); components never use hex, `rgba()` or primitives (`--ft-teal-*`,
 `--ft-ink`...), only semantic tokens (`--ft-fg`, `--ft-bg-raised`, `--ft-accent`...), and spacing
 comes from `--ft-space-*`.
