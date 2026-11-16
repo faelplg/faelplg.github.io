@@ -170,8 +170,8 @@
       float on = step(bayer8(cell) + 0.02, tone * 0.72);
       // ponto de 3/4 da célula: a retícula lê como grade, não como mancha
       vec2 inside = step(fract(gl_FragCoord.xy / uCell), vec2(0.75));
-      // só os pontos são pintados (alfa pré-multiplicado): o fundo é o do palco,
-      // como nos outros heróis de página interna, e segue o tema
+      // only the dots are painted (premultiplied alpha): the background is the stage's,
+      // as on the other inner page heroes, and it follows the theme
       float alpha = on * inside.x * inside.y;
       gl_FragColor = vec4(uInk * alpha, alpha);
     }`;
